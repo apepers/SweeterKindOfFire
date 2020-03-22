@@ -23,10 +23,19 @@ jobs:
           tweego SweeterKindOfFire.twee -o dist/index.html
           tweego SweeterKindOfFire.twee -o SweeterKindOfFire.html
 
-
-      - name: Deploy
+      - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: ${{ secrets.GH_PAT }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./dist
+
+      - name: Commit html file to master
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Add html changes" SweeterKindOfFire.html
+      - name: Push html file to master
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_PAT }}
