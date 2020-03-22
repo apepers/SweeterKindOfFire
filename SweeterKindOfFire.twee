@@ -259,7 +259,7 @@ if (paragraphs.length > 1) {
 <<SecretTaskComplete "Get Kim alone" 25>>
 
 <<PassiveSkill "Electrochemistry">>
-<<AddParagraph "Fuckin' *finally*. I love Vic - I love watching that ass leave as much as you do - but let's be real, he was cramping your style.">>
+<<AddParagraph "Fuckin' //finally//. I love Vic - I love watching that ass leave as much as you do - but let's be real, he was cramping your style.">>
 
 <<PassiveSkill "Perception (Sight)">>
 <<AddParagraph "Kim is nearly done with his third drink of the evening. He is sitting across from you, with a mirror behind him; there is a low table between you two, covered in cheap alcohol bottles and ashtrays full of stubs. In the corner of the mirror, a square is etched into the glass; the square is painted purple, with a black spiral shape on it.">>
@@ -1046,16 +1046,46 @@ A Disco Elysium Fanwork
 :: Handsy [nobr] {"position":"1423.3333333333335,3889.6666666666665","size":"100,100"}
 <<set $position to "sit">>
 
+<<SetSpeaker "">>
+<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+
+<<SetSpeaker "YOU">>
+<<AddParagraph "Your body moves without your control, bucking your hips, and you let out an obscene noise.">>
+
+<<PassiveSkill "Reaction Speed" "Medium" "Failure">>
+<<AddParagraph "Damn, not cool, dude, what were you thinking? You're gonna freak him out!">>
+
+<<PassiveSkill "CONCEPTUALIZATION">>
+<<AddParagraph "And yet, the heavens open -">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "Kim is //laughing//. Heartily. Joyfully. It is only a little at your expense, but still - it is //wonderful//.">>
+
+<<AddOption "ELECTROCHEMISTRY: ''NOW!''" "Second kiss">>[[|Second kiss]]
+
 
 :: Dip? [nobr] {"position":"574.9999999999999,3914.6666666666665","size":"100,100"}
 <<set $position to "dip">>
 
 <<PassiveSkill "Perception (Sight)">>
-<<AddParagraph "You look down at him; you see that his bomber jacket is just open enough to let rain soak some of his chest and the thin white v-neck shirt he's wearing.">>
+<<AddParagraph "You look down at him; you see that his bomber jacket is just open enough to let rain soak some of the white v-neck shirt he's wearing; the thin fabric clings to his chest and collarbones.">>
 
 <<PassiveSkill "Physical Instrument">>
-<<AddParagraph "You try to tilt him down - ">>
+<<AddParagraph "You try to tilt him down in a dramatic swoop -">>
 
+<<PassiveSkill "Reaction Speed" "Medium" "Failure">>
+<<AddParagraph "Oh fuck, the concrete is slick, you're going to fuck this up and not catch him - ">>
+
+<<PassiveSkill "Visual Calculus" "Medium" "Success">>
+<<AddParagraph "Wait, one moment before you fuck this up completely. Tilt your pelvis down three degrees and move your arm just so.">>
+
+<<PassiveSkill "CONCEPTUALIZATION">>
+<<AddParagraph "And at this point, the heavens open -">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "Kim is //laughing//. Heartily. You can practically feel his body shaking in your arms as he does. It is only a little at your expense, but still - it is //wonderful//.">>
+
+<<AddOption "ELECTROCHEMISTRY: ''NOW!''" "Second kiss">>[[|Second kiss]]
 
 :: Second kiss {"position":"1040,4204.666666666667","size":"100,100"}
 Double-click this passage to edit it.
