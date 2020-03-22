@@ -1050,6 +1050,12 @@ A Disco Elysium Fanwork
 :: Dip? [nobr] {"position":"574.9999999999999,3914.6666666666665","size":"100,100"}
 <<set $position to "dip">>
 
+<<PassiveSkill "Perception (Sight)">>
+<<AddParagraph "You look down at him; you see that his bomber jacket is just open enough to let rain soak some of his chest and the thin white v-neck shirt he's wearing.">>
+
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "You try to tilt him down - ">>
+
 
 :: Second kiss {"position":"1040,4204.666666666667","size":"100,100"}
 Double-click this passage to edit it.
