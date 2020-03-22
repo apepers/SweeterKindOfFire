@@ -1115,6 +1115,7 @@ A Disco Elysium Fanwork
 <<AddOption "UNAMUSED CAB DRIVER - At this point, tragicomically, the cab comes to a full stop." "Cab sequence 3">>[[|Cab sequence 3]]
 <<else>>
 <<AddOption "SHIVERS [Trivial: Success] - At this point, tragicomically, a LUM Fevre speeds past you, splashing an impressive amount of water over the both of you." "Walk sequence 2">>[[|Walk sequence 2]]
+<<endif>>
 
 :: Cab sequence 3 [nobr]
 <<SetSpeaker "Kim Kitsuragi">>
@@ -1123,4 +1124,4 @@ A Disco Elysium Fanwork
 
 :: Walk sequence 2 [nobr]
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "The sudden rush of cold water makes Kim pull away."
+<<AddParagraph "The sudden rush of cold water makes Kim pull away.">>
