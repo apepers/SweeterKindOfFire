@@ -9,6 +9,7 @@ https://github.com/ChapelR/tweego-installer
 # Quick local previewing
 If you want to preview the game locally without having to push, you can do that quickly as long as you've installed Tweego as above.
 Open a command line terminal inside of the repo folder (for example, `C:\Users\Alexei\Documents\Github\SweeterKindOfFire`) and run the following command:
+
 `tweego SweeterKindOfFire.twee -o SweeterKindOfFire.html`
 
 You can then navigate to the repo folder and double click `SweeterKindOfFire.html` to open it in your web browser and play your modified version to test.
@@ -19,8 +20,11 @@ You also have access to some extra functionality when testing this way.
 
 ## To start at a different passage than the normal start
 As an example, to start as the passage named 'PickDrink'
+
 `tweego SweeterKindOfFire.twee -o SweeterKindOfFire.html --start=PickDrink`
+
 Note that if the passage name has spaces you will need quotes
+
 `tweego SweeterKindOfFire.twee -o SweeterKindOfFire.html --start="Cheap wine"`
 
 ## To detect new changes without needing to rebuild
@@ -29,6 +33,7 @@ You can put Tweego in a 'watch' mode which will cause it to rebuild every time y
 Note that when you refresh it does remember what passage you were on, so this can be really handy to fix typos as you see them.
 
 To run in watch mode, use
+
 `tweego SweeterKindOfFire.twee -o SweeterKindOfFire.html -w`
 
 # How to edit in the Twine editor
