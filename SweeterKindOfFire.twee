@@ -140,7 +140,7 @@ postdisplay['paragraph'] = function (taskName) {
 <<set $triedfancy to false>>
 <<set $optionmap to new Map()>>
 <<set $motorics to ["composure", "hand-eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception (sight)", "perception (taste)", "perception (touch)"]>>
-<<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual Calculus"]>>
+<<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual calculus"]>>
 <<set $fysique to ["electrochemistry", "endurance", "half light", "pain threshold", "physical instrument", "shivers"]>>
 <<set $psyche to ["authority", "empathy", "esprit de corps", "inland empire", "suggestion", "volition"]>>
 <<set $greentext to []>>
@@ -733,7 +733,7 @@ A Disco Elysium Fanwork
 <<endif>>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "Cab to my place?">>
+<<AddParagraph "\"Cab to my place?\""">>
 
 <<PassiveSkill "Empathy" "Easy" "Success">>
 <<AddParagraph "Avoiding the pouring rain seems like a good idea.">>
@@ -758,7 +758,7 @@ A Disco Elysium Fanwork
 <<endif>>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "Seems reasonable to me.">>
+<<AddParagraph "\"Seems reasonable to me.\""">>
 
 <<PassiveSkill "Empathy" "Easy" "Success">>
 <<AddParagraph "Avoiding the pouring rain seems like a good idea.">>
@@ -991,7 +991,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "It's not going anywhere until the exact moment it cannot stay - ">>
 
 <<SetSpeaker "KIM KITSURAGI">>
-<<AddParagraph - "and a hand brushes gently along the top of your right thigh. Slow strokes; Down, then up.">>
+<<AddParagraph "- and a hand brushes gently along the top of your right thigh. Slow strokes; Down, then up.">>
 
 <<PassiveSkill "ELECTROCHEMISTRY">>
 <<AddParagraph "His hand is //centimeters// away from where it should be, and then just. Leaves. The fucking tease.">>
@@ -1032,7 +1032,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
 
 <<SetSpeaker "YOU">>
-<<AddParagraph "The words come out of your mouth before you can even think about what they are. \"Pleaaaaaaaaaase tell me?? Pretty please??"">>
+<<AddParagraph "The words come out of your mouth before you can even think about what they are. \"Pleaaaaaaaaaase tell me?? Pretty please??\"">>
 
 <<PassiveSkill "CONCEPTUALIZATION">>
 <<AddParagraph "And at this point, the heavens open -">>
