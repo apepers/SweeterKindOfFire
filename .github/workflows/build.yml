@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - 'SweeterKindOfFire.html'
 
 jobs:
   build:
@@ -34,7 +36,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m "Add html changes" -a
+          git add SweeterKindOfFire.html
+          git commit -m "Add html changes" SweeterKindOfFire.html
 
       - name: Push html file to master
         uses: ad-m/github-push-action@master
