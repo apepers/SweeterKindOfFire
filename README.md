@@ -14,6 +14,8 @@ Open a command line terminal inside of the repo folder (for example, `C:\Users\A
 
 You can then navigate to the repo folder and double click `SweeterKindOfFire.html` to open it in your web browser and play your modified version to test.
 
+Github will notice that you've modified the html file when you go to commit your changes. You can commit if you want, but it will re-compile the html anyway based on the twee, so you can safely revert the html file instead and just commit your twee file. Either works.
+
 You also have access to some extra functionality when testing this way.
 ## To preview your changes with testing enabled (aka same as Test in the Twine editor)
 `tweego SweeterKindOfFire.twee -o SweeterKindOfFire.html -t`
