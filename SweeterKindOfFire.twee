@@ -291,15 +291,15 @@ A Disco Elysium Fanwork
 <<NewTask "Get Kim to drink">>
 
 <<SetSpeaker "You">>
-<<AddParagraph "\"*Lieutenant* Kitsuragi, you know I do not pull rank often. But *this* is of the utmost importance - a celebration of you joining our team. We cannot leave you out of this toast, and to do so without *some* alcohol - without some fire in your gut - is almost an insult to the tradition!\"">>
+<<AddParagraph "\"//Lieutenant// Kitsuragi, you know I do not pull rank often. But //this// is of the utmost importance - a celebration of you joining our team. We cannot leave you out of this toast, and to do so without //some// alcohol - without some fire in your gut - is almost an insult to the tradition!\"">>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "Something in his lip twitched at that - some color entered the tips of his ears - and then a lazy smile. \"Well if you'll buy me *any*thing…\"">>
+<<AddParagraph "Something in his lip twitched at that - some color entered the tips of his ears - and then a lazy smile. \"Well if you'll buy me //any//thing…\"">>
 
 <<AddOption "Order an Aerostatique." "Aerostatique">>[[|Aerostatique]]
 <<AddOption "Order a Grand Couron." "Grand Couron">>[[|Grand Couron]]
 <<AddOption "These cocktails are crazy, just get cheap wine." "Cheap wine">>[[|Cheap wine]]
-<<AddOption "*Do* I know anything besides Potent Pilsner?" "Cocktail questions">>[[|Cocktail questions]]
+<<AddOption "//Do// I know anything besides Potent Pilsner?" "Cocktail questions">>[[|Cocktail questions]]
 
 
 :: Aerostatique [nobr] {"position":"891,184","size":"100,100"}
@@ -367,7 +367,7 @@ A Disco Elysium Fanwork
 
 <<TaskComplete "Get Kim to drink" 10>>
 
-<<SetSpeaker "Empathy" "Medium" "Failure">>
+<<PassiveSkill "Empathy" "Medium" "Failure">>
 <<AddParagraph "You'd thought he'd care more about the drink quality - why doesn't he?">>
 
 <<AddOption "The evening passes, and you keep buying his drinks." "Darts">>[[|Darts]]
@@ -919,7 +919,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "He settles in the back seat, perfectly framed by the dark inside the motor carriage. He looks back at you, eyes half-lidded, and something playing at the corner of his lip. Getting into the empty seat next to him is suddenly the most vital thing in the world.">>
 
 <<SetSpeaker "YOU">>
-<<AddParagraph "You careen into the cab; your left hip shoves into Kim's right, the force recoiling through you. The end of your coat almost gets stuck in the cab door as you slam it quickly behind you. 
+<<AddParagraph "You careen into the cab; your left hip shoves into Kim's right, the force recoiling through you. The end of your coat almost gets stuck in the cab door as you slam it quickly behind you.">> 
 
 <<AddOption "The cab driver does not look amused." "Cab sequence 2">>[[|Cab sequence 2]]
 
@@ -988,13 +988,13 @@ A Disco Elysium Fanwork
 <<AddParagraph "Kim's still wearing that grin - ">>
 
 <<PassiveSkill "COMPOSURE">>
-<<AddParagraph It's not going anywhere until the exact moment it cannot stay - ">>
+<<AddParagraph "It's not going anywhere until the exact moment it cannot stay - ">>
 
 <<SetSpeaker "KIM KITSURAGI">>
-<<AddParagraph - and a hand brushes gently along the top of your right thigh. Slow strokes; Down, then up.">>
+<<AddParagraph - "and a hand brushes gently along the top of your right thigh. Slow strokes; Down, then up.">>
 
 <<PassiveSkill "ELECTROCHEMISTRY">>
-<<AddParagraph His hand is //centimeters// away from where it should be, and then just. Leaves. The fucking tease.">>
+<<AddParagraph "His hand is //centimeters// away from where it should be, and then just. Leaves. The fucking tease.">>
 
 <<AddOption "KIM KITSURAGI: His chin is on your shoulder; he's whispering in your ear." "Secret 2">>[[|Secret 2]]
 
@@ -1087,7 +1087,40 @@ A Disco Elysium Fanwork
 
 <<AddOption "ELECTROCHEMISTRY: ''NOW!''" "Second kiss">>[[|Second kiss]]
 
-:: Second kiss {"position":"1040,4204.666666666667","size":"100,100"}
-Double-click this passage to edit it.
+:: Second kiss [nobr] {"position":"1040,4204.666666666667","size":"100,100"}
+<<if $position is "sit">>
+<<set _youmove to "lean over and thread a hand through his hair">>
+<<else if $position is "stand">>
+<<set _youmove to "turn to face him and thread a hand through his hair">>
+<<else>>
+<<set _youmove to "move your free hand to thread through his hair">>
+<<endif>>
+
+<<SetSpeaker "you">>
+<<AddParagraph "You _youmove -">>
+
+<<PassiveSkill "Perception (Touch)">>
+<<AddParagraph "How the fuck is it //so soft//, what does he //do// -">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "and tilt his head towards you; you quiet his laughter with a kiss.">>
+
+<<PassiveSkill "Empathy">>
+<<AddParagraph "Softer than before, but no less hungry. A fine meal, not a wolfed down treat.">>
+
+<<PassiveSkill "Electrochemistry" "Formidable" "Success">>
+<<AddParagraph "You have not forgotten what you're doing; how to tease, how to play.">>
+
+<<if $apartment is "Kim">>
+<<AddOption "UNAMUSED CAB DRIVER - At this point, tragicomically, the cab comes to a full stop." "Cab sequence 3">>[[|Cab sequence 3]]
+<<else>>
+<<AddOption "SHIVERS [Trivial: Success] - At this point, tragicomically, a LUM Fevre speeds past you, splashing an impressive amount of water over the both of you." "Walk sequence 2">>[[|Walk sequence 2]]
+
+:: Cab sequence 3 [nobr]
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The halting of the cab makes Kim pull away and don the Professional Mask.">>
 
 
+:: Walk sequence 2 [nobr]
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The sudden rush of cold water makes Kim pull away."
