@@ -1,0 +1,1063 @@
+:: StoryTitle
+SweeterKindOfFire
+
+
+:: StoryData
+{
+	"ifid": "B1E46906-738D-4617-BD15-CEF422C96FD8",
+	"format": "SugarCube",
+	"format-version": "2.30.0",
+	"start": "Intro",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url(http://fonts.googleapis.com/css?family=David+Libre:400,700,400italic,700italic);
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');
+
+html {
+  height: 100%;
+}
+
+body, tw-story
+{
+  font-family: 'David Libre', serif;
+  margin-left: 2em;
+  color: #d2d3cd;
+  height: 100%;
+}
+
+tw-hook
+{
+  margin-left: -25px;
+}
+
+#story {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.passage {
+  line-height: 1.25;
+  font-size: large;
+  margin-left: 1.5em;
+}
+
+a {
+  color: #b6523a;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+a:active {
+  color: white;
+}
+
+.passage ol {
+  margin-left: -1em;
+}
+
+.psyche {
+  color: #705cbb;
+}
+
+.fysique {
+  color: #c6496b;
+}
+
+.intellect {
+  color: #6cc6ce;
+}
+
+.motorics {
+  color: #e4b934;
+}
+
+.speaker {
+  text-transform: uppercase;
+  margin-left: -1.5em;
+}
+
+
+.dim {
+  transition: opacity 0.5s;
+  opacity: 0.5;
+}
+
+.macro-timed-insert {
+	transition-duration: 2s;
+}
+
+.pastchoice {
+  color: #737c87;
+}
+
+.option {
+  font-weight: bold;
+}
+
+span.continueblock {
+  display: none;
+}
+
+a.macro-linkreplace {
+  background-color: #90280f;
+  color: white;
+  padding: 15px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin-left: -1.5em;
+  display: block;
+}
+
+
+.green {
+  color: #98b48b; 
+  margin-left: -1.5em;
+}
+
+
+:: Story JavaScript [script]
+$(document).click(function(e) {
+	if($("span.continueblock").length) {
+		$("span.continueblock").first().removeClass('continueblock');
+	}
+	e.stopPropagation();
+	return false;
+});
+
+postdisplay['paragraph'] = function (taskName) {
+	//$('.paragraph').hide().fadeIn(10000);
+};
+
+
+:: StoryInit {"position":"268,25","size":"100,100"}
+<<set $triedfancy to false>>
+<<set $optionmap to new Map()>>
+<<set $motorics to ["composure", "hand-eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception (sight)", "perception (taste)", "perception (touch)"]>>
+<<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual Calculus"]>>
+<<set $fysique to ["electrochemistry", "endurance", "half light", "pain threshold", "physical instrument", "shivers"]>>
+<<set $psyche to ["authority", "empathy", "esprit de corps", "inland empire", "suggestion", "volition"]>>
+<<set $greentext to []>>
+<<set $paraAppendMode to false>>
+
+
+:: PassageHeader {"position":"407,27","size":"100,100"}
+<<set $paragraphs to []>>
+<<if $lastoption>>
+@@.speaker.pastchoice;You@@ @@.pastchoice;- $lastoption@@
+
+<</if>>
+
+
+:: PassageFooter {"position":"547,28","size":"100,100"}
+<<DisplayParagraphs>>\
+
+
+:: DisplayOptions [nobr] {"position":"546,144","size":"100,100"}
+<ol>
+<<for _optiontext, _optionpassage range $optionmap>><<capture _optionpassage, _optiontext>><li>- @@.option;<<link _optiontext _optionpassage>><<set $lastoption to _optiontext>><</link>>@@</li><</capture>><</for>>
+</ol>
+<<set $optionmap to new Map()>>
+
+
+:: PassiveSkill [Widget widget] {"position":"403,146","size":"100,100"}
+<<nobr>>
+<<widget "PassiveSkill">>
+<<set _skillname to ($args[0].toLowerCase())>>
+<<set _skillresult to "">>
+<<if $args[1]>>
+<<set _skillresult to ("[" + $args[1] + ": " + $args[2] + "]")>>
+<</if>>
+<<if $motorics.includes(_skillname)>>
+<<set $currentspeaker to ("@@.motorics.speaker;" +
+_skillname +
+"@@")>>
+<<elseif $intellect.includes(_skillname)>>
+<<set $currentspeaker to ("@@.intellect.speaker;" +
+_skillname +
+"@@")>>
+<<elseif $fysique.includes(_skillname)>>
+<<set $currentspeaker to ("@@.fysique.speaker;" +
+_skillname +
+"@@")>>
+<<elseif $psyche.includes(_skillname)>>
+<<set $currentspeaker to ("@@.psyche.speaker;" +
+_skillname +
+"@@")>>
+<</if>>
+<<if _skillresult>>
+<<set $currentspeaker += _skillresult>>
+<</if>>
+<<set $currentspeaker += " - ">>
+<</widget>>
+<</nobr>>
+
+
+:: Speaker [widget] {"position":"272,152","size":"100,100"}
+<<nobr>>
+<<widget "speaker">>
+@@.speaker;
+$args[0] -
+@@
+<</widget>>
+<</nobr>>
+
+
+:: AddOption [widget] {"position":"273,265","size":"100,100"}
+\<<widget "AddOption">>\<<run $optionmap.set($args[0], $args[1])>>\<</widget>>\
+
+
+:: DisplayParagraphs [widget] {"position":"401,262","size":"100,100"}
+<<widget "DisplayParagraphs">><<set _paragraph to $paragraphs[0]>>\
+<<run $paragraphs.deleteAt(0)>>\
+<span class="paragraph"><<print _paragraph>></span>
+<<if $paragraphs.length > 0>>
+<<linkreplace "CONTINUE ➤" t8n>><<DisplayParagraphs>><</linkreplace>>\
+<<else>>\
+<<include DisplayOptions>>
+<</if>>
+<<timed 0.5s>><<script>>
+var paragraphs = document.getElementsByClassName('paragraph');
+if (paragraphs.length > 1) {
+	paragraphs[paragraphs.length-2].classList.add("dim");
+}
+<</script>><</timed>>\
+<</widget>>
+
+
+:: SetSpeaker [widget] {"position":"674,151","size":"100,100"}
+<<widget "SetSpeaker">><<set $currentspeaker to ("@@.speaker;" + $args[0] + "@@ - ")>><</widget>>
+
+
+:: AddParagraph [widget] {"position":"546,268","size":"100,100"}
+<<nobr>>
+<<widget "AddParagraph">>
+<<set _para to "">>
+<<if $paraAppendMode is true>>
+<<for _text range $greentext>>
+<<set _para to (_para + _text + "<br /><br />")>>
+<</for>>
+<<set $greentext to []>>
+<<set $paraAppendMode to false>>
+<</if>>
+<<set _para to (_para + $currentspeaker + $args[0])>>
+<<run $paragraphs.push(_para)>>
+<</widget>>
+<</nobr>>
+
+
+:: Intro [nobr] {"position":"1136,19","size":"100,100"}
+<<SetSpeaker "Jean Vicquemare">>
+<<AddParagraph "Jean pulls himself upright from the low booth the three of you have been sharing in this bar. Most of the 41st plus Kim had been scattered across this back room, but everyone else had been filtering out over the course of the evening. \"Congrats on finally joining us, Kitsuragi, and welcome to the 41st,\" Jean says with a lazy grin. \"I'll see you at the office on Monday. Make sure Harry gets home in one piece,\" and with that, he leaves.">>
+
+<<SecretTaskComplete "Get Kim alone" 25>>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "Fuckin' *finally*. I love Vic - I love watching that ass leave as much as you do - but let's be real, he was cramping your style.">>
+
+<<PassiveSkill "Perception (Sight)">>
+<<AddParagraph "Kim is nearly done with his third drink of the evening. He is sitting across from you, with a mirror behind him; there is a low table between you two, covered in cheap alcohol bottles and ashtrays full of stubs. In the corner of the mirror, a square is etched into the glass; the square is painted purple, with a black spiral shape on it.">>
+
+<<PassiveSkill "Encyclopedia" "Medium" "Success">>
+<<AddParagraph "The Purple Curve, a symbol of the homo-sexual underground. This is one of the only bars in Jamrock that won't flinch at affection regardless of gender.">>
+
+<<PassiveSkill "Esprit de Corps">>
+<<AddParagraph "There was to be a round for the new colleague, before Captain Pryce's toast. And when Kim tried to demur, tried to just get seltzer, you of course-">>
+
+<<AddOption "Pulled rank on him." "PickDrink">>[[|PickDrink]]
+
+
+:: StoryAuthor {"position":"268,439","size":"100,100"}
+Original story by Kawa
+Twine framework by Pikalex88
+
+
+:: StorySubtitle {"position":"392,432","size":"100,100"}
+A Disco Elysium Fanwork
+
+
+:: StoryShare {"position":"526,432","size":"100,100"}
+[["@ampepers on Twitter"|https://twitter.com/ampepers]]
+[["Repo with the source code"|https://github.com/apepers/DiscoElysiumTwineMacros/]]
+
+
+:: PickDrink [nobr] {"position":"1136,169","size":"100,100"}
+<<NewTask "Get Kim to drink">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "\"*Lieutenant* Kitsuragi, you know I do not pull rank often. But *this* is of the utmost importance - a celebration of you joining our team. We cannot leave you out of this toast, and to do so without *some* alcohol - without some fire in your gut - is almost an insult to the tradition!\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Something in his lip twitched at that - some color entered the tips of his ears - and then a lazy smile. \"Well if you'll buy me *any*thing…\"">>
+
+<<AddOption "Order an Aerostatique." "Aerostatique">>[[|Aerostatique]]
+<<AddOption "Order a Grand Couron." "Grand Couron">>[[|Grand Couron]]
+<<AddOption "These cocktails are crazy, just get cheap wine." "Cheap wine">>[[|Cheap wine]]
+<<AddOption "*Do* I know anything besides Potent Pilsner?" "Cocktail questions">>[[|Cocktail questions]]
+
+
+:: Aerostatique [nobr] {"position":"891,184","size":"100,100"}
+<<set $triedfancy to true>>
+
+<<PassiveSkill "Electrochemistry" "Formidable" "Success">>
+<<AddParagraph "An Aerostatique is an extremely complex cocktail - some smoke, some earth, but a strange lightness too, and an electric shade of orange. Goes great with Astras, the cigarettes you know are in Kim's jacket pocket right now.">>
+
+<<PassiveSkill "Encyclopedia" "Legendary" "Success">>
+<<AddParagraph "Indeed, there was an advertisement in //Most Able-Bodied Men// June '36 where noted daredevil aerostatic pilot Danny Demise extolled the virtues of the pair and gave his personal recipe - 2 oz Le Canard 1 rye whiskey, 1 oz Mundial Gener //apertif//, and a dash of chocolate cocktail bitters.">>
+
+<<SecretTaskComplete "Try to order Kim's favorite drink" 15>>
+
+<<SetSpeaker "Bored Bartender">>
+<<AddParagraph "\"Sorry, we just ran out of Gener. You're going to have to order something else.\"">>
+
+<<AddOption "Order a Grand Couron." "Grand Couron">>[[|Grand Couron]]
+<<AddOption "These cocktails are crazy, just get cheap wine." "Cheap wine">>[[|Cheap wine]]
+
+
+:: Grand Couron [nobr] {"position":"1061,319","size":"100,100"}
+<<set $drink to "cocktail">>
+
+<<PassiveSkill "Encyclopedia" "Medium" "Success">>
+<<AddParagraph "The Grand Couron is the kind of cocktail that a dive bar considers fancy and a serious bar considers trivial. Bourbon, vermouth, standard bitters. Nice enough for a rocks glass, nothing any serious cocktail drinker takes too seriously.">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "You go up to the bar. \"A Grand Couron, please.\"">>
+
+<<SetSpeaker "Bored Bartender">>
+<<AddParagraph "\"Sure thing, 5 reál, please.\"">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "You grimace and hand over the cash, then bring the drink back to Kim.">>
+
+<<TaskComplete "Get Kim to drink" 10>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He looks approvingly at the drink and takes a sip. \"Thank you, detective.\"">>
+
+<<SetSpeaker "Empathy" "Legendary" "Success">>
+<<if $triedfancy is true>>
+<<AddParagraph "He appreciates that you knew of and tried your best to get something that aligns with his aesthetic.">>
+<<else>>
+<<AddParagraph "He's a little disappointed, but he's not going to show it.">>
+<<endif>>
+
+<<AddOption "The evening passes, and you keep buying his drinks." "Darts">>[[|Darts]]
+
+
+:: Cheap wine [nobr] {"position":"1211,319","size":"100,100"}
+<<set $drink to "wine">>
+
+<<PassiveSkill "Savoir Faire">>
+<<AddParagraph "Why in the world would you get cheap wine?? At least cheap beer is //honest// about its cheapness. Cheap wine is godawful and pretending to be fancy.">>
+
+<<SetSpeaker "Bored Bartender">>
+<<AddParagraph "\"1 reál, please.\"">>
+
+<<PassiveSkill "Logic">>
+<<AddParagraph "That's why.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "To your surprise, he downs the drink anyway, rather quickly.">>
+
+<<TaskComplete "Get Kim to drink" 10>>
+
+<<SetSpeaker "Empathy" "Medium" "Failure">>
+<<AddParagraph "You'd thought he'd care more about the drink quality - why doesn't he?">>
+
+<<AddOption "The evening passes, and you keep buying his drinks." "Darts">>[[|Darts]]
+
+
+:: Cocktail questions [nobr] {"position":"1421,177","size":"100,100"}
+<<PassiveSkill "Electrochemistry" "Trivial" "Success">>
+<<AddParagraph "Whatever you get, he'll get drunk regardless. Kim does not strike you as someone who drinks very often.">>
+
+<<PassiveSkill "Encyclopedia" "Legendary" "Success">>
+<<AddParagraph "The difference between an Aerostatique and a Grand Couron are fairly minor - but the Aerostatique uses fancier ingredients.">>
+
+<<PassiveSkill "Logic" "Medium" "Success">>
+<<AddParagraph "They're also pretty expensive. You should consider something cheaper, for the sake of your wallet.">>
+
+<<AddOption "Order an Aerostatique." "Aerostatique">>[[|Aerostatique]]
+<<AddOption "Order a Grand Couron." "Grand Couron">>[[|Grand Couron]]
+<<AddOption "These cocktails are crazy, just get cheap wine." "Cheap wine">>[[|Cheap wine]]
+
+
+:: Darts [nobr] {"position":"1061,469","size":"100,100"}
+<<PassiveSkill "Logic">>
+<<AddParagraph "You've been buying cheap beer for yourself this whole time to match him.">>
+
+<<PassiveSkill "Hand-Eye Coordination">>
+<<AddParagraph "And won three rounds of darts with other members of the 41st to get some shots of cheap liquor in yourself.">>
+
+<<AddOption "Back to the present - look at Kim." "Halo imagery 1">>[[|Halo imagery 1]]
+
+
+:: Halo imagery 1 [nobr] {"position":"1061,619","size":"100,100"}
+<<if $drink is "cocktail">>
+<<set _drinkglass to "heavy rocks">>
+<<set _drinkcolour to "Gorgeous amber">>
+<<else>>
+<<set _drinkglass to "cheap wine">>
+<<set _drinkcolour to "Dark, almost bloody red">>
+<<endif>>
+
+<<PassiveSkill "Perception (Sight)" "Medium" "Success">>
+<<AddParagraph "The lieutenant raises the _drinkglass glass to his lips. _drinkcolour swirls within it, lit up by strobe lights throughout the bar - blue and gold and hazy red. The mirror behind him, lit luridly, blinds you occasionally unless you focus on him in shadow. You watch the liquid disappear. Watch his throat move to swallow, that beautiful line of his neck.">>
+
+<<PassiveSkill "Conceptualization" "Legendary" "Success">>
+<<AddParagraph "Light and shadow playing across his skin, across his glasses. A mirage - a miracle - beauty to rival an Innocence.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He puts down the glass slowly -">>
+
+<<PassiveSkill "Drama" "Heroic" "Success">>
+<<AddParagraph "There's //some//thing he wants to play up; a flourish for effect, sire -">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Then licks his lips, and looks at you.">>
+
+<<PassiveSkill "Conceptualization" "Trivial" "Success">>
+<<AddParagraph "A large feline, lithe, hungry, ready to pounce.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Hey, Harry. Remember how you kept asking me for a secret?\"">>
+
+<<AddOption "EMPATHY \[Legendary: Success\]: You haven't asked in weeks!" "Secret 1">>[[|Secret 1]]
+
+
+:: Secret 1 [nobr] {"position":"1061,769","size":"100,100"}
+<<PassiveSkill "Authority">>
+<<AddParagraph " Also, it's //never// Harry, it's always //detective// or //officer//, even off the clock, what the hell -">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Would you like to see something I'm //really// good at?\"">>
+
+<<PassiveSkill "Rhetoric" "Impossible" "Failure">>
+<<AddParagraph "Well //that's// a weird question, but damn if you're not curious.">>
+
+<<AddOption "Be the bisexual disaster. Flash the finger guns. \"Go for it, Kim.\"" "Disaster secret">>[[|Disaster secret]]
+<<AddOption "\[Authority - Challenging 12\] Force it out. \"//Lieutenant//, I //command// you to show me.\"" "Command secret">>[[|Command secret]]
+<<AddOption "\[Pain Threshold - Legendary 14\] Be teasing and dismissive about it. \"Oh, it can't be that big a deal, right?\"" "Tease secret">>[[|Tease secret]]
+<<AddOption "Keep drinking, silently, maintaining eye contact. See what he'll do." "Stoic secret">>[[|Stoic secret]]
+
+
+:: Disaster secret [nobr] {"position":"836,919","size":"100,100"}
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He stares at you for a moment - amused, he finds it slightly funny, but doesn't laugh -">>
+
+<<AddOption "And then he surprises you." "First kiss">>[[|First kiss]]
+
+
+:: Command secret [nobr] {"position":"986,919","size":"100,100"}
+<<SetSpeaker "">>
+<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He stares at you for a moment - as if considering if he'll quirk an eyebrow at you, then decides not to -">>
+
+<<AddOption "And then he surprises you." "First kiss">>[[|First kiss]]
+
+
+:: Tease secret [nobr] {"position":"1136,919","size":"100,100"}
+<<SetSpeaker "">>
+<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+
+<<AddOption "You are expecting a flippant response, when Kim surprises you." "First kiss">>[[|First kiss]]
+
+
+:: Stoic secret [nobr] {"position":"1286,919","size":"100,100"}
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He stares at you for a moment - realizes you won't respond -">>
+
+<<AddOption "And then he takes the initiative and surprises you." "First kiss">>[[|First kiss]]
+
+
+:: First kiss [nobr] {"position":"1052,1142","size":"100,100"}
+<<if $drink is "cocktail">>
+<<set _smell to "bourbon, cut through with the bitters and vermouth">>
+<<set _value to "Worth every goddamn centimo.">>
+<<else>>
+<<set _smell to "wine with a strange metallic note">>
+<<set _value to "">>
+<<endif>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Suddenly, Kim's leaning over the table, and grabbing your tie to pull you in; his face is close, so close. You can smell the _smell and something more dark and raw. \"You'd think you'd know better by now than to underestimate me, Harry,\" he says, low and rough. Before you can say anything, he's released your tie, and grabbed the back of your neck. It's at this point, as you realize what's happened, that he kisses you, //hard//.">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "Oh //fuck// this feels //amazing//. _value">>
+
+<<PassiveSkill "Pain Threshold" "Heroic" "Success">>
+<<AddParagraph " He's not being gentle. At all. The pull of the tie was a whip second of breathlessness, which he's now fully taken advantage of. He's kissing //hard//, all force; his mouth melts into yours, demanding surrender with every insistent, spit-slicked movement.">>
+
+<<AddOption "And what does he taste like?" "Taste">>[[|Taste]]
+
+
+:: GreenTextWidgets [widget] {"position":"685,274","size":"100,100"}
+<<nobr>>
+<<widget "TaskComplete">>
+<<run $greentext.push("@@.green;Task complete: " + $args[0] + "@@")>>
+<<if $args[1]>>
+<<run $greentext.push("@@.green;Gained experience: +" + $args[1] + "@@")>>
+<</if>>
+<<set $paraAppendMode to true>>
+<</widget>>
+
+<<widget "SecretTaskComplete">>
+<<run $greentext.push("@@.green;Secret task complete: " + $args[0] + "@@")>>
+<<if $args[1]>>
+<<run $greentext.push("@@.green;+" + $args[1] + " XP: gained experience@@")>>
+<</if>>
+<<set $paraAppendMode to true>>
+<</widget>>
+
+<<widget "NewTask">>
+<<run $greentext.push("@@.green;New task: " + $args[0] + "@@")>>
+<<set $paraAppendMode to true>>
+<</widget>>
+
+<<widget "ItemGained">>
+<<run $greentext.push("@@.green;Item gained: " + $args[0] + "@@")>>
+<<set $paraAppendMode to true>>
+<</widget>>
+
+<<widget "ItemLost">>
+<<run $greentext.push("@@.green;Item lost: " + $args[0] + "@@")>>
+<<set $paraAppendMode to true>>
+<</widget>>
+
+<<widget "ThoughtGained">>
+<<run $greentext.push("@@.green;Thought gained: " + $args[0] + "@@")>>
+<<set $paraAppendMode to true>>
+<</widget>>
+
+<<widget "LevelUp">>
+<<run $greentext.push("@@.green;Level up!@@")>>
+<<set $paraAppendMode to true>>
+<</widget>>
+
+<</nobr>>
+
+
+:: Taste [nobr] {"position":"1052,1292","size":"100,100"}
+<<if $drink is "cocktail">>
+<<set _perception to "Caramel-tinged fire. A blend of spices in counterpoint.">>
+<<set _conceptualization to "They'd go together brilliantly, though, emphasizing the smell of wood with literal smoke.">>
+<<else>>
+<<set _perception to "A strange blend of cherries and metal.">>
+<<set _conceptualization to "The taste makes you think of blood, honestly - a forbidden thrill, like the Vampyres of trashy romance novels that are a secret erotic thrill for young and old in Revachol.">>
+<<endif>>
+
+<<PassiveSkill "Perception (Taste)">>
+<<AddParagraph "_perception No tobacco - he hasn't had his One today.">>
+
+<<PassiveSkill "Conceptualization" "Formidable" "Success">>
+<<AddParagraph "_conceptualization">>
+
+<<PassiveSkill "Savoir Faire" "Medium" "Success">>
+<<AddParagraph "You know that if he had the choice, he would have preferred the Aerostatique, be the image of a dashing pilot -">>
+
+<<PassiveSkill "Electrochemistry" "Trivial" "Success">>
+<<AddParagraph "But at //this// particular moment, he's enjoying a Harrier, and not complaining one bit.">>
+
+<<AddOption "And how does it feel?" "Control">>[[|Control]]
+
+
+:: Control [nobr] {"position":"1052,1442","size":"100,100"}
+<<PassiveSkill "PHYSICAL INSTRUMENT">>
+<<AddParagraph "Kim is holding you fiercely - one hand on the back of your neck, the other gripping your shoulder. He's stronger than he looks.">> 
+
+<<PassiveSkill "ELECTROCHEMISTRY">>
+<<AddParagraph "Did I mention that he's good at this? He's coaxed your mouth open, his tongue curls around yours.">> 
+
+<<PassiveSkill "AUTHORITY">>
+<<AddParagraph "He already has remarkable control over you, doesn't he? He already had that control before he was literally using your mouth, but now he's got you helpless. ">> 
+
+<<PassiveSkill "EMPATHY">>
+<<AddParagraph "Through the booze, he kisses you with a remarkably focused intention. He's wanted this for a while.">>
+
+<<AddOption "PERCEPTION (Sound): \[Challenging: Success\] Someone coughs loudly off to the side." "Closing time">>[[|Closing time]]
+
+
+:: Closing time [nobr] {"position":"1052,1592","size":"100,100"}
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He pulls away, looking a bit abashed, and turns to the side where you'd heard the cough. \"Khm.\"">>
+
+<<PassiveSkill "ELECTROCHEMISTRY">>
+<<AddParagraph "Damnit.">>
+
+<<SetSpeaker "BORED BARTENDER">>
+<<AddParagraph "\"Glad you're enjoying yourselves...\" He looks down in disbelief at the RCM patches on your jackets. \"...Officers... But uh, we're closing up. You've already paid your tabs, but you can't stay.\"">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "The lieutenant's mask of professionalism slides back on neatly, even if his lips are still a bit swollen and slick with bourbon and spit. \"Of course. We won't keep you.\"">>
+
+<<AddOption "\[Composure - Medium 10\] Let Kim get up by himself. \"After you, Kim.\"" "After you">>[[|After you]]
+<<AddOption "\[Physical Instrument - Challenging 12\] Get up." "Up yourself">>[[|Up yourself]]
+<<AddOption "\[Empathy - Formidable 13\] Help Kim up. Offer a hand." "Offer hand">>[[|Offer hand]]
+<<AddOption "Wait to see what Kim does." "Wait">>[[|Wait]]
+
+
+:: After you [nobr] {"position":"827,1742","size":"100,100"}
+<<SetSpeaker "">>
+<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "Kim gets up smoothly, holding a hand out to you.">>
+
+<<SetSpeaker "YOU">>
+<<AddParagraph "You take it, let him pull you up - ">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He wasn't quite expecting the fullness of your weight. Now you're up, but crushed against him, bodies pressing together.">>
+
+<<AddOption "//Oh.//" "Ass grab">>[[|Ass grab]]
+
+
+:: Up yourself [nobr] {"position":"977,1742","size":"100,100"}
+<<SetSpeaker "">>
+<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+
+<<SetSpeaker "YOU">>
+<<AddParagraph "You try to get up from the booth, but your legs wobble too much to be trustworthy.">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "Kim is already upright, holding a hand out to you. ">>
+
+<<SetSpeaker "YOU">>
+<<AddParagraph "You take it, let him pull you up - ">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He wasn't quite expecting the fullness of your weight. Now you're up, but crushed against him, bodies pressing together.">>
+
+<<AddOption "//Oh.//" "Ass grab">>[[|Ass grab]]
+
+
+:: Offer hand [nobr] {"position":"1127,1742","size":"100,100"}
+<<SetSpeaker "">>
+<<AddParagraph "/Green flashes at the edges of your vision - a success.//">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He gets up smoothly, then shifts the weight, turning it into offering //his// hand for //you//.">>
+
+<<SetSpeaker "YOU">>
+<<AddParagraph "You take it, let him pull you up - ">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He wasn't quite expecting the fullness of your weight. Now you're up, but crushed against him, bodies pressing together.">>
+
+<<AddOption "//Oh.//" "Ass grab">>[[|Ass grab]]
+
+
+:: Wait [nobr] {"position":"1277,1742","size":"100,100"}
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "Kim gets up smoothly, holding a hand out to you.">>
+
+<<SetSpeaker "YOU">>
+<<AddParagraph "You take it, let him pull you up - ">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He wasn't quite expecting the fullness of your weight. Now you're up, but crushed against him, bodies pressing together.">>
+
+<<AddOption "//Oh.//" "Ass grab">>[[|Ass grab]]
+
+
+:: Ass grab [nobr] {"position":"1047,1995","size":"100,100"}
+<<PassiveSkill "ELECTROCHEMISTRY">>
+<<AddParagraph "Why, //hello// there - ">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "His right hand is still holding yours, now pulled in where your stomachs meet. His left hand is on the small of your back - ">>
+
+<<PassiveSkill "PERCEPTION (Touch)">>
+<<AddParagraph "It's //moving// -">>
+
+<<PassiveSkill "ELECTROCHEMISTRY">>
+<<AddParagraph "//Lieutenant. Kitsuragi. Is. Feeling. Up. Your. Ass.//">>
+
+<<PassiveSkill "COMPOSURE: He must be //very// drunk.">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "Your body is so distracted by his left hand that you do not even notice his face buried in the crook of your neck, until he starts talking; a warm, wet murmur against sensitive skin. \"My place or yours?\"">>
+
+<<AddOption "ELECTROCHEMISTRY: Holy. Fuck. Did he really just ask that?" "New apartment">>[[|New apartment]]
+
+
+:: New apartment [nobr] {"position":"1047,2145","size":"100,100"}
+<<SetSpeaker "KIM KITSURAGI'S NEW APARTMENT">>
+<<AddParagraph "Kim moved to Jamrock two weeks ago. The transfer process was so slow - weeks upon weeks of waiting for paperwork to pass between the precincts and the Moralintern - that you were able to spend your evenings helping him move. His place isn't far - certainly closer than his old place, deep in Precinct 57 territory - but yours is closer by a few blocks.">>
+
+<<PassiveSkill "ESPRIT DE CORPS">>
+<<AddParagraph "Jean said to make sure //you// got home, not the other way around. Though you're not sure he realized just how drunk Kim got.">>
+
+<<PassiveSkill "COMPOSURE">>
+<<AddParagraph "Your place is, as always, a bit of a trainwreck compared to his.">>
+
+<<AddOption "\"My place, it's closer.\"" "Harry's apartment 1">>[[|Harry's apartment 1]]
+<<AddOption "\"Your place, it's cleaner.\"" "Kim's apartment 1">>[[|Kim's apartment 1]]
+<<AddOption "\"Which do you want?\"" "Indecisive again">>[[|Indecisive again]]
+
+
+:: Harry's apartment 1 [nobr] {"position":"790,2281","size":"100,100"}
+<<set $apartment to "Harry">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Good idea. It will be a nice walk, won't it?\"">>
+
+<<PassiveSkill "Logic" "Easy" "Failure">>
+<<AddParagraph "I guess the lieutenant likes walking in the pouring rain...?">>
+
+<<PassiveSkill "Authority" "Legendary" "Failure">>
+<<AddParagraph "That seemed almost too easy, to convince him to come to your filthy hovel. But why?">>
+
+<<PassiveSkill "Electrochemistry" "Trivial" "Success">>
+<<AddParagraph "That hand has not left your ass, by the way.">>
+
+<<AddOption "\[Electrochemistry - Trivial 7\] Wiggle your ass a bit." "Butt wiggle">>[[|Butt wiggle]]
+<<AddOption "\[Pain Threshold - Legendary 14\] Grab //his// ass." "firmlygrasp">>[[|firmlygrasp]]
+
+
+:: Indecisive again [nobr] {"position":"1343,2276","size":"100,100"}
+<<set $apartment to "Kim">>
+
+<<if $drink is "cocktail">>
+<<set _cash to "Or at least you hope so, since you spent your last centimo on his last round.">>
+<<else>>
+<<set _cash to "Which is fine, you should be able to cover it anyway.">>
+<<endif>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Cab to my place?">>
+
+<<PassiveSkill "Empathy" "Easy" "Success">>
+<<AddParagraph "Avoiding the pouring rain seems like a good idea.">>
+
+<<PassiveSkill "Logic" "Medium" "Success">>
+<<AddParagraph "If he's suggesting it, he should have the eight reál to cover it. _cash">>
+
+<<PassiveSkill "Electrochemistry" "Trivial" "Success">>
+<<AddParagraph "That hand has not left your ass, by the way.">>
+
+<<AddOption "\[Electrochemistry - Trivial 7\] Wiggle your ass a bit." "Butt wiggle">>[[|Butt wiggle]]
+<<AddOption "\[Pain Threshold - Legendary 14\] Grab //his// ass." "firmlygrasp">>[[|firmlygrasp]]
+
+
+:: Kim's apartment 1 [nobr] {"position":"1165,2273","size":"100,100"}
+<<set $apartment to "Kim">>
+
+<<if $drink is "cocktail">>
+<<set _cash to "You'd better hope he has the cash, since you spent your last centimo on his last round.">>
+<<else>>
+<<set _cash to "Which is fine, you should be able to cover it anyway.">>
+<<endif>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Seems reasonable to me.">>
+
+<<PassiveSkill "Empathy" "Easy" "Success">>
+<<AddParagraph "Avoiding the pouring rain seems like a good idea.">>
+
+<<PassiveSkill "Logic" "Medium" "Success">>
+<<AddParagraph "It should be about eight reál to cover it. _cash">>
+
+<<PassiveSkill "Electrochemistry" "Trivial" "Success">>
+<<AddParagraph "That hand has not left your ass, by the way.">>
+
+<<AddOption "\[Electrochemistry - Trivial 7\] Wiggle your ass a bit." "Butt wiggle">>[[|Butt wiggle]]
+<<AddOption "\[Pain Threshold - Legendary 14\] Grab //his// ass." "firmlygrasp">>[[|firmlygrasp]]
+
+
+:: Butt wiggle [nobr] {"position":"877,2583","size":"100,100"}
+<<if $apartment is "Kim">>
+<<set _letsgo to "Let's get that cab.">>
+<<set _destination to "the bar to use the phone.">>
+<<else>>
+<<set _letsgo to "Let's get moving.">>
+<<set _destination to "the door.">>
+<<endif>>
+
+<<SetSpeaker "">>
+<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "You twist your hips a bit, just enough motion. There's a look of surprise on his face, that quickly morphs into a devilish grin, and -">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "His hand leaves your ass just quickly enough to - THWACK.">>
+
+<<PassiveSkill "Pain Threshold" "Easy" "Success">>
+<<AddParagraph "A solid sting, that would bloom beautifully into redness on bare skin but even through clothing sends a jolt through you. That was a warning shot. ">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "''_letsgo NOW.''">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He untangles from you, still wearing that grin. \"I hope there will be more of that later,\" he says, and heads to _destination">>
+
+<<AddOption "You shuffle behind him, slowly feeling your legs regain sensation." "Taxonomy 1">>[[|Taxonomy 1]]
+
+
+:: firmlygrasp [nobr] {"position":"1233.3333333333333,2609.6666666666665","size":"100,100"}
+<<if $apartment is "Kim">>
+<<set _letsgo to "Let's get that cab.">>
+<<set _destination to "the bar to use the phone.">>
+<<else>>
+<<set _letsgo to "Let's get moving.">>
+<<set _destination to "the door.">>
+<<endif>>
+
+<<SetSpeaker "">>
+<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "You reach over and grasp him, a body you have been wanting for so long now but never let yourself hope for. There's a look of surprise on his face, that quickly morphs into a devilish grin, and -">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "His hand leaves your ass just quickly enough to - THWACK.">>
+
+<<PassiveSkill "Pain Threshold" "Easy" "Success">>
+<<AddParagraph "A solid sting, that would bloom beautifully into redness on bare skin but even through clothing sends a jolt through you. That was a warning shot. ">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "''_letsgo NOW.''">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He untangles from you, still wearing that grin. \"I hope there will be more of that later,\" he says, and heads to _destination">>
+
+<<AddOption "You shuffle behind him, slowly feeling your legs regain sensation." "Taxonomy 1">>[[|Taxonomy 1]]
+
+
+:: Kawa's Copy-Paste Passages {"position":"235,665.8333333333334","size":"100,100"}
+<<SetSpeaker "">>
+<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+
+<<SetSpeaker "">>
+<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+
+<<SetSpeaker "This is what currency is, lol">>
+<<AddParagraph "reál">>
+
+<<ItemGained "Blue oblong pen">>
+<<ItemLost "Your dignity">>
+<<NewTask "Make it up to Kim">>
+<<ThoughtGained "Stereo-partnership">>
+<<TaskComplete "Get Kim alone" 5>>
+<<SecretTaskComplete "Allow multiple tasks completed at once" 15>>
+<<LevelUp>>
+
+
+:: Taxonomy 1 [nobr] {"position":"1088.3333333333333,2958","size":"100,100"}
+<<PassiveSkill "Rhetoric">>
+<<AddParagraph "Along with Copotypes, there are Drunkotypes. Like Copotypes, they overlap.">>
+
+<<PassiveSkill "Empathy">>
+<<AddParagraph "Touchy drunk.">>
+
+<<PassiveSkill "Esprit de Corps">>
+<<AddParagraph "Chatty drunk.">>
+
+<<PassiveSkill "Savoir Faire">>
+<<AddParagraph "//Cocky// drunk.">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "//Horny// drunk.">>
+
+<<AddOption "RHETORIC: And probably many more, that you are thankful Kim is not." "Taxonomy 2">>[[|Taxonomy 2]]
+
+
+:: Taxonomy 2 [nobr] {"position":"1088.3333333333333,3108","size":"100,100"}
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "Angry drunk.">>
+
+<<PassiveSkill "Endurance">>
+<<AddParagraph "Mean drunk.">>
+
+<<PassiveSkill "Half Light">>
+<<AddParagraph "Anxious drunk.">>
+
+<<PassiveSkill "Drama">>
+<<AddParagraph "Sad drunk.">>
+
+<<PassiveSkill "RHETORIC">>
+<<AddParagraph "As many drunks as there are people, really. So what are you, Harry? What kind of drunk are you?">>
+
+<<ThoughtGained "Drunkotype Taxonomy">>
+
+<<SetSpeaker "Drunkotype Taxonomy">>
+<<AddParagraph "You once were someone who drank to forget, until you forgot almost everything. You're working on the building of new memories, and haven't stopped drinking, but it's different now - you only drink when socializing, as ritual. Still, somehow, the booze must do something, in the place of amnesia. What is it doing to you, exactly? And relatedly, what exactly does it do for Kim, and why do you care so much to know the answer to that question?">>
+
+<<if $apartment is "Harry">>
+<<AddOption "Let's get out on the street." "Walk sequence 1">>[[|Walk sequence 1]]
+<<else>>
+<<AddOption "COUPRIS MARK 40: The cab arrives quickly enough - a Coupris Mark 40, in sleek black." "Cab sequence 1">>[[|Cab sequence 1]]
+<<endif>>
+
+
+:: Cab sequence 1 [nobr] {"position":"1388.3333333333333,3249.6666666666665","size":"100,100"}
+<<PassiveSkill "INTERFACING" "Medium" "Success">>
+<<AddParagraph "You see the subtle look of approval on Kim's face - the MC is well maintained.">>
+
+<<SetSpeaker "YOU">>
+<<AddParagraph "Instinctively, you open the door for him.">> 
+
+<<PassiveSkill "SUGGESTION">>
+<<AddParagraph "You learned to do that for //dates//, for //paramours//. ">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He flashes you a grin, bemused. With no teetering, despite all the drinks gone past those lips and down that gorgeous throat, the lieutenant slides into the cab. \"98 //et demi//, rue Dephoure, please.\"">> 
+
+<<PassiveSkill "SAVOIR FAIRE">>
+<<AddParagraph "Ridiculously, //devastatingly// cool, even while drunk. How?">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "He settles in the back seat, perfectly framed by the dark inside the motor carriage. He looks back at you, eyes half-lidded, and something playing at the corner of his lip. Getting into the empty seat next to him is suddenly the most vital thing in the world.">>
+
+<<SetSpeaker "YOU">>
+<<AddParagraph "You careen into the cab; your left hip shoves into Kim's right, the force recoiling through you. The end of your coat almost gets stuck in the cab door as you slam it quickly behind you. 
+
+<<AddOption "The cab driver does not look amused." "Cab sequence 2">>[[|Cab sequence 2]]
+
+
+:: Walk sequence 1 [nobr] {"position":"709.9999999999999,3268","size":"100,100"}
+<<if $drink is "cocktail">>
+<<set _queer to "queer">>
+<<set _teeth to "bright teeth">>
+<<else>>
+<<set _queer to "Other">>
+<<set _teeth to "sharp teeth">>
+<<endif>>
+
+<<PassiveSkill "Perception (Touch)" "Trivial" "Success">>
+<<AddParagraph "It's a cold, raining night in Jamrock. The rain soaks through your blazer, raising goosebumps on your skin - everywhere except your right bicep, which Kim is holding tightly with his left arm.">>
+
+<<PassiveSkill "Half Light" "Easy" "Success">>
+<<AddParagraph "To be _queer on the streets of Jamrock is to paint a target on your backs as obvious as your halogen patches. There is no way this is safe. You must protect Kim from his drunken impulse.">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "\"Kim, aren't you worried - ?\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He cuts you off before you can finish the sentence. \"No, because ''no one'' fucks with Kim Kitsuragi.\"">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "You look down at his grin, _teeth flashing in the light of the streetlamps.">>
+
+<<PassiveSkill "Half Light" "Formidable" "Success">>
+<<AddParagraph "I stand corrected. The city should be afraid of him, not the other way around.">>
+
+<<AddOption "KIM KITSURAGI: His chin is on your shoulder; he's whispering in your ear." "Secret 2">>[[|Secret 2]]
+
+
+:: Secret 2 [nobr] {"position":"1065,3708","size":"100,100"}
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "\"It's interesting, isn't it? When we met, one of the first things you asked me for is a secret, and I didn't budge. You ask a few times during THE HANGED MAN; I never give. But in all these weeks since, helping me move furniture across Revachol and get through the local bureaucracy, you don't even think to ask. What changed? Why did you stop asking?\"">>
+
+<<PassiveSkill "CONCEPTUALIZATION" "Legendary" "Success">>
+<<AddParagraph "//You// know what changed. The Homo-Sexual Underground thought you had gotten during the case - had solved just before taking off in a particular small boat - had split, then morphed. One side of the thought was a cavalcade of colors and images, shining and lurid, masculine and feminine and simply human, a kaleidoscope, multitudes layered on multitudes. The other had settled, very cleanly and insistently, on the brightness you swear you always see behind Kim's frankly beautiful face.">>
+
+<<PassiveSkill "EMPATHY">>
+<<AddParagraph "You wanted to respect Kim though, crush aside. You wanted Kim to be your colleague and a friend, as much as you wanted other things. So you dropped what seemed to bother him, helped him with what he needed. Of //course// you want to know a secret - who wouldn't? - but you knew it wouldn't come from asking.">>
+
+<<SetSpeaker "YOU">>
+<<AddParagraph "\"I figured you would tell me when you were ready, I guess. What changed for //you//? Why are you offering your secret now?\"">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "His lips brush behind your ear, just for a moment. \"So I'm the one can you won't open without permission? That's very interesting. As for me...\" You cannot see it, but the grin has spread to his eyes. \"I wanted a chance to show you, instead of telling. And I needed pretext, for that.\"
+
+<<AddOption "\[Empathy - Formidable 13\] Ask for permission." "Ask permission">>[[|Ask permission]]
+<<AddOption "\[Rhetoric - Godly 16\] Ask for his secret." "Ask directly">>[[|Ask directly]]
+
+<<if $apartment is "Kim">>
+<<AddOption "\[Electrochemistry - Trivial 7\] Ask him to put his hand somewhere else." "Handsy">>[[|Handsy]]
+<<else>>
+<<AddOption "\[Electrochemistry - Trivial 7\] Just kiss him already!" "Dip?">>[[|Dip?]]
+<<endif>>
+
+
+:: Cab sequence 2 [nobr] {"position":"1388.3333333333333,3399.6666666666665","size":"100,100"}
+<<SetSpeaker "UNAMUSED CAB DRIVER">>
+<<AddParagraph "The driver was //not// expecting two //RCM officers// to leave this particular bar, but is attempting to be nonplussed about it. Regardless of the bar's underground affiliation, they're still expecting what normally happens when a pair of cops leave a dive bar late on a Friday - banter, insults, railing complaints about the city and its ungrateful citizenry. They grimace and begin to drive. ">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "Kim's still wearing that grin - ">>
+
+<<PassiveSkill "COMPOSURE">>
+<<AddParagraph It's not going anywhere until the exact moment it cannot stay - ">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph - and a hand brushes gently along the top of your right thigh. Slow strokes; Down, then up.">>
+
+<<PassiveSkill "ELECTROCHEMISTRY">>
+<<AddParagraph His hand is //centimeters// away from where it should be, and then just. Leaves. The fucking tease.">>
+
+<<AddOption "KIM KITSURAGI: His chin is on your shoulder; he's whispering in your ear." "Secret 2">>[[|Secret 2]]
+
+
+:: Ask permission [nobr] {"position":"891.6666666666666,3886.3333333333335","size":"100,100"}
+<<if $apartment is "Kim">>
+<<set $position to "sit">>
+<<else>>
+<<set $position to "stand">>
+<<endif>>
+
+<<SetSpeaker "">>
+<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+
+<<SetSpeaker "YOU">>
+<<AddParagraph "The words come out of your mouth before you can even think about what they are. \"So does that mean I can open your can, Kim?\"">>
+
+<<PassiveSkill "CONCEPTUALIZATION">>
+<<AddParagraph "And at this point, the heavens open -">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "Kim is //laughing//. Heartily. Joyfully. It is only a little at your expense, but still - it is //wonderful//.">>
+
+<<AddOption "ELECTROCHEMISTRY: ''NOW!''" "Second kiss">>[[|Second kiss]]
+
+
+:: Ask directly [nobr] {"position":"1178.3333333333333,3876.3333333333335","size":"100,100"}
+<<if $apartment is "Kim">>
+<<set $position to "sit">>
+<<else>>
+<<set $position to "stand">>
+<<endif>>
+
+<<SetSpeaker "">>
+<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+
+<<SetSpeaker "YOU">>
+<<AddParagraph "The words come out of your mouth before you can even think about what they are. \"Pleaaaaaaaaaase tell me?? Pretty please??"">>
+
+<<PassiveSkill "CONCEPTUALIZATION">>
+<<AddParagraph "And at this point, the heavens open -">>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<AddParagraph "Kim is //laughing//. Heartily. Joyfully. It is only a little at your expense, but still - it is //wonderful//.">>
+
+<<AddOption "ELECTROCHEMISTRY: ''NOW!''" "Second kiss">>[[|Second kiss]]
+
+
+:: Handsy [nobr] {"position":"1423.3333333333335,3889.6666666666665","size":"100,100"}
+<<set $position to "sit">>
+
+
+:: Dip? [nobr] {"position":"574.9999999999999,3914.6666666666665","size":"100,100"}
+<<set $position to "dip">>
+
+<<PassiveSkill "Perception (Sight)">>
+<<AddParagraph "You look down at him; you see that his bomber jacket is just open enough to let rain soak some of his chest and the thin white v-neck shirt he's wearing.">>
+
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "You try to tilt him down - ">>
+
+
+:: Second kiss {"position":"1040,4204.666666666667","size":"100,100"}
+Double-click this passage to edit it.
+
+
