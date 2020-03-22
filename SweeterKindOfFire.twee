@@ -968,7 +968,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "\"I figured you would tell me when you were ready, I guess. What changed for //you//? Why are you offering your secret now?\"">>
 
 <<SetSpeaker "KIM KITSURAGI">>
-<<AddParagraph "His lips brush behind your ear, just for a moment. \"So I'm the one can you won't open without permission? That's very interesting. As for me...\" You cannot see it, but the grin has spread to his eyes. \"I wanted a chance to show you, instead of telling. And I needed pretext, for that.\">>
+<<AddParagraph "His lips brush behind your ear, just for a moment. \"So I'm the one can you won't open without permission? That's very interesting. As for me...\" You cannot see it, but the grin has spread to his eyes. \"I wanted a chance to show you, instead of telling. And I needed pretext, for that.\"">>
 
 <<AddOption "\[Empathy - Formidable 13\] Ask for permission." "Ask permission">>[[|Ask permission]]
 <<AddOption "\[Rhetoric - Godly 16\] Ask for his secret." "Ask directly">>[[|Ask directly]]
