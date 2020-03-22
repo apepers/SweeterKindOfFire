@@ -1090,7 +1090,7 @@ A Disco Elysium Fanwork
 :: Second kiss [nobr] {"position":"1040,4204.666666666667","size":"100,100"}
 <<if $position is "sit">>
 <<set _youmove to "lean over and thread a hand through his hair">>
-<<else if $position is "stand">>
+<<elseif $position is "stand">>
 <<set _youmove to "turn to face him and thread a hand through his hair">>
 <<else>>
 <<set _youmove to "move your free hand to thread through his hair">>
