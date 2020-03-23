@@ -1142,6 +1142,8 @@ A Disco Elysium Fanwork
 :: Dip? [nobr] {"position":"574.9999999999999,3914.6666666666665","size":"100,100"}
 <<set $position to "dip">>
 
+<<SkillSuccess>>
+
 <<PassiveSkill "Perception (Sight)">>
 <<AddParagraph "You look down at him; you see that his bomber jacket is just open enough to let rain soak some of the white v-neck shirt he's wearing; the thin fabric clings to his chest and collarbones.">>
 
@@ -1152,7 +1154,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "Oh fuck, the concrete is slick, you're going to fuck this up and not catch him - ">>
 
 <<PassiveSkill "Visual Calculus" "Medium" "Success">>
-<<AddParagraph "Wait, one moment before you fuck this up completely. Tilt your pelvis down three degrees and move your arm just so.">>
+<<AddParagraph "Wait, one moment before you fuck this up completely. Tilt your pelvis down three degrees and move your arm just so and - //there!//">>
 
 <<PassiveSkill "CONCEPTUALIZATION">>
 <<AddParagraph "And at this point, the heavens open -">>
@@ -1189,13 +1191,13 @@ A Disco Elysium Fanwork
 <<if $apartment is "Kim">>
 <<AddOption "UNAMUSED CAB DRIVER - At this point, tragicomically, the cab comes to a full stop." "Cab sequence 3">>[[|Cab sequence 3]]
 <<else>>
-<<AddOption "SHIVERS [Trivial: Success] - At this point, tragicomically, a LUM Fevre speeds past you, splashing an impressive amount of water over the both of you." "Walk sequence 2">>[[|Walk sequence 2]]
+<<AddOption "ELECTROCHEMISTRY - You want to make this last forever. No, scratch that - you want to get down and party with Kim, //right now//, here in the middle of the street." "Walk sequence 2">>[[|Walk sequence 2]]
 <<endif>>
 
 :: Cab sequence 3 [nobr]
 
 <<if $decision is "aggressive">>
-<<set _taking to "asking to">>
+<<set _taking to "asking to take">>
 <<else>>
 <<set _taking to "taking">>
 <<endif>>
@@ -1243,10 +1245,57 @@ A Disco Elysium Fanwork
 <<AddOption "ENCYCLOPEDIA: Also, 12 reál is the cost for a board game of Suzerainty." "Cab sequence 4">>[[|Cab sequence 4]]
 
 
-::Cab sequence 4 [nobr]
+:: Cab sequence 4 [nobr]
 <<PassiveSkill "Empathy">>
 <<AddParagraph "Which is probably the first time you'd really noticed how he //really// is, underneath the professional face. The way he takes on challenges, his competitive streak, that tinge of vanity.">>
 
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph " And the way he handled pieces in his long fingers; plus the shapes of his face, the lines of his throat.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He hops out of the cab, and extends a hand to you - the apartment's on his side of the street.">>
+
+<<AddOption "You take his hand, gratefully, and get out as well." "Apartment entrance">>[[|Apartment entrance]]
+
 :: Walk sequence 2 [nobr]
+
+<<if $position is "dip">>
+<<set _hesinto to "He's into">>
+<<set _asyoudo to "as you hold him up.">>
+<<else>>
+<<set _hesinto to "He wants to know">>
+<<set _asyoudo to "find out if you can take him to trembling pieces like he wants.">>
+
+<<PassiveSkill "Volition" "Formidable" "Success">>
+<<AddParagraph "Please don't actually party with Kim here in the middle of the street, you horny bastard.">>
+
+<<PassiveSkill "Visual Calculus" "Challenging" "Success">>
+<<AddParagraph "You //could// grab him and pull him to that alley, three meters away.">>
+
+<<PassiveSkill "Savoir Faire" "Medium" "Success">>
+<<AddParagraph "No, be a //gentleman// about it - take him home, where you can have some privacy.">>
+
+<<PassiveSkill "Endurance" "Easy" "Success">>
+<<AddParagraph "You'd have to make him let go of your arms first, though. He's holding onto you with a vice-like grip. _hesinto how strong you are, _asyoudo"
+
+<<AddOption "SHIVERS [Trivial: Success] - At this point, tragicomically, a LUM Fevre speeds past you, splashing an impressive amount of water over the both of you." "Walk sequence 3">>[[|Walk sequence 3]]
+
+:: Walk sequence 3 [nobr]
+
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "The sudden rush of cold water makes Kim pull away.">>
+
+/* there should be more here but I don't know what just yet, look I'm tired */
+
+<<AddOption "You take his hand, gratefully, and manage to walk the rest of the way to your apartment." "Apartment entrance">>[[|Apartment entrance]]
+
+:: Apartment entrance [nobr]
+<<if $apartment is "Kim">>
+<<set _now to "now">>
+<<else>>
+<<set _now to "once again">>
+<<endif>>
+
+<<PassiveSkill "Electrochemistry" "Heroic" "Success">>
+<<AddParagraph "You have not had much time to sober up, but you can handle yourself okay - falling-down-drunk you are not, at least not in your current state. A warm, gentle flush is tingling through you, though, as it has been for a while...">>
+
