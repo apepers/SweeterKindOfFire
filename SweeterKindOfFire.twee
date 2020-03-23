@@ -200,7 +200,7 @@ postdisplay['paragraph'] = function (taskName) {
 :: StoryInit {"position":"268,25","size":"100,100"}
 <<set $triedfancy to false>>
 <<set $optionmap to new Map()>>
-<<set $motorics to ["composure", "hand-eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception (sight)", "perception (taste)", "perception (touch)"]>>
+<<set $motorics to ["composure", "hand-eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception (sight)", "perception (taste)", "perception (touch)", "perception (sound)"]>>
 <<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual calculus"]>>
 <<set $fysique to ["electrochemistry", "endurance", "half light", "pain threshold", "physical instrument", "shivers"]>>
 <<set $psyche to ["authority", "empathy", "esprit de corps", "inland empire", "suggestion", "volition"]>>
@@ -782,6 +782,8 @@ A Disco Elysium Fanwork
 :: Harry's apartment 1 [nobr] {"position":"790,2281","size":"100,100"}
 <<set $apartment to "Harry">>
 
+<<NewTask "Take Kim home">>
+
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Good idea. It will be a nice walk, won't it?\"">>
 
@@ -811,6 +813,8 @@ A Disco Elysium Fanwork
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Cab to my place?\"">>
 
+<<NewTask "Go to Kim's place">>
+
 <<PassiveSkill "Empathy" "Easy" "Success">>
 <<AddParagraph "Avoiding the pouring rain seems like a good idea.">>
 
@@ -833,6 +837,8 @@ A Disco Elysium Fanwork
 <<else>>
 <<set _cash to "Which is fine, you should be able to cover it anyway.">>
 <<endif>>
+
+<<NewTask "Go to Kim's place">>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Seems reasonable to me.\"">>
@@ -1007,7 +1013,7 @@ A Disco Elysium Fanwork
 <<endif>>
 
 <<PassiveSkill "Perception (Touch)" "Trivial" "Success">>
-<<AddParagraph "It's a cold, raining night in Jamrock. The rain soaks through your blazer, raising goosebumps on your skin - everywhere except your right bicep, which Kim is holding tightly with his left arm.">>
+<<AddParagraph "It's a cold, raining night in Jamrock. Your patrol cloak was the right thing to wear tonight, the heavy layer shielding you from the worst of it. Still, the rain soaks through your hair, raising goosebumps on your skin - everywhere except your right bicep, which Kim is holding tightly with his left arm.">>
 
 <<PassiveSkill "Half Light" "Easy" "Success">>
 <<AddParagraph "To be _queer on the streets of Jamrock is to paint a target on your backs as obvious as your halogen patches. There is no way this is safe. You must protect Kim from his drunken impulse.">>
@@ -1260,6 +1266,7 @@ A Disco Elysium Fanwork
 <<else>>
 <<set _hesinto to "He wants to know">>
 <<set _asyoudo to "find out if you can take him to trembling pieces like he wants.">>
+<<endif>>
 
 <<PassiveSkill "Volition" "Formidable" "Success">>
 <<AddParagraph "Please don't actually party with Kim here in the middle of the street, you horny bastard.">>
@@ -1271,18 +1278,34 @@ A Disco Elysium Fanwork
 <<AddParagraph "No, be a //gentleman// about it - take him home, where you can have some privacy.">>
 
 <<PassiveSkill "Endurance" "Easy" "Success">>
-<<AddParagraph "You'd have to make him let go of your arms first, though. He's holding onto you with a vice-like grip. _hesinto how strong you are, _asyoudo"
+<<AddParagraph "You'd have to make him let go of your arms first, though. He's holding onto you with a vice-like grip. _hesinto how strong you are, _asyoudo">>
 
 <<AddOption "SHIVERS [Trivial: Success] - At this point, tragicomically, a LUM Fevre speeds past you, splashing an impressive amount of water over the both of you." "Walk sequence 3">>[[|Walk sequence 3]]
 
 :: Walk sequence 3 [nobr]
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "The sudden rush of cold water makes Kim pull away.">>
+<<AddParagraph "The sudden rush of cold water makes Kim pull away. He's now thoroughly soaked.">>
 
-/* there should be more here but I don't know what just yet, look I'm tired */
+<<if $position is "dip">>
+/* Get him up */
+<<else>>
+/* ?? */
+<<endif>>
 
-<<AddOption "You take his hand, gratefully, and manage to walk the rest of the way to your apartment." "Apartment entrance">>[[|Apartment entrance]]
+<<SetSpeaker "Pain Threshold">>
+<<AddParagraph "That cannot be comfortable, it's freezing out. Offer him your jacket.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Thank you.\" He's practically swimming in it, //that's// how much bigger you are. Think on that for a moment.">>
+
+<<PassiveSkill "Reaction Speed">>
+<<AddParagraph "Ah shit, your keys are in there!">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He shoves one hand in the pocket of the cloak - you hear him find your keys - and offers his other hand to you. \"Shall we get going then?\"">>
+
+<<AddOption "You take his hand, gratefully, and manage to walk the rest of the way to your apartment building." "Apartment entrance">>[[|Apartment entrance]]
 
 :: Apartment entrance [nobr]
 <<if $apartment is "Kim">>
@@ -1294,3 +1317,139 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Electrochemistry" "Heroic" "Success">>
 <<AddParagraph "You have not had much time to sober up, but you can handle yourself okay - falling-down-drunk you are not, at least not in your current state. A warm, gentle flush is tingling through you, though, as it has been for a while...">>
 
+<<PassiveSkill "Perception (Touch)">>
+<<AddParagraph "He's _now looped his arm around yours, to squeeze himself against you, left hand wrapped around your right bicep, as he leads you onward.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "As Kim reaches the doorway to the apartment complex, he suddenly stops and twists a bit, from his core to his shoulders.">>
+
+<<PassiveSkill "Physical Instrument" "Formidable" "Failure">>
+<<AddParagraph "The movement makes you stumble forward; now he's followed through with his gloved hands, shoving you through the doorway. You're going exactly where he wants you, no more, no less.">>
+
+<<AddOption "ELECTROCHEMISTRY - Him pushing you around is hot, yes, but you need more. Keep touching him - don't let go - nothing matters more than the sensation of body against body." "Hallway">>[[|Hallway]]
+
+:: Hallway [nobr]
+<<if $apartment is "Kim">>
+<<set _you to "You">>
+<<else>>
+<<set _you to "You choke out directions - \"Stairs at the end of the hallway, third floor, apartment J\" - as you">>
+<<endif>>
+
+<<SetSpeaker "You">>
+<<AddParagraph "_you stumble through, and Kim takes the opportunity to stride confidently ahead of you down the hallway. You practically run to catch up, sliding your hands along his sides once you do.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim gives you a withering look. \"Now now, we've got a bit more to go, don't we? Don't be hasty - and don't make me punish impatience.\"">>
+
+<<PassiveSkill "Drama" "Medium" "Success">>
+<<AddParagraph "Another pretense, my liege. If you disobey, he //will// punish you - but only in ways that you crave.">>
+
+<<AddOption "\[Volition - Impossible 20\] \"I'm sorry, it won't happen again.\"" "Sorry and horny">>[[|Sorry and horny]]
+<<AddOption "\[Electrochemistry - Trivial 6\] Grin wolfishly. \"//Not// sorry.\"" "Shameless and horny">>[[|Shameless and horny]]
+
+:: Sorry and horny [nobr]
+
+<<SkillFailure>>
+
+<<PassiveSkill "Drama" "Easy" "Success">>
+<<AddParagraph "Kim catches your lie easy as anything.">>
+
+<<AddOption "So what's my punishment?" "Ass grab 2">>[[|Ass grab 2]]
+
+:: Shameless and horny [nobr]
+
+<<SkillSuccess>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"I bet you're not - you're //shameless//, aren't you?\"">>
+
+<<AddOption "\"So what are you going to do about it?\"" "Ass grab 2">>[[|Ass grab 2]]
+
+:: Ass grab 2 [nobr]
+<<if $apartment is "Kim">>
+<<set _notworried to "I don't have the kind of neighbors who would care.">>
+<<else>>
+<<set _notworried to "I already told you, no one fucks with Kim Kitsuragi.">>
+<<endif>>
+
+<<PassiveSkill "Pain Threshold">>
+<<AddParagraph "Kim slaps your ass again - quick enough to catch you by surprise, loud enough to echo in the hall, hard enough for your eyes to sting just a little.">>
+
+<<PassiveSkill "Electrochemistry" "Easy" "Success">>
+<<AddParagraph "A lighting spark through your body, pumping pleasure alongside the pain through your nerves.">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "Your cheeks flush at the echo. \"Aren't you worried anyone else will hear?\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"_notworried\" He bounds up the stairs at that, harboring no further discussion.">>
+
+<<if $apartment is "Kim">>
+<<SetSpeaker "Kim Kitsuragi's New Apartment Building">>
+<<AddParagraph "In your thorough vetting of apartments, the two of you made sure no children live in this building and the landlord was comfortable with the underground, thanks to some off-the-clock detective work and a radiocomputer operator in the 57th willing to turn a blind eye in exchange for kebabs. The neighbors can handle adults consensually enjoying themselves, within reason, and are particularly lax on Friday nights, when half the building's tenants are out on the town chasing their own moments of debauchery.">>
+<<else>>
+<<SetSpeaker "Your apartment building">>
+/* What sort of wacky things has Harry heard in this building? */
+<<AddParagraph "">>
+<<endif>>
+
+<<AddOption "You scramble up the stairs to catch up." "Keys">>[[|Keys]]
+
+:: Keys [nobr]
+
+<<if $apartment is "Kim">>
+<<set _keychain to "The Kineema, two locks for this door, two more you don't immediately recognize - a safe, and maybe a briefcase?">>
+<<set _justification to "he surrendered his desk and locker keys at the 57th and has yet to get the equivalents at the 41st.">>
+<<set _composure to "">>
+<<else>>
+<<set _keychain to "Three locks for this door. Your desk and locker at the 41st. An old briefcase key, a memento from your father.">>
+<<set _justification to "it's not like you could afford other properties or a motor carriage at this point.">>
+<<set _composure to "Or because it's your keychain, not his?">>
+<<endif>>
+
+<<SetSpeaker "You">>
+<<AddParagraph "By the time you've gotten to the right landing, he's already at the door. There is a single weak, flickering lamp in this part of the hallway, casting long shadows on you both. ">>
+
+<<PassiveSkill "Perception (Sound)" "Legendary" "Success">>
+<<AddParagraph "The sound of metal on metal, but small - fumbling with a keychain.">>
+
+<<PassiveSkill "Visual Calculus">>
+<<AddParagraph "Time freezes, however briefly, as you focus on the keychain. _keychain Not many keys in total, which makes sense; _justification">>
+
+<<PassiveSkill "Composure" "Medium" "Failure">>
+<<AddParagraph "Not that many keys, so why is he struggling? Is the alcohol finally catching up to him? _composure">>
+
+<<PassiveSkill "Electrochemistry" "Trivial" "Success">>
+<<AddParagraph "No, he's //distracted// - you should distract him some more! Look at that neck, so vulnerable; doesn't it look delicious? If you kiss it now, what will he do? What if you //nibble//?">>
+
+<<PassiveSkill "Authority">>
+<<AddParagraph "Regardless, a rare moment: when Lieutenant Kitsuragi isn't restraining you with a professionally raised eyebrow. Nor is he giving you such an arresting look that your body locks obediently and patiently for him, without him ever lifting a finger. ">>
+
+<<AddOption "\[Volition - Impossible 20\] Wait for him to open the door." "Wait for door">>[[|Wait for door]]
+<<AddOption " \[Electrochemistry - Trivial 6\] Go for the neck." "Neck for door">>[[|Neck for door]]
+
+:: Wait for door [nobr]
+
+<<SkillFailure>> 
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "No way are you going to make me wait. Not this close.">>
+
+<<AddOption "You step forward, closing the distance between the shadow of your massive form and the lines of his small, graceful body." "Bitey">>[[|Bitey]]
+
+:: Neck for door [nobr]
+
+<<SkillSuccess>>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "Fuck yeah!">>
+
+<<AddOption "You step forward, closing the distance between the shadow of your massive form and the lines of his small, graceful body." "Bitey">>[[|Bitey]]
+
+:: Bitey [nobr]
+
+<<SetSpeaker "You">>
+<<AddParagraph "You feel him, just for a microsecond, tense. The keys clink in his hand as your body presses against his. When you lean forward, and your hungry mouth brushes against Kim's neck, you can feel the breath hitch inside his throat - an encouragement you take, to bite down.">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "The strangled \"Oh, //fuck//\" from him, startled and breathy, is enough to make your cock strain in your trousers, pressing firmly against his ass.">>
