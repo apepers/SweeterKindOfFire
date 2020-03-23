@@ -716,7 +716,12 @@ A Disco Elysium Fanwork
 
 
 :: Offer hand [nobr] {"position":"1127,1742","size":"100,100"}
+<<<<<<< Updated upstream
 <<SkillSuccess>>
+=======
+<<SetSpeaker "">>
+<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+>>>>>>> Stashed changes
 
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "He gets up smoothly, then shifts the weight, turning it into offering //his// hand for //you//.">>
@@ -800,6 +805,7 @@ A Disco Elysium Fanwork
 
 :: Indecisive again [nobr] {"position":"1343,2276","size":"100,100"}
 <<set $apartment to "Kim">>
+<<set $decision to "aggressive">>
 
 <<if $drink is "cocktail">>
 <<set _cash to "Or at least you hope so, since you spent your last centimo on his last round.">>
@@ -808,7 +814,7 @@ A Disco Elysium Fanwork
 <<endif>>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "\"Cab to my place?\""">>
+<<AddParagraph "\"Cab to my place?\"">>
 
 <<PassiveSkill "Empathy" "Easy" "Success">>
 <<AddParagraph "Avoiding the pouring rain seems like a good idea.">>
@@ -825,6 +831,7 @@ A Disco Elysium Fanwork
 
 :: Kim's apartment 1 [nobr] {"position":"1165,2273","size":"100,100"}
 <<set $apartment to "Kim">>
+<<set $decison to "passive">>
 
 <<if $drink is "cocktail">>
 <<set _cash to "You'd better hope he has the cash, since you spent your last centimo on his last round.">>
@@ -833,7 +840,7 @@ A Disco Elysium Fanwork
 <<endif>>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "\"Seems reasonable to me.\""">>
+<<AddParagraph "\"Seems reasonable to me.\"">>
 
 <<PassiveSkill "Empathy" "Easy" "Success">>
 <<AddParagraph "Avoiding the pouring rain seems like a good idea.">>
@@ -1186,9 +1193,59 @@ A Disco Elysium Fanwork
 <<endif>>
 
 :: Cab sequence 3 [nobr]
+
+<<if $decision is "aggressive">>
+<<set _taking to "asking to">>
+<<else>>
+<<set _taking to "taking">>
+<<endif>>
+
+<<if $drink is "wine">>
+<<set _pay to "but thanks to your earlier choices, you can in fact pay for it.">>
+<<set _empath to "He's been so aggressively into this - drinking that shitty wine, _taking you home, literally grabbing at you - but it feels good to pull your own weight too, to make it good for him too.">>
+<<else>>
+<<set _pay to "and thanks to your earlier choices, you can't pay for it.">>
+<<set _empath to "You're grateful he can pay - and he's grateful for the cocktails earlier, too. You're //both// making this happen, both making it good for each other.">>
+<<endif>>
+
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "The halting of the cab makes Kim pull away and don the Professional Mask.">>
 
+<<PassiveSkill "Composure" "Medium" "Success">>
+<<AddParagraph "You'd think with reddened lips and tousled hair it wouldn't work, but apparently more things in this world are capable of miracles than you'd thought.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Thank you. How much do we owe you?\"">>
+
+<<SetSpeaker "Unamused cab driver">>
+<<AddParagraph "\"12 reál, please.\"">>
+
+<<PassiveSkill "Reaction Speed">>
+<<AddParagraph "More than half a day's pay. For fuck's sake, you're not going to Wheat Town. The fucker charged you...">>
+
+<<PassiveSkill "Drama" "Heroic" "Success">>
+<<AddParagraph "For //discretion//, m'lord.">>
+
+<<PassiveSkill "Logic">>
+<<AddParagraph "It's more than you expected, _pay">>
+
+<<if $cocktail is "wine">>
+<<SetSpeaker "You">>
+<<AddParagraph "You fumble a bit, but hand over the cash.">>
+<<else>>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He hands over the cash, simple, smooth.">>
+<<endif>>
+
+<<PassiveSkill "Empathy" "Heroic" "Success">>
+<<AddParagraph "_empath Let's hope you can keep this up.">>
+
+<<AddOption "ENCYCLOPEDIA: Also, 12 reál is the cost for a board game of Suzerainty." "Cab sequence 4">>[[|Cab sequence 4]]
+
+
+::Cab sequence 4 [nobr]
+<<PassiveSkill "Empathy">>
+<<AddParagraph "Which is probably the first time you'd really noticed how he //really// is, underneath the professional face. The way he takes on challenges, his competitive streak, that tinge of vanity.">>
 
 :: Walk sequence 2 [nobr]
 <<SetSpeaker "Kim Kitsuragi">>
