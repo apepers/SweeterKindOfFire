@@ -131,7 +131,7 @@ a.macro-linkreplace {
   top: 0px;
   left: 0px;
   pointer-events: none;
-  opacity: 0%;
+  opacity: 0;
   animation-name: Flash;
   animation-duration: 2s;
 }
@@ -145,10 +145,10 @@ a.macro-linkreplace {
 }
 
 @keyframes Flash {
-  0%  {opacity: 0%}
-  20% {opacity: 100%}
-  50% {opacity: 100%}
-  100% {opacity: 0%}
+  0%  {opacity: 0}
+  20% {opacity: 1}
+  50% {opacity: 1}
+  100% {opacity: 0}
 }
 
 .CheckText {
@@ -157,7 +157,7 @@ a.macro-linkreplace {
   position: absolute;
   bottom: 25%;
   left: 50%;
-  opacity: 0%;
+  opacity: 0;
   padding: 0.5em;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -177,10 +177,10 @@ a.macro-linkreplace {
 }
 
 @keyframes SlideAndFade {
-  0% {opacity: 70%; left: 45%}
-  10% {opacity: 100%; left: 50%}
-  60% {opacity: 100%; left: 50%}
-  100% {opacity: 0%; left: 80%}
+  0% {opacity: 0.75; left: 45%}
+  10% {opacity: 1; left: 50%}
+  60% {opacity: 1; left: 50%}
+  100% {opacity: 0; left: 80%}
 }
 
 :: Story JavaScript [script]
@@ -716,12 +716,7 @@ A Disco Elysium Fanwork
 
 
 :: Offer hand [nobr] {"position":"1127,1742","size":"100,100"}
-<<<<<<< Updated upstream
 <<SkillSuccess>>
-=======
-<<SetSpeaker "">>
-<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
->>>>>>> Stashed changes
 
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "He gets up smoothly, then shifts the weight, turning it into offering //his// hand for //you//.">>
