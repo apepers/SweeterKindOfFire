@@ -36,6 +36,8 @@ tw-hook
 #story {
   height: 100%;
   overflow-y: auto;
+  margin-top: 0em;
+  margin-bottom: 0em;
 }
 
 .passage {
@@ -121,6 +123,65 @@ a.macro-linkreplace {
   margin-left: -1.5em;
 }
 
+.CheckOverlay {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  opacity: 0%;
+  animation-name: Flash;
+  animation-duration: 2s;
+}
+
+#SuccessImg {
+  background: url(SuccessOverlay.png) no-repeat center;
+}
+
+#FailureImg {
+  background: url(FailureOverlay.png) no-repeat center;
+}
+
+@keyframes Flash {
+  0%  {opacity: 0%}
+  20% {opacity: 100%}
+  50% {opacity: 100%}
+  100% {opacity: 0%}
+}
+
+.CheckText {
+  color: white;
+  font-family: 'PT Sans Narrow', sans-serif;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  opacity: 0%;
+  padding: 0.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  animation-name: SlideAndFade;
+  animation-duration: 2.5s;
+  animation-delay: 1s;
+}
+
+#CheckSuccess {
+  background-color: #40ce68;
+  box-shadow: 0em 0em 0.2em 0.3em #40ce68;
+}
+
+#CheckFailure {
+  background-color: #90280f;
+  box-shadow: 0em 0em 0.2em 0.3em #90280f;
+}
+
+@keyframes SlideAndFade {
+  0% {opacity: 70%; left: 45%}
+  10% {opacity: 100%; left: 50%}
+  60% {opacity: 100%; left: 50%}
+  100% {opacity: 0%; left: 80%}
+}
 
 :: Story JavaScript [script]
 $(document).click(function(e) {
@@ -165,6 +226,25 @@ postdisplay['paragraph'] = function (taskName) {
 </ol>
 <<set $optionmap to new Map()>>
 
+:: SkillSuccess [Widget widget]
+<<nobr>>
+<<widget "SkillSuccess">>
+<div id="SuccessImg" class="CheckOverlay"></div>
+<div id="CheckSuccess" class="CheckText">CHECK SUCCESS</div>
+<<SetSpeaker "">>
+<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+<</widget>>
+<</nobr>>
+
+:: SkillFailure [Widget widget]
+<<nobr>>
+<<widget "SkillFailure">>
+<div id="FailureImg" class="CheckOverlay"></div>
+<div id="CheckFailure" class="CheckText">CHECK FAILURE</div>
+<<SetSpeaker "">>
+<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+<</widget>>
+<</nobr>>
 
 :: PassiveSkill [Widget widget] {"position":"403,146","size":"100,100"}
 <<nobr>>
@@ -455,8 +535,7 @@ A Disco Elysium Fanwork
 
 
 :: Command secret [nobr] {"position":"986,919","size":"100,100"}
-<<SetSpeaker "">>
-<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+<<SkillFailure>>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "He stares at you for a moment - as if considering if he'll quirk an eyebrow at you, then decides not to -">>
@@ -465,8 +544,7 @@ A Disco Elysium Fanwork
 
 
 :: Tease secret [nobr] {"position":"1136,919","size":"100,100"}
-<<SetSpeaker "">>
-<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+<<SkillSuccess>>
 
 <<AddOption "You are expecting a flippant response, when Kim surprises you." "First kiss">>[[|First kiss]]
 
@@ -605,8 +683,7 @@ A Disco Elysium Fanwork
 
 
 :: After you [nobr] {"position":"827,1742","size":"100,100"}
-<<SetSpeaker "">>
-<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+<<SkillSuccess>>
 
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "Kim gets up smoothly, holding a hand out to you.">>
@@ -621,8 +698,7 @@ A Disco Elysium Fanwork
 
 
 :: Up yourself [nobr] {"position":"977,1742","size":"100,100"}
-<<SetSpeaker "">>
-<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+<<SkillFailure>>
 
 <<SetSpeaker "YOU">>
 <<AddParagraph "You try to get up from the booth, but your legs wobble too much to be trustworthy.">>
@@ -640,8 +716,7 @@ A Disco Elysium Fanwork
 
 
 :: Offer hand [nobr] {"position":"1127,1742","size":"100,100"}
-<<SetSpeaker "">>
-<<AddParagraph "/Green flashes at the edges of your vision - a success.//">>
+<<SkillSuccess>>
 
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "He gets up smoothly, then shifts the weight, turning it into offering //his// hand for //you//.">>
@@ -782,8 +857,7 @@ A Disco Elysium Fanwork
 <<set _destination to "the door.">>
 <<endif>>
 
-<<SetSpeaker "">>
-<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+<<SkillSuccess>>
 
 <<SetSpeaker "You">>
 <<AddParagraph "You twist your hips a bit, just enough motion. There's a look of surprise on his face, that quickly morphs into a devilish grin, and -">>
@@ -812,8 +886,7 @@ A Disco Elysium Fanwork
 <<set _destination to "the door.">>
 <<endif>>
 
-<<SetSpeaker "">>
-<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+<<SkillSuccess>>
 
 <<SetSpeaker "You">>
 <<AddParagraph "You reach over and grasp him, a body you have been wanting for so long now but never let yourself hope for. There's a look of surprise on his face, that quickly morphs into a devilish grin, and -">>
@@ -834,11 +907,9 @@ A Disco Elysium Fanwork
 
 
 :: Kawa's Copy-Paste Passages {"position":"235,665.8333333333334","size":"100,100"}
-<<SetSpeaker "">>
-<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
+<<SkillSuccess>>
 
-<<SetSpeaker "">>
-<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+<<SkillFailure>>
 
 <<SetSpeaker "This is what currency is, lol">>
 <<AddParagraph "reál">>
@@ -1006,8 +1077,7 @@ A Disco Elysium Fanwork
 <<set $position to "stand">>
 <<endif>>
 
-<<SetSpeaker "">>
-<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+<<SkillFailure>>
 
 <<SetSpeaker "YOU">>
 <<AddParagraph "The words come out of your mouth before you can even think about what they are. \"So does that mean I can open your can, Kim?\"">>
@@ -1028,8 +1098,7 @@ A Disco Elysium Fanwork
 <<set $position to "stand">>
 <<endif>>
 
-<<SetSpeaker "">>
-<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+<<SkillFailure>>
 
 <<SetSpeaker "YOU">>
 <<AddParagraph "The words come out of your mouth before you can even think about what they are. \"Pleaaaaaaaaaase tell me?? Pretty please??\"">>
@@ -1046,8 +1115,7 @@ A Disco Elysium Fanwork
 :: Handsy [nobr] {"position":"1423.3333333333335,3889.6666666666665","size":"100,100"}
 <<set $position to "sit">>
 
-<<SetSpeaker "">>
-<<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
+<<SkillFailure>>
 
 <<SetSpeaker "YOU">>
 <<AddParagraph "Your body moves without your control, bucking your hips, and you let out an obscene noise.">>
