@@ -716,12 +716,7 @@ A Disco Elysium Fanwork
 
 
 :: Offer hand [nobr] {"position":"1127,1742","size":"100,100"}
-<<<<<<< Updated upstream
 <<SkillSuccess>>
-=======
-<<SetSpeaker "">>
-<<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
->>>>>>> Stashed changes
 
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "He gets up smoothly, then shifts the weight, turning it into offering //his// hand for //you//.">>
