@@ -1293,7 +1293,7 @@ A Disco Elysium Fanwork
 /* ?? */
 <<endif>>
 
-<<SetSpeaker "Pain Threshold">>
+<<PassiveSkill "Pain Threshold">>
 <<AddParagraph "That cannot be comfortable, it's freezing out. Offer him your jacket.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
