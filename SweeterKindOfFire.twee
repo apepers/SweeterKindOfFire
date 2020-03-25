@@ -1496,4 +1496,37 @@ A Disco Elysium Fanwork
 
 :: Submissive? [nobr] {"position": "1400,4850"}
 
-/* I have no fucking clue what to do here. */
+<<if $drink is "wine">>
+<<set _control to "thrall">>
+<<else>>
+<<set _control to "control">>
+<<endif>>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "You've been wanting him so long - so //hungry// -">>
+
+<<PassiveSkill "half light">>
+<<AddParagraph "He's hungry too, meeting his eyes makes you feel small, desperate, under his _control.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "With a knowing look, the lieutenant slowly raises a gloved hand, presses the tip of his index finger gently against your lips.">>
+<<AddParagraph "He looks at you. Expectantly.">>
+
+<<PassiveSkill "authority" "Godly" "Failure">>
+<<AddParagraph "His confidence that you will do as he wishes is absolute - and correct.">>
+
+<<AddOption "[Interfacing - Medium 6] Remove his glove - //sexily//." "GloveSuck">>
+
+:: GloveSuck [nobr] {"position": "1400,5000"}
+
+<<SkillSuccess>>
+<<PassiveSkill "perception (sound)">>
+<<AddParagraph "The scrape of your teeth against the pad of Kim's finger draws out a hitched breath, barely perceptible even in this empty room.">>
+
+<<PassiveSkill "interfacing">>
+<<AddParagraph "With a bit of suction and delicate biting, you get a firm grip on the tip of his glove between your teeth and tilt your head back, shifting it off his hand.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "The lieutenant draws his hand back the rest of the way and his dark eyes follow his glove as it drop from your mouth and to the floor.">>
+
+<<AddParagraph "With a surge of hunger he meets your eyes once again the presses the thumb of his other hand forcefully against your mouth, prompting you to repeat your trick.">>
