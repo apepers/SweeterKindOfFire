@@ -1077,6 +1077,22 @@ A Disco Elysium Fanwork
 
 <<AddOption "KIM KITSURAGI: His chin is on your shoulder; he's whispering in your ear." "Secret 2">>[[|Secret 2]]
 
+:: KimLaughter [nobr]
+<<PassiveSkill "CONCEPTUALIZATION">>
+<<if $laughDespiteNoise is true>>
+<<AddParagraph "And yet, the heavens open -">>
+<<else>>
+<<AddParagraph "And at this point, the heavens open -">>
+<<endif>>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<if $position is "dip">>
+<<AddParagraph "Kim is //laughing//. Heartily. You can practically feel his body shaking in your arms as he does. It is only a little at your expense, but still - it is //wonderful//.">>
+<<else>>
+<<AddParagraph "Kim is //laughing//. Heartily. Joyfully. It is only a little at your expense, but still - it is //wonderful//.">>
+<<endif>>
+
+<<AddOption "ELECTROCHEMISTRY: ''NOW!''" "Second kiss">>[[|Second kiss]]
 
 :: Ask permission [nobr] {"position":"892,3886","size":"100,100"}
 <<if $apartment is "Kim">>
@@ -1090,13 +1106,7 @@ A Disco Elysium Fanwork
 <<SetSpeaker "YOU">>
 <<AddParagraph "The words come out of your mouth before you can even think about what they are. \"So does that mean I can open your can, Kim?\"">>
 
-<<PassiveSkill "CONCEPTUALIZATION">>
-<<AddParagraph "And at this point, the heavens open -">>
-
-<<SetSpeaker "KIM KITSURAGI">>
-<<AddParagraph "Kim is //laughing//. Heartily. Joyfully. It is only a little at your expense, but still - it is //wonderful//.">>
-
-<<AddOption "ELECTROCHEMISTRY: ''NOW!''" "Second kiss">>[[|Second kiss]]
+<<include "KimLaughter">>
 
 
 :: Ask directly [nobr] {"position":"1178,3886","size":"100,100"}
@@ -1111,17 +1121,12 @@ A Disco Elysium Fanwork
 <<SetSpeaker "YOU">>
 <<AddParagraph "The words come out of your mouth before you can even think about what they are. \"Pleaaaaaaaaaase tell me?? Pretty please??\"">>
 
-<<PassiveSkill "CONCEPTUALIZATION">>
-<<AddParagraph "And at this point, the heavens open -">>
-
-<<SetSpeaker "KIM KITSURAGI">>
-<<AddParagraph "Kim is //laughing//. Heartily. Joyfully. It is only a little at your expense, but still - it is //wonderful//.">>
-
-<<AddOption "ELECTROCHEMISTRY: ''NOW!''" "Second kiss">>[[|Second kiss]]
+<<include "KimLaughter">>
 
 
 :: Handsy [nobr] {"position":"1423,3886","size":"100,100"}
 <<set $position to "sit">>
+<<set $laughDespiteNoise to true>>
 
 <<SkillFailure>>
 
@@ -1131,13 +1136,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Reaction Speed" "Medium" "Failure">>
 <<AddParagraph "Damn, not cool, dude, what were you thinking? You're gonna freak him out!">>
 
-<<PassiveSkill "CONCEPTUALIZATION">>
-<<AddParagraph "And yet, the heavens open -">>
-
-<<SetSpeaker "KIM KITSURAGI">>
-<<AddParagraph "Kim is //laughing//. Heartily. Joyfully. It is only a little at your expense, but still - it is //wonderful//.">>
-
-<<AddOption "ELECTROCHEMISTRY: ''NOW!''" "Second kiss">>[[|Second kiss]]
+<<include "KimLaughter">>
 
 
 :: Dip? [nobr] {"position":"574,3886","size":"100,100"}
@@ -1157,13 +1156,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Visual Calculus" "Medium" "Success">>
 <<AddParagraph "Wait, one moment before you fuck this up completely. Tilt your pelvis down three degrees and move your arm just so and - //there!//">>
 
-<<PassiveSkill "CONCEPTUALIZATION">>
-<<AddParagraph "And at this point, the heavens open -">>
-
-<<SetSpeaker "KIM KITSURAGI">>
-<<AddParagraph "Kim is //laughing//. Heartily. You can practically feel his body shaking in your arms as he does. It is only a little at your expense, but still - it is //wonderful//.">>
-
-<<AddOption "ELECTROCHEMISTRY: ''NOW!''" "Second kiss">>[[|Second kiss]]
+<<include "KimLaughter">>
 
 :: Second kiss [nobr] {"position":"1100,4200","size":"100,100"}
 <<if $position is "sit">>
