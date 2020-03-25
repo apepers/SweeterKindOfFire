@@ -1521,6 +1521,6 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "You've been wanting him so long - so //hungry// -">>
 
-:: Submissive? [nobr] {position: "1400,6600"}
+:: Submissive? [nobr] {"position": "1400,6600"}
 
 /* I have no fucking clue what to do here. */
