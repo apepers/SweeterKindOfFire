@@ -278,7 +278,21 @@ a.macro-linkreplace {
 
 postdisplay['paragraph'] = function (taskName) {
 	//$('.paragraph').hide().fadeIn(10000);
-};</script><tw-passagedata pid="1" name="StoryInit" tags="" position="268,25" size="100,100">&lt;&lt;set $triedfancy to false&gt;&gt;
+};
+
+$(document).on("keyup", function (e) {
+  if ((e.keyCode == 32) && ($("#ContinueBtn"))) {
+    $("#ContinueBtn").click();
+  }
+
+  if ((e.keyCode >= 49 && e.keyCode <= 57) && (document.getElementById("OptionList"))) {
+    var list = document.getElementById("OptionList");
+    var childIndex = e.keyCode - 49; // 0 for '1', 1 for '2', etc
+    if (list.children[childIndex]) {
+      list.children[childIndex].getElementsByClassName("link-internal")[0].click();
+    }
+  }
+});</script><tw-passagedata pid="1" name="StoryInit" tags="" position="268,25" size="100,100">&lt;&lt;set $triedfancy to false&gt;&gt;
 &lt;&lt;set $optionmap to new Map()&gt;&gt;
 &lt;&lt;set $motorics to [&quot;composure&quot;, &quot;hand-eye coordination&quot;, &quot;interfacing&quot;, &quot;perception&quot;, &quot;reaction speed&quot;, &quot;savoir faire&quot;, &quot;perception (sight)&quot;, &quot;perception (taste)&quot;, &quot;perception (touch)&quot;, &quot;perception (sound)&quot;]&gt;&gt;
 &lt;&lt;set $intellect to [&quot;conceptualization&quot;, &quot;drama&quot;, &quot;encyclopedia&quot;, &quot;logic&quot;, &quot;rhetoric&quot;, &quot;visual calculus&quot;]&gt;&gt;
@@ -289,8 +303,14 @@ postdisplay['paragraph'] = function (taskName) {
 &lt;&lt;if $lastoption&gt;&gt;
 @@.speaker.pastchoice;You@@ @@.pastchoice;- $lastoption@@
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="PassageFooter" tags="" position="547,28" size="100,100">&lt;&lt;DisplayParagraphs&gt;&gt;\</tw-passagedata><tw-passagedata pid="4" name="DisplayOptions" tags="nobr" position="546,144" size="100,100">&lt;ol&gt;
-&lt;&lt;for _optiontext, _optionpassage range $optionmap&gt;&gt;&lt;&lt;capture _optionpassage, _optiontext&gt;&gt;&lt;li&gt;- @@.option;&lt;&lt;link _optiontext _optionpassage&gt;&gt;&lt;&lt;set $lastoption to _optiontext&gt;&gt;&lt;&lt;/link&gt;&gt;@@&lt;/li&gt;&lt;&lt;/capture&gt;&gt;&lt;&lt;/for&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="PassageFooter" tags="" position="547,28" size="100,100">&lt;&lt;DisplayParagraphs&gt;&gt;\</tw-passagedata><tw-passagedata pid="4" name="DisplayOptions" tags="nobr" position="546,144" size="100,100">&lt;ol id=&quot;OptionList&quot;&gt;
+&lt;&lt;for _optiontext, _optionpassage range $optionmap&gt;&gt;
+  &lt;&lt;capture _optionpassage, _optiontext&gt;&gt;
+    &lt;li&gt;
+      &lt;&lt;link _optiontext _optionpassage&gt;&gt;&lt;&lt;set $lastoption to _optiontext&gt;&gt;&lt;&lt;/link&gt;&gt;
+    &lt;/li&gt;
+  &lt;&lt;/capture&gt;&gt;
+&lt;&lt;/for&gt;&gt;
 &lt;/ol&gt;
 &lt;&lt;set $optionmap to new Map()&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="SkillSuccess" tags="Widget widget" position="600,100" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;widget &quot;SkillSuccess&quot;&gt;&gt;
@@ -345,7 +365,7 @@ $args[0] -
 &lt;&lt;run $paragraphs.deleteAt(0)&gt;&gt;\
 &lt;span class=&quot;paragraph&quot;&gt;&lt;&lt;print _paragraph&gt;&gt;&lt;/span&gt;
 &lt;&lt;if $paragraphs.length &gt; 0&gt;&gt;
-&lt;&lt;linkreplace &quot;CONTINUE ➤&quot; t8n&gt;&gt;&lt;&lt;DisplayParagraphs&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;\
+&lt;&lt;linkreplace &quot;@@#ContinueBtn;CONTINUE ➤@@&quot; t8n&gt;&gt;&lt;&lt;DisplayParagraphs&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;\
 &lt;&lt;else&gt;&gt;\
 &lt;&lt;include DisplayOptions&gt;&gt;
 &lt;&lt;/if&gt;&gt;
