@@ -196,6 +196,20 @@ postdisplay['paragraph'] = function (taskName) {
 	//$('.paragraph').hide().fadeIn(10000);
 };
 
+$(document).on("keyup", function (e) {
+  if ((e.keyCode == 32) && ($("#ContinueBtn"))) {
+    $("#ContinueBtn").click();
+  }
+
+  if ((e.keyCode >= 49 && e.keyCode <= 57) && (document.getElementById("OptionList"))) {
+    var list = document.getElementById("OptionList");
+    var childIndex = e.keyCode - 49; // 0 for '1', 1 for '2', etc
+    if (list.children[childIndex]) {
+      list.children[childIndex].getElementsByClassName("link-internal")[0].click();
+    }
+  }
+});
+
 
 :: StoryInit {"position":"268,25","size":"100,100"}
 <<set $triedfancy to false>>
@@ -221,8 +235,14 @@ postdisplay['paragraph'] = function (taskName) {
 
 
 :: DisplayOptions [nobr] {"position":"546,144","size":"100,100"}
-<ol>
-<<for _optiontext, _optionpassage range $optionmap>><<capture _optionpassage, _optiontext>><li>- @@.option;<<link _optiontext _optionpassage>><<set $lastoption to _optiontext>><</link>>@@</li><</capture>><</for>>
+<ol id="OptionList">
+<<for _optiontext, _optionpassage range $optionmap>>
+  <<capture _optionpassage, _optiontext>>
+    <li>
+      <<link _optiontext _optionpassage>><<set $lastoption to _optiontext>><</link>>
+    </li>
+  <</capture>>
+<</for>>
 </ol>
 <<set $optionmap to new Map()>>
 
@@ -298,7 +318,7 @@ $args[0] -
 <<run $paragraphs.deleteAt(0)>>\
 <span class="paragraph"><<print _paragraph>></span>
 <<if $paragraphs.length > 0>>
-<<linkreplace "CONTINUE ➤" t8n>><<DisplayParagraphs>><</linkreplace>>\
+<<linkreplace "@@#ContinueBtn;CONTINUE ➤@@" t8n>><<DisplayParagraphs>><</linkreplace>>\
 <<else>>\
 <<include DisplayOptions>>
 <</if>>
