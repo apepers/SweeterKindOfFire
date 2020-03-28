@@ -459,8 +459,8 @@ A Disco Elysium Fanwork
 <<SetSpeaker "Bored Bartender">>
 <<AddParagraph "\"Sorry, we just ran out of Gener. You're going to have to order something else.\"">>
 
-<<AddOption "Order a Grand Couron." "Grand Couron">>[[|GrandCouron]]
-<<AddOption "These cocktails are crazy, just get cheap wine." "Cheap wine">>[[|CheapWine]]
+<<AddOption "Order a Grand Couron." "GrandCouron">>[[|GrandCouron]]
+<<AddOption "These cocktails are crazy, just get cheap wine." "CheapWine">>[[|CheapWine]]
 
 
 :: GrandCouron [nobr] {"position":"1000,350","size":"100,100"}
@@ -527,8 +527,8 @@ A Disco Elysium Fanwork
 <<AddParagraph "They're also pretty expensive. You should consider something cheaper, for the sake of your wallet.">>
 
 <<AddOption "Order an Aerostatique." "Aerostatique">>[[|Aerostatique]]
-<<AddOption "Order a Grand Couron." "Grand Couron">>[[|GrandCouron]]
-<<AddOption "These cocktails are crazy, just get cheap wine." "Cheap wine">>[[|CheapWine]]
+<<AddOption "Order a Grand Couron." "GrandCouron">>[[|GrandCouron]]
+<<AddOption "These cocktails are crazy, just get cheap wine." "CheapWine">>[[|CheapWine]]
 
 
 :: Darts [nobr] {"position":"1100,500","size":"100,100"}
@@ -1799,3 +1799,39 @@ A Disco Elysium Fanwork
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"//Ahhhh//, //Harry//,\" the lieutenant gasps, legs folding even more tightly against his body, offering himself to you.">>
+
+<<PassiveSkill "Empathy">>
+<<AddParagraph "It's your name again, for only the second time tonight - and like this, a wonderful breath of longing and desire. Treasure it. ">>
+
+<<PassiveSkill "Pain Threshold">>
+<<AddParagraph "Push in, slow but persistent. Feel how hot he is, and tight, yielding under your torturously even pressure; you feel him consciously relax as best he can, welcoming you in. Keep him right on that edge, deep and hard enough to stretch - so close to registering as pain, but careful not to cross that line. Not tonight, at least.">>
+
+<<PassiveSkill "Interfacing">>
+<<AddParagraph "And doesn't he handle like a dream - so responsive to your touch, straining his hips to take more when you tease too slowly, shuddering beautifully as you slip a second slick finger inside. Isn't this satisfying, to experiment with your touch? To be able to crook your fingers just so and be rewarded with an immediate wanton moan, to know that if you want you can make it happen again, and again?">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "The thought comes out of you, a reflex. \"I wonder what handles better, you or the Kineema?\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph " \"Well you're never finding out, because you will //never// drive my Kineema.\"">>
+
+<<AddOption "This is perfect as is, let's linger on this sensation for as long as he can handle it." Linger>>[[|Linger]]
+<<AddOption "I need more, it's not enough, I want to be inside him too badly." Needy>>[[|Needy]]
+<<AddOption "I want more, but he's not ready just yet." NotYet>>[[|NotYet]]
+
+:: Linger [nobr] {"position":"900,6500"}
+
+/* Something about patience snapping, I guess. */
+<<SetSpeaker "Kawa">>
+<<AddParagraph "Hi! I'll put something here soon. Thanks for testing!">>
+
+:: Needy [nobr] {"position": "1100,6500"}
+
+/* Something about the trials and tribulations of having an obscenely sized dick? */
+<<SetSpeaker "Kawa">>
+<<AddParagraph "Hi! Something will be here eventually. Thanks for testing!">>
+
+:: NotYet [nobr] {"position": "1300,6500"}
+
+<<PassiveSkill "Perception (Taste)">>
+<<AddParagraph "Fingers still carefully stretching Kim further, you lean in and run your tongue along the taut and trembling muscles of his leg, trapped as it is underneath you. A long wet strip, tasting the thin sheen of sweat that highlights the well defined contours of his calves.">>
