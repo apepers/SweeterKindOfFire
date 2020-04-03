@@ -1285,9 +1285,14 @@ A Disco Elysium Fanwork
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "He shoves one hand in the pocket of the cloak - you hear him find your keys - and offers his other hand to you. \"Shall we get going then?\"">>
 
-<<AddOption "You take his hand, gratefully, and manage to walk the rest of the way to your apartment building." "ApartmentEntrance">>[[|ApartmentEntrance]]
+<<AddOption "PHYSICAL INSTRUMENT [Formidable 13] \"Actually, I have a better idea...\" Pull him into the alley." "Alley1">>[[|Alley1]]
+<<AddOption "VOLITION [Godly 16] \"Yes, let's get going.\" Go to your apartment." "ApartmentEntrance">>[[|ApartmentEntrance]]
 
-:: ApartmentEntrance [nobr] {"position": "1100,3800"}
+:: Alley1 [nobr] {"position":"900,3800"}
+
+/* Grace, this part is for you! Start the alley sequence here. */
+
+:: ApartmentEntrance [nobr] {"position": "1200,3800"}
 <<if $apartment is "Kim">>
 <<set _now to "now">>
 <<else>>
@@ -1515,7 +1520,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "You've been wanting him so long - so //hungry// -">>
 
-/*To do: integrate the following from Rulse: Nothing is sexier than taking off heavy, soggy, see-through clothing that is clinging to your skin. Leaving no room to imagination. And sliding your hands on a wet shivering body. And clinging to each other, sliding their bodies together, undulating their hips without breaking that skin contact.  anything to chase away the rain chills */
+/* Grace, this part is for you! This is the eager/himbo Harry taking the clothes off take. Add whatever you want between this and Himbo2. */
 
 <<PassiveSkill "Half Light">>
 <<AddParagraph "Nearly tearing his shirt off him, like your life depended on it, depended on the vulnerability of bare skin. The body, taking control. ">>
@@ -1570,7 +1575,7 @@ A Disco Elysium Fanwork
 
 <<AddParagraph "With a surge of hunger he meets your eyes once again the presses the thumb of his other hand forcefully against your mouth, prompting you to repeat your trick.">>
 
-/* To do: find a way to make this hotter, but succinct. it's okay if it stays this way for lack of better options */
+/* Grace, this part is for you! This is the submissive Harry taking the clothes off take. I love the sequence above that Pika wrote, but the rest is up to you. Just make sure that at the end you inclde the "HotStuff" passage, which has the choices that come back. */
 
 <<SetSpeaker "You">>
 <<AddParagraph "And so it follows with the rest of his clothing - occasionally with your hands, but mostly with your mouth.">>
@@ -1847,9 +1852,10 @@ A Disco Elysium Fanwork
 
 :: Needy [nobr] {"position": "1100,6500"}
 
-/* Something about the trials and tribulations of having an obscenely sized dick? */
 <<SetSpeaker "Kawa">>
 <<AddParagraph "Hi! Something will be here eventually. Thanks for testing!">>
+
+/* ideas: playing with size kink, eager and trusting even with all the intensity, don't forget EdC going "Kim's kinda going ohshit but is into it" */
 
 :: NotYet [nobr] {"position": "1300,6500"}
 
