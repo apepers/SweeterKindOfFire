@@ -100,7 +100,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://B1E46906-738D-4617-BD15-CEF422C96FD8// --><tw-storydata name="SweeterKindOfFire" startnode="13" creator="Tweego" creator-version="2.1.1" ifid="B1E46906-738D-4617-BD15-CEF422C96FD8" zoom="0.6" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(http://fonts.googleapis.com/css?family=David+Libre:400,700,400italic,700italic);
+	<!-- UUID://B1E46906-738D-4617-BD15-CEF422C96FD8// --><tw-storydata name="SweeterKindOfFire" startnode="13" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="B1E46906-738D-4617-BD15-CEF422C96FD8" zoom="0.6" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(http://fonts.googleapis.com/css?family=David+Libre:400,700,400italic,700italic);
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');
 
 html {
@@ -293,6 +293,7 @@ $(document).on("keyup", function (e) {
     }
   }
 });</script><tw-passagedata pid="1" name="StoryInit" tags="" position="268,25" size="100,100">&lt;&lt;set $triedfancy to false&gt;&gt;
+&lt;&lt;set $alley to false&gt;&gt;
 &lt;&lt;set $optionmap to new Map()&gt;&gt;
 &lt;&lt;set $motorics to [&quot;composure&quot;, &quot;hand-eye coordination&quot;, &quot;interfacing&quot;, &quot;perception&quot;, &quot;reaction speed&quot;, &quot;savoir faire&quot;, &quot;perception (sight)&quot;, &quot;perception (taste)&quot;, &quot;perception (touch)&quot;, &quot;perception (sound)&quot;]&gt;&gt;
 &lt;&lt;set $intellect to [&quot;conceptualization&quot;, &quot;drama&quot;, &quot;encyclopedia&quot;, &quot;logic&quot;, &quot;rhetoric&quot;, &quot;visual calculus&quot;]&gt;&gt;
@@ -1057,7 +1058,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Logic&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;It&#39;s more than you expected, _pay&quot;&gt;&gt;
 
-&lt;&lt;if $cocktail is &quot;wine&quot;&gt;&gt;
+&lt;&lt;if $drink is &quot;wine&quot;&gt;&gt;
 &lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You fumble a bit, but hand over the cash.&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -1121,7 +1122,26 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;He shoves one hand in the pocket of the cloak - you hear him find your keys - and offers his other hand to you. \&quot;Shall we get going then?\&quot;&quot;&gt;&gt;
 
 &lt;&lt;AddOption &quot;PHYSICAL INSTRUMENT [Formidable 13] \&quot;Actually, I have a better idea...\&quot; Pull him into the alley.&quot; &quot;Alley1&quot;&gt;&gt;[[|Alley1]]
-&lt;&lt;AddOption &quot;VOLITION [Godly 16] \&quot;Yes, let&#39;s get going.\&quot; Go to your apartment.&quot; &quot;ApartmentEntrance&quot;&gt;&gt;[[|ApartmentEntrance]]</tw-passagedata><tw-passagedata pid="65" name="Alley1" tags="nobr" position="900,3800" size="100,100">/* Grace, this part is for you! Start the alley sequence here. */</tw-passagedata><tw-passagedata pid="66" name="ApartmentEntrance" tags="nobr" position="1200,3800" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;VOLITION [Godly 16] \&quot;Yes, let&#39;s get going.\&quot; Go to your apartment.&quot; &quot;ApartmentEntrance&quot;&gt;&gt;[[|ApartmentEntrance]]</tw-passagedata><tw-passagedata pid="65" name="Alley1" tags="nobr" position="900,3800" size="100,100">&lt;&lt;set $alley to true&gt;&gt;
+
+/* Grace, this part is for you! Start the alley sequence here. */
+
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Kim’s painfully precise hands grab your belt, firm, steady, confident.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt; /* not sure about this but i think it&#39;s okay */
+&lt;&lt;AddParagraph &quot;You ready for this, cowboy? To get your dick out here in the rain?&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;Perception (Touch)&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;The metal of your belt buckle briefly brushes against exposed skin -&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;Shivers&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;You are suddenly deeply aware of how eerily quiet the world is around you, even though you are literally expose in public. All around you, while Revachol is alive, it is at a remove from you - people pursuing their own moments of tenderness and debauchery, but away from the two of you, without directly regarding you. One of the lights in a house down the street turns off. A different light turns on in another window, but filtered through heavy curtains. All you hear is wind, rain, and your own pounding heartbeat.&quot;&gt;&gt;
+
+&lt;&lt;AddParagraph &quot;YOU&#39;VE MADE YOUR CHOICE, MY OFFICERS. YOU KEEP ME SAFE AND LOVE ME - I LOVE YOU AND I&#39;LL KEEP YOU SAFE. BUT IT&#39;S YOUR FUNERAL IF YOU CATCH A COLD FROM YOUR DECADENCE.&quot;&gt;&gt;
+
+/* this brings it back to the &quot;know my secret&quot; thing. */
+&lt;&lt;include &quot;Ready&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="ApartmentEntrance" tags="nobr" position="1200,3800" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set _now to &quot;now&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _now to &quot;once again&quot;&gt;&gt;
@@ -1411,20 +1431,36 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Secretly loves you?&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;KIM KITSURAGI: For the first time this evening, Kim&#39;s eyebrow is raised.&quot; &quot;Secret4&quot;&gt;&gt;[[|Secret4]]</tw-passagedata><tw-passagedata pid="89" name="Secret4" tags="nobr" position="1100,5600" size="100,100">&lt;&lt;PassiveSkill &quot;Authority&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;KIM KITSURAGI: For the first time this evening, Kim&#39;s eyebrow is raised.&quot; &quot;Secret4&quot;&gt;&gt;[[|Secret4]]</tw-passagedata><tw-passagedata pid="89" name="Secret4" tags="nobr" position="1100,5600" size="100,100">&lt;&lt;if $alley is true&gt;&gt;
+&lt;&lt;set _hard to &quot;half-hard&quot;&gt;&gt;
+&lt;&lt;set _unabashed to &quot;exposed&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _hard to &quot;hard&quot;&gt;&gt;
+&lt;&lt;set _unabashed to &quot;unabashed&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;Authority&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;It&#39;s different from the usual - the assured control is there, but there&#39;s mischief, too.&quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He leans up, once again close enough for your lips to //almost// touch. \&quot;My finest skill is with my mouth.\&quot;&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;And in one smooth motion, he&#39;s on his knees with your hard cock swallowed down.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;And in one smooth motion, he&#39;s on his knees with your _hard cock swallowed down.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;Who would have ever fucking thought that you&#39;d get to really, truly //party// with fucking Kim Kitsuragi, in the most vulgar and unabashed way possible? Incredible.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Who would have ever fucking thought that you&#39;d get to really, truly //party// with fucking Kim Kitsuragi, in the most vulgar and _unabashed way possible? Incredible.&quot;&gt;&gt;
 
+&lt;&lt;if $alley is true&gt;&gt;
+&lt;&lt;SetSpeaker &quot;???&quot;&gt;&gt; /* To do: figure out who should speak here */
+&lt;&lt;AddParagraph &quot;You’ve never seen anyone look this good- Kim’s eyes bore into yours as he settles on his knees.&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Kim, who tailors his clothes, whose hair is impeccable, whose air is always professional, is kneeling down on the filthy alley ground and sucking your dick.&quot; &quot;Alley2&quot;&gt;&gt;[[|Alley2]]
+&lt;&lt;else&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Savoir Faire&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;It takes some serious talent to look that good with a mouth full of cock. He&#39;s still //devastatingly fucking handsome//. It&#39;s practically unfair. You should tell him so.&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Yes, good idea. I will do exactly that.&quot; &quot;NewInnocence&quot;&gt;&gt;[[|NewInnocence]]
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="90" name="Alley2" tags="nobr" position="900,5750" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Kim, who tailors his clothes, whose hair is impeccable, whose air is always professional, is kneeling down on the filthy alley ground and sucking your dick.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;Yes, good idea. I will do exactly that.&quot; &quot;NewInnocence&quot;&gt;&gt;[[|NewInnocence]]</tw-passagedata><tw-passagedata pid="90" name="NewInnocence" tags="nobr" position="1100,5750" size="100,100">&lt;&lt;if $drink is &quot;wine&quot;&gt;&gt;
+/* Grace, this part is for you! This is what&#39;s happening in the alley after Kim&#39;s got his mouth full of dick. Enjoy! */</tw-passagedata><tw-passagedata pid="91" name="NewInnocence" tags="nobr" position="1100,5750" size="100,100">&lt;&lt;if $drink is &quot;wine&quot;&gt;&gt;
 &lt;&lt;set _thrall to &quot;You have become an utter, utter thrall&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _thrall to &quot;You have lost control completely, thanks&quot;&gt;&gt;
@@ -1448,7 +1484,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Suggestion&quot; &quot;Legendary&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The challenging look in his eyes and the steady hand on your hip says, \&quot;fucking go for it, //I can take it//\&quot;.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;Thrust into his mouth.&quot; MouthFuck&gt;&gt; [[|MouthFuck]]</tw-passagedata><tw-passagedata pid="91" name="MouthFuck" tags="nobr" position="1100,5900" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Thrust into his mouth.&quot; MouthFuck&gt;&gt; [[|MouthFuck]]</tw-passagedata><tw-passagedata pid="92" name="MouthFuck" tags="nobr" position="1100,5900" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;And oh, can Kim Kitsuragi //take it//. Even as the head of your cock pushes into his throat, even as his jaw stretches wide, he doesn&#39;t take his eyes off of you.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Suggestion&quot;&gt;&gt;
@@ -1463,7 +1499,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He&#39;s keeping up, drooling around you, glasses shifting askew from the force of your thrusting.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;PAIN THRESHOLD - If he didn&#39;t know what he was doing, he&#39;d be choking for sure.&quot; GhostOfHornt1&gt;&gt; [[|GhostOfHornt1]]</tw-passagedata><tw-passagedata pid="92" name="GhostOfHornt1" tags="nobr" position="1100, 6050" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;PAIN THRESHOLD - If he didn&#39;t know what he was doing, he&#39;d be choking for sure.&quot; GhostOfHornt1&gt;&gt; [[|GhostOfHornt1]]</tw-passagedata><tw-passagedata pid="93" name="GhostOfHornt1" tags="nobr" position="1100, 6050" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set _this to &quot;this&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _this to &quot;his&quot;&gt;&gt;
@@ -1493,7 +1529,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Give him what he really wants. Take what //you// want.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;\&quot;Fuck, stop, I want to, I can&#39;t,\&quot; your mouth a swirling of swear words as you pull his mouth off of your cock with more than a little force.&quot; Toss&gt;&gt; [[|Toss]]</tw-passagedata><tw-passagedata pid="93" name="Toss" tags="nobr" position="1100,6200" size="100,100">&lt;&lt;PassiveSkill &quot;Physical Instrument&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Fuck, stop, I want to, I can&#39;t,\&quot; your mouth a swirling of swear words as you pull his mouth off of your cock with more than a little force.&quot; Toss&gt;&gt; [[|Toss]]</tw-passagedata><tw-passagedata pid="94" name="Toss" tags="nobr" position="1100,6200" size="100,100">&lt;&lt;PassiveSkill &quot;Physical Instrument&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Toss him on the bed, before he has time to think about it. Spread those legs wide open, bend them up so his knees touch his shoulders and that glorious ass is exposed to you.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Reaction Speed&quot;&gt;&gt;
@@ -1539,7 +1575,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 
 &lt;&lt;AddOption &quot;You dollop lube generously on your fingers, then push one thick finger inside.&quot; Prep1&gt;&gt;[[|Prep1]]
 
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="94" name="Prep1" tags="nobr" position="1100,6350" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="95" name="Prep1" tags="nobr" position="1100,6350" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;//Ahhhh//, //Harry//,\&quot; the lieutenant gasps, legs folding even more tightly against his body, offering himself to you.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
@@ -1559,12 +1595,42 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 
 &lt;&lt;AddOption &quot;This is perfect as is, let&#39;s linger on this sensation for as long as he can handle it.&quot; Linger&gt;&gt;[[|Linger]]
 &lt;&lt;AddOption &quot;I need more, it&#39;s not enough, I want to be inside him too badly.&quot; Needy&gt;&gt;[[|Needy]]
-&lt;&lt;AddOption &quot;I want more, but he&#39;s not ready just yet.&quot; NotYet&gt;&gt;[[|NotYet]]</tw-passagedata><tw-passagedata pid="95" name="Linger" tags="nobr" position="900,6500" size="100,100">/* Something about patience snapping, I guess. */
-&lt;&lt;SetSpeaker &quot;Kawa&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;Hi! I&#39;ll put something here soon. Thanks for testing!&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="96" name="Needy" tags="nobr" position="1100,6500" size="100,100">&lt;&lt;SetSpeaker &quot;Kawa&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;I want more, but he&#39;s not ready just yet.&quot; NotYet&gt;&gt;[[|NotYet]]</tw-passagedata><tw-passagedata pid="96" name="Linger" tags="nobr" position="600,6500" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;set _comfortable to &quot;perfectly crisp, clean&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _comfortable to &quot;cozily rumpled, warm&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;Perception&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;He&#39;s really, truly incredible like this. Spread out under you, filled with you. His response to your movement is practically an assault to your senses - the heat of his body, the velvet softness and the rosy flush of his skin, the obscene gasps and moans.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;Inland Empire&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;You want to spend your entire life learning every in and out of his body - every nook and cranny of what he enjoys, what he craves, every noise he is capable of making.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Yes, if you could make this last forever, you would. Two bodies enjoying the primal joy of connection, no outside world to speak of beyond these _comfortable bedsheets.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;Esprit de Corps&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;His desire is almost tangible. He&#39;s so close to floating away on a blissful ride of sensation, but also he craves more.&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;H-Harry, I - god, this is incredible, but - don&#39;t you want...?\&quot; There&#39;s some uncertainty to his voice, like he doesn&#39;t know what to ask for, or how to ask for it.&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;\[Empathy - Medium 10\] Help him out. \&quot;How badly do you want me inside you?\&quot;&quot; &quot;SoftDom&quot;&gt;&gt;[[|SoftDom]]
+&lt;&lt;AddOption &quot;\[Authority - Medium 10\] Draw it out of him. \&quot;Is there something you want, //Lieutenant//? I think you&#39;re going to have to tell me.\&quot;&quot; &quot;UseYourWords&quot;&gt;&gt;[[|UseYourWords]]</tw-passagedata><tw-passagedata pid="97" name="SoftDom" tags="nobr" position="400,6650" size="100,100">&lt;&lt;CheckSuccess&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Empathy&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;As forceful as he is, he&#39;s a little embarrassed about dirty talk, and you&#39;re not going to push it.&quot;&gt;&gt;
+
+/* Don&#39;t be a jerk about it. Pika, Grace, feel free to put any ideas here.*/</tw-passagedata><tw-passagedata pid="98" name="UseYourWords" tags="nobr" position="800,6650" size="100,100">&lt;&lt;CheckSuccess&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Authority&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;As forceful as he is, he&#39;s a little embarrassed about dirty talk - but he wants to be pushed into it.&quot;&gt;&gt;
+
+/* Be the right kind of shit disturber. More pulling rank? Pika, Grace, feel free to put any ideas here.*/</tw-passagedata><tw-passagedata pid="99" name="Needy" tags="nobr" position="1100,6500" size="100,100">&lt;&lt;SetSpeaker &quot;Kawa&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Hi! Something will be here eventually. Thanks for testing!&quot;&gt;&gt;
 
-/* ideas: playing with size kink, eager and trusting even with all the intensity, don&#39;t forget EdC going &quot;Kim&#39;s kinda going ohshit but is into it&quot; */</tw-passagedata><tw-passagedata pid="97" name="NotYet" tags="nobr" position="1300,6500" size="100,100">&lt;&lt;PassiveSkill &quot;Perception (Taste)&quot;&gt;&gt;
+/* ideas: playing with size kink, eager and trusting even with all the intensity, don&#39;t forget EdC going &quot;Kim&#39;s kinda going ohshit but is into it&quot; */</tw-passagedata><tw-passagedata pid="100" name="NotYet" tags="nobr" position="1300,6500" size="100,100">&lt;&lt;PassiveSkill &quot;Perception (Taste)&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Fingers still carefully stretching Kim further, you lean in and run your tongue along the taut and trembling muscles of his leg, trapped as it is underneath you. A long wet strip, tasting the thin sheen of sweat that highlights the well defined contours of his calves.&quot;&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */

@@ -213,6 +213,7 @@ $(document).on("keyup", function (e) {
 
 :: StoryInit {"position":"268,25","size":"100,100"}
 <<set $triedfancy to false>>
+<<set $alley to false>>
 <<set $optionmap to new Map()>>
 <<set $motorics to ["composure", "hand-eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception (sight)", "perception (taste)", "perception (touch)", "perception (sound)"]>>
 <<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual calculus"]>>
@@ -1210,7 +1211,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Logic">>
 <<AddParagraph "It's more than you expected, _pay">>
 
-<<if $cocktail is "wine">>
+<<if $drink is "wine">>
 <<SetSpeaker "You">>
 <<AddParagraph "You fumble a bit, but hand over the cash.">>
 <<else>>
@@ -1290,7 +1291,26 @@ A Disco Elysium Fanwork
 
 :: Alley1 [nobr] {"position":"900,3800"}
 
+<<set $alley to true>>
+
 /* Grace, this part is for you! Start the alley sequence here. */
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim’s painfully precise hands grab your belt, firm, steady, confident.">>
+
+<<PassiveSkill "Electrochemistry">> /* not sure about this but i think it's okay */
+<<AddParagraph "You ready for this, cowboy? To get your dick out here in the rain?">>
+
+<<PassiveSkill "Perception (Touch)">>
+<<AddParagraph "The metal of your belt buckle briefly brushes against exposed skin -">>
+
+<<PassiveSkill "Shivers">>
+<<AddParagraph "You are suddenly deeply aware of how eerily quiet the world is around you, even though you are literally expose in public. All around you, while Revachol is alive, it is at a remove from you - people pursuing their own moments of tenderness and debauchery, but away from the two of you, without directly regarding you. One of the lights in a house down the street turns off. A different light turns on in another window, but filtered through heavy curtains. All you hear is wind, rain, and your own pounding heartbeat.">>
+
+<<AddParagraph "YOU'VE MADE YOUR CHOICE, MY OFFICERS. YOU KEEP ME SAFE AND LOVE ME - I LOVE YOU AND I'LL KEEP YOU SAFE. BUT IT'S YOUR FUNERAL IF YOU CATCH A COLD FROM YOUR DECADENCE.">>
+
+/* this brings it back to the "know my secret" thing. */
+<<include "Ready">>
 
 :: ApartmentEntrance [nobr] {"position": "1200,3800"}
 <<if $apartment is "Kim">>
@@ -1674,20 +1694,40 @@ A Disco Elysium Fanwork
 
 :: Secret4 [nobr] {"position": "1100,5600"}
 
+<<if $alley is true>>
+<<set _hard to "half-hard">>
+<<set _unabashed to "exposed">>
+<<else>>
+<<set _hard to "hard">>
+<<set _unabashed to "unabashed">>
+<<endif>>
+
 <<PassiveSkill "Authority">>
 <<AddParagraph "It's different from the usual - the assured control is there, but there's mischief, too.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "He leans up, once again close enough for your lips to //almost// touch. \"My finest skill is with my mouth.\"">>
-<<AddParagraph "And in one smooth motion, he's on his knees with your hard cock swallowed down.">>
+<<AddParagraph "And in one smooth motion, he's on his knees with your _hard cock swallowed down.">>
 
 <<PassiveSkill "Electrochemistry">>
-<<AddParagraph "Who would have ever fucking thought that you'd get to really, truly //party// with fucking Kim Kitsuragi, in the most vulgar and unabashed way possible? Incredible.">>
+<<AddParagraph "Who would have ever fucking thought that you'd get to really, truly //party// with fucking Kim Kitsuragi, in the most vulgar and _unabashed way possible? Incredible.">>
 
+<<if $alley is true>>
+<<SetSpeaker "???">> /* To do: figure out who should speak here */
+<<AddParagraph "You’ve never seen anyone look this good- Kim’s eyes bore into yours as he settles on his knees.">>
+<<AddOption "Kim, who tailors his clothes, whose hair is impeccable, whose air is always professional, is kneeling down on the filthy alley ground and sucking your dick." "Alley2">>[[|Alley2]]
+<<else>>
 <<PassiveSkill "Savoir Faire">>
 <<AddParagraph "It takes some serious talent to look that good with a mouth full of cock. He's still //devastatingly fucking handsome//. It's practically unfair. You should tell him so.">>
-
 <<AddOption "Yes, good idea. I will do exactly that." "NewInnocence">>[[|NewInnocence]]
+<<endif>>
+
+:: Alley2 [nobr] {"position": "900,5750"}
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim, who tailors his clothes, whose hair is impeccable, whose air is always professional, is kneeling down on the filthy alley ground and sucking your dick.">>
+
+/* Grace, this part is for you! This is what's happening in the alley after Kim's got his mouth full of dick. Enjoy! */
 
 :: NewInnocence [nobr] {"position": "1100,5750"}
 
@@ -1844,11 +1884,49 @@ A Disco Elysium Fanwork
 <<AddOption "I need more, it's not enough, I want to be inside him too badly." Needy>>[[|Needy]]
 <<AddOption "I want more, but he's not ready just yet." NotYet>>[[|NotYet]]
 
-:: Linger [nobr] {"position":"900,6500"}
+:: Linger [nobr] {"position":"600,6500"}
 
-/* Something about patience snapping, I guess. */
-<<SetSpeaker "Kawa">>
-<<AddParagraph "Hi! I'll put something here soon. Thanks for testing!">>
+<<if $apartment is "Kim">>
+<<set _comfortable to "perfectly crisp, clean">>
+<<else>>
+<<set _comfortable to "cozily rumpled, warm">>
+<<endif>>
+
+<<PassiveSkill "Perception">>
+<<AddParagraph "He's really, truly incredible like this. Spread out under you, filled with you. His response to your movement is practically an assault to your senses - the heat of his body, the velvet softness and the rosy flush of his skin, the obscene gasps and moans.">>
+
+<<PassiveSkill "Inland Empire">>
+<<AddParagraph "You want to spend your entire life learning every in and out of his body - every nook and cranny of what he enjoys, what he craves, every noise he is capable of making.">>
+
+<<PassiveSkill "Empathy">>
+<<AddParagraph "Yes, if you could make this last forever, you would. Two bodies enjoying the primal joy of connection, no outside world to speak of beyond these _comfortable bedsheets.">>
+
+<<PassiveSkill "Esprit de Corps">>
+<<AddParagraph "His desire is almost tangible. He's so close to floating away on a blissful ride of sensation, but also he craves more.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"H-Harry, I - god, this is incredible, but - don't you want...?\" There's some uncertainty to his voice, like he doesn't know what to ask for, or how to ask for it.">>
+
+<<AddOption "\[Empathy - Medium 10\] Help him out. \"How badly do you want me inside you?\"" "SoftDom">>[[|SoftDom]]
+<<AddOption "\[Authority - Medium 10\] Draw it out of him. \"Is there something you want, //Lieutenant//? I think you're going to have to tell me.\"" "UseYourWords">>[[|UseYourWords]]
+
+:: SoftDom [nobr] {"position":"400,6650"}
+
+<<CheckSuccess>>
+
+<<SetSpeaker "Empathy">>
+<<AddParagraph "As forceful as he is, he's a little embarrassed about dirty talk, and you're not going to push it.">>
+
+/* Don't be a jerk about it. Pika, Grace, feel free to put any ideas here.*/
+
+:: UseYourWords [nobr] {"position":"800,6650"}
+
+<<CheckSuccess>>
+
+<<SetSpeaker "Authority">>
+<<AddParagraph "As forceful as he is, he's a little embarrassed about dirty talk - but he wants to be pushed into it.">>
+
+/* Be the right kind of shit disturber. More pulling rank? Pika, Grace, feel free to put any ideas here.*/
 
 :: Needy [nobr] {"position": "1100,6500"}
 
