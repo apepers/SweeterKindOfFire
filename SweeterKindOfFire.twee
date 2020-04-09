@@ -953,6 +953,8 @@ A Disco Elysium Fanwork
 <<PassiveSkill "RHETORIC">>
 <<AddParagraph "As many drunks as there are people, really. So what are you, Harry? What kind of drunk are you?">>
 
+<<NewTask "Learn the lieutenant's drunkotype">>
+
 <<ThoughtGained "Drunkotype Taxonomy">>
 
 <<SetSpeaker "Drunkotype Taxonomy">>
@@ -1612,7 +1614,7 @@ A Disco Elysium Fanwork
 <<AddOption "\"So what now?\"" "WhatNow">>[[|WhatNow]]
 
 :: Ready [nobr] {"position": "1100,5150"}
-
+<<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Wait. Are you ready?\"">>
 
 <<AddOption "\"Yes.\"" "SecretYes">>[[|SecretYes]]
@@ -1723,9 +1725,6 @@ A Disco Elysium Fanwork
 <<endif>>
 
 :: Alley2 [nobr] {"position": "900,5750"}
-
-<<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "Kim, who tailors his clothes, whose hair is impeccable, whose air is always professional, is kneeling down on the filthy alley ground and sucking your dick.">>
 
 /* Grace, this part is for you! This is what's happening in the alley after Kim's got his mouth full of dick. Enjoy! */
 
@@ -1939,3 +1938,47 @@ A Disco Elysium Fanwork
 
 <<PassiveSkill "Perception (Taste)">>
 <<AddParagraph "Fingers still carefully stretching Kim further, you lean in and run your tongue along the taut and trembling muscles of his leg, trapped as it is underneath you. A long wet strip, tasting the thin sheen of sweat that highlights the well defined contours of his calves.">>
+
+<<PassiveSkill "Endurance">>
+<<AddParagraph "He's not a marathon runner but he's a sprinter - there's power coiled inside, you can taste it. Push his leg up just a bit further, savor how even as he shakes he can meet your strength. Feel the pressure of two forces in glorious opposition.">>
+
+<<PassiveSkill "perception (taste)">>
+<<AddParagraph "His skin is so perfectly firm as you let your teeth sink into his inner thigh, biting just so, holding him down as he gasps and surges against you. Then you slide up to mouth at his cock, letting your lips drag sloppily over the head, gluttonous in your urge to devour him.">>
+
+<<PassiveSkill "Savoir Faire">>
+<<AddParagraph "You're being ridiculously messy, smearing precum and your own drool all over your chin. The facial hair is going to need a real scrubbing after this. It's not smooth - it's outright //debauched// - and Kim's cock twitches every time you make eye contact, so you know just how much he enjoys it.">>
+
+<<PassiveSkill "Empathy">>
+<<AddParagraph " The movement of your mouth is no match for his masterful display on you earlier; it's meant to be a distraction - and it worked, exactly as planned. ">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "His back is arching at the sensation, his feet kicking up into the air a bit. \"Gods, //fuck// - \"">>
+
+<<AddOption "You guide a third finger in, and the tone //changes// - something more ragged, more raw." GhostOfHornt2>> [[|GhostOfHornt2]]
+
+:: GhostOfHornt2 [nobr] {"position":"1300,6650"}
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"//Goddamn//, what are you - you - haaaaaa-\" He can't finish the sentence, the sensation overloading his ability to form coherent words. ">>
+
+<<PassiveSkill "Esprit de Corps">>
+<<AddParagraph "He's realizing just how thick //you// are, if you felt the need to stretch him further. Sure, you just nearly knocked his jaw loose, but the full consequences of that are just dawning on him. ">>
+
+<<PassiveSkill "Pain Threshold">>
+<<AddParagraph "Trust me, it was necessary. ">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "Trust me, he's not complaining.">>
+
+<<PassiveSkill "Hand-Eye Coordination">>
+<<AddParagraph "You stretch him open, holding a trembling thigh in your other hand, continuing to lap at his cock. Each movement of your fingers wrenches out another moan, another gasp, another swear. He's barely able to buck against you, with his legs up, but he's trying his best with what little leverage he has.">>
+
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "After having spent so long under his control, mental or physical, there is something powerful and awe-inspiring about having him pinned down. A thrill, knowing you could do whatever you wanted to him. ">>
+
+<<AddOption "EMPATHY: This is also a privilege, as confident as he's been up to this point; still a body opening up to you, intimate. " Ready2>>[[|Ready2]]
+
+:: Ready2 [nobr] {"position":"1300,6800"}
+
+<<PassiveSkill "Pain Threshold">>
+<<AddParagraph "The sounds he is making are evening out now - less surprised. His muscles are still tight around your fingers, but no longer strained, and you have thoroughly covered every possible bit you could reach in plenty of lube. He's as ready as he's going to be for you. Slide out slowly, carefully - both feel and hear the anguished groan of the temporary loss.">>
