@@ -214,6 +214,7 @@ $(document).on("keyup", function (e) {
 :: StoryInit {"position":"268,25","size":"100,100"}
 <<set $triedfancy to false>>
 <<set $alley to false>>
+<<set $hastyprep to false>>
 <<set $optionmap to new Map()>>
 <<set $motorics to ["composure", "hand-eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception (sight)", "perception (taste)", "perception (touch)", "perception (sound)"]>>
 <<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual calculus"]>>
@@ -1929,10 +1930,46 @@ A Disco Elysium Fanwork
 
 :: Needy [nobr] {"position": "1100,6500"}
 
-<<SetSpeaker "Kawa">>
-<<AddParagraph "Hi! Something will be here eventually. Thanks for testing!">>
+<<PassiveSkill "Composure">>
+<<AddParagraph "You're absolutely sloppy in your haste, dripping lube down onto your two fingers as you continue to work them in and out. He's practically leaking it out, slick even along his inner thighs, a mess and you haven't even really gotten going.">>
 
-/* ideas: playing with size kink, eager and trusting even with all the intensity, don't forget EdC going "Kim's kinda going ohshit but is into it" */
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "He's tight but surely he can take it, you need it now. Lining yourself up you start to push inside - despite the lube, he's incredibly tight. You have to be more forceful than expected, slower. Muscles taut against the head. Willing Kim to open up to you as you drive into him with a steady weight.">>
+
+<<PassiveSkill "Pain Threshold" "Difficult" "Success">>
+<<AddParagraph "It's almost a more intense stretch than he can take. He's breathing heavily, trying to force himself to relax - but his own excitement, his craving for the stretch and the effort, is making that difficult for him.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim is gripping the sheets tight, focusing on you with wide eyes, gasping for air, flushed pink with exertion. (You didn't know he could blush, it must only happen when he's truly overwhelmed.)">>
+<<AddParagraph "\"Fucking hell, Harry, I can't believe -\"">>
+
+<<PassiveSkill "Volition" "Heroic" "Success">>
+<<AddParagraph "You pause at that, letting him breathe, feeling the muscles slowly unclench around you.">>
+
+<<PassiveSkill "Esprit de corps">>
+<<AddParagraph "He's trusted you this far - don't make him regret it.">>
+
+<<PassiveSkill "Suggestion">>
+<<AddParagraph "Let him decide when he's ready. He knows his body and he wants this. He knows what he can take.">>
+
+<<AddOption "\"Tell me when you're ready for me to move, Kim.\"" "NeedyWait">>[[|NeedyWait]]
+
+:: NeedyWait [nobr] {"position": "1100,6700"}
+<<set $hastyprep to true>>
+<<PassiveSkill "Hand-eye coordination">>
+<<AddParagraph "His legs shake as he nods, the end points of a subtle tremor of anticipation and strain throughout his body. You support his back and ass against your thighs and settle his left ankle on your right shoulder, angling his other thigh out.">>
+
+<<PassiveSkill "Endurance">>
+<<AddParagraph "An even wider stretch, open and exposed to you. But his body is also supported like this. At your mercy, encouraged to relax and let you hold him where you want him.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "His breathing finally levels out, not quite even, but back under his control. His cock is twitching against the plane of your stomach. His eyes, through skewed glasses, lock with yours.">>
+<<AddParagraph "\"Okay okay, I'm ready. Please.\"">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "Given his earlier swearing, you'd better be damn sure.">>
+
+<<AddOption "\"Ready for what? I think you're going to have to tell me, I need to know what you want.\"" "KimAreYouSURE">>[[|KimAreYouSURE]]
 
 :: NotYet [nobr] {"position": "1300,6500"}
 
@@ -1976,9 +2013,74 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Physical Instrument">>
 <<AddParagraph "After having spent so long under his control, mental or physical, there is something powerful and awe-inspiring about having him pinned down. A thrill, knowing you could do whatever you wanted to him. ">>
 
-<<AddOption "EMPATHY: This is also a privilege, as confident as he's been up to this point; still a body opening up to you, intimate. " Ready2>>[[|Ready2]]
-
-:: Ready2 [nobr] {"position":"1300,6800"}
+<<PassiveSkill "Empathy">>
+<<AddParagraph "This is also a privilege, as confident as he's been up to this point; still a body opening up to you, intimate.">>
 
 <<PassiveSkill "Pain Threshold">>
 <<AddParagraph "The sounds he is making are evening out now - less surprised. His muscles are still tight around your fingers, but no longer strained, and you have thoroughly covered every possible bit you could reach in plenty of lube. He's as ready as he's going to be for you. Slide out slowly, carefully - both feel and hear the anguished groan of the temporary loss.">>
+
+<<AddOption "Slick up your own cock with more lube" "Ready2">>[[|Ready2]]
+
+:: Ready2 [nobr] {"position":"1300,6800"}
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "It's sweet and familiar to thrust into your own hand but oh, it's a pale substitute for what's coming next.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "You sit up, sliding your bent knees in under Kim's body, supporting his back and his ass against your thighs. You grab his left ankle and settle it on your right shoulder, then angle his right thigh out, pressing your other hand into the fold where thigh meets hip.">>
+<<AddParagraph "A shift of your hips, and you're in the right position to enter him at last.">>
+
+<<AddOption "\"Are you ready?\"" "CheckReady">>[[|CheckReady]]
+
+::CheckReady [nobr] {"position":"1300, 7000"}
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "His breathing is deep and even. His cock is twitching against the plane of your stomach. His eyes, through skewed glasses, lock with yours.">> 
+<<AddParagraph "\"Yes, I'm ready. Please.\"">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "I think it's time for a little revenge for earlier, don't you?">>
+
+<<AddOption "\"Oh yeah? Ready for what? I think you're going to have to tell me.\"" "KimAreYouSURE">>[[|KimAreYouSURE]]
+
+::KimAreYouSURE [nobr] {"position": "1300, 7200"}
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "His chest flushes, along with his face. He looks away, briefly.">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "His cock pulses against you, though. He //likes// this.">>
+
+<<SetSpeaker "Kim Kitsurag">>
+<<AddParagraph "He looks back up at you, some of the earlier worry undone in exchange for more wanton desire. \"//Please//, Harry. Fuck me.\"">>
+
+<<AddOption "That's all the permission you need." "KimIsReady">>[[|KimIsReady]]
+
+::KimIsReady [nobr] {"position": "1300, 7400"}
+<<if $hastyprep is false>>
+<<PassiveSkill "Perception (touch)">>
+<<AddParagraph "Pushing inside, the slide is perfect - tight heat, but smooth, delicious. His leg and hip are warm and vibrating slightly in your grip.">>
+
+<<PassiveSkill "Pain Threshold" "Difficult" "Success">>
+<<AddParagraph "It renders as a stretch for him - intense, but welcome. You did well, he's in no pain at all, even as you bury yourself completely in him.">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "Indeed, the bobbing of his cock against his stomach, the grip of the sheets, the intensity of his eyes screwed shut and the hiss from between his teeth - he wants every bit of this. It is a deep seated, primal craving. Give him what he wants, baby. Fuck his brains out.">>
+<</if>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "You take a breath, then slide your hips back - relishing the gasp that comes out from him.">>
+<<AddParagraph "then...">>
+<<AddParagraph "//Snap// your hips back in, rewarded with the sound of a moan that will almost certainly wake his neighbors, if not the dead.">>
+
+<<PassiveSkill "Composure" "Impossible" "Success">>
+<<AddParagraph "You keep your motions slow at first, steady. You want desire to build. You want to hold on and watch Kim come undone completely.">>
+
+<<PassiveSkill "Rhetoric" "Legendary" "Failure">>
+<<AddParagraph "You find yourself babbling, the slick heat undoing any thoughts basides the sheer wonder you feel about your current position">>
+
+<<AddOption "\"Fucking hell, Kim, you're perfect, you look amazing, you feel amazing/" "FuckKimHarder">>[[|FuckKimHarder]]
+
+::FuckKimHarder [nobr] {"position": "1300, 7600"}
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Gods, fuck, yes, Harry, more, harder, please,\" panting and desperate from him in return.">>
+
+<<PassiveSkill "Empathy">>
+<<AddParagraph "And who are you to deny him at this point?">>
