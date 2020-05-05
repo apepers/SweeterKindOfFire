@@ -100,7 +100,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://B1E46906-738D-4617-BD15-CEF422C96FD8// --><tw-storydata name="SweeterKindOfFire" startnode="13" creator="Tweego" creator-version="2.1.1" ifid="B1E46906-738D-4617-BD15-CEF422C96FD8" zoom="0.6" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(http://fonts.googleapis.com/css?family=David+Libre:400,700,400italic,700italic);
+	<!-- UUID://B1E46906-738D-4617-BD15-CEF422C96FD8// --><tw-storydata name="SweeterKindOfFire" startnode="14" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="B1E46906-738D-4617-BD15-CEF422C96FD8" zoom="0.6" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(http://fonts.googleapis.com/css?family=David+Libre:400,700,400italic,700italic);
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');
 
 html {
@@ -296,7 +296,7 @@ $(document).on("keyup", function (e) {
 &lt;&lt;set $alley to false&gt;&gt;
 &lt;&lt;set $hastyprep to false&gt;&gt;
 &lt;&lt;set $optionmap to new Map()&gt;&gt;
-&lt;&lt;set $motorics to [&quot;composure&quot;, &quot;hand-eye coordination&quot;, &quot;interfacing&quot;, &quot;perception&quot;, &quot;reaction speed&quot;, &quot;savoir faire&quot;, &quot;perception (sight)&quot;, &quot;perception (taste)&quot;, &quot;perception (touch)&quot;, &quot;perception (sound)&quot;]&gt;&gt;
+&lt;&lt;set $motorics to [&quot;composure&quot;, &quot;hand/eye coordination&quot;, &quot;interfacing&quot;, &quot;perception&quot;, &quot;reaction speed&quot;, &quot;savoir faire&quot;, &quot;perception&quot;, &quot;perception (smell)&quot;, &quot;perception (sight)&quot;, &quot;perception (taste)&quot;, &quot;perception (touch)&quot;, &quot;perception (hearing)&quot;]&gt;&gt;
 &lt;&lt;set $intellect to [&quot;conceptualization&quot;, &quot;drama&quot;, &quot;encyclopedia&quot;, &quot;logic&quot;, &quot;rhetoric&quot;, &quot;visual calculus&quot;]&gt;&gt;
 &lt;&lt;set $fysique to [&quot;electrochemistry&quot;, &quot;endurance&quot;, &quot;half light&quot;, &quot;pain threshold&quot;, &quot;physical instrument&quot;, &quot;shivers&quot;]&gt;&gt;
 &lt;&lt;set $psyche to [&quot;authority&quot;, &quot;empathy&quot;, &quot;esprit de corps&quot;, &quot;inland empire&quot;, &quot;suggestion&quot;, &quot;volition&quot;]&gt;&gt;
@@ -317,14 +317,14 @@ $(document).on("keyup", function (e) {
 &lt;&lt;set $optionmap to new Map()&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="SkillSuccess" tags="Widget widget" position="600,100" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;widget &quot;SkillSuccess&quot;&gt;&gt;
 &lt;div id=&quot;SuccessImg&quot; class=&quot;CheckOverlay&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;CheckSuccess&quot; class=&quot;CheckText&quot;&gt;CHECK SUCCESS&lt;/div&gt;
+&lt;div id=&quot;CheckSuccess&quot; class=&quot;CheckText&quot;&gt;CHECK Success&lt;/div&gt;
 &lt;&lt;SetSpeaker &quot;&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;//Green flashes at the edges of your vision - a success.//&quot;&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="SkillFailure" tags="Widget widget" position="725,100" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;widget &quot;SkillFailure&quot;&gt;&gt;
 &lt;div id=&quot;FailureImg&quot; class=&quot;CheckOverlay&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;CheckFailure&quot; class=&quot;CheckText&quot;&gt;CHECK FAILURE&lt;/div&gt;
+&lt;div id=&quot;CheckFailure&quot; class=&quot;CheckText&quot;&gt;CHECK Failure&lt;/div&gt;
 &lt;&lt;SetSpeaker &quot;&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;//Red flashes at the edges of your vision - a failure.//&quot;&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
@@ -377,7 +377,7 @@ if (paragraphs.length &gt; 1) {
 	paragraphs[paragraphs.length-2].classList.add(&quot;dim&quot;);
 }
 &lt;&lt;/script&gt;&gt;&lt;&lt;/timed&gt;&gt;\
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="SetSpeaker" tags="widget" position="674,151" size="100,100">&lt;&lt;widget &quot;SetSpeaker&quot;&gt;&gt;&lt;&lt;set $currentspeaker to (&quot;@@.speaker;&quot; + $args[0] + &quot;@@ - &quot;)&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="AddParagraph" tags="widget" position="546,268" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="SetSpeaker" tags="widget" position="674,151" size="100,100">&lt;&lt;widget &quot;SetSpeaker&quot;&gt;&gt;&lt;&lt;set $currentspeaker to (&quot;@@.speaker;&quot; + $args[0] + &quot;@@ - &quot;)&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="BlankSpeaker" tags="widget" position="1225,100" size="100,100">&lt;&lt;widget &quot;BlankSpeaker&quot;&gt;&gt;&lt;&lt;set $currentspeaker to &quot;&quot;&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="AddParagraph" tags="widget" position="546,268" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;widget &quot;AddParagraph&quot;&gt;&gt;
 &lt;&lt;set _para to &quot;&quot;&gt;&gt;
 &lt;&lt;if $paraAppendMode is true&gt;&gt;
@@ -390,7 +390,7 @@ if (paragraphs.length &gt; 1) {
 &lt;&lt;set _para to (_para + $currentspeaker + $args[0])&gt;&gt;
 &lt;&lt;run $paragraphs.push(_para)&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="Intro" tags="nobr" position="1100,50" size="100,100">&lt;&lt;SetSpeaker &quot;Jean Vicquemare&quot;&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="Intro" tags="nobr" position="1100,50" size="100,100">&lt;&lt;SetSpeaker &quot;Jean Vicquemare&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Jean pulls himself upright from the low booth the three of you have been sharing in this bar. Most of the 41st plus Kim had been scattered across this back room, but everyone else had been filtering out over the course of the evening. \&quot;Congrats on finally joining us, Kitsuragi, and welcome to the 41st,\&quot; Jean says with a lazy grin. \&quot;I&#39;ll see you at the office on Monday. Make sure Harry gets home in one piece,\&quot; and with that, he leaves.&quot;&gt;&gt;
 
 &lt;&lt;SecretTaskComplete &quot;Get Kim alone&quot; 25&gt;&gt;
@@ -407,9 +407,9 @@ if (paragraphs.length &gt; 1) {
 &lt;&lt;PassiveSkill &quot;Esprit de Corps&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;There was to be a round for the new colleague, before Captain Pryce&#39;s toast. And when Kim tried to demur, tried to just get seltzer, you of course-&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;Pulled rank on him.&quot; &quot;PickDrink&quot;&gt;&gt;[[|PickDrink]]</tw-passagedata><tw-passagedata pid="14" name="StoryAuthor" tags="" position="268,439" size="100,100">Original story by Kawa
-Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="StorySubtitle" tags="" position="392,432" size="100,100">A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="16" name="StoryShare" tags="" position="526,432" size="100,100">[[&quot;@ampepers on Twitter&quot;|https://twitter.com/ampepers]]
-[[&quot;Repo with the source code&quot;|https://github.com/apepers/DiscoElysiumTwineMacros/]]</tw-passagedata><tw-passagedata pid="17" name="Kawa&#39;s Copy-Paste Passages" tags="" position="250,600" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
+&lt;&lt;AddOption &quot;Pulled rank on him.&quot; &quot;PickDrink&quot;&gt;&gt;[[|PickDrink]]</tw-passagedata><tw-passagedata pid="15" name="StoryAuthor" tags="" position="268,439" size="100,100">Original story by Kawa
+Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="16" name="StorySubtitle" tags="" position="392,432" size="100,100">A Disco Elysium Fanwork</tw-passagedata><tw-passagedata pid="17" name="StoryShare" tags="" position="526,432" size="100,100">[[&quot;@ampepers on Twitter&quot;|https://twitter.com/ampepers]]
+[[&quot;Repo with the source code&quot;|https://github.com/apepers/DiscoElysiumTwineMacros/]]</tw-passagedata><tw-passagedata pid="18" name="Kawa&#39;s Copy-Paste Passages" tags="" position="250,600" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
 
 &lt;&lt;SkillFailure&gt;&gt;
 
@@ -422,7 +422,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;ThoughtGained &quot;Stereo-partnership&quot;&gt;&gt;
 &lt;&lt;TaskComplete &quot;Get Kim alone&quot; 5&gt;&gt;
 &lt;&lt;SecretTaskComplete &quot;Allow multiple tasks completed at once&quot; 15&gt;&gt;
-&lt;&lt;LevelUp&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="GreenTextWidgets" tags="widget" position="400,600" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;LevelUp&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="GreenTextWidgets" tags="widget" position="400,600" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;widget &quot;TaskComplete&quot;&gt;&gt;
 &lt;&lt;run $greentext.push(&quot;@@.green;Task complete: &quot; + $args[0] + &quot;@@&quot;)&gt;&gt;
 &lt;&lt;if $args[1]&gt;&gt;
@@ -464,7 +464,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;set $paraAppendMode to true&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
 
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="PickDrink" tags="nobr" position="1100,200" size="100,100">&lt;&lt;NewTask &quot;Get Kim to drink&quot;&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="PickDrink" tags="nobr" position="1100,200" size="100,100">&lt;&lt;NewTask &quot;Get Kim to drink&quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;//Lieutenant// Kitsuragi, you know I do not pull rank often. But //this// is of the utmost importance - a celebration of you joining our team. We cannot leave you out of this toast, and to do so without //some// alcohol - without some fire in your gut - is almost an insult to the tradition!\&quot;&quot;&gt;&gt;
@@ -475,7 +475,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddOption &quot;Order an Aerostatique.&quot; &quot;Aerostatique&quot;&gt;&gt;[[|Aerostatique]]
 &lt;&lt;AddOption &quot;Order a Grand Couron.&quot; &quot;GrandCouron&quot;&gt;&gt;[[|GrandCouron]]
 &lt;&lt;AddOption &quot;These cocktails are crazy, just get cheap wine.&quot; &quot;CheapWine&quot;&gt;&gt;[[|CheapWine]]
-&lt;&lt;AddOption &quot;//Do// I know anything besides Potent Pilsner?&quot; &quot;CocktailQuestions&quot;&gt;&gt;[[|CocktailQuestions]]</tw-passagedata><tw-passagedata pid="20" name="Aerostatique" tags="nobr" position="800,350" size="100,100">&lt;&lt;set $triedfancy to true&gt;&gt;
+&lt;&lt;AddOption &quot;//Do// I know anything besides Potent Pilsner?&quot; &quot;CocktailQuestions&quot;&gt;&gt;[[|CocktailQuestions]]</tw-passagedata><tw-passagedata pid="21" name="Aerostatique" tags="nobr" position="800,350" size="100,100">&lt;&lt;set $triedfancy to true&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot; &quot;Formidable&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;An Aerostatique is an extremely complex cocktail - some smoke, some earth, but a strange lightness too, and an electric shade of orange. Goes great with Astras, the cigarettes you know are in Kim&#39;s jacket pocket right now.&quot;&gt;&gt;
@@ -489,7 +489,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;\&quot;Sorry, we just ran out of Gener. You&#39;re going to have to order something else.\&quot;&quot;&gt;&gt;
 
 &lt;&lt;AddOption &quot;Order a Grand Couron.&quot; &quot;GrandCouron&quot;&gt;&gt;[[|GrandCouron]]
-&lt;&lt;AddOption &quot;These cocktails are crazy, just get cheap wine.&quot; &quot;CheapWine&quot;&gt;&gt;[[|CheapWine]]</tw-passagedata><tw-passagedata pid="21" name="GrandCouron" tags="nobr" position="1000,350" size="100,100">&lt;&lt;set $drink to &quot;cocktail&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;These cocktails are crazy, just get cheap wine.&quot; &quot;CheapWine&quot;&gt;&gt;[[|CheapWine]]</tw-passagedata><tw-passagedata pid="22" name="GrandCouron" tags="nobr" position="1000,350" size="100,100">&lt;&lt;set $drink to &quot;cocktail&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Encyclopedia&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The Grand Couron is the kind of cocktail that a dive bar considers fancy and a serious bar considers trivial. Bourbon, vermouth, standard bitters. Nice enough for a rocks glass, nothing any serious cocktail drinker takes too seriously.&quot;&gt;&gt;
@@ -515,7 +515,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;He&#39;s a little disappointed, but he&#39;s not going to show it.&quot;&gt;&gt;
 &lt;&lt;endif&gt;&gt;
 
-&lt;&lt;AddOption &quot;The evening passes, and you keep buying his drinks.&quot; &quot;Darts&quot;&gt;&gt;[[|Darts]]</tw-passagedata><tw-passagedata pid="22" name="CheapWine" tags="nobr" position="1200,350" size="100,100">&lt;&lt;set $drink to &quot;wine&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;The evening passes, and you keep buying his drinks.&quot; &quot;Darts&quot;&gt;&gt;[[|Darts]]</tw-passagedata><tw-passagedata pid="23" name="CheapWine" tags="nobr" position="1200,350" size="100,100">&lt;&lt;set $drink to &quot;wine&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Savoir Faire&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Why in the world would you get cheap wine?? At least cheap beer is //honest// about its cheapness. Cheap wine is godawful and pretending to be fancy.&quot;&gt;&gt;
@@ -534,7 +534,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Empathy&quot; &quot;Medium&quot; &quot;Failure&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You&#39;d thought he&#39;d care more about the drink quality - why doesn&#39;t he?&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;The evening passes, and you keep buying his drinks.&quot; &quot;Darts&quot;&gt;&gt;[[|Darts]]</tw-passagedata><tw-passagedata pid="23" name="CocktailQuestions" tags="nobr" position="1400,350" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot; &quot;Trivial&quot; &quot;Success&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;The evening passes, and you keep buying his drinks.&quot; &quot;Darts&quot;&gt;&gt;[[|Darts]]</tw-passagedata><tw-passagedata pid="24" name="CocktailQuestions" tags="nobr" position="1400,350" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot; &quot;Trivial&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Whatever you get, he&#39;ll get drunk regardless. Kim does not strike you as someone who drinks very often.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Encyclopedia&quot; &quot;Legendary&quot; &quot;Success&quot;&gt;&gt;
@@ -545,13 +545,13 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 
 &lt;&lt;AddOption &quot;Order an Aerostatique.&quot; &quot;Aerostatique&quot;&gt;&gt;[[|Aerostatique]]
 &lt;&lt;AddOption &quot;Order a Grand Couron.&quot; &quot;GrandCouron&quot;&gt;&gt;[[|GrandCouron]]
-&lt;&lt;AddOption &quot;These cocktails are crazy, just get cheap wine.&quot; &quot;CheapWine&quot;&gt;&gt;[[|CheapWine]]</tw-passagedata><tw-passagedata pid="24" name="Darts" tags="nobr" position="1100,500" size="100,100">&lt;&lt;PassiveSkill &quot;Logic&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;These cocktails are crazy, just get cheap wine.&quot; &quot;CheapWine&quot;&gt;&gt;[[|CheapWine]]</tw-passagedata><tw-passagedata pid="25" name="Darts" tags="nobr" position="1100,500" size="100,100">&lt;&lt;PassiveSkill &quot;Logic&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You&#39;ve been buying cheap beer for yourself this whole time to match him.&quot;&gt;&gt;
 
-&lt;&lt;PassiveSkill &quot;Hand-Eye Coordination&quot;&gt;&gt;
+&lt;&lt;PassiveSkill &quot;hand/eye Coordination&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;And won three rounds of darts with other members of the 41st to get some shots of cheap liquor in yourself.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;Back to the present - look at Kim.&quot; &quot;HaloImagery1&quot;&gt;&gt;[[|HaloImagery1]]</tw-passagedata><tw-passagedata pid="25" name="HaloImagery1" tags="nobr" position="1100,650" size="100,100">&lt;&lt;if $drink is &quot;cocktail&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Back to the present - look at Kim.&quot; &quot;HaloImagery1&quot;&gt;&gt;[[|HaloImagery1]]</tw-passagedata><tw-passagedata pid="26" name="HaloImagery1" tags="nobr" position="1100,650" size="100,100">&lt;&lt;if $drink is &quot;cocktail&quot;&gt;&gt;
 &lt;&lt;set _drinkglass to &quot;heavy rocks&quot;&gt;&gt;
 &lt;&lt;set _drinkcolour to &quot;Gorgeous amber&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -580,7 +580,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Hey, Harry. Remember how you kept asking me for a secret?\&quot;&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;EMPATHY \[Legendary: Success\]: You haven&#39;t asked in weeks!&quot; &quot;Secret1&quot;&gt;&gt;[[|Secret1]]</tw-passagedata><tw-passagedata pid="26" name="Secret1" tags="nobr" position="1100,800" size="100,100">&lt;&lt;PassiveSkill &quot;Authority&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;EMPATHY \[Legendary: Success\]: You haven&#39;t asked in weeks!&quot; &quot;Secret1&quot;&gt;&gt;[[|Secret1]]</tw-passagedata><tw-passagedata pid="27" name="Secret1" tags="nobr" position="1100,800" size="100,100">&lt;&lt;PassiveSkill &quot;Authority&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot; Also, it&#39;s //never// Harry, it&#39;s always //detective// or //officer//, even off the clock, what the hell -&quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
@@ -592,20 +592,25 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddOption &quot;Be the bisexual disaster. Flash the finger guns. \&quot;Go for it, Kim.\&quot;&quot; &quot;DisasterSecret&quot;&gt;&gt;[[|DisasterSecret]]
 &lt;&lt;AddOption &quot;\[Authority - Challenging 12\] Force it out. \&quot;//Lieutenant//, I //command// you to show me.\&quot;&quot; &quot;CommandSecret&quot;&gt;&gt;[[|CommandSecret]]
 &lt;&lt;AddOption &quot;\[Pain Threshold - Legendary 14\] Be teasing and dismissive about it. \&quot;Oh, it can&#39;t be that big a deal, right?\&quot;&quot; &quot;TeaseSecret&quot;&gt;&gt;[[|TeaseSecret]]
-&lt;&lt;AddOption &quot;Keep drinking, silently, maintaining eye contact. See what he&#39;ll do.&quot; &quot;StoicSecret&quot;&gt;&gt;[[|StoicSecret]]</tw-passagedata><tw-passagedata pid="27" name="DisasterSecret" tags="nobr" position="800,950" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Keep drinking, silently, maintaining eye contact. See what he&#39;ll do.&quot; &quot;StoicSecret&quot;&gt;&gt;[[|StoicSecret]]</tw-passagedata><tw-passagedata pid="28" name="DisasterSecret" tags="nobr" position="800,950" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He stares at you for a moment - amused, he finds it slightly funny, but doesn&#39;t laugh -&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;And then he surprises you.&quot; &quot;FirstKiss&quot;&gt;&gt;[[|FirstKiss]]</tw-passagedata><tw-passagedata pid="28" name="CommandSecret" tags="nobr" position="1000,950" size="100,100">&lt;&lt;SkillFailure&gt;&gt;
+&lt;&lt;AddParagraph &quot;And then he surprises you.&quot;&gt;&gt;
+&lt;&lt;include FirstKiss&gt;&gt;[[|FirstKiss]]</tw-passagedata><tw-passagedata pid="29" name="CommandSecret" tags="nobr" position="1000,950" size="100,100">&lt;&lt;SkillFailure&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He stares at you for a moment - as if considering if he&#39;ll quirk an eyebrow at you, then decides not to -&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;And then he surprises you.&quot; &quot;FirstKiss&quot;&gt;&gt;[[|FirstKiss]]</tw-passagedata><tw-passagedata pid="29" name="TeaseSecret" tags="nobr" position="1200,950" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
+&lt;&lt;AddParagraph &quot;And then he surprises you.&quot;&gt;&gt;
+&lt;&lt;include FirstKiss&gt;&gt;[[|FirstKiss]]</tw-passagedata><tw-passagedata pid="30" name="TeaseSecret" tags="nobr" position="1200,950" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
 
-&lt;&lt;AddOption &quot;You are expecting a flippant response, when Kim surprises you.&quot; &quot;FirstKiss&quot;&gt;&gt;[[|FirstKiss]]</tw-passagedata><tw-passagedata pid="30" name="StoicSecret" tags="nobr" position="1400,950" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;You are expecting a flippant response, when Kim surprises you.&quot; &gt;&gt;
+&lt;&lt;include FirstKiss&gt;&gt;[[|FirstKiss]]</tw-passagedata><tw-passagedata pid="31" name="StoicSecret" tags="nobr" position="1400,950" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He stares at you for a moment - realizes you won&#39;t respond -&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;And then he takes the initiative and surprises you.&quot; &quot;FirstKiss&quot;&gt;&gt;[[|FirstKiss]]</tw-passagedata><tw-passagedata pid="31" name="FirstKiss" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;if $drink is &quot;cocktail&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;And then he takes the initiative and surprises you.&quot; &gt;&gt;
+&lt;&lt;include FirstKiss&gt;&gt;[[|FirstKiss]]</tw-passagedata><tw-passagedata pid="32" name="FirstKiss" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;if $drink is &quot;cocktail&quot;&gt;&gt;
 &lt;&lt;set _smell to &quot;bourbon, cut through with the bitters and vermouth&quot;&gt;&gt;
 &lt;&lt;set _value to &quot;Worth every goddamn centimo.&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -622,7 +627,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Pain Threshold&quot; &quot;Heroic&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot; He&#39;s not being gentle. At all. The pull of the tie was a whip second of breathlessness, which he&#39;s now fully taken advantage of. He&#39;s kissing //hard//, all force; his mouth melts into yours, demanding surrender with every insistent, spit-slicked movement.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;And what does he taste like?&quot; &quot;Taste&quot;&gt;&gt;[[|Taste]]</tw-passagedata><tw-passagedata pid="32" name="Taste" tags="nobr" position="1100,1250" size="100,100">&lt;&lt;if $drink is &quot;cocktail&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;And what does he taste like?&quot; &quot;Taste&quot;&gt;&gt;[[|Taste]]</tw-passagedata><tw-passagedata pid="33" name="Taste" tags="nobr" position="1100,1250" size="100,100">&lt;&lt;if $drink is &quot;cocktail&quot;&gt;&gt;
 &lt;&lt;set _perception to &quot;Caramel-tinged fire. A blend of spices in counterpoint.&quot;&gt;&gt;
 &lt;&lt;set _conceptualization to &quot;They&#39;d go together brilliantly, though, emphasizing the smell of wood with literal smoke.&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -642,7 +647,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot; &quot;Trivial&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;But at //this// particular moment, he&#39;s enjoying a Harrier, and not complaining one bit.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;And how does it feel?&quot; &quot;Control&quot;&gt;&gt;[[|Control]]</tw-passagedata><tw-passagedata pid="33" name="Control" tags="nobr" position="1100,1400" size="100,100">&lt;&lt;PassiveSkill &quot;PHYSICAL INSTRUMENT&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;And how does it feel?&quot; &quot;Control&quot;&gt;&gt;[[|Control]]</tw-passagedata><tw-passagedata pid="34" name="Control" tags="nobr" position="1100,1400" size="100,100">&lt;&lt;PassiveSkill &quot;PHYSICAL INSTRUMENT&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Kim is holding you fiercely - one hand on the back of your neck, the other gripping your shoulder. He&#39;s stronger than he looks.&quot;&gt;&gt; 
 
 &lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot;&gt;&gt;
@@ -654,7 +659,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;EMPATHY&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Through the booze, he kisses you with a remarkably focused intention. He&#39;s wanted this for a while.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;PERCEPTION (Sound): \[Challenging: Success\] Someone coughs loudly off to the side.&quot; &quot;ClosingTime&quot;&gt;&gt;[[|ClosingTime]]</tw-passagedata><tw-passagedata pid="34" name="ClosingTime" tags="nobr" position="1100,1550" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Perception (Hearing): \[Challenging: Success\] Someone coughs loudly off to the side.&quot; &quot;ClosingTime&quot;&gt;&gt;[[|ClosingTime]]</tw-passagedata><tw-passagedata pid="35" name="ClosingTime" tags="nobr" position="1100,1550" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He pulls away, looking a bit abashed, and turns to the side where you&#39;d heard the cough. \&quot;Khm.\&quot;&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot;&gt;&gt;
@@ -669,18 +674,18 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddOption &quot;\[Composure - Medium 10\] Let Kim get up by himself. \&quot;After you, Kim.\&quot;&quot; &quot;AfterYou&quot;&gt;&gt;[[|AfterYou]]
 &lt;&lt;AddOption &quot;\[Physical Instrument - Challenging 12\] Get up.&quot; &quot;UpYourself&quot;&gt;&gt;[[|UpYourself]]
 &lt;&lt;AddOption &quot;\[Empathy - Formidable 13\] Help Kim up. Offer a hand.&quot; &quot;OfferHand&quot;&gt;&gt;[[|OfferHand]]
-&lt;&lt;AddOption &quot;Wait to see what Kim does.&quot; &quot;Wait&quot;&gt;&gt;[[|Wait]]</tw-passagedata><tw-passagedata pid="35" name="LetHim" tags="nobr" position="1100,1700" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Wait to see what Kim does.&quot; &quot;Wait&quot;&gt;&gt;[[|Wait]]</tw-passagedata><tw-passagedata pid="36" name="LetHim" tags="nobr" position="1100,1700" size="100,100">&lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You take it, let him pull you up - &quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He wasn&#39;t quite expecting the fullness of your weight. Now you&#39;re up, but crushed against him, bodies pressing together.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;//Oh.//&quot; &quot;AssGrab&quot;&gt;&gt;[[|AssGrab]]</tw-passagedata><tw-passagedata pid="36" name="AfterYou" tags="nobr" position="800,1700" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
+&lt;&lt;AddOption &quot;//Oh.//&quot; &quot;AssGrab&quot;&gt;&gt;[[|AssGrab]]</tw-passagedata><tw-passagedata pid="37" name="AfterYou" tags="nobr" position="800,1700" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Kim gets up smoothly, holding a hand out to you.&quot;&gt;&gt;
 
-&lt;&lt;include &quot;LetHim&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="UpYourself" tags="nobr" position="950,1700" size="100,100">&lt;&lt;SkillFailure&gt;&gt;
+&lt;&lt;include &quot;LetHim&quot;&gt;&gt;[[|LetHim]]</tw-passagedata><tw-passagedata pid="38" name="UpYourself" tags="nobr" position="950,1700" size="100,100">&lt;&lt;SkillFailure&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You try to get up from the booth, but your legs wobble too much to be trustworthy.&quot;&gt;&gt;
@@ -688,15 +693,15 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Kim is already upright, holding a hand out to you. &quot;&gt;&gt;
 
-&lt;&lt;include &quot;LetHim&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="OfferHand" tags="nobr" position="1250,1700" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
+&lt;&lt;include &quot;LetHim&quot;&gt;&gt;[[|LetHim]]</tw-passagedata><tw-passagedata pid="39" name="OfferHand" tags="nobr" position="1250,1700" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He gets up smoothly, then shifts the weight, turning it into offering //his// hand for //you//.&quot;&gt;&gt;
 
-&lt;&lt;include &quot;LetHim&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="Wait" tags="nobr" position="1400,1700" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;include &quot;LetHim&quot;&gt;&gt;[[|LetHim]]</tw-passagedata><tw-passagedata pid="40" name="Wait" tags="nobr" position="1400,1700" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Kim gets up smoothly, holding a hand out to you.&quot;&gt;&gt;
 
-&lt;&lt;include &quot;LetHim&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="AssGrab" tags="nobr" position="1100,1850" size="100,100">&lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot;&gt;&gt;
+&lt;&lt;include &quot;LetHim&quot;&gt;&gt;[[|LetHim]]</tw-passagedata><tw-passagedata pid="41" name="AssGrab" tags="nobr" position="1100,1850" size="100,100">&lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Why, //hello// there - &quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
@@ -713,7 +718,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Your body is so distracted by his left hand that you do not even notice his face buried in the crook of your neck, until he starts talking; a warm, wet murmur against sensitive skin. \&quot;My place or yours?\&quot;&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;ELECTROCHEMISTRY: Holy. Fuck. Did he really just ask that?&quot; &quot;NewApartment&quot;&gt;&gt;[[|NewApartment]]</tw-passagedata><tw-passagedata pid="41" name="NewApartment" tags="nobr" position="1100,2000" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&#39;S NEW APARTMENT&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;ELECTROCHEMISTRY: Holy. Fuck. Did he really just ask that?&quot; &quot;NewApartment&quot;&gt;&gt;[[|NewApartment]]</tw-passagedata><tw-passagedata pid="42" name="NewApartment" tags="nobr" position="1100,2000" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&#39;S NEW APARTMENT&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Kim moved to Jamrock two weeks ago. The transfer process was so slow - weeks upon weeks of waiting for paperwork to pass between the precincts and the Moralintern - that you were able to spend your evenings helping him move. His place isn&#39;t far - certainly closer than his old place, deep in Precinct 57 territory - but yours is closer by a few blocks.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;ESPRIT DE CORPS&quot;&gt;&gt;
@@ -724,11 +729,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 
 &lt;&lt;AddOption &quot;\&quot;My place, it&#39;s closer.\&quot;&quot; &quot;HarryApartment1&quot;&gt;&gt;[[|HarryApartment1]]
 &lt;&lt;AddOption &quot;\&quot;Your place, it&#39;s cleaner.\&quot;&quot; &quot;KimApartment1&quot;&gt;&gt;[[|KimApartment1]]
-&lt;&lt;AddOption &quot;\&quot;Which do you want?\&quot;&quot; &quot;IndecisiveAgain&quot;&gt;&gt;[[|IndecisiveAgain]]</tw-passagedata><tw-passagedata pid="42" name="ECKnows" tags="nobr" position="1100,2150" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot; &quot;Trivial&quot; &quot;Success&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;That hand has not left your ass, by the way.&quot;&gt;&gt;
-
-&lt;&lt;AddOption &quot;\[Electrochemistry - Trivial 7\] Wiggle your ass a bit.&quot; &quot;ButtWiggle&quot;&gt;&gt;[[|ButtWiggle]]
-&lt;&lt;AddOption &quot;\[Pain Threshold - Legendary 14\] Grab //his// ass.&quot; &quot;firmlygrasp&quot;&gt;&gt;[[|firmlygrasp]]</tw-passagedata><tw-passagedata pid="43" name="HarryApartment1" tags="nobr" position="800,2150" size="100,100">&lt;&lt;set $apartment to &quot;Harry&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Which do you want?\&quot;&quot; &quot;IndecisiveAgain&quot;&gt;&gt;[[|IndecisiveAgain]]</tw-passagedata><tw-passagedata pid="43" name="HarryApartment1" tags="nobr" position="800,2150" size="100,100">&lt;&lt;set $apartment to &quot;Harry&quot;&gt;&gt;
 
 &lt;&lt;NewTask &quot;Take Kim home&quot;&gt;&gt;
 
@@ -741,7 +742,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Authority&quot; &quot;Legendary&quot; &quot;Failure&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;That seemed almost too easy, to convince him to come to your filthy hovel. But why?&quot;&gt;&gt;
 
-&lt;&lt;include &quot;ECKnows&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="IndecisiveAgain" tags="nobr" position="1250,2150" size="100,100">&lt;&lt;set $apartment to &quot;Kim&quot;&gt;&gt;
+&lt;&lt;include &quot;ECKnows&quot;&gt;&gt;[[|ECKnows]]</tw-passagedata><tw-passagedata pid="44" name="IndecisiveAgain" tags="nobr" position="1250,2150" size="100,100">&lt;&lt;set $apartment to &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set $decision to &quot;aggressive&quot;&gt;&gt;
 
 &lt;&lt;if $drink is &quot;cocktail&quot;&gt;&gt;
@@ -761,7 +762,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Logic&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;If he&#39;s suggesting it, he should have the eight reál to cover it. _cash&quot;&gt;&gt;
 
-&lt;&lt;include &quot;ECKnows&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="KimApartment1" tags="nobr" position="1400,2150" size="100,100">&lt;&lt;set $apartment to &quot;Kim&quot;&gt;&gt;
+&lt;&lt;include &quot;ECKnows&quot;&gt;&gt;[[|ECKnows]]</tw-passagedata><tw-passagedata pid="45" name="KimApartment1" tags="nobr" position="1400,2150" size="100,100">&lt;&lt;set $apartment to &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set $decison to &quot;passive&quot;&gt;&gt;
 
 &lt;&lt;if $drink is &quot;cocktail&quot;&gt;&gt;
@@ -781,7 +782,21 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Logic&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;It should be about eight reál to cover it. _cash&quot;&gt;&gt;
 
-&lt;&lt;include &quot;ECKnows&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="Smack" tags="nobr" position="1100,2300" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;include &quot;ECKnows&quot;&gt;&gt;[[|ECKnows]]</tw-passagedata><tw-passagedata pid="46" name="ECKnows" tags="nobr" position="1100,2150" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot; &quot;Trivial&quot; &quot;Success&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;That hand has not left your ass, by the way.&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;\[Electrochemistry - Trivial 7\] Wiggle your ass a bit.&quot; &quot;ButtWiggle&quot;&gt;&gt;[[|ButtWiggle]]
+&lt;&lt;AddOption &quot;\[Pain Threshold - Legendary 14\] Grab //his// ass.&quot; &quot;firmlygrasp&quot;&gt;&gt;[[|firmlygrasp]]</tw-passagedata><tw-passagedata pid="47" name="ButtWiggle" tags="nobr" position="900,2300" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;You twist your hips a bit, just enough motion. There&#39;s a look of surprise on his face, that quickly morphs into a devilish grin, and -&quot;&gt;&gt;
+
+&lt;&lt;include &quot;Smack&quot;&gt;&gt;[[|Smack]]</tw-passagedata><tw-passagedata pid="48" name="firmlygrasp" tags="nobr" position="1300,2300" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;You reach over and grasp him, a body you have been wanting for so long now but never let yourself hope for. There&#39;s a look of surprise on his face, that quickly morphs into a devilish grin, and -&quot;&gt;&gt;
+
+&lt;&lt;include &quot;Smack&quot;&gt;&gt;[[|Smack]]</tw-passagedata><tw-passagedata pid="49" name="Smack" tags="nobr" position="1100,2300" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set _letsgo to &quot;Let&#39;s get that cab.&quot;&gt;&gt;
 &lt;&lt;set _destination to &quot;the bar to use the phone.&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -801,17 +816,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He untangles from you, still wearing that grin. \&quot;I hope there will be more of that later,\&quot; he says, and heads to _destination&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;You shuffle behind him, slowly feeling your legs regain sensation.&quot; &quot;Taxonomy1&quot;&gt;&gt;[[|Taxonomy1]]</tw-passagedata><tw-passagedata pid="47" name="ButtWiggle" tags="nobr" position="900,2300" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
-
-&lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;You twist your hips a bit, just enough motion. There&#39;s a look of surprise on his face, that quickly morphs into a devilish grin, and -&quot;&gt;&gt;
-
-&lt;&lt;include &quot;Smack&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="firmlygrasp" tags="nobr" position="1300,2300" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
-
-&lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;You reach over and grasp him, a body you have been wanting for so long now but never let yourself hope for. There&#39;s a look of surprise on his face, that quickly morphs into a devilish grin, and -&quot;&gt;&gt;
-
-&lt;&lt;include &quot;Smack&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="Taxonomy1" tags="nobr" position="1100,2450" size="100,100">&lt;&lt;PassiveSkill &quot;Rhetoric&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;You shuffle behind him, slowly feeling your legs regain sensation.&quot; &quot;Taxonomy1&quot;&gt;&gt;[[|Taxonomy1]]</tw-passagedata><tw-passagedata pid="50" name="Taxonomy1" tags="nobr" position="1100,2450" size="100,100">&lt;&lt;PassiveSkill &quot;Rhetoric&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Along with Copotypes, there are Drunkotypes. Like Copotypes, they overlap.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
@@ -826,7 +831,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;//Horny// drunk.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;RHETORIC: And probably many more, that you are thankful Kim is not.&quot; &quot;Taxonomy2&quot;&gt;&gt;[[|Taxonomy2]]</tw-passagedata><tw-passagedata pid="50" name="Taxonomy2" tags="nobr" position="1100,2600" size="100,100">&lt;&lt;PassiveSkill &quot;Physical Instrument&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;RHETORIC: And probably many more, that you are thankful Kim is not.&quot; &quot;Taxonomy2&quot;&gt;&gt;[[|Taxonomy2]]</tw-passagedata><tw-passagedata pid="51" name="Taxonomy2" tags="nobr" position="1100,2600" size="100,100">&lt;&lt;PassiveSkill &quot;Physical Instrument&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Angry drunk.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Endurance&quot;&gt;&gt;
@@ -852,7 +857,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddOption &quot;Let&#39;s get out on the street.&quot; &quot;WalkSequence1&quot;&gt;&gt;[[|WalkSequence1]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;AddOption &quot;COUPRIS MARK 40: The cab arrives quickly enough - a Coupris Mark 40, in sleek black.&quot; &quot;CabSequence1&quot;&gt;&gt;[[|CabSequence1]]
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="CabSequence1" tags="nobr" position="1300,2750" size="100,100">&lt;&lt;PassiveSkill &quot;INTERFACING&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="CabSequence1" tags="nobr" position="1300,2750" size="100,100">&lt;&lt;PassiveSkill &quot;INTERFACING&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You see the subtle look of approval on Kim&#39;s face - the MC is well maintained.&quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
@@ -873,7 +878,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You careen into the cab; your left hip shoves into Kim&#39;s right, the force recoiling through you. The end of your coat almost gets stuck in the cab door as you slam it quickly behind you.&quot;&gt;&gt; 
 
-&lt;&lt;AddOption &quot;The cab driver does not look amused.&quot; &quot;CabSequence2&quot;&gt;&gt;[[|CabSequence2]]</tw-passagedata><tw-passagedata pid="52" name="CabSequence2" tags="nobr" position="1300,2900" size="100,100">&lt;&lt;SetSpeaker &quot;UNAMUSED CAB DRIVER&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;The cab driver does not look amused.&quot; &quot;CabSequence2&quot;&gt;&gt;[[|CabSequence2]]</tw-passagedata><tw-passagedata pid="53" name="CabSequence2" tags="nobr" position="1300,2900" size="100,100">&lt;&lt;SetSpeaker &quot;UNAMUSED CAB DRIVER&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The driver was //not// expecting two //RCM officers// to leave this particular bar, but is attempting to be nonplussed about it. Regardless of the bar&#39;s underground affiliation, they&#39;re still expecting what normally happens when a pair of cops leave a dive bar late on a Friday - banter, insults, railing complaints about the city and its ungrateful citizenry. They grimace and begin to drive. &quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
@@ -888,7 +893,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;His hand is //centimeters// away from where it should be, and then just. Leaves. The fucking tease.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;KIM KITSURAGI: His chin is on your shoulder; he&#39;s whispering in your ear.&quot; &quot;Secret2&quot;&gt;&gt;[[|Secret2]]</tw-passagedata><tw-passagedata pid="53" name="WalkSequence1" tags="nobr" position="900,2750" size="100,100">&lt;&lt;if $drink is &quot;cocktail&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;KIM KITSURAGI: His chin is on your shoulder; he&#39;s whispering in your ear.&quot; &quot;Secret2&quot;&gt;&gt;[[|Secret2]]</tw-passagedata><tw-passagedata pid="54" name="WalkSequence1" tags="nobr" position="900,2750" size="100,100">&lt;&lt;if $drink is &quot;cocktail&quot;&gt;&gt;
 &lt;&lt;set _queer to &quot;queer&quot;&gt;&gt;
 &lt;&lt;set _teeth to &quot;bright teeth&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -914,7 +919,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Half Light&quot; &quot;Formidable&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;I stand corrected. The city should be afraid of him, not the other way around.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;KIM KITSURAGI: His chin is on your shoulder; he&#39;s whispering in your ear.&quot; &quot;Secret2&quot;&gt;&gt;[[|Secret2]]</tw-passagedata><tw-passagedata pid="54" name="Secret2" tags="nobr" position="1100,3050" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;KIM KITSURAGI: His chin is on your shoulder; he&#39;s whispering in your ear.&quot; &quot;Secret2&quot;&gt;&gt;[[|Secret2]]</tw-passagedata><tw-passagedata pid="55" name="Secret2" tags="nobr" position="1100,3050" size="100,100">&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;It&#39;s interesting, isn&#39;t it? When we met, one of the first things you asked me for is a secret, and I didn&#39;t budge. You ask a few times during THE HANGED MAN; I never give. But in all these weeks since, helping me move furniture across Revachol and get through the local bureaucracy, you don&#39;t even think to ask. What changed? Why did you stop asking?\&quot;&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;CONCEPTUALIZATION&quot; &quot;Legendary&quot; &quot;Success&quot;&gt;&gt;
@@ -936,21 +941,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddOption &quot;\[Electrochemistry - Trivial 7\] Ask him to put his hand somewhere else.&quot; &quot;Handsy&quot;&gt;&gt;[[|Handsy]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;AddOption &quot;\[Electrochemistry - Trivial 7\] Just kiss him already!&quot; &quot;Dip?&quot;&gt;&gt;[[|Dip?]]
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="KimLaughter" tags="nobr" position="1100,3200" size="100,100">&lt;&lt;PassiveSkill &quot;CONCEPTUALIZATION&quot;&gt;&gt;
-&lt;&lt;if $laughDespiteNoise is true&gt;&gt;
-&lt;&lt;AddParagraph &quot;And yet, the heavens open -&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;AddParagraph &quot;And at this point, the heavens open -&quot;&gt;&gt;
-&lt;&lt;endif&gt;&gt;
-
-&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
-&lt;&lt;if $position is &quot;dip&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;Kim is //laughing//. Heartily. You can practically feel his body shaking in your arms as he does. It is only a little at your expense, but still - it is //wonderful//.&quot;&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;AddParagraph &quot;Kim is //laughing//. Heartily. Joyfully. It is only a little at your expense, but still - it is //wonderful//.&quot;&gt;&gt;
-&lt;&lt;endif&gt;&gt;
-
-&lt;&lt;AddOption &quot;ELECTROCHEMISTRY: &#39;&#39;NOW!&#39;&#39;&quot; &quot;SecondKiss&quot;&gt;&gt;[[|SecondKiss]]</tw-passagedata><tw-passagedata pid="56" name="Dip?" tags="nobr" position="800,3200" size="100,100">&lt;&lt;set $position to &quot;dip&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="Dip?" tags="nobr" position="800,3200" size="100,100">&lt;&lt;set $position to &quot;dip&quot;&gt;&gt;
 
 &lt;&lt;SkillSuccess&gt;&gt;
 
@@ -966,7 +957,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Visual Calculus&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Wait, one moment before you fuck this up completely. Tilt your pelvis down three degrees and move your arm just so and - //there!//&quot;&gt;&gt;
 
-&lt;&lt;include &quot;KimLaughter&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="AskPermission" tags="nobr" position="950,3200" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;include &quot;KimLaughter&quot;&gt;&gt;[[|KimLaughter]]</tw-passagedata><tw-passagedata pid="57" name="AskPermission" tags="nobr" position="950,3200" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set $position to &quot;sit&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set $position to &quot;stand&quot;&gt;&gt;
@@ -977,7 +968,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The words come out of your mouth before you can even think about what they are. \&quot;So does that mean I can open your can, Kim?\&quot;&quot;&gt;&gt;
 
-&lt;&lt;include &quot;KimLaughter&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="58" name="AskDirectly" tags="nobr" position="1250,3200" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;include &quot;KimLaughter&quot;&gt;&gt;[[|KimLaughter]]</tw-passagedata><tw-passagedata pid="58" name="AskDirectly" tags="nobr" position="1250,3200" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set $position to &quot;sit&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set $position to &quot;stand&quot;&gt;&gt;
@@ -988,7 +979,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;YOU&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The words come out of your mouth before you can even think about what they are. \&quot;Pleaaaaaaaaaase tell me?? Pretty please??\&quot;&quot;&gt;&gt;
 
-&lt;&lt;include &quot;KimLaughter&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="59" name="Handsy" tags="nobr" position="1400,3200" size="100,100">&lt;&lt;set $position to &quot;sit&quot;&gt;&gt;
+&lt;&lt;include &quot;KimLaughter&quot;&gt;&gt;[[|KimLaughter]]</tw-passagedata><tw-passagedata pid="59" name="Handsy" tags="nobr" position="1400,3200" size="100,100">&lt;&lt;set $position to &quot;sit&quot;&gt;&gt;
 &lt;&lt;set $laughDespiteNoise to true&gt;&gt;
 
 &lt;&lt;SkillFailure&gt;&gt;
@@ -999,7 +990,21 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Reaction Speed&quot; &quot;Medium&quot; &quot;Failure&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Damn, not cool, dude, what were you thinking? You&#39;re gonna freak him out!&quot;&gt;&gt;
 
-&lt;&lt;include &quot;KimLaughter&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="60" name="SecondKiss" tags="nobr" position="1100,3350" size="100,100">&lt;&lt;if $position is &quot;sit&quot;&gt;&gt;
+&lt;&lt;include &quot;KimLaughter&quot;&gt;&gt;[[|KimLaughter]]</tw-passagedata><tw-passagedata pid="60" name="KimLaughter" tags="nobr" position="1100,3200" size="100,100">&lt;&lt;PassiveSkill &quot;CONCEPTUALIZATION&quot;&gt;&gt;
+&lt;&lt;if $laughDespiteNoise is true&gt;&gt;
+&lt;&lt;AddParagraph &quot;And yet, the heavens open -&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;AddParagraph &quot;And at this point, the heavens open -&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;KIM KITSURAGI&quot;&gt;&gt;
+&lt;&lt;if $position is &quot;dip&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Kim is //laughing//. Heartily. You can practically feel his body shaking in your arms as he does. It is only a little at your expense, but still - it is //wonderful//.&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;AddParagraph &quot;Kim is //laughing//. Heartily. Joyfully. It is only a little at your expense, but still - it is //wonderful//.&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;
+
+&lt;&lt;AddOption &quot;ELECTROCHEMISTRY: &#39;&#39;NOW!&#39;&#39;&quot; &quot;SecondKiss&quot;&gt;&gt;[[|SecondKiss]]</tw-passagedata><tw-passagedata pid="61" name="SecondKiss" tags="nobr" position="1100,3350" size="100,100">&lt;&lt;if $position is &quot;sit&quot;&gt;&gt;
 &lt;&lt;set _youmove to &quot;lean over and thread a hand through his hair&quot;&gt;&gt;
 &lt;&lt;elseif $position is &quot;stand&quot;&gt;&gt;
 &lt;&lt;set _youmove to &quot;turn to face him and thread a hand through his hair&quot;&gt;&gt;
@@ -1026,7 +1031,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddOption &quot;UNAMUSED CAB DRIVER - At this point, tragicomically, the cab comes to a full stop.&quot; &quot;CabSequence3&quot;&gt;&gt;[[|CabSequence3]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;AddOption &quot;ELECTROCHEMISTRY - You want to make this last forever. No, scratch that - you want to get down and party with Kim, //right now//, here in the middle of the street.&quot; &quot;WalkSequence2&quot;&gt;&gt;[[|WalkSequence2]]
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="61" name="CabSequence3" tags="nobr" position="1300,3500" size="100,100">&lt;&lt;if $decision is &quot;aggressive&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="62" name="CabSequence3" tags="nobr" position="1300,3500" size="100,100">&lt;&lt;if $decision is &quot;aggressive&quot;&gt;&gt;
 &lt;&lt;set _taking to &quot;asking to take&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _taking to &quot;taking&quot;&gt;&gt;
@@ -1072,7 +1077,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Empathy&quot; &quot;Heroic&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;_empath Let&#39;s hope you can keep this up.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;ENCYCLOPEDIA: Also, 12 reál is the cost for a board game of Suzerainty.&quot; &quot;CabSequence4&quot;&gt;&gt;[[|CabSequence4]]</tw-passagedata><tw-passagedata pid="62" name="CabSequence4" tags="nobr" position="1300,3650" size="100,100">&lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;ENCYCLOPEDIA: Also, 12 reál is the cost for a board game of Suzerainty.&quot; &quot;CabSequence4&quot;&gt;&gt;[[|CabSequence4]]</tw-passagedata><tw-passagedata pid="63" name="CabSequence4" tags="nobr" position="1300,3650" size="100,100">&lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Which is probably the first time you&#39;d really noticed how he //really// is, underneath the professional face. The way he takes on challenges, his competitive streak, that tinge of vanity.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
@@ -1081,7 +1086,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He hops out of the cab, and extends a hand to you - the apartment&#39;s on his side of the street.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;You take his hand, gratefully, and get out as well.&quot; &quot;ApartmentEntrance&quot;&gt;&gt;[[|ApartmentEntrance]]</tw-passagedata><tw-passagedata pid="63" name="WalkSequence2" tags="nobr" position="900,3500" size="100,100">&lt;&lt;if $position is &quot;dip&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;You take his hand, gratefully, and get out as well.&quot; &quot;ApartmentEntrance&quot;&gt;&gt;[[|ApartmentEntrance]]</tw-passagedata><tw-passagedata pid="64" name="WalkSequence2" tags="nobr" position="900,3500" size="100,100">&lt;&lt;if $position is &quot;dip&quot;&gt;&gt;
 &lt;&lt;set _hesinto to &quot;He&#39;s into&quot;&gt;&gt;
 &lt;&lt;set _asyoudo to &quot;as you hold him up.&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -1101,7 +1106,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Endurance&quot; &quot;Easy&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You&#39;d have to make him let go of your arms first, though. He&#39;s holding onto you with a vice-like grip. _hesinto how strong you are, _asyoudo&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;SHIVERS [Trivial: Success] - At this point, tragicomically, a LUM Fevre speeds past you, splashing an impressive amount of water over the both of you. La Révacholière wants her cops safely home, come hell or literal high water.&quot; &quot;WalkSequence3&quot;&gt;&gt;[[|WalkSequence3]]</tw-passagedata><tw-passagedata pid="64" name="WalkSequence3" tags="nobr" position="900,3650" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;SHIVERS [Trivial: Success] - At this point, tragicomically, a LUM Fevre speeds past you, splashing an impressive amount of water over the both of you. La Révacholière wants her cops safely home, come hell or literal high water.&quot; &quot;WalkSequence3&quot;&gt;&gt;[[|WalkSequence3]]</tw-passagedata><tw-passagedata pid="65" name="WalkSequence3" tags="nobr" position="900,3650" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The sudden rush of cold water makes Kim pull away. He&#39;s now thoroughly soaked.&quot;&gt;&gt;
 
 &lt;&lt;if $position is &quot;dip&quot;&gt;&gt;
@@ -1125,9 +1130,21 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;He shoves one hand in the pocket of the cloak - you hear him find your keys - and offers his other hand to you. \&quot;Shall we get going then?\&quot;&quot;&gt;&gt;
 
 &lt;&lt;AddOption &quot;PHYSICAL INSTRUMENT [Formidable 13] \&quot;Actually, I have a better idea...\&quot; Pull him into the alley.&quot; &quot;Alley1&quot;&gt;&gt;[[|Alley1]]
-&lt;&lt;AddOption &quot;VOLITION [Godly 16] \&quot;Yes, let&#39;s get going.\&quot; Go to your apartment.&quot; &quot;ApartmentEntrance&quot;&gt;&gt;[[|ApartmentEntrance]]</tw-passagedata><tw-passagedata pid="65" name="Alley1" tags="nobr" position="900,3800" size="100,100">&lt;&lt;set $alley to true&gt;&gt;
+&lt;&lt;AddOption &quot;VOLITION [Godly 16] \&quot;Yes, let&#39;s get going.\&quot; Go to your apartment.&quot; &quot;ApartmentEntrance&quot;&gt;&gt;[[|ApartmentEntrance]]</tw-passagedata><tw-passagedata pid="66" name="Alley1" tags="nobr" position="900,3800" size="100,100">&lt;&lt;set $alley to true&gt;&gt;
 
-/* Grace, this part is for you! Start the alley sequence here. */
+&lt;&lt;SkillSuccess&gt;&gt; 
+
+&lt;&lt;PassiveSkill &quot;PAIN THRESHOLD&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;Ow...&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;Ow!!&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;PHYSICAL INSTRUMENT&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;His body, smaller than yours and thinner too is surprisingly strong. All Kim’s movements are so graceful and considered you hadn’t imagined there’d be power there.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;PERCEPTION (touch)&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;His tongue is in your mouth, his glasses bump up on your cheek. It’s amazing that you’re soaking wet in an alley and all Kim’s attention stays glued on you. Not on the dampness of your clothes or the foul smell of the street but you, officer.&quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Kim’s painfully precise hands grab your belt, firm, steady, confident.&quot;&gt;&gt;
@@ -1135,7 +1152,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt; /* not sure about this but i think it&#39;s okay */
 &lt;&lt;AddParagraph &quot;You ready for this, cowboy? To get your dick out here in the rain?&quot;&gt;&gt;
 
-&lt;&lt;PassiveSkill &quot;Perception (Touch)&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Wait, what? Is this really safe?&quot; AlleyShivers&gt;&gt;[[|AlleyShivers]]</tw-passagedata><tw-passagedata pid="67" name="AlleyShivers" tags="nobr" position="900,3950" size="100,100">&lt;&lt;PassiveSkill &quot;Perception (Touch)&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The metal of your belt buckle briefly brushes against exposed skin -&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Shivers&quot;&gt;&gt;
@@ -1144,10 +1161,14 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;YOU&#39;VE MADE YOUR CHOICE, MY OFFICERS. YOU KEEP ME SAFE AND LOVE ME - I LOVE YOU AND I&#39;LL KEEP YOU SAFE. BUT IT&#39;S YOUR FUNERAL IF YOU CATCH A COLD FROM YOUR DECADENCE.&quot;&gt;&gt;
 
 /* this brings it back to the &quot;know my secret&quot; thing. */
-&lt;&lt;include &quot;Ready&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="ApartmentEntrance" tags="nobr" position="1200,3800" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;include &quot;Ready&quot;&gt;&gt;[[|Ready]]</tw-passagedata><tw-passagedata pid="68" name="ApartmentEntrance" tags="nobr" position="1200,3800" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set _now to &quot;now&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _now to &quot;once again&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;
+
+&lt;&lt;if $apartment is &quot;Harry&quot;&gt;&gt;
+&lt;&lt;SkillSuccess&gt;&gt; 
 &lt;&lt;endif&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot; &quot;Heroic&quot; &quot;Success&quot;&gt;&gt;
@@ -1162,7 +1183,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Physical Instrument&quot; &quot;Formidable&quot; &quot;Failure&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The movement makes you stumble forward; now he&#39;s followed through with his gloved hands, shoving you through the doorway. You&#39;re going exactly where he wants you, no more, no less.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;ELECTROCHEMISTRY - Him pushing you around is hot, yes, but you need more. Keep touching him - don&#39;t let go - nothing matters more than the sensation of body against body.&quot; &quot;Hallway&quot;&gt;&gt;[[|Hallway]]</tw-passagedata><tw-passagedata pid="67" name="Hallway" tags="nobr" position="1100,3950" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;ELECTROCHEMISTRY - Him pushing you around is hot, yes, but you need more. Keep touching him - don&#39;t let go - nothing matters more than the sensation of body against body.&quot; &quot;Hallway&quot;&gt;&gt;[[|Hallway]]</tw-passagedata><tw-passagedata pid="69" name="Hallway" tags="nobr" position="1100,3950" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set _you to &quot;You&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _you to &quot;You choke out directions - \&quot;Stairs at the end of the hallway, third floor, apartment J\&quot; - as you&quot;&gt;&gt;
@@ -1178,17 +1199,17 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;Another pretense, my liege. If you disobey, he //will// punish you - but only in ways that you crave.&quot;&gt;&gt;
 
 &lt;&lt;AddOption &quot;\[Volition - Impossible 20\] \&quot;I&#39;m sorry, it won&#39;t happen again.\&quot;&quot; &quot;SorryAndHorny&quot;&gt;&gt;[[|SorryAndHorny]]
-&lt;&lt;AddOption &quot;\[Electrochemistry - Trivial 6\] Grin wolfishly. \&quot;//Not// sorry.\&quot;&quot; &quot;ShamelessAndHorny&quot;&gt;&gt;[[|ShamelessAndHorny]]</tw-passagedata><tw-passagedata pid="68" name="SorryAndHorny" tags="nobr" position="900,4100" size="100,100">&lt;&lt;SkillFailure&gt;&gt;
+&lt;&lt;AddOption &quot;\[Electrochemistry - Trivial 6\] Grin wolfishly. \&quot;//Not// sorry.\&quot;&quot; &quot;ShamelessAndHorny&quot;&gt;&gt;[[|ShamelessAndHorny]]</tw-passagedata><tw-passagedata pid="70" name="SorryAndHorny" tags="nobr" position="900,4100" size="100,100">&lt;&lt;SkillFailure&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Drama&quot; &quot;Easy&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Kim catches your lie easy as anything.&quot;&gt;&gt;
 
-&lt;&lt;include &quot;AssGrab2&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="ShamelessAndHorny" tags="nobr" position="1300,4100" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
+&lt;&lt;include &quot;AssGrab2&quot;&gt;&gt;[[|AssGrab2]]</tw-passagedata><tw-passagedata pid="71" name="ShamelessAndHorny" tags="nobr" position="1300,4100" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;I bet you&#39;re not - you&#39;re //shameless//, aren&#39;t you?\&quot;&quot;&gt;&gt;
 
-&lt;&lt;include &quot;AssGrab2&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="AssGrab2" tags="nobr" position="1100,4100" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;include &quot;AssGrab2&quot;&gt;&gt;[[|AssGrab2]]</tw-passagedata><tw-passagedata pid="72" name="AssGrab2" tags="nobr" position="1100,4100" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set _notworried to &quot;I don&#39;t have the kind of neighbors who would care.&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _notworried to &quot;I already told you, no one fucks with Kim Kitsuragi.&quot;&gt;&gt;
@@ -1214,7 +1235,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;Last Friday night, from 9 PM to 2 AM, you were kept awake by the sounds of apartment 3K&#39;s semi-regular house party, which features the latest in anodic dance music and quite //possibly// an orgy. No one is actually going to care about the sound of a single ass slap, even if it flusters you a bit to think of your fellow tenants knowing about your tastes in masochism.&quot;&gt;&gt;
 &lt;&lt;endif&gt;&gt;
 
-&lt;&lt;AddOption &quot;You scramble up the stairs to catch up.&quot; &quot;Keys&quot;&gt;&gt;[[|Keys]]</tw-passagedata><tw-passagedata pid="71" name="Keys" tags="nobr" position="1100,4250" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;You scramble up the stairs to catch up.&quot; &quot;Keys&quot;&gt;&gt;[[|Keys]]</tw-passagedata><tw-passagedata pid="73" name="Keys" tags="nobr" position="1100,4250" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set _keychain to &quot;The Kineema, two locks for this door, two more you don&#39;t immediately recognize - a safe, and maybe a briefcase?&quot;&gt;&gt;
 &lt;&lt;set _justification to &quot;he surrendered his desk and locker keys at the 57th and has yet to get the equivalents at the 41st.&quot;&gt;&gt;
 &lt;&lt;set _composure to &quot;&quot;&gt;&gt;
@@ -1227,7 +1248,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;By the time you&#39;ve gotten to the right landing, he&#39;s already at the door. There is a single weak, flickering lamp in this part of the hallway, casting long shadows on you both. &quot;&gt;&gt;
 
-&lt;&lt;PassiveSkill &quot;Perception (Sound)&quot; &quot;Legendary&quot; &quot;Success&quot;&gt;&gt;
+&lt;&lt;PassiveSkill &quot;perception (hearing)&quot; &quot;Legendary&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The sound of metal on metal, but small - fumbling with a keychain.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Visual Calculus&quot;&gt;&gt;
@@ -1243,17 +1264,17 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;Regardless, a rare moment: when Lieutenant Kitsuragi isn&#39;t restraining you with a professionally raised eyebrow. Nor is he giving you such an arresting look that your body locks obediently and patiently for him, without him ever lifting a finger. &quot;&gt;&gt;
 
 &lt;&lt;AddOption &quot;\[Volition - Impossible 20\] Wait for him to open the door.&quot; &quot;WaitForDoor&quot;&gt;&gt;[[|WaitForDoor]]
-&lt;&lt;AddOption &quot; \[Electrochemistry - Trivial 6\] Go for the neck.&quot; &quot;NeckForDoor&quot;&gt;&gt;[[|NeckForDoor]]</tw-passagedata><tw-passagedata pid="72" name="WaitForDoor" tags="nobr" position="900,4400" size="100,100">&lt;&lt;SkillFailure&gt;&gt; 
+&lt;&lt;AddOption &quot; \[Electrochemistry - Trivial 6\] Go for the neck.&quot; &quot;NeckForDoor&quot;&gt;&gt;[[|NeckForDoor]]</tw-passagedata><tw-passagedata pid="74" name="WaitForDoor" tags="nobr" position="900,4400" size="100,100">&lt;&lt;SkillFailure&gt;&gt; 
 
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;No way are you going to make me wait. Not this close.&quot;&gt;&gt;
 
-&lt;&lt;include &quot;Bitey&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="NeckForDoor" tags="nobr" position="1400,4400" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
+&lt;&lt;include &quot;Bitey&quot;&gt;&gt;[[|Bitey]]</tw-passagedata><tw-passagedata pid="75" name="NeckForDoor" tags="nobr" position="1400,4400" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Fuck yeah!&quot;&gt;&gt;
 
-&lt;&lt;include &quot;Bitey&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="Bitey" tags="nobr" position="1100,4400" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;include &quot;Bitey&quot;&gt;&gt;[[|Bitey]]</tw-passagedata><tw-passagedata pid="76" name="Bitey" tags="nobr" position="1100,4400" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set _home to &quot;Go to Kim&#39;s place&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _home to &quot;Take Kim home&quot;&gt;&gt;
@@ -1285,7 +1306,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Authority&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Indeed, he seems to know exactly what he wants and is getting it -&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;EMPATHTY - And thank your lucky stars, it&#39;s //you//.&quot; &quot;ToBedroom&quot;&gt;&gt;[[|ToBedroom]]</tw-passagedata><tw-passagedata pid="75" name="ToBedroom" tags="nobr" position="1100,4550" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;EMPATHTY - And thank your lucky stars, it&#39;s //you//.&quot; &quot;ToBedroom&quot;&gt;&gt;[[|ToBedroom]]</tw-passagedata><tw-passagedata pid="77" name="ToBedroom" tags="nobr" position="1100,4550" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set _volition to &quot;so far from the usual precision with which Kim keeps house.&quot;&gt;&gt;
 &lt;&lt;set _conceptualization to &quot;As if instead of cheap vinyl, his floors are white marble, with veins of green and gold. Cold and impersonal, if not for your careless additions to it.&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -1314,7 +1335,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Conceptualization&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;_conceptualization&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;ELECTROCHEMISTRY - Which brings us to the bedroom.&quot; &quot;Bedroom&quot;&gt;&gt;[[|Bedroom]]</tw-passagedata><tw-passagedata pid="76" name="Bedroom" tags="nobr" position="1100,4700" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;ELECTROCHEMISTRY - Which brings us to the bedroom.&quot; &quot;Bedroom&quot;&gt;&gt;[[|Bedroom]]</tw-passagedata><tw-passagedata pid="78" name="Bedroom" tags="nobr" position="1100,4700" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You&#39;re naked and standing at the foot of the bed - and he&#39;s still fully clothed, other than having kicked off his boots near the entrance.&quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
@@ -1324,7 +1345,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;The smile on Kim&#39;s face turns leering, challenging. \&quot;If you want me unclothed so badly, //Detective//, you should //do// something about it.\&quot;&quot;&gt;&gt;
 
 &lt;&lt;AddOption &quot;\[Physical Instrument - Medium 11\] Take control.&quot; &quot;Himbo1&quot;&gt;&gt;[[|Himbo1]]
-&lt;&lt;AddOption &quot;Let Kim take the lead.&quot; &quot;Submissive?&quot;&gt;&gt;[[|Submissive?]]</tw-passagedata><tw-passagedata pid="77" name="Himbo1" tags="nobr" position="900,4850" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
+&lt;&lt;AddOption &quot;Let Kim take the lead.&quot; &quot;Submissive?&quot;&gt;&gt;[[|Submissive?]]</tw-passagedata><tw-passagedata pid="79" name="Himbo1" tags="nobr" position="900,4850" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You&#39;ve been wanting him so long - so //hungry// -&quot;&gt;&gt;
@@ -1337,10 +1358,10 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Physical Instrument&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Your hands move quickly, confidently, undoing his belt and fly, shoving down pants and boxers deftly. &quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;And how is he reacting?&quot; &quot;Himbo2&quot;&gt;&gt;[[|Himbo2]]</tw-passagedata><tw-passagedata pid="78" name="Himbo2" tags="nobr" position="900,5000" size="100,100">&lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;And how is he reacting?&quot; &quot;Himbo2&quot;&gt;&gt;[[|Himbo2]]</tw-passagedata><tw-passagedata pid="80" name="Himbo2" tags="nobr" position="900,5000" size="100,100">&lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;A look of surprise in his eyes, turned eager. Ears bright red, a small gasp from his lips. He knew you were capable of this - he saw the destruction at the end of your bender, so long ago now; he&#39;s admired your physique from afar enough - but he is still surprised at the way that you are not a pushover now.&quot;&gt;&gt;
 
-&lt;&lt;include &quot;HotStuff&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="79" name="Submissive?" tags="nobr" position="1400,4850" size="100,100">&lt;&lt;if $drink is &quot;wine&quot;&gt;&gt;
+&lt;&lt;include &quot;HotStuff&quot;&gt;&gt;[[|HotStuff]]</tw-passagedata><tw-passagedata pid="81" name="Submissive?" tags="nobr" position="1400,4850" size="100,100">&lt;&lt;if $drink is &quot;wine&quot;&gt;&gt;
 &lt;&lt;set _control to &quot;thrall&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _control to &quot;control&quot;&gt;&gt;
@@ -1359,8 +1380,8 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;authority&quot; &quot;Godly&quot; &quot;Failure&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;His confidence that you will do as he wishes is absolute - and correct.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;[Interfacing - Medium 6] Remove his glove - //sexily//.&quot; &quot;GloveSuck&quot;&gt;&gt;[[|GloveSuck]]</tw-passagedata><tw-passagedata pid="80" name="GloveSuck" tags="nobr" position="1400,5000" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
-&lt;&lt;PassiveSkill &quot;perception (sound)&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;[Interfacing - Medium 10] Remove his glove - //sexily//.&quot; &quot;GloveSuck&quot;&gt;&gt;[[|GloveSuck]]</tw-passagedata><tw-passagedata pid="82" name="GloveSuck" tags="nobr" position="1400,5000" size="100,100">&lt;&lt;SkillSuccess&gt;&gt;
+&lt;&lt;PassiveSkill &quot;perception (hearing)&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The scrape of your teeth against the pad of Kim&#39;s finger draws out a hitched breath, barely perceptible even in this empty room.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;interfacing&quot;&gt;&gt;
@@ -1371,28 +1392,38 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 
 &lt;&lt;AddParagraph &quot;With a surge of hunger he meets your eyes once again the presses the thumb of his other hand forcefully against your mouth, prompting you to repeat your trick.&quot;&gt;&gt;
 
-/* Grace, this part is for you! This is the submissive Harry taking the clothes off take. I love the sequence above that Pika wrote, but the rest is up to you. Just make sure that at the end you inclde the &quot;HotStuff&quot; passage, which has the choices that come back. */
+/* Grace, this part is for you! This is the submissive Harry taking the clothes off take. I love the sequence above that Pika wrote, but the rest is up to you. Just make sure that at the end you include the &quot;HotStuff&quot; passage, which has the choices that come back. */
 
 &lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;And so it follows with the rest of his clothing - occasionally with your hands, but mostly with your mouth.&quot;&gt;&gt;
 
-&lt;&lt;include &quot;HotStuff&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="81" name="HotStuff" tags="nobr" position="1100,5000" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
+&lt;&lt;include &quot;HotStuff&quot;&gt;&gt;[[|HotStuff]]</tw-passagedata><tw-passagedata pid="83" name="HotStuff" tags="nobr" position="1100,5000" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;So what are you going to do with him now? Where&#39;s this party going, hot stuff?&quot;&gt;&gt;
 
 &lt;&lt;AddOption &quot;\[Physical Instrument - Heroic 15\] Push him onto the bed.&quot; &quot;Pushy&quot;&gt;&gt;[[|Pushy]]
 &lt;&lt;AddOption &quot;\[Electrochemistry - Heroic 15\] Push him down onto his knees.&quot; &quot;Pushy&quot;&gt;&gt;[[|Pushy]]
-&lt;&lt;AddOption &quot;\&quot;So what now?\&quot;&quot; &quot;WhatNow&quot;&gt;&gt;[[|WhatNow]]</tw-passagedata><tw-passagedata pid="82" name="Ready" tags="nobr" position="1100,5150" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;So what now?\&quot;&quot; &quot;WhatNow&quot;&gt;&gt;[[|WhatNow]]</tw-passagedata><tw-passagedata pid="84" name="Pushy" tags="nobr" position="900,5150" size="100,100">&lt;&lt;SkillFailure&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Kim locks his knees to resist your pushing.&quot;&gt;&gt;
+&lt;&lt;include &quot;Ready&quot;&gt;&gt;[[|Ready]]</tw-passagedata><tw-passagedata pid="85" name="WhatNow" tags="nobr" position="1300,5150" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Kim puts a hand on your chest - a moment of warmth - and grins.&quot;&gt;&gt;
+&lt;&lt;include &quot;Ready&quot;&gt;&gt;[[|Ready]]</tw-passagedata><tw-passagedata pid="86" name="Ready" tags="nobr" position="1100,5150" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Wait. Are you ready?\&quot;&quot;&gt;&gt;
 
 &lt;&lt;AddOption &quot;\&quot;Yes.\&quot;&quot; &quot;SecretYes&quot;&gt;&gt;[[|SecretYes]]
 &lt;&lt;AddOption &quot;\&quot;No.\&quot;&quot; &quot;SecretNoHuh&quot;&gt;&gt;[[|SecretNoHuh]]
-&lt;&lt;AddOption &quot;\&quot;Huh?\&quot;&quot; &quot;SecretNoHuh&quot;&gt;&gt;[[|SecretNoHuh]]</tw-passagedata><tw-passagedata pid="83" name="Pushy" tags="nobr" position="900,5150" size="100,100">&lt;&lt;SkillFailure&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Huh?\&quot;&quot; &quot;SecretNoHuh&quot;&gt;&gt;[[|SecretNoHuh]]</tw-passagedata><tw-passagedata pid="87" name="SecretYes" tags="nobr" position="900,5300" size="100,100">&lt;&lt;PassiveSkill &quot;Rhetoric&quot; &quot;Heroic&quot; &quot;Failure&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Do you even know what you&#39;re agreeing to?&quot;&gt;&gt;
 
-&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;Kim locks his knees to resist your pushing.&quot;&gt;&gt;
-&lt;&lt;include &quot;Ready&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="WhatNow" tags="nobr" position="1300,5150" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;Kim puts a hand on your chest - a moment of warmth - and grins.&quot;&gt;&gt;
-&lt;&lt;include &quot;Ready&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="85" name="AgreeToEverything" tags="nobr" position="1100,5300" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;//Everything.//&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Fucking his brains out, obviously. GIMME.&quot;&gt;&gt;
+&lt;&lt;include AgreeToEverything&gt;&gt;[[|AgreeToEverything]]</tw-passagedata><tw-passagedata pid="88" name="SecretNoHuh" tags="nobr" position="1300,5300" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;What? You&#39;re sure ready to fuck his brain out, and that&#39;s what matters here, isn&#39;t it?&quot;&gt;&gt;
+&lt;&lt;include AgreeToEverything&gt;&gt;[[|AgreeToEverything]]</tw-passagedata><tw-passagedata pid="89" name="AgreeToEverything" tags="nobr" position="1100,5300" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;You don&#39;t even remember, do you?\&quot;&quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
@@ -1407,17 +1438,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Volition&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Oh for the love of everything, //please// hold back on your own carnal desire until you know.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;\&quot;Well then by all means, Kim, tell me your secret.\&quot;&quot; &quot;Secret3&quot;&gt;&gt;[[|Secret3]]</tw-passagedata><tw-passagedata pid="86" name="SecretYes" tags="nobr" position="900,5300" size="100,100">&lt;&lt;PassiveSkill &quot;Rhetoric&quot; &quot;Heroic&quot; &quot;Failure&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;Do you even know what you&#39;re agreeing to?&quot;&gt;&gt;
-
-&lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;//Everything.//&quot;&gt;&gt;
-
-&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;Fucking his brains out, obviously. GIMME.&quot;&gt;&gt;
-&lt;&lt;include AgreeToEverything&gt;&gt;</tw-passagedata><tw-passagedata pid="87" name="SecretNoHuh" tags="nobr" position="1300,5300" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;What? You&#39;re sure ready to fuck his brain out, and that&#39;s what matters here, isn&#39;t it?&quot;&gt;&gt;
-&lt;&lt;include AgreeToEverything&gt;&gt;</tw-passagedata><tw-passagedata pid="88" name="Secret3" tags="nobr" position="1100,5450" size="100,100">&lt;&lt;PassiveSkill &quot;Perception (Sound)&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Well then by all means, Kim, tell me your secret.\&quot;&quot; &quot;Secret3&quot;&gt;&gt;[[|Secret3]]</tw-passagedata><tw-passagedata pid="90" name="Secret3" tags="nobr" position="1100,5450" size="100,100">&lt;&lt;PassiveSkill &quot;perception (hearing)&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;A breath, a moment of silence.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Rhetoric&quot;&gt;&gt;
@@ -1435,12 +1456,18 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Secretly loves you?&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;KIM KITSURAGI: For the first time this evening, Kim&#39;s eyebrow is raised.&quot; &quot;Secret4&quot;&gt;&gt;[[|Secret4]]</tw-passagedata><tw-passagedata pid="89" name="Secret4" tags="nobr" position="1100,5600" size="100,100">&lt;&lt;if $alley is true&gt;&gt;
+&lt;&lt;AddOption &quot;KIM KITSURAGI: For the first time this evening, Kim&#39;s eyebrow is raised.&quot; &quot;Secret4&quot;&gt;&gt;[[|Secret4]]</tw-passagedata><tw-passagedata pid="91" name="Secret4" tags="nobr" position="1100,5600" size="100,100">&lt;&lt;if $alley is true&gt;&gt;
 &lt;&lt;set _hard to &quot;half-hard&quot;&gt;&gt;
 &lt;&lt;set _unabashed to &quot;exposed&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _hard to &quot;hard&quot;&gt;&gt;
 &lt;&lt;set _unabashed to &quot;unabashed&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;
+
+&lt;&lt;if $drink is &quot;wine&quot;&gt;&gt;
+&lt;&lt;set _control to &quot;thrall&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _control to &quot;control&quot;&gt;&gt;
 &lt;&lt;endif&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Authority&quot;&gt;&gt;
@@ -1454,14 +1481,67 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;Who would have ever fucking thought that you&#39;d get to really, truly //party// with fucking Kim Kitsuragi, in the most vulgar and _unabashed way possible? Incredible.&quot;&gt;&gt;
 
 &lt;&lt;if $alley is true&gt;&gt;
-&lt;&lt;SetSpeaker &quot;???&quot;&gt;&gt; /* To do: figure out who should speak here */
-&lt;&lt;AddParagraph &quot;You’ve never seen anyone look this good- Kim’s eyes bore into yours as he settles on his knees.&quot;&gt;&gt;
-&lt;&lt;AddOption &quot;Kim, who tailors his clothes, whose hair is impeccable, whose air is always professional, is kneeling down on the filthy alley ground and sucking your dick.&quot; &quot;Alley2&quot;&gt;&gt;[[|Alley2]]
+&lt;&lt;PassiveSkill &quot;COMPOSURE&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;This is the man who you had to //beg// to play board games or listen to stories about cryptids.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;AUTHORITY&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;Someone who can pull you into his _control with a single eyebrow.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;SAVOIR FAIRE&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;Who tailored those trousers, now slick with mud.&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;ELECTROCHEMISTRY: All in the service of sucking on your cock.&quot; &quot;Alley2&quot;&gt;&gt;[[|Alley2]]
 &lt;&lt;else&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Savoir Faire&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;It takes some serious talent to look that good with a mouth full of cock. He&#39;s still //devastatingly fucking handsome//. It&#39;s practically unfair. You should tell him so.&quot;&gt;&gt;
 &lt;&lt;AddOption &quot;Yes, good idea. I will do exactly that.&quot; &quot;NewInnocence&quot;&gt;&gt;[[|NewInnocence]]
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="90" name="Alley2" tags="nobr" position="900,5750" size="100,100">/* Grace, this part is for you! This is what&#39;s happening in the alley after Kim&#39;s got his mouth full of dick. Enjoy! */</tw-passagedata><tw-passagedata pid="91" name="NewInnocence" tags="nobr" position="1100,5750" size="100,100">&lt;&lt;if $drink is &quot;wine&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="92" name="Alley2" tags="nobr" position="900,5750" size="100,100">&lt;&lt;PassiveSkill &quot;CONCEPTUALIZATION&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;Kim’s eyes flutter prettily and he swallows you down in one swift motion. God, he’s gorgeous, lips pursed around you. The neon from the sign across the road  shines on the spit coating your cock and his lips. Beautiful; a painting in pinks and blues and dirty gray.&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;you&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;There’s nothing here for you to brace yourself with so you clutch the back of Kim’s head. &quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;VOLITION&quot; &quot;Legendary&quot; &quot;Failure&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;You’re messing up his hairdo, boss. His hair, once slicked back, is now being tousled by your meaty paws.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;PAIN THRESHOLD&quot; &quot;Challenging&quot; &quot;Success&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Maybe he&#39;ll punish you for it later.&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;He looks up at you, cheeks hollow, eyes burning with lust. And he just feels //so good//, his hot, wet mouth, his clever tongue.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;ESPRIT DE CORPS&quot; &quot;Legendary&quot; &quot;Success&quot;&gt;&gt; 
+&lt;&lt;AddParagraph &quot;Kim told himself he wouldn’t do this like this, but here he is. You, human can-opener as you are, have knocked his inhibitions loose. It alarms some part of him, how little he cares about getting caught in this alleyway, about anyone seeing how much this turns him on.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;Did you forget? That’s //Kim// sucking you off. He’s making pretty noises, too; wet noises. Grunting, too. One hand is wrapped around the base of you, and the other? Why, that one’s snaked down to his crotch.&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Limbic System&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;The thrill of being exposed, the beauty of the man below you, the knowledge you&#39;re affecting him - it&#39;s too much at once! A sweet fire burns through you, faster than you can control, you can&#39;t hold on, can you, Harry-boy?&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;No, I can&#39;t hold out. (Cum.)&quot; AlleyPremature&gt;&gt;[[|AlleyPremature]]</tw-passagedata><tw-passagedata pid="93" name="AlleyPremature" tags="nobr" position="900,5900" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Kim licks his lips and looks up at you for the briefest moment. You should help him up; you’re not young men anymore. But he stands without complaint, grabbing your forearms and leverage.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;There is a smug little smile on his face. Then he stretches his jaw and wipes a little excess saliva from his lips.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;REACTION SPEED&quot; &quot;Formidable&quot; &quot;Success&quot;&gt;&gt; 
+&lt;&lt;AddParagraph &quot;\&quot;You&#39;re a big boy, Harry,\&quot; the quirk of his eyebrow says.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;COMPOSURE&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt; 
+&lt;&lt;AddParagraph &quot;You redo your pants and belt, feeling a little more clearheaded. Tuck a hand into your pocket, casual-like.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;But even as Kim looks like the image of composure and grace and you regain your own, he&#39;s still hard, straining through his pants.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;VOLITION&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;After that little moment, it&#39;d only be right to help him with that.&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;\[SAVOIR FAIRE - Challenging 12\] Undo his belt and pull his cock out with your free hand. Yes, one handed.&quot; AlleyPullItOut&gt;&gt;[[|AlleyPullItOut]]</tw-passagedata><tw-passagedata pid="94" name="AlleyPullItOut" tags="nobr" position="900,6050" size="100,100">&lt;&lt;SkillSuccess&gt;&gt; 
+
+&lt;&lt;SetSpeaker &quot;???&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Kim lets out a surprised grunt as he’s pressed into the brick like you were.  But when you go for his belt, he doesn’t stop you, but secures his fingers around your lapel. &quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Harry -\&quot; You lean in so you feel his breathe hot on your ear. It’s a warning, but that’s the only resistance you’ll get.  His cock is hot in your cold hands. He sucks in air through his teeth.&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="95" name="NewInnocence" tags="nobr" position="1100,5750" size="100,100">&lt;&lt;if $drink is &quot;wine&quot;&gt;&gt;
 &lt;&lt;set _thrall to &quot;You have become an utter, utter thrall&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _thrall to &quot;You have lost control completely, thanks&quot;&gt;&gt;
@@ -1485,7 +1565,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Suggestion&quot; &quot;Legendary&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The challenging look in his eyes and the steady hand on your hip says, \&quot;fucking go for it, //I can take it//\&quot;.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;Thrust into his mouth.&quot; MouthFuck&gt;&gt; [[|MouthFuck]]</tw-passagedata><tw-passagedata pid="92" name="MouthFuck" tags="nobr" position="1100,5900" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Thrust into his mouth.&quot; MouthFuck&gt;&gt; [[|MouthFuck]]</tw-passagedata><tw-passagedata pid="96" name="MouthFuck" tags="nobr" position="1100,5900" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;And oh, can Kim Kitsuragi //take it//. Even as the head of your cock pushes into his throat, even as his jaw stretches wide, he doesn&#39;t take his eyes off of you.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Suggestion&quot;&gt;&gt;
@@ -1500,7 +1580,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He&#39;s keeping up, drooling around you, glasses shifting askew from the force of your thrusting.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;PAIN THRESHOLD - If he didn&#39;t know what he was doing, he&#39;d be choking for sure.&quot; GhostOfHornt1&gt;&gt; [[|GhostOfHornt1]]</tw-passagedata><tw-passagedata pid="93" name="GhostOfHornt1" tags="nobr" position="1100, 6050" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;PAIN THRESHOLD - If he didn&#39;t know what he was doing, he&#39;d be choking for sure.&quot; GhostOfHornt1&gt;&gt; [[|GhostOfHornt1]]</tw-passagedata><tw-passagedata pid="97" name="GhostOfHornt1" tags="nobr" position="1100, 6050" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set _this to &quot;this&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _this to &quot;his&quot;&gt;&gt;
@@ -1530,7 +1610,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Give him what he really wants. Take what //you// want.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;\&quot;Fuck, stop, I want to, I can&#39;t,\&quot; your mouth a swirling of swear words as you pull his mouth off of your cock with more than a little force.&quot; Toss&gt;&gt; [[|Toss]]</tw-passagedata><tw-passagedata pid="94" name="Toss" tags="nobr" position="1100,6200" size="100,100">&lt;&lt;PassiveSkill &quot;Physical Instrument&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Fuck, stop, I want to, I can&#39;t,\&quot; your mouth a swirling of swear words as you pull his mouth off of your cock with more than a little force.&quot; Toss&gt;&gt; [[|Toss]]</tw-passagedata><tw-passagedata pid="98" name="Toss" tags="nobr" position="1100,6200" size="100,100">&lt;&lt;PassiveSkill &quot;Physical Instrument&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Toss him on the bed, before he has time to think about it. Spread those legs wide open, bend them up so his knees touch his shoulders and that glorious ass is exposed to you.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Reaction Speed&quot;&gt;&gt;
@@ -1552,7 +1632,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;You have featured heavily in his fantasies, lately. Indeed, many of those nights after parting with a chaste hug from an evening of helping him move, he&#39;d come straight to bed, strip the minimum viable amount, lube both hands, and have at it, left fist on his cock, right index finger in his ass, moaning your name the whole time.&quot;&gt;&gt;
 
 &lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
-&lt;&lt;PassiveSkill &quot;Hand-Eye Coordination&quot;&gt;&gt;
+&lt;&lt;PassiveSkill &quot;hand/eye Coordination&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You dollop lube generously on your fingers, shooting him a devilish grin as you do so.&quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;You&quot;&gt;&gt;
@@ -1576,7 +1656,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 
 &lt;&lt;AddOption &quot;You dollop lube generously on your fingers, then push one thick finger inside.&quot; Prep1&gt;&gt;[[|Prep1]]
 
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="95" name="Prep1" tags="nobr" position="1100,6350" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="99" name="Prep1" tags="nobr" position="1100,6350" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;//Ahhhh//, //Harry//,\&quot; the lieutenant gasps, legs folding even more tightly against his body, offering himself to you.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
@@ -1596,7 +1676,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 
 &lt;&lt;AddOption &quot;This is perfect as is, let&#39;s linger on this sensation for as long as he can handle it.&quot; Linger&gt;&gt;[[|Linger]]
 &lt;&lt;AddOption &quot;I need more, it&#39;s not enough, I want to be inside him too badly.&quot; Needy&gt;&gt;[[|Needy]]
-&lt;&lt;AddOption &quot;I want more, but he&#39;s not ready just yet.&quot; NotYet&gt;&gt;[[|NotYet]]</tw-passagedata><tw-passagedata pid="96" name="Linger" tags="nobr" position="600,6500" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;I want more, but he&#39;s not ready just yet.&quot; NotYet&gt;&gt;[[|NotYet]]</tw-passagedata><tw-passagedata pid="100" name="Linger" tags="nobr" position="600,6500" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
 &lt;&lt;set _comfortable to &quot;perfectly crisp, clean&quot;&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set _comfortable to &quot;cozily rumpled, warm&quot;&gt;&gt;
@@ -1618,17 +1698,34 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;AddParagraph &quot;\&quot;H-Harry, I - god, this is incredible, but - don&#39;t you want...?\&quot; There&#39;s some uncertainty to his voice, like he doesn&#39;t know what to ask for, or how to ask for it.&quot;&gt;&gt;
 
 &lt;&lt;AddOption &quot;\[Empathy - Medium 10\] Help him out. \&quot;How badly do you want me inside you?\&quot;&quot; &quot;SoftDom&quot;&gt;&gt;[[|SoftDom]]
-&lt;&lt;AddOption &quot;\[Authority - Medium 10\] Draw it out of him. \&quot;Is there something you want, //Lieutenant//? I think you&#39;re going to have to tell me.\&quot;&quot; &quot;UseYourWords&quot;&gt;&gt;[[|UseYourWords]]</tw-passagedata><tw-passagedata pid="97" name="SoftDom" tags="nobr" position="400,6650" size="100,100">&lt;&lt;CheckSuccess&gt;&gt;
+&lt;&lt;AddOption &quot;\[Authority - Medium 10\] Draw it out of him. \&quot;Is there something you want, //Lieutenant//? I think you&#39;re going to have to tell me.\&quot;&quot; &quot;UseYourWords&quot;&gt;&gt;[[|UseYourWords]]</tw-passagedata><tw-passagedata pid="101" name="SoftDom" tags="nobr" position="400,6650" size="100,100">&lt;&lt;CheckSuccess&gt;&gt;
 
-&lt;&lt;SetSpeaker &quot;Empathy&quot;&gt;&gt;
+&lt;&lt;set $fantasies to 0&gt;&gt; /* fantasy counter */
+&lt;&lt;set $threshold to 5&gt;&gt; /* adjust this as we make more ridiculous options. Player will not get *all* options, but it&#39;s good practice to have this be adjustable. */
+
+&lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;As forceful as he is, he&#39;s a little embarrassed about dirty talk, and you&#39;re not going to push it.&quot;&gt;&gt;
 
-/* Don&#39;t be a jerk about it. Pika, Grace, feel free to put any ideas here.*/</tw-passagedata><tw-passagedata pid="98" name="UseYourWords" tags="nobr" position="800,6650" size="100,100">&lt;&lt;CheckSuccess&gt;&gt;
+&lt;&lt;PassiveSkill &quot;Suggestion&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot; In fact, //you// should push -- to dizzying heights. How many fantasies have you had about him, anyway? List them //all.//&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;Let us consider the Kim Kitsuragi Spank Bank.&quot; SB_Start&gt;&gt;[[|SB_Start]]</tw-passagedata><tw-passagedata pid="102" name="SB_Start" tags="nobr" position="400,6800" size="100,100">/* oh jeez here we go */
+
+&lt;&lt;if $fantasies &gt; $threshold&gt;&gt;
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Okay okay, I get it, enough!\&quot; The mix of exasperation and lust looks good on him. \&quot;We can discuss your...imagination...some other time. Now, please, //fuck me//.\&quot;&quot;&gt;&gt;
+
+&lt;&lt;else&gt;&gt;
+&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;The Kim Kitsuragi Spank Bank is extensive. You&#39;ve wanted to boogie with the man for a long time, and the realms of the //fantasme érotique// are vast.&quot;&gt;&gt;
+
+/* Meta-notes: you can use x position = 400, y &gt; 600 to &quot;visually store&quot; all the SB entries. They should be short. Honestly, I should probably be stopped before I make too many. */
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="103" name="UseYourWords" tags="nobr" position="800,6650" size="100,100">&lt;&lt;CheckSuccess&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;Authority&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;As forceful as he is, he&#39;s a little embarrassed about dirty talk - but he wants to be pushed into it.&quot;&gt;&gt;
 
-/* Be the right kind of shit disturber. More pulling rank? Pika, Grace, feel free to put any ideas here.*/</tw-passagedata><tw-passagedata pid="99" name="Needy" tags="nobr" position="1100,6500" size="100,100">&lt;&lt;PassiveSkill &quot;Composure&quot;&gt;&gt;
+/* Be the right kind of shit disturber. More pulling rank? Pika, Grace, feel free to put any ideas here.*/</tw-passagedata><tw-passagedata pid="104" name="Needy" tags="nobr" position="1100,6500" size="100,100">&lt;&lt;PassiveSkill &quot;Composure&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You&#39;re absolutely sloppy in your haste, dripping lube down onto your two fingers as you continue to work them in and out. He&#39;s practically leaking it out, slick even along his inner thighs, a mess and you haven&#39;t even really gotten going.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Physical Instrument&quot;&gt;&gt;
@@ -1650,8 +1747,8 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Suggestion&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Let him decide when he&#39;s ready. He knows his body and he wants this. He knows what he can take.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;\&quot;Tell me when you&#39;re ready for me to move, Kim.\&quot;&quot; &quot;NeedyWait&quot;&gt;&gt;[[|NeedyWait]]</tw-passagedata><tw-passagedata pid="100" name="NeedyWait" tags="nobr" position="1100,6700" size="100,100">&lt;&lt;set $hastyprep to true&gt;&gt;
-&lt;&lt;PassiveSkill &quot;Hand-eye coordination&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Tell me when you&#39;re ready for me to move, Kim.\&quot;&quot; &quot;NeedyWait&quot;&gt;&gt;[[|NeedyWait]]</tw-passagedata><tw-passagedata pid="105" name="NeedyWait" tags="nobr" position="1100,6700" size="100,100">&lt;&lt;set $hastyprep to true&gt;&gt;
+&lt;&lt;PassiveSkill &quot;hand/eye coordination&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;His legs shake as he nods, the end points of a subtle tremor of anticipation and strain throughout his body. You support his back and ass against your thighs and settle his left ankle on your right shoulder, angling his other thigh out.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Endurance&quot;&gt;&gt;
@@ -1664,7 +1761,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Given his earlier swearing, you&#39;d better be damn sure.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;\&quot;Ready for what? I think you&#39;re going to have to tell me, I need to know what you want.\&quot;&quot; &quot;KimAreYouSURE&quot;&gt;&gt;[[|KimAreYouSURE]]</tw-passagedata><tw-passagedata pid="101" name="NotYet" tags="nobr" position="1300,6500" size="100,100">&lt;&lt;PassiveSkill &quot;Perception (Taste)&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Ready for what? I think you&#39;re going to have to tell me, I need to know what you want.\&quot;&quot; &quot;KimAreYouSURE&quot;&gt;&gt;[[|KimAreYouSURE]]</tw-passagedata><tw-passagedata pid="106" name="NotYet" tags="nobr" position="1300,6500" size="100,100">&lt;&lt;PassiveSkill &quot;Perception (Taste)&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Fingers still carefully stretching Kim further, you lean in and run your tongue along the taut and trembling muscles of his leg, trapped as it is underneath you. A long wet strip, tasting the thin sheen of sweat that highlights the well defined contours of his calves.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Endurance&quot;&gt;&gt;
@@ -1682,7 +1779,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;His back is arching at the sensation, his feet kicking up into the air a bit. \&quot;Gods, //fuck// - \&quot;&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;You guide a third finger in, and the tone //changes// - something more ragged, more raw.&quot; GhostOfHornt2&gt;&gt; [[|GhostOfHornt2]]</tw-passagedata><tw-passagedata pid="102" name="GhostOfHornt2" tags="nobr" position="1300,6650" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;You guide a third finger in, and the tone //changes// - something more ragged, more raw.&quot; GhostOfHornt2&gt;&gt; [[|GhostOfHornt2]]</tw-passagedata><tw-passagedata pid="107" name="GhostOfHornt2" tags="nobr" position="1300,6650" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;//Goddamn//, what are you - you - haaaaaa-\&quot; He can&#39;t finish the sentence, the sensation overloading his ability to form coherent words. &quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Esprit de Corps&quot;&gt;&gt;
@@ -1694,7 +1791,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Trust me, he&#39;s not complaining.&quot;&gt;&gt;
 
-&lt;&lt;PassiveSkill &quot;Hand-Eye Coordination&quot;&gt;&gt;
+&lt;&lt;PassiveSkill &quot;hand/eye Coordination&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You stretch him open, holding a trembling thigh in your other hand, continuing to lap at his cock. Each movement of your fingers wrenches out another moan, another gasp, another swear. He&#39;s barely able to buck against you, with his legs up, but he&#39;s trying his best with what little leverage he has.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Physical Instrument&quot;&gt;&gt;
@@ -1706,21 +1803,21 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Pain Threshold&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;The sounds he is making are evening out now - less surprised. His muscles are still tight around your fingers, but no longer strained, and you have thoroughly covered every possible bit you could reach in plenty of lube. He&#39;s as ready as he&#39;s going to be for you. Slide out slowly, carefully - both feel and hear the anguished groan of the temporary loss.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;Slick up your own cock with more lube&quot; &quot;Ready2&quot;&gt;&gt;[[|Ready2]]</tw-passagedata><tw-passagedata pid="103" name="Ready2" tags="nobr" position="1300,6800" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;Slick up your own cock with more lube&quot; &quot;Ready2&quot;&gt;&gt;[[|Ready2]]</tw-passagedata><tw-passagedata pid="108" name="Ready2" tags="nobr" position="1300,6800" size="100,100">&lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;It&#39;s sweet and familiar to thrust into your own hand but oh, it&#39;s a pale substitute for what&#39;s coming next.&quot;&gt;&gt;
 
 &lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You sit up, sliding your bent knees in under Kim&#39;s body, supporting his back and his ass against your thighs. You grab his left ankle and settle it on your right shoulder, then angle his right thigh out, pressing your other hand into the fold where thigh meets hip.&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;A shift of your hips, and you&#39;re in the right position to enter him at last.&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;\&quot;Are you ready?\&quot;&quot; &quot;CheckReady&quot;&gt;&gt;[[|CheckReady]]</tw-passagedata><tw-passagedata pid="104" name="CheckReady" tags="nobr" position="1300, 7000" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Are you ready?\&quot;&quot; &quot;CheckReady&quot;&gt;&gt;[[|CheckReady]]</tw-passagedata><tw-passagedata pid="109" name="CheckReady" tags="nobr" position="1300, 7000" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;His breathing is deep and even. His cock is twitching against the plane of your stomach. His eyes, through skewed glasses, lock with yours.&quot;&gt;&gt; 
 &lt;&lt;AddParagraph &quot;\&quot;Yes, I&#39;m ready. Please.\&quot;&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;I think it&#39;s time for a little revenge for earlier, don&#39;t you?&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;\&quot;Oh yeah? Ready for what? I think you&#39;re going to have to tell me.\&quot;&quot; &quot;KimAreYouSURE&quot;&gt;&gt;[[|KimAreYouSURE]]</tw-passagedata><tw-passagedata pid="105" name="KimAreYouSURE" tags="nobr" position="1300, 7200" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Oh yeah? Ready for what? I think you&#39;re going to have to tell me.\&quot;&quot; &quot;KimAreYouSURE&quot;&gt;&gt;[[|KimAreYouSURE]]</tw-passagedata><tw-passagedata pid="110" name="KimAreYouSURE" tags="nobr" position="1300, 7200" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;His chest flushes, along with his face. He looks away, briefly.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Electrochemistry&quot;&gt;&gt;
@@ -1729,7 +1826,7 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;SetSpeaker &quot;Kim Kitsurag&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;He looks back up at you, some of the earlier worry undone in exchange for more wanton desire. \&quot;//Please//, Harry. Fuck me.\&quot;&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;That&#39;s all the permission you need.&quot; &quot;KimIsReady&quot;&gt;&gt;[[|KimIsReady]]</tw-passagedata><tw-passagedata pid="106" name="KimIsReady" tags="nobr" position="1300, 7400" size="100,100">&lt;&lt;if $hastyprep is false&gt;&gt;
+&lt;&lt;AddOption &quot;That&#39;s all the permission you need.&quot; &quot;KimIsReady&quot;&gt;&gt;[[|KimIsReady]]</tw-passagedata><tw-passagedata pid="111" name="KimIsReady" tags="nobr" position="1300, 7400" size="100,100">&lt;&lt;if $hastyprep is false&gt;&gt;
 &lt;&lt;PassiveSkill &quot;Perception (touch)&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;Pushing inside, the slide is perfect - tight heat, but smooth, delicious. His leg and hip are warm and vibrating slightly in your grip.&quot;&gt;&gt;
 
@@ -1751,11 +1848,155 @@ Twine framework by Pikalex88</tw-passagedata><tw-passagedata pid="15" name="Stor
 &lt;&lt;PassiveSkill &quot;Rhetoric&quot; &quot;Legendary&quot; &quot;Failure&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;You find yourself babbling, the slick heat undoing any thoughts basides the sheer wonder you feel about your current position&quot;&gt;&gt;
 
-&lt;&lt;AddOption &quot;\&quot;Fucking hell, Kim, you&#39;re perfect, you look amazing, you feel amazing/&quot; &quot;FuckKimHarder&quot;&gt;&gt;[[|FuckKimHarder]]</tw-passagedata><tw-passagedata pid="107" name="FuckKimHarder" tags="nobr" position="1300, 7600" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddOption &quot;\&quot;Fucking hell, Kim, you&#39;re perfect, you look amazing, you feel amazing -\&quot;&quot; &quot;FuckKimHarder&quot;&gt;&gt;[[|FuckKimHarder]]</tw-passagedata><tw-passagedata pid="112" name="FuckKimHarder" tags="nobr" position="1300, 7600" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
 &lt;&lt;AddParagraph &quot;\&quot;Gods, fuck, yes, Harry, more, harder, please,\&quot; panting and desperate from him in return.&quot;&gt;&gt;
 
 &lt;&lt;PassiveSkill &quot;Empathy&quot;&gt;&gt;
-&lt;&lt;AddParagraph &quot;And who are you to deny him at this point?&quot;&gt;&gt;</tw-passagedata></tw-storydata>
+&lt;&lt;AddParagraph &quot;And who are you to deny him at this point?&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;Who are you to deny //yourself// at this point? Give in. Wreck him and yourself. Head into oblivion together, Disco Zero, the only place all this can go.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;PHYSICAL INSTRUMENT&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;Your pick up the pace; fast now, hard, with the full force of your weight into them; in time to the kind of music he likes, primal, thrashing, forceful.&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;His reactions are exquisite - look at this beautiful mess! Flashes of light bounce chaotically around the room as his glasses get knocked about. He&#39;s sweating profusely, the sheen highlighting his musculature just so. A bead of precum at the tip of his hard cock becomes a streak on his stomach with one thrust, joined by more as you go. &quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Listen to him cry out for you, gasping, pleading. \&quot;I&#39;m so close, //please// -\&quot;&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;\[ELECTROCHEMISTRY - Medium 10\] Give him what he wants - grab his cock.&quot; VisCalcBestBro&gt;&gt;[[|VisCalcBestBro]]</tw-passagedata><tw-passagedata pid="113" name="VisCalcBestBro" tags="nobr" position="1300, 7750" size="100,100">&lt;&lt;SkillFailure&gt;&gt; 
+
+&lt;&lt;PassiveSkill &quot;VISUAL CALCULUS&quot; &quot;Impossible&quot; &quot;Success&quot;&gt;&gt; 
+&lt;&lt;AddParagraph &quot;Wait, one second, before you reach to grab his cock, even as it leaks precum all over the both of you. Tilt your pelvis three degrees up and thrust //as hard as you can.//&quot;&gt;&gt;
+
+&lt;&lt;SecretTaskComplete &quot;Things you can do without your hands&quot;&gt;&gt;
+&lt;&lt;LevelUp&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Oh //fuck// - how did you even - I&#39;m going to -\&quot; And with that, a look of amazement and disbelief and lust on his face, as he cums all over the both of you, cock pulsing without direct touch.&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;You try to withdraw, give him a break -&quot; DontStop&gt;&gt;[[|DontStop]]</tw-passagedata><tw-passagedata pid="114" name="DontStop" tags="nobr" position="1300, 7900" size="100,100">&lt;&lt;SetSpeaker &quot;kim kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;- but he kicks his legs out from your grip and wraps them around you, holding you in. \&quot;Don&#39;t //fucking// stop, I want you to cum //inside//,\&quot; he whines, wanton, insistent.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;DRAMA&quot; &quot;Challenging&quot; &quot;Success&quot;&gt;&gt; 
+&lt;&lt;AddParagraph &quot;He is masking some of the impact you are having, but he is being sincere, my lord. He //wants// you to fuck //all// of the composure out of him, so that he can&#39;t even do that. &quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;you&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;He presses his ankles against your back and you fall forward, pressing your bodies together as you continue to thrust.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot; You return to his neck and latch on, kissing and sucking up and down his throat. &quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;kim kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;He slides one hand in your hair and another along your neck; his back arches, his chest rises to meet you.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot; The friction of your bodies makes him hard again, pressed between the two of you.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot; His moans continue, frantic, incoherent.&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;This moment is perfect, overwhelming, and thus it cannot last -&quot; Orgasm&gt;&gt;[[|Orgasm]]</tw-passagedata><tw-passagedata pid="115" name="Orgasm" tags="nobr" position="1300,8050" size="100,100">&lt;&lt;PassiveSkill &quot;ENDURANCE&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;And now: a point of undoing.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;VOLITION&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;A collapse of control.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;RHETORIC&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;An unfurling of the tangle of the brain.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;PHYSICAL INSTRUMENT&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;An uncoiling of the body. Muscles slacken, release their grip.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;ELECTROCHEMISTRY&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;The best, most delicious head high. Pleasure unparalleled, the most disco of emotional states. You are the light and the disco ball and the dancer all in one - bright and scattered and moved by it, all at once. &quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Ancient Reptilian Brain&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Here we are, you filthy animal! It&#39;s right before you teeter into oblivion, //baby//.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Go on - mark him, fill him, make him //yours// in the oldest, most primal way possible.&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Limbic System&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;It is not amnesia - you have been there, that terrible uncontrolled wildfire. But it is a different thing, burning clean all your cares for a moment, in exchange for connection to flesh and blood.&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;you&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Intimacy and physicality spark a sweeter kind of fire.&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;The world goes white, for just a moment, nothing but feral groans from the both of you and the connection of your bodies. &quot; Aftercare1&gt;&gt;[[|Aftercare1]]</tw-passagedata><tw-passagedata pid="116" name="Aftercare1" tags="nobr" position="1300,8200" size="100,100">&lt;&lt;SetSpeaker &quot;you&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Spent, you collapse more fully onto him, caring not a bit for the sticky sensation of bodies against each other. It&#39;s even slicker than before - he must have come again when you did. \&quot;That was amazing,\&quot; you murmur into the crook of his neck.&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot; \&quot;Yes-yes, it was. I didn&#39;t know you had it in you.\&quot; You feel his hands move off of you briefly - he&#39;s taking his glasses off and stretching to put them on the nightstand.&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;you&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;I didn&#39;t know //you// did, either,\&quot; you respond, as you slowly slide off his body to settle in next to him. \&quot;I didn&#39;t even know you wanted me like this.\&quot;&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot; He smiles at that. \&quot;I&#39;ve been told I&#39;m a terrible flirt. Alcohol makes it easier though - almost too easy. Maybe one day I&#39;ll tell you //that// story.\&quot; And with that, he moves to his side and backs into you; you slot in easily, the proverbial bigger spoon.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;RHETORIC&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;One day, you will fulfill the task \&quot;Learn the lieutenant&#39;s drunkotype\&quot;. Today is not that day. &quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;SUGGESTION&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;Pull the covers up around you both. This is the time to be gentle, to be tender, right as you drift off.&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;\&quot;Hey. Kitsy. Are you awake?\&quot;&quot; HiKitsy&gt;&gt;[[|HiKitsy]]</tw-passagedata><tw-passagedata pid="117" name="HiKitsy" tags="nobr" position="1300,8350" size="100,100">&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;//Kitsy?//\&quot;&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;EMPATHY&quot; &quot;Medium&quot; &quot;Success&quot;&gt;&gt; 
+&lt;&lt;AddParagraph &quot;He&#39;s surprised by the new nickname, but it&#39;s not unwelcome.&quot;&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;ESPRIT DE CORPS&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;After years of \&quot;Kimball\&quot;, let alone terrible racist epithets said in the name of \&quot;joking\&quot;, he&#39;s bristled at the idea of being nicknamed again - but he can tell this comes from genuine affection. It&#39;ll take him time to get used to it, but he&#39;s willing to give you that time. &quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;you&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Sorry, don&#39;t like it?\&quot;&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Kim Kitsuragi&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;... I didn&#39;t say that.\&quot; He&#39;s silent, for just a moment, considering. \&quot;What is it, Harry?\&quot; &quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;you&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Is your secret //really// cock sucking? I mean, that was incredible, but -\&quot;&quot;&gt;&gt;
+
+&lt;&lt;SecretTaskComplete &quot;A nickname for your partner&quot; 25&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Kitsy&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;Khm.\&quot; He sounds affectionate, amused. \&quot;I guess you&#39;ll have to keep detecting to find out.\&quot;&quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;you&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;\&quot;... tomorrow?\&quot; &quot;&gt;&gt;
+
+&lt;&lt;SetSpeaker &quot;Kitsy&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;His chuckle is soft and genuine. \&quot;Sure, maybe you&#39;ll get it tomorrow. Good night, Harry.\&quot; &quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot; \&quot;Good night, Kitsy.\&quot;&quot; FinalShivers&gt;&gt;[[|FinalShivers]]</tw-passagedata><tw-passagedata pid="118" name="FinalShivers" tags="nobr" position="1300,8500" size="100,100">&lt;&lt;PassiveSkill &quot;Shivers&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot; At your back is a window left slightly ajar, and a whisper of wind kisses the back of your neck, sending a chill down your spine. It carries to your senses a hint of the sea, a life in salt. Dark depths, stretching on and on, across a city with every possible story to tell. Dots of humanity in motion, drenched in sea spray, peering for signs of life in the dark, dreaming of the kind of warmth and connection you have at hand.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Coldly uncaring the breeze blows past, skimming the hard and barren planes of vinyl and oak, swirling around the discarded detritus of personal touchstones, dreams of the sparkling lights of disco and the thrilling whirl of aerostatics. The breeze slides through the cracks in the door and into the hallway, down into the street, retracing a path further and further back. To a discrete bar in Jamrock where lonely hearts have lingered. To a dock on the coast of Martinaise, where a woman watches the waves alone. Perhaps even all the way to a small hostel, a balcony that always smells of smoke; through a once shattered window, now cracked open into a room that will never be completely free of a permeated unpleasant odor.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Warm breath suddenly replaces the chill, as Kim stirs enough to reach out and draw the covers more snugly around you both. The wind carries on its way, but you are no longer carried with it. You&#39;re just here, now, with your partner settled back against your chest. Two hearts slowing and syncing into a shared beat.&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;You close your eyes again and allow yourself to drift to sleep, under the moon; you give yourself a chance to dream.&quot; FinalIE&gt;&gt;[[|FinalIE]]</tw-passagedata><tw-passagedata pid="119" name="FinalIE" tags="nobr" position="1300,8650" size="100,100">&lt;&lt;if $apartment is &quot;Kim&quot;&gt;&gt;
+&lt;&lt;set _coffee to &quot;does not have any on hand&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _coffee to &quot;turns down your offered cup&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;
+
+&lt;&lt;if $alley is true&gt;&gt;
+&lt;&lt;set _sniffles to &quot;through your cold-induced sniffles&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;&lt;set _sniffles to &quot;&quot;&gt;&gt;
+&lt;&lt;endif&gt;&gt;
+
+&lt;&lt;PassiveSkill &quot;INLAND EMPIRE&quot; &gt;&gt;
+&lt;&lt;AddParagraph &quot;In the morning, there will be a moment of confusion, as you find the lieutenant does not drink coffee and thus _coffee.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;In a few days, there will be a moment of pride _sniffles, as you introduce Kim formally to the 41st and are assigned your first case with him.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;In a few weeks, there will be a moment of joy, as he invites you back to that bar on a Friday night.&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;In a few months? In a few years? Things are hazier, besides the light behind Kim&#39;s face. That much will stay, a beacon to guide you onwards. &quot;&gt;&gt;
+
+&lt;&lt;BlankSpeaker&gt;&gt;
+&lt;&lt;AddParagraph &quot;&#39;&#39;FIN&#39;&#39;&quot;&gt;&gt;
+
+&lt;&lt;AddOption &quot;Credits&quot; Credits&gt;&gt;[[|Credits]]</tw-passagedata><tw-passagedata pid="120" name="Credits" tags="nobr" position="1300,8800" size="100,100">&lt;&lt;SetSpeaker &quot;Kawa&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Enormous, enormous thanks to all the following people!&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;rulse, best Drunk Cop, whose wonderful art inspired this fic in the first place;&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Alexei/Pikalex, Mistress of Shivers, Keeper of Macros, best collaborator, and general darling of mine;&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;Mysterious PartnerBeast, human-shaped Animal of Esteem, a patient and thoughtful editor and anchor;&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;coolant6969, for writing assistance in the \&quot;Alley\&quot; fork of the game;&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;the entire fan-run Disco Elysium Discord server, sexyposter or not, a wonderful community that I&#39;m proud to call home;&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;the art movement of ZA/UM - a continuous inspiration to keep striving to further creative heights, untethered from expectations;&quot;&gt;&gt;
+&lt;&lt;AddParagraph &quot;And you, dear reader, player of games - thanks for coming along for the ride!&quot;&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},errorPrologRegExp=/^(?:(?:uncaught\s+(?:exception:\s+)?)?\w*(?:error|exception|_err):\s+)+/i,Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(errorPrologRegExp,"")+".":": unknown error."),"object"===(void 0===n?"undefined":_typeof(n))&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}(),Patterns=function(){var e=function(){var e=new Map([[" ","\\u0020"],["\f","\\f"],["\n","\\n"],["\r","\\r"],["\t","\\t"],["\v","\\v"],[" ","\\u00a0"],[" ","\\u1680"],["᠎","\\u180e"],[" ","\\u2000"],[" ","\\u2001"],[" ","\\u2002"],[" ","\\u2003"],[" ","\\u2004"],[" ","\\u2005"],[" ","\\u2006"],[" ","\\u2007"],[" ","\\u2008"],[" ","\\u2009"],[" ","\\u200a"],["\u2028","\\u2028"],["\u2029","\\u2029"],[" ","\\u202f"],[" ","\\u205f"],["　","\\u3000"],["\ufeff","\\ufeff"]]),t=/^\s$/,r="";return e.forEach(function(e,n){t.test(n)||(r+=e)}),r?"[\\s"+r+"]":"\\s"}(),t="\\s"===e?"\\S":e.replace(/^\[/,"[^"),r="[0-9A-Z_a-z\\-\\u00c0-\\u00d6\\u00d8-\\u00f6\\u00f8-\\u00ff\\u0150\\u0170\\u0151\\u0171]",n=r.replace("\\-",""),a=function(){return"("+r+"+)\\(([^\\)\\|\\n]+)\\):|("+r+"+):([^;\\|\\n]+);|((?:\\."+r+"+)+);|((?:#"+r+"+)+);"}();return Object.freeze({space:e,spaceNoTerminator:"[\\u0020\\f\\t\\v\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000\\ufeff]",lineTerminator:"[\\n\\r\\u2028\\u2029]",notSpace:t,anyChar:"(?:.|[\\n\\r\\u2028\\u2029])",anyLetter:r,anyLetterStrict:n,identifierFirstChar:"[$A-Z_a-z]",identifierNextChar:"[$0-9A-Z_a-z]",identifier:"[$A-Z_a-z][$0-9A-Z_a-z]*",variableSigil:"[$_]",variable:"[$_][$A-Z_a-z][$0-9A-Z_a-z]*",macroName:"[A-Za-z][\\w-]*|[=-]",templateName:"[A-Za-z][\\w-]*",cssImage:"\\[[<>]?[Ii][Mm][Gg]\\[(?:\\s|\\S)*?\\]\\]+",inlineCss:a,url:"(?:file|https?|mailto|ftp|javascript|irc|news|data):[^\\s'\"]+"})}();!function(){!function(e){if(e&&e.prototype&&null==e.prototype.firstElementChild){var t=Node.ELEMENT_NODE;Object.defineProperty(e.prototype,"firstElementChild",{get:function(){for(var e=this.childNodes,r=0;r<e.length;++r){var n=e[r];if(n.nodeType===t)return n}return null}})}}(window.Node||window.Element)}(),function(){function e(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n=void 0===t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var t=function(){function e(e,n){var a=String(e);if(!a)return a;switch(n){case"start":return t.test(a)?a.replace(t,""):a;case"end":return r.test(a)?a.replace(r,""):a;default:throw new Error('_trimString called with incorrect where parameter value: "'+n+'"')}}var t=new RegExp("^"+Patterns.space+Patterns.space+"*"),r=new RegExp(""+Patterns.space+Patterns.space+"*$");return e}();Array.prototype.flat||Object.defineProperty(Array.prototype,"flat",{configurable:!0,writable:!0,value:function(){function e(){if(null==this)throw new TypeError("Array.prototype.flat called on null or undefined");var t=0===arguments.length?1:Number(arguments[0])||0;return t<1?Array.prototype.slice.call(this):Array.prototype.reduce.call(this,function(r,n){return n instanceof Array?r.push.apply(r,_toConsumableArray(e.call(n,t-1))):r.push(n),r},[])}return e}()}),Array.prototype.flatMap||Object.defineProperty(Array.prototype,"flatMap",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatMap called on null or undefined");return Array.prototype.map.apply(this,arguments).flat()}}),Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(n===t||n!==n&&t!==t)return!0}return!1}}),Object.entries||Object.defineProperty(Object,"entries",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.entries object parameter must be an object");return Object.keys(e).map(function(t){return[t,e[t]]})}}),Object.fromEntries||Object.defineProperty(Object,"fromEntries",{configurable:!0,writable:!0,value:function(e){return Array.from(e).reduce(function(e,t){if(Object(t)!==t)throw new TypeError("Object.fromEntries iterable parameter must yield objects");return t[0]in e?Object.defineProperty(e,t[0],{configurable:!0,enumerable:!0,writable:!0,value:t[1]}):e[t[0]]=t[1],e},{})}}),Object.getOwnPropertyDescriptors||Object.defineProperty(Object,"getOwnPropertyDescriptors",{configurable:!0,writable:!0,value:function(e){if(null==e)throw new TypeError("Object.getOwnPropertyDescriptors object parameter is null or undefined");var t=Object(e);return Reflect.ownKeys(t).reduce(function(e,r){var n=Object.getOwnPropertyDescriptor(t,r);return void 0!==n&&(r in e?Object.defineProperty(e,r,{configurable:!0,enumerable:!0,writable:!0,value:n}):e[r]=n),e},{})}}),Object.values||Object.defineProperty(Object,"values",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.values object parameter must be an object");return Object.keys(e).map(function(t){return e[t]})}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:e(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:n+e(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return t(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return t(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return t(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return t(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r)<0&&(r=0),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n)<0&&(n=e-1),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){return e[0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1))]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var e=Array.from(this);if(0===arguments.length)return e;var t=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),r=t.length;if(0===r)return e;for(var n=Array.prototype.indexOf,a=Array.prototype.push,i=0;i<r;++i){var o=t[i];-1===n.call(e,o)&&a.call(e,o)}return e}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;-1!==(r=e.call(this,t,r));)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.concat.apply([],arguments),r=t.length,n=[],a=0;a<e;++a)for(var i=this[a],o=0;o<r;++o){var s=t[o];if(i===s||i!==i&&s!==s){n.push(a);break}}for(var u=[],l=0,c=n.length;l<c;++l)u[l]=this[n[l]];for(var d=Array.prototype.splice,f=n.length-1;f>=0;--f)d.call(this,n[f],1);return u}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"deleteWith",{configurable:!0,writable:!0,value:function(e,t){if(null==this)throw new TypeError("Array.prototype.deleteWith called on null or undefined");if("function"!=typeof e)throw new Error("Array.prototype.deleteWith predicate parameter must be a function");var r=this.length>>>0;if(0===r)return[];for(var n=Array.prototype.splice,a=[],i=[],o=0;o<r;++o)e.call(t,this[o],o,this)&&(i.push(this[o]),a.push(o));for(var s=a.length-1;s>=0;--s)n.call(this,a[s],1);return i}}),Object.defineProperty(Array.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.first called on null or undefined");if(0!=this.length>>>0)return this[0]}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.last called on null or undefined");var e=this.length>>>0;if(0!==e)return this[e-1]}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do{a.push(n.call(this,_random(0,i--),1)[0])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){return this[0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)))]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do{o=_random(0,i)}while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.unshift,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function(e,t,r){var n=Number(e);return Number.isNaN(n)?NaN:n.clamp(t,r)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch(void 0===i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return-1!==String.prototype.indexOf.apply(this,arguments)}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;-1!==(n=t.call(this,e,n));)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.first called on null or undefined");return _getCodePointStartAndEnd(String(this),0).char}}),Object.defineProperty(String.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.last called on null or undefined");var e=String(this);return _getCodePointStartAndEnd(e,e.length-1).char}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n)<0&&(a=0):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return void 0!==r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.flat.call(this,1/0)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Opera:!t&&("object"===_typeof(window.operamini)||e.includes("opera mini")),Windows:t||/iemobile|wpdesktop/.test(e),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Opera||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null,u=e.includes("vivaldi");return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s,isVivaldi:u})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=e&&function(){try{var e=document.createElement("audio").play();return e.catch(function(){}),e instanceof Promise}catch(e){}return!1}(),r=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),n=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),a=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),i=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}(),o=function(){try{return"ontouchstart"in window||!!window.DocumentTouch&&document instanceof window.DocumentTouch||!!navigator.maxTouchPoints||!!navigator.msMaxTouchPoints}catch(e){}return!1}(),s=function(){try{for(var e=new Map([["transition","transitionend"],["MSTransition","msTransitionEnd"],["WebkitTransition","webkitTransitionEnd"],["MozTransition","transitionend"]]),t=[].concat(_toConsumableArray(e.keys())),r=document.createElement("div"),n=0;n<t.length;++n)if(r.style[t[n]]!==undefined)return e.get(t[n])}catch(e){}return!1}();return Object.freeze({audio:e,audioPromise:t,fileAPI:r,geolocation:n,mutationObserver:a,performance:i,touch:o,transitionEndEvent:s})}(),Visibility=function(){function e(){return Boolean(r&&document[r.hiddenProperty])}function t(){return r&&document[r.stateProperty]||"visible"}var r=function(){try{return Object.freeze([{hiddenProperty:"hidden",stateProperty:"visibilityState",changeEvent:"visibilitychange"},{hiddenProperty:"webkitHidden",stateProperty:"webkitVisibilityState",changeEvent:"webkitvisibilitychange"},{hiddenProperty:"mozHidden",stateProperty:"mozVisibilityState",changeEvent:"mozvisibilitychange"},{hiddenProperty:"msHidden",stateProperty:"msVisibilityState",changeEvent:"msvisibilitychange"}].find(function(e){return e.hiddenProperty in document}))}catch(e){}return null}();return Object.freeze(Object.defineProperties({},{isHidden:{value:e},state:{value:t},hiddenProperty:{value:r.hiddenProperty},stateProperty:{value:r.stateProperty},changeEvent:{value:r.changeEvent}}))}(),_ref3=function(){function e(t){if("object"!==(void 0===t?"undefined":_typeof(t))||null===t)return t;if(t instanceof String)return String(t);if(t instanceof Number)return Number(t);if(t instanceof Boolean)return Boolean(t);if("function"==typeof t.clone)return t.clone(!0);if(t.nodeType&&"function"==typeof t.cloneNode)return t.cloneNode(!0);var r=void 0;return t instanceof Array?r=new Array(t.length):t instanceof Date?r=new Date(t.getTime()):t instanceof Map?(r=new Map,t.forEach(function(t,n){return r.set(n,e(t))})):t instanceof RegExp?r=new RegExp(t):t instanceof Set?(r=new Set,t.forEach(function(t){return r.add(e(t))})):r=Object.create(Object.getPrototypeOf(t)),Object.keys(t).forEach(function(n){return r[n]=e(t[n])}),r}function t(e){for(var t=document.createDocumentFragment(),r=document.createElement("p"),n=void 0;null!==(n=e.firstChild);){if(n.nodeType===Node.ELEMENT_NODE){switch(n.nodeName.toUpperCase()){case"BR":if(null!==n.nextSibling&&n.nextSibling.nodeType===Node.ELEMENT_NODE&&"BR"===n.nextSibling.nodeName.toUpperCase()){e.removeChild(n.nextSibling),e.removeChild(n),t.appendChild(r),r=document.createElement("p");continue}if(!r.hasChildNodes()){e.removeChild(n);continue}break;case"ADDRESS":case"ARTICLE":case"ASIDE":case"BLOCKQUOTE":case"CENTER":case"DIV":case"DL":case"FIGURE":case"FOOTER":case"FORM":case"H1":case"H2":case"H3":case"H4":case"H5":case"H6":case"HEADER":case"HR":case"MAIN":case"NAV":case"OL":case"P":case"PRE":case"SECTION":case"TABLE":case"UL":r.hasChildNodes()&&(t.appendChild(r),r=document.createElement("p")),t.appendChild(n);continue}}r.appendChild(n)}r.hasChildNodes()&&t.appendChild(r),e.appendChild(t)}function r(){try{return document.activeElement||null}catch(e){return null}}function n(e,t,r){var n="object"===(void 0===e?"undefined":_typeof(e))?e:document.getElementById(e);if(null==n)return null;var a=Array.isArray(t)?t:[t];jQuery(n).empty();for(var i=0,o=a.length;i<o;++i)if(Story.has(a[i]))return new Wikifier(n,Story.get(a[i]).processText().trim()),n;if(null!=r){var s=String(r).trim();""!==s&&new Wikifier(n,s)}return n}function a(e,t,r){var n=jQuery(document.createElement("div")),a=jQuery(document.createElement("button")),i=jQuery(document.createElement("pre")),o=L10n.get("errorTitle")+": "+(t||"unknown error");return a.addClass("error-toggle").ariaClick({label:L10n.get("errorToggle")},function(){a.hasClass("enabled")?(a.removeClass("enabled"),i.attr({"aria-hidden":!0,hidden:"hidden"})):(a.addClass("enabled"),i.removeAttr("aria-hidden hidden"))}).appendTo(n),jQuery(document.createElement("span")).addClass("error").text(o).appendTo(n),jQuery(document.createElement("code")).text(r).appendTo(i),i.addClass("error-source").attr({"aria-hidden":!0,hidden:"hidden"}).appendTo(n),n.addClass("error-view").appendTo(e),console.warn(o+"\n\t"+r.replace(/\n/g,"\n\t")),!1}function i(e,t){var r=i;switch(void 0===e?"undefined":_typeof(e)){case"number":if(Number.isNaN(e))return t;break;case"object":if(null===e)return t;if(Array.isArray(e))return e.map(function(e){return r(e,t)}).join(", ");if(e instanceof Set)return[].concat(_toConsumableArray(e)).map(function(e){return r(e,t)}).join(", ");if(e instanceof Map){return"{ "+[].concat(_toConsumableArray(e)).map(function(e){var n=_slicedToArray(e,2),a=n[0],i=n[1];return r(a,t)+" → "+r(i,t)}).join(", ")+" }"}return e instanceof Date?e.toLocaleString():"function"==typeof e.toString?e.toString():Object.prototype.toString.call(e);case"function":case"undefined":return t}return String(e)}return Object.freeze(Object.defineProperties({},{clone:{value:e},convertBreaks:{value:t},safeActiveElement:{value:r},setPageElement:{value:n},throwError:{value:a},toStringOrDefault:{value:i}}))

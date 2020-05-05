@@ -216,7 +216,7 @@ $(document).on("keyup", function (e) {
 <<set $alley to false>>
 <<set $hastyprep to false>>
 <<set $optionmap to new Map()>>
-<<set $motorics to ["composure", "hand-eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception (sight)", "perception (taste)", "perception (touch)", "perception (sound)"]>>
+<<set $motorics to ["composure", "hand/eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception", "perception (smell)", "perception (sight)", "perception (taste)", "perception (touch)", "perception (hearing)"]>>
 <<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual calculus"]>>
 <<set $fysique to ["electrochemistry", "endurance", "half light", "pain threshold", "physical instrument", "shivers"]>>
 <<set $psyche to ["authority", "empathy", "esprit de corps", "inland empire", "suggestion", "volition"]>>
@@ -252,7 +252,7 @@ $(document).on("keyup", function (e) {
 <<nobr>>
 <<widget "SkillSuccess">>
 <div id="SuccessImg" class="CheckOverlay"></div>
-<div id="CheckSuccess" class="CheckText">CHECK SUCCESS</div>
+<div id="CheckSuccess" class="CheckText">CHECK Success</div>
 <<SetSpeaker "">>
 <<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
 <</widget>>
@@ -262,7 +262,7 @@ $(document).on("keyup", function (e) {
 <<nobr>>
 <<widget "SkillFailure">>
 <div id="FailureImg" class="CheckOverlay"></div>
-<div id="CheckFailure" class="CheckText">CHECK FAILURE</div>
+<div id="CheckFailure" class="CheckText">CHECK Failure</div>
 <<SetSpeaker "">>
 <<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
 <</widget>>
@@ -336,6 +336,8 @@ if (paragraphs.length > 1) {
 :: SetSpeaker [widget] {"position":"674,151","size":"100,100"}
 <<widget "SetSpeaker">><<set $currentspeaker to ("@@.speaker;" + $args[0] + "@@ - ")>><</widget>>
 
+:: BlankSpeaker [widget] {"position":"1225,100","size":"100,100"}
+<<widget "BlankSpeaker">><<set $currentspeaker to "">><</widget>>
 
 :: AddParagraph [widget] {"position":"546,268","size":"100,100"}
 <<nobr>>
@@ -557,7 +559,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Logic">>
 <<AddParagraph "You've been buying cheap beer for yourself this whole time to match him.">>
 
-<<PassiveSkill "Hand-Eye Coordination">>
+<<PassiveSkill "hand/eye Coordination">>
 <<AddParagraph "And won three rounds of darts with other members of the 41st to get some shots of cheap liquor in yourself.">>
 
 <<AddOption "Back to the present - look at Kim." "HaloImagery1">>[[|HaloImagery1]]
@@ -616,7 +618,8 @@ A Disco Elysium Fanwork
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "He stares at you for a moment - amused, he finds it slightly funny, but doesn't laugh -">>
 
-<<AddOption "And then he surprises you." "FirstKiss">>[[|FirstKiss]]
+<<AddParagraph "And then he surprises you.">>
+<<include FirstKiss>>[[|FirstKiss]]
 
 
 :: CommandSecret [nobr] {"position":"1000,950","size":"100,100"}
@@ -625,20 +628,24 @@ A Disco Elysium Fanwork
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "He stares at you for a moment - as if considering if he'll quirk an eyebrow at you, then decides not to -">>
 
-<<AddOption "And then he surprises you." "FirstKiss">>[[|FirstKiss]]
+<<AddParagraph "And then he surprises you.">>
+<<include FirstKiss>>[[|FirstKiss]]
 
 
 :: TeaseSecret [nobr] {"position":"1200,950","size":"100,100"}
 <<SkillSuccess>>
 
-<<AddOption "You are expecting a flippant response, when Kim surprises you." "FirstKiss">>[[|FirstKiss]]
+<<SetSpeaker "You">>
+<<AddParagraph "You are expecting a flippant response, when Kim surprises you." >>
+<<include FirstKiss>>[[|FirstKiss]]
 
 
 :: StoicSecret [nobr] {"position":"1400,950","size":"100,100"}
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "He stares at you for a moment - realizes you won't respond -">>
 
-<<AddOption "And then he takes the initiative and surprises you." "FirstKiss">>[[|FirstKiss]]
+<<AddParagraph "And then he takes the initiative and surprises you." >>
+<<include FirstKiss>>[[|FirstKiss]]
 
 
 :: FirstKiss [nobr] {"position":"1100,1100","size":"100,100"}
@@ -702,7 +709,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "EMPATHY">>
 <<AddParagraph "Through the booze, he kisses you with a remarkably focused intention. He's wanted this for a while.">>
 
-<<AddOption "PERCEPTION (Sound): \[Challenging: Success\] Someone coughs loudly off to the side." "ClosingTime">>[[|ClosingTime]]
+<<AddOption "Perception (Hearing): \[Challenging: Success\] Someone coughs loudly off to the side." "ClosingTime">>[[|ClosingTime]]
 
 
 :: ClosingTime [nobr] {"position":"1100,1550","size":"100,100"}
@@ -739,7 +746,7 @@ A Disco Elysium Fanwork
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "Kim gets up smoothly, holding a hand out to you.">>
 
-<<include "LetHim">>
+<<include "LetHim">>[[|LetHim]]
 
 :: UpYourself [nobr] {"position":"950,1700","size":"100,100"}
 <<SkillFailure>>
@@ -750,7 +757,7 @@ A Disco Elysium Fanwork
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "Kim is already upright, holding a hand out to you. ">>
 
-<<include "LetHim">>
+<<include "LetHim">>[[|LetHim]]
 
 
 :: OfferHand [nobr] {"position":"1250,1700","size":"100,100"}
@@ -759,14 +766,14 @@ A Disco Elysium Fanwork
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "He gets up smoothly, then shifts the weight, turning it into offering //his// hand for //you//.">>
 
-<<include "LetHim">>
+<<include "LetHim">>[[|LetHim]]
 
 
 :: Wait [nobr] {"position":"1400,1700","size":"100,100"}
 <<SetSpeaker "KIM KITSURAGI">>
 <<AddParagraph "Kim gets up smoothly, holding a hand out to you.">>
 
-<<include "LetHim">>
+<<include "LetHim">>[[|LetHim]]
 
 
 :: AssGrab [nobr] {"position":"1100,1850","size":"100,100"}
@@ -804,13 +811,6 @@ A Disco Elysium Fanwork
 <<AddOption "\"Your place, it's cleaner.\"" "KimApartment1">>[[|KimApartment1]]
 <<AddOption "\"Which do you want?\"" "IndecisiveAgain">>[[|IndecisiveAgain]]
 
-:: ECKnows [nobr] {"position":"1100,2150"}
-<<PassiveSkill "Electrochemistry" "Trivial" "Success">>
-<<AddParagraph "That hand has not left your ass, by the way.">>
-
-<<AddOption "\[Electrochemistry - Trivial 7\] Wiggle your ass a bit." "ButtWiggle">>[[|ButtWiggle]]
-<<AddOption "\[Pain Threshold - Legendary 14\] Grab //his// ass." "firmlygrasp">>[[|firmlygrasp]]
-
 :: HarryApartment1 [nobr] {"position":"800,2150","size":"100,100"}
 <<set $apartment to "Harry">>
 
@@ -825,7 +825,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Authority" "Legendary" "Failure">>
 <<AddParagraph "That seemed almost too easy, to convince him to come to your filthy hovel. But why?">>
 
-<<include "ECKnows">>
+<<include "ECKnows">>[[|ECKnows]]
 
 
 :: IndecisiveAgain [nobr] {"position":"1250,2150","size":"100,100"}
@@ -849,7 +849,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Logic" "Medium" "Success">>
 <<AddParagraph "If he's suggesting it, he should have the eight reál to cover it. _cash">>
 
-<<include "ECKnows">>
+<<include "ECKnows">>[[|ECKnows]]
 
 
 :: KimApartment1 [nobr] {"position":"1400,2150","size":"100,100"}
@@ -873,7 +873,33 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Logic" "Medium" "Success">>
 <<AddParagraph "It should be about eight reál to cover it. _cash">>
 
-<<include "ECKnows">>
+<<include "ECKnows">>[[|ECKnows]]
+
+:: ECKnows [nobr] {"position":"1100,2150"}
+<<PassiveSkill "Electrochemistry" "Trivial" "Success">>
+<<AddParagraph "That hand has not left your ass, by the way.">>
+
+<<AddOption "\[Electrochemistry - Trivial 7\] Wiggle your ass a bit." "ButtWiggle">>[[|ButtWiggle]]
+<<AddOption "\[Pain Threshold - Legendary 14\] Grab //his// ass." "firmlygrasp">>[[|firmlygrasp]]
+
+
+:: ButtWiggle [nobr] {"position":"900,2300","size":"100,100"}
+
+<<SkillSuccess>>
+
+<<SetSpeaker "You">>
+<<AddParagraph "You twist your hips a bit, just enough motion. There's a look of surprise on his face, that quickly morphs into a devilish grin, and -">>
+
+<<include "Smack">>[[|Smack]]
+
+:: firmlygrasp [nobr] {"position":"1300,2300","size":"100,100"}
+
+<<SkillSuccess>>
+
+<<SetSpeaker "You">>
+<<AddParagraph "You reach over and grasp him, a body you have been wanting for so long now but never let yourself hope for. There's a look of surprise on his face, that quickly morphs into a devilish grin, and -">>
+
+<<include "Smack">>[[|Smack]]
 
 :: Smack [nobr] {"position":"1100,2300"}
 
@@ -898,25 +924,6 @@ A Disco Elysium Fanwork
 <<AddParagraph "He untangles from you, still wearing that grin. \"I hope there will be more of that later,\" he says, and heads to _destination">>
 
 <<AddOption "You shuffle behind him, slowly feeling your legs regain sensation." "Taxonomy1">>[[|Taxonomy1]]
-
-
-:: ButtWiggle [nobr] {"position":"900,2300","size":"100,100"}
-
-<<SkillSuccess>>
-
-<<SetSpeaker "You">>
-<<AddParagraph "You twist your hips a bit, just enough motion. There's a look of surprise on his face, that quickly morphs into a devilish grin, and -">>
-
-<<include "Smack">>
-
-:: firmlygrasp [nobr] {"position":"1300,2300","size":"100,100"}
-
-<<SkillSuccess>>
-
-<<SetSpeaker "You">>
-<<AddParagraph "You reach over and grasp him, a body you have been wanting for so long now but never let yourself hope for. There's a look of surprise on his face, that quickly morphs into a devilish grin, and -">>
-
-<<include "Smack">>
 
 
 :: Taxonomy1 [nobr] {"position":"1100,2450","size":"100,100"}
@@ -1066,22 +1073,7 @@ A Disco Elysium Fanwork
 <<AddOption "\[Electrochemistry - Trivial 7\] Just kiss him already!" "Dip?">>[[|Dip?]]
 <<endif>>
 
-:: KimLaughter [nobr] {"position":"1100,3200"}
-<<PassiveSkill "CONCEPTUALIZATION">>
-<<if $laughDespiteNoise is true>>
-<<AddParagraph "And yet, the heavens open -">>
-<<else>>
-<<AddParagraph "And at this point, the heavens open -">>
-<<endif>>
 
-<<SetSpeaker "KIM KITSURAGI">>
-<<if $position is "dip">>
-<<AddParagraph "Kim is //laughing//. Heartily. You can practically feel his body shaking in your arms as he does. It is only a little at your expense, but still - it is //wonderful//.">>
-<<else>>
-<<AddParagraph "Kim is //laughing//. Heartily. Joyfully. It is only a little at your expense, but still - it is //wonderful//.">>
-<<endif>>
-
-<<AddOption "ELECTROCHEMISTRY: ''NOW!''" "SecondKiss">>[[|SecondKiss]]
 
 :: Dip? [nobr] {"position":"800,3200","size":"100,100"}
 <<set $position to "dip">>
@@ -1100,7 +1092,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Visual Calculus" "Medium" "Success">>
 <<AddParagraph "Wait, one moment before you fuck this up completely. Tilt your pelvis down three degrees and move your arm just so and - //there!//">>
 
-<<include "KimLaughter">>
+<<include "KimLaughter">>[[|KimLaughter]]
 
 :: AskPermission [nobr] {"position":"950,3200","size":"100,100"}
 <<if $apartment is "Kim">>
@@ -1114,7 +1106,7 @@ A Disco Elysium Fanwork
 <<SetSpeaker "YOU">>
 <<AddParagraph "The words come out of your mouth before you can even think about what they are. \"So does that mean I can open your can, Kim?\"">>
 
-<<include "KimLaughter">>
+<<include "KimLaughter">>[[|KimLaughter]]
 
 
 :: AskDirectly [nobr] {"position":"1250,3200","size":"100,100"}
@@ -1129,7 +1121,7 @@ A Disco Elysium Fanwork
 <<SetSpeaker "YOU">>
 <<AddParagraph "The words come out of your mouth before you can even think about what they are. \"Pleaaaaaaaaaase tell me?? Pretty please??\"">>
 
-<<include "KimLaughter">>
+<<include "KimLaughter">>[[|KimLaughter]]
 
 
 :: Handsy [nobr] {"position":"1400,3200","size":"100,100"}
@@ -1144,7 +1136,24 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Reaction Speed" "Medium" "Failure">>
 <<AddParagraph "Damn, not cool, dude, what were you thinking? You're gonna freak him out!">>
 
-<<include "KimLaughter">>
+<<include "KimLaughter">>[[|KimLaughter]]
+
+:: KimLaughter [nobr] {"position":"1100,3200"}
+<<PassiveSkill "CONCEPTUALIZATION">>
+<<if $laughDespiteNoise is true>>
+<<AddParagraph "And yet, the heavens open -">>
+<<else>>
+<<AddParagraph "And at this point, the heavens open -">>
+<<endif>>
+
+<<SetSpeaker "KIM KITSURAGI">>
+<<if $position is "dip">>
+<<AddParagraph "Kim is //laughing//. Heartily. You can practically feel his body shaking in your arms as he does. It is only a little at your expense, but still - it is //wonderful//.">>
+<<else>>
+<<AddParagraph "Kim is //laughing//. Heartily. Joyfully. It is only a little at your expense, but still - it is //wonderful//.">>
+<<endif>>
+
+<<AddOption "ELECTROCHEMISTRY: ''NOW!''" "SecondKiss">>[[|SecondKiss]]
 
 
 :: SecondKiss [nobr] {"position":"1100,3350","size":"100,100"}
@@ -1296,13 +1305,29 @@ A Disco Elysium Fanwork
 
 <<set $alley to true>>
 
-/* Grace, this part is for you! Start the alley sequence here. */
+<<SkillSuccess>> 
+
+<<PassiveSkill "PAIN THRESHOLD" >>
+<<AddParagraph "Ow...">>
+
+<<PassiveSkill "ELECTROCHEMISTRY" >>
+<<AddParagraph "Ow!!">>
+
+<<PassiveSkill "PHYSICAL INSTRUMENT" >>
+<<AddParagraph "His body, smaller than yours and thinner too is surprisingly strong. All Kim’s movements are so graceful and considered you hadn’t imagined there’d be power there.">>
+
+<<PassiveSkill "PERCEPTION (touch)">>
+<<AddParagraph "His tongue is in your mouth, his glasses bump up on your cheek. It’s amazing that you’re soaking wet in an alley and all Kim’s attention stays glued on you. Not on the dampness of your clothes or the foul smell of the street but you, officer.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "Kim’s painfully precise hands grab your belt, firm, steady, confident.">>
 
 <<PassiveSkill "Electrochemistry">> /* not sure about this but i think it's okay */
 <<AddParagraph "You ready for this, cowboy? To get your dick out here in the rain?">>
+
+<<AddOption "Wait, what? Is this really safe?" AlleyShivers>>[[|AlleyShivers]]
+
+:: AlleyShivers [nobr] {"position": "900,3950"}
 
 <<PassiveSkill "Perception (Touch)">>
 <<AddParagraph "The metal of your belt buckle briefly brushes against exposed skin -">>
@@ -1313,13 +1338,17 @@ A Disco Elysium Fanwork
 <<AddParagraph "YOU'VE MADE YOUR CHOICE, MY OFFICERS. YOU KEEP ME SAFE AND LOVE ME - I LOVE YOU AND I'LL KEEP YOU SAFE. BUT IT'S YOUR FUNERAL IF YOU CATCH A COLD FROM YOUR DECADENCE.">>
 
 /* this brings it back to the "know my secret" thing. */
-<<include "Ready">>
+<<include "Ready">>[[|Ready]]
 
 :: ApartmentEntrance [nobr] {"position": "1200,3800"}
 <<if $apartment is "Kim">>
 <<set _now to "now">>
 <<else>>
 <<set _now to "once again">>
+<<endif>>
+
+<<if $apartment is "Harry">>
+<<SkillSuccess>> 
 <<endif>>
 
 <<PassiveSkill "Electrochemistry" "Heroic" "Success">>
@@ -1362,7 +1391,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Drama" "Easy" "Success">>
 <<AddParagraph "Kim catches your lie easy as anything.">>
 
-<<include "AssGrab2">>
+<<include "AssGrab2">>[[|AssGrab2]]
 
 :: ShamelessAndHorny [nobr] {"position": "1300,4100"}
 
@@ -1371,7 +1400,7 @@ A Disco Elysium Fanwork
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"I bet you're not - you're //shameless//, aren't you?\"">>
 
-<<include "AssGrab2">>
+<<include "AssGrab2">>[[|AssGrab2]]
 
 :: AssGrab2 [nobr] {"position": "1100,4100"}
 <<if $apartment is "Kim">>
@@ -1417,7 +1446,7 @@ A Disco Elysium Fanwork
 <<SetSpeaker "You">>
 <<AddParagraph "By the time you've gotten to the right landing, he's already at the door. There is a single weak, flickering lamp in this part of the hallway, casting long shadows on you both. ">>
 
-<<PassiveSkill "Perception (Sound)" "Legendary" "Success">>
+<<PassiveSkill "perception (hearing)" "Legendary" "Success">>
 <<AddParagraph "The sound of metal on metal, but small - fumbling with a keychain.">>
 
 <<PassiveSkill "Visual Calculus">>
@@ -1442,7 +1471,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "No way are you going to make me wait. Not this close.">>
 
-<<include "Bitey">>
+<<include "Bitey">>[[|Bitey]]
 
 :: NeckForDoor [nobr] {"position": "1400,4400"}
 
@@ -1451,7 +1480,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "Fuck yeah!">>
 
-<<include "Bitey">>
+<<include "Bitey">>[[|Bitey]]
 
 :: Bitey [nobr] {"position": "1100,4400"}
 
@@ -1558,7 +1587,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Empathy">>
 <<AddParagraph "A look of surprise in his eyes, turned eager. Ears bright red, a small gasp from his lips. He knew you were capable of this - he saw the destruction at the end of your bender, so long ago now; he's admired your physique from afar enough - but he is still surprised at the way that you are not a pushover now.">>
 
-<<include "HotStuff">>
+<<include "HotStuff">>[[|HotStuff]]
 
 
 :: Submissive? [nobr] {"position": "1400,4850"}
@@ -1582,12 +1611,12 @@ A Disco Elysium Fanwork
 <<PassiveSkill "authority" "Godly" "Failure">>
 <<AddParagraph "His confidence that you will do as he wishes is absolute - and correct.">>
 
-<<AddOption "[Interfacing - Medium 6] Remove his glove - //sexily//." "GloveSuck">>[[|GloveSuck]]
+<<AddOption "[Interfacing - Medium 10] Remove his glove - //sexily//." "GloveSuck">>[[|GloveSuck]]
 
 :: GloveSuck [nobr] {"position": "1400,5000"}
 
 <<SkillSuccess>>
-<<PassiveSkill "perception (sound)">>
+<<PassiveSkill "perception (hearing)">>
 <<AddParagraph "The scrape of your teeth against the pad of Kim's finger draws out a hitched breath, barely perceptible even in this empty room.">>
 
 <<PassiveSkill "interfacing">>
@@ -1598,12 +1627,12 @@ A Disco Elysium Fanwork
 
 <<AddParagraph "With a surge of hunger he meets your eyes once again the presses the thumb of his other hand forcefully against your mouth, prompting you to repeat your trick.">>
 
-/* Grace, this part is for you! This is the submissive Harry taking the clothes off take. I love the sequence above that Pika wrote, but the rest is up to you. Just make sure that at the end you inclde the "HotStuff" passage, which has the choices that come back. */
+/* Grace, this part is for you! This is the submissive Harry taking the clothes off take. I love the sequence above that Pika wrote, but the rest is up to you. Just make sure that at the end you include the "HotStuff" passage, which has the choices that come back. */
 
 <<SetSpeaker "You">>
 <<AddParagraph "And so it follows with the rest of his clothing - occasionally with your hands, but mostly with your mouth.">>
 
-<<include "HotStuff">>
+<<include "HotStuff">>[[|HotStuff]]
 
 :: HotStuff [nobr] {"position": "1100,5000"}
 
@@ -1614,6 +1643,20 @@ A Disco Elysium Fanwork
 <<AddOption "\[Electrochemistry - Heroic 15\] Push him down onto his knees." "Pushy">>[[|Pushy]]
 <<AddOption "\"So what now?\"" "WhatNow">>[[|WhatNow]]
 
+:: Pushy [nobr] {"position":"900,5150"}
+
+<<SkillFailure>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim locks his knees to resist your pushing.">>
+<<include "Ready">>[[|Ready]]
+
+:: WhatNow [nobr] {"position": "1300,5150"}
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim puts a hand on your chest - a moment of warmth - and grins.">>
+<<include "Ready">>[[|Ready]]
+
 :: Ready [nobr] {"position": "1100,5150"}
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Wait. Are you ready?\"">>
@@ -1622,19 +1665,23 @@ A Disco Elysium Fanwork
 <<AddOption "\"No.\"" "SecretNoHuh">>[[|SecretNoHuh]]
 <<AddOption "\"Huh?\"" "SecretNoHuh">>[[|SecretNoHuh]]
 
-:: Pushy [nobr] {"position":"900,5150"}
+:: SecretYes [nobr] {"position": "900,5300"}
 
-<<SkillFailure>>
+<<PassiveSkill "Rhetoric" "Heroic" "Failure">>
+<<AddParagraph "Do you even know what you're agreeing to?">>
 
-<<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "Kim locks his knees to resist your pushing.">>
-<<include "Ready">>
+<<PassiveSkill "Empathy">>
+<<AddParagraph "//Everything.//">>
 
-:: WhatNow [nobr] {"position": "1300,5150"}
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "Fucking his brains out, obviously. GIMME.">>
+<<include AgreeToEverything>>[[|AgreeToEverything]]
 
-<<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "Kim puts a hand on your chest - a moment of warmth - and grins.">>
-<<include "Ready">>
+:: SecretNoHuh [nobr] {"position": "1300,5300"}
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "What? You're sure ready to fuck his brain out, and that's what matters here, isn't it?">>
+<<include AgreeToEverything>>[[|AgreeToEverything]]
 
 :: AgreeToEverything [nobr] {"position": "1100,5300"}
 
@@ -1655,27 +1702,11 @@ A Disco Elysium Fanwork
 
 <<AddOption "\"Well then by all means, Kim, tell me your secret.\"" "Secret3">>[[|Secret3]]
 
-:: SecretYes [nobr] {"position": "900,5300"}
 
-<<PassiveSkill "Rhetoric" "Heroic" "Failure">>
-<<AddParagraph "Do you even know what you're agreeing to?">>
-
-<<PassiveSkill "Empathy">>
-<<AddParagraph "//Everything.//">>
-
-<<PassiveSkill "Electrochemistry">>
-<<AddParagraph "Fucking his brains out, obviously. GIMME.">>
-<<include AgreeToEverything>>
-
-:: SecretNoHuh [nobr] {"position": "1300,5300"}
-
-<<PassiveSkill "Electrochemistry">>
-<<AddParagraph "What? You're sure ready to fuck his brain out, and that's what matters here, isn't it?">>
-<<include AgreeToEverything>>
 
 :: Secret3 [nobr] {"position": "1100,5450"}
 
-<<PassiveSkill "Perception (Sound)">>
+<<PassiveSkill "perception (hearing)">>
 <<AddParagraph "A breath, a moment of silence.">>
 
 <<PassiveSkill "Rhetoric">>
@@ -1705,6 +1736,12 @@ A Disco Elysium Fanwork
 <<set _unabashed to "unabashed">>
 <<endif>>
 
+<<if $drink is "wine">>
+<<set _control to "thrall">>
+<<else>>
+<<set _control to "control">>
+<<endif>>
+
 <<PassiveSkill "Authority">>
 <<AddParagraph "It's different from the usual - the assured control is there, but there's mischief, too.">>
 
@@ -1716,9 +1753,16 @@ A Disco Elysium Fanwork
 <<AddParagraph "Who would have ever fucking thought that you'd get to really, truly //party// with fucking Kim Kitsuragi, in the most vulgar and _unabashed way possible? Incredible.">>
 
 <<if $alley is true>>
-<<SetSpeaker "???">> /* To do: figure out who should speak here */
-<<AddParagraph "You’ve never seen anyone look this good- Kim’s eyes bore into yours as he settles on his knees.">>
-<<AddOption "Kim, who tailors his clothes, whose hair is impeccable, whose air is always professional, is kneeling down on the filthy alley ground and sucking your dick." "Alley2">>[[|Alley2]]
+<<PassiveSkill "COMPOSURE" >>
+<<AddParagraph "This is the man who you had to //beg// to play board games or listen to stories about cryptids.">>
+
+<<PassiveSkill "AUTHORITY" >>
+<<AddParagraph "Someone who can pull you into his _control with a single eyebrow.">>
+
+<<PassiveSkill "SAVOIR FAIRE" >>
+<<AddParagraph "Who tailored those trousers, now slick with mud.">>
+
+<<AddOption "ELECTROCHEMISTRY: All in the service of sucking on your cock." "Alley2">>[[|Alley2]]
 <<else>>
 <<PassiveSkill "Savoir Faire">>
 <<AddParagraph "It takes some serious talent to look that good with a mouth full of cock. He's still //devastatingly fucking handsome//. It's practically unfair. You should tell him so.">>
@@ -1727,7 +1771,61 @@ A Disco Elysium Fanwork
 
 :: Alley2 [nobr] {"position": "900,5750"}
 
-/* Grace, this part is for you! This is what's happening in the alley after Kim's got his mouth full of dick. Enjoy! */
+<<PassiveSkill "CONCEPTUALIZATION" >>
+<<AddParagraph "Kim’s eyes flutter prettily and he swallows you down in one swift motion. God, he’s gorgeous, lips pursed around you. The neon from the sign across the road  shines on the spit coating your cock and his lips. Beautiful; a painting in pinks and blues and dirty gray.">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "There’s nothing here for you to brace yourself with so you clutch the back of Kim’s head. ">>
+
+<<PassiveSkill "VOLITION" "Legendary" "Failure" >>
+<<AddParagraph "You’re messing up his hairdo, boss. His hair, once slicked back, is now being tousled by your meaty paws.">>
+
+<<PassiveSkill "PAIN THRESHOLD" "Challenging" "Success">>
+<<AddParagraph "Maybe he'll punish you for it later.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He looks up at you, cheeks hollow, eyes burning with lust. And he just feels //so good//, his hot, wet mouth, his clever tongue.">>
+
+<<PassiveSkill "ESPRIT DE CORPS" "Legendary" "Success">> 
+<<AddParagraph "Kim told himself he wouldn’t do this like this, but here he is. You, human can-opener as you are, have knocked his inhibitions loose. It alarms some part of him, how little he cares about getting caught in this alleyway, about anyone seeing how much this turns him on.">>
+
+<<PassiveSkill "ELECTROCHEMISTRY" >>
+<<AddParagraph "Did you forget? That’s //Kim// sucking you off. He’s making pretty noises, too; wet noises. Grunting, too. One hand is wrapped around the base of you, and the other? Why, that one’s snaked down to his crotch.">>
+
+<<SetSpeaker "Limbic System">>
+<<AddParagraph "The thrill of being exposed, the beauty of the man below you, the knowledge you're affecting him - it's too much at once! A sweet fire burns through you, faster than you can control, you can't hold on, can you, Harry-boy?">>
+
+<<AddOption "No, I can't hold out. (Cum.)" AlleyPremature>>[[|AlleyPremature]]
+
+:: AlleyPremature [nobr] {"position":"900,5900"}
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim licks his lips and looks up at you for the briefest moment. You should help him up; you’re not young men anymore. But he stands without complaint, grabbing your forearms and leverage.">>
+<<AddParagraph "There is a smug little smile on his face. Then he stretches his jaw and wipes a little excess saliva from his lips.">>
+
+<<PassiveSkill "REACTION SPEED" "Formidable" "Success">> 
+<<AddParagraph "\"You're a big boy, Harry,\" the quirk of his eyebrow says.">>
+
+<<PassiveSkill "COMPOSURE" "Medium" "Success">> 
+<<AddParagraph "You redo your pants and belt, feeling a little more clearheaded. Tuck a hand into your pocket, casual-like.">>
+
+<<PassiveSkill "ELECTROCHEMISTRY" >>
+<<AddParagraph "But even as Kim looks like the image of composure and grace and you regain your own, he's still hard, straining through his pants.">>
+
+<<PassiveSkill "VOLITION" >>
+<<AddParagraph "After that little moment, it'd only be right to help him with that.">>
+
+<<AddOption "\[SAVOIR FAIRE - Challenging 12\] Undo his belt and pull his cock out with your free hand. Yes, one handed." AlleyPullItOut>>[[|AlleyPullItOut]]
+
+:: AlleyPullItOut [nobr] {"position":"900,6050"}
+
+<<SkillSuccess>> 
+
+<<SetSpeaker "???">>
+<<AddParagraph "Kim lets out a surprised grunt as he’s pressed into the brick like you were.  But when you go for his belt, he doesn’t stop you, but secures his fingers around your lapel. ">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Harry -\" You lean in so you feel his breathe hot on your ear. It’s a warning, but that’s the only resistance you’ll get.  His cock is hot in your cold hands. He sucks in air through his teeth.">>
 
 :: NewInnocence [nobr] {"position": "1100,5750"}
 
@@ -1834,7 +1932,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "You have featured heavily in his fantasies, lately. Indeed, many of those nights after parting with a chaste hug from an evening of helping him move, he'd come straight to bed, strip the minimum viable amount, lube both hands, and have at it, left fist on his cock, right index finger in his ass, moaning your name the whole time.">>
 
 <<if $apartment is "Kim">>
-<<PassiveSkill "Hand-Eye Coordination">>
+<<PassiveSkill "hand/eye Coordination">>
 <<AddParagraph "You dollop lube generously on your fingers, shooting him a devilish grin as you do so.">>
 
 <<SetSpeaker "You">>
@@ -1914,10 +2012,31 @@ A Disco Elysium Fanwork
 
 <<CheckSuccess>>
 
-<<SetSpeaker "Empathy">>
+<<set $fantasies to 0>> /* fantasy counter */
+<<set $threshold to 5>> /* adjust this as we make more ridiculous options. Player will not get *all* options, but it's good practice to have this be adjustable. */
+
+<<PassiveSkill "Empathy">>
 <<AddParagraph "As forceful as he is, he's a little embarrassed about dirty talk, and you're not going to push it.">>
 
-/* Don't be a jerk about it. Pika, Grace, feel free to put any ideas here.*/
+<<PassiveSkill "Suggestion">>
+<<AddParagraph " In fact, //you// should push -- to dizzying heights. How many fantasies have you had about him, anyway? List them //all.//">>
+
+<<AddOption "Let us consider the Kim Kitsuragi Spank Bank." SB_Start>>[[|SB_Start]]
+
+:: SB_Start [nobr] {"position": "400,6800"}
+
+/* oh jeez here we go */
+
+<<if $fantasies > $threshold>>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Okay okay, I get it, enough!\" The mix of exasperation and lust looks good on him. \"We can discuss your...imagination...some other time. Now, please, //fuck me//.\"">>
+
+<<else>>
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "The Kim Kitsuragi Spank Bank is extensive. You've wanted to boogie with the man for a long time, and the realms of the //fantasme érotique// are vast.">>
+
+/* Meta-notes: you can use x position = 400, y > 600 to "visually store" all the SB entries. They should be short. Honestly, I should probably be stopped before I make too many. */
+<<endif>>
 
 :: UseYourWords [nobr] {"position":"800,6650"}
 
@@ -1956,7 +2075,7 @@ A Disco Elysium Fanwork
 
 :: NeedyWait [nobr] {"position": "1100,6700"}
 <<set $hastyprep to true>>
-<<PassiveSkill "Hand-eye coordination">>
+<<PassiveSkill "hand/eye coordination">>
 <<AddParagraph "His legs shake as he nods, the end points of a subtle tremor of anticipation and strain throughout his body. You support his back and ass against your thighs and settle his left ankle on your right shoulder, angling his other thigh out.">>
 
 <<PassiveSkill "Endurance">>
@@ -2007,7 +2126,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "Trust me, he's not complaining.">>
 
-<<PassiveSkill "Hand-Eye Coordination">>
+<<PassiveSkill "hand/eye Coordination">>
 <<AddParagraph "You stretch him open, holding a trembling thigh in your other hand, continuing to lap at his cock. Each movement of your fingers wrenches out another moan, another gasp, another swear. He's barely able to buck against you, with his legs up, but he's trying his best with what little leverage he has.">>
 
 <<PassiveSkill "Physical Instrument">>
@@ -2076,7 +2195,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Rhetoric" "Legendary" "Failure">>
 <<AddParagraph "You find yourself babbling, the slick heat undoing any thoughts basides the sheer wonder you feel about your current position">>
 
-<<AddOption "\"Fucking hell, Kim, you're perfect, you look amazing, you feel amazing/" "FuckKimHarder">>[[|FuckKimHarder]]
+<<AddOption "\"Fucking hell, Kim, you're perfect, you look amazing, you feel amazing -\"" "FuckKimHarder">>[[|FuckKimHarder]]
 
 ::FuckKimHarder [nobr] {"position": "1300, 7600"}
 <<SetSpeaker "Kim Kitsuragi">>
@@ -2084,3 +2203,179 @@ A Disco Elysium Fanwork
 
 <<PassiveSkill "Empathy">>
 <<AddParagraph "And who are you to deny him at this point?">>
+
+<<PassiveSkill "ELECTROCHEMISTRY" >>
+<<AddParagraph "Who are you to deny //yourself// at this point? Give in. Wreck him and yourself. Head into oblivion together, Disco Zero, the only place all this can go.">>
+
+<<PassiveSkill "PHYSICAL INSTRUMENT" >>
+<<AddParagraph "Your pick up the pace; fast now, hard, with the full force of your weight into them; in time to the kind of music he likes, primal, thrashing, forceful.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "His reactions are exquisite - look at this beautiful mess! Flashes of light bounce chaotically around the room as his glasses get knocked about. He's sweating profusely, the sheen highlighting his musculature just so. A bead of precum at the tip of his hard cock becomes a streak on his stomach with one thrust, joined by more as you go. ">>
+<<AddParagraph "Listen to him cry out for you, gasping, pleading. \"I'm so close, //please// -\"">>
+
+<<AddOption "\[ELECTROCHEMISTRY - Medium 10\] Give him what he wants - grab his cock." VisCalcBestBro>>[[|VisCalcBestBro]]
+
+:: VisCalcBestBro [nobr] {"position": "1300, 7750"}
+
+<<SkillFailure>> 
+
+<<PassiveSkill "VISUAL CALCULUS" "Impossible" "Success">> 
+<<AddParagraph "Wait, one second, before you reach to grab his cock, even as it leaks precum all over the both of you. Tilt your pelvis three degrees up and thrust //as hard as you can.//">>
+
+<<SecretTaskComplete "Things you can do without your hands">>
+<<LevelUp>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Oh //fuck// - how did you even - I'm going to -\" And with that, a look of amazement and disbelief and lust on his face, as he cums all over the both of you, cock pulsing without direct touch.">>
+
+<<AddOption "You try to withdraw, give him a break -" DontStop>>[[|DontStop]]
+
+:: DontStop [nobr] {"position": "1300, 7900"}
+
+<<SetSpeaker "kim kitsuragi">>
+<<AddParagraph "- but he kicks his legs out from your grip and wraps them around you, holding you in. \"Don't //fucking// stop, I want you to cum //inside//,\" he whines, wanton, insistent.">>
+
+<<PassiveSkill "DRAMA" "Challenging" "Success">> 
+<<AddParagraph "He is masking some of the impact you are having, but he is being sincere, my lord. He //wants// you to fuck //all// of the composure out of him, so that he can't even do that. ">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "He presses his ankles against your back and you fall forward, pressing your bodies together as you continue to thrust.">>
+<<AddParagraph " You return to his neck and latch on, kissing and sucking up and down his throat. ">>
+
+<<SetSpeaker "kim kitsuragi">>
+<<AddParagraph "He slides one hand in your hair and another along your neck; his back arches, his chest rises to meet you.">>
+<<AddParagraph " The friction of your bodies makes him hard again, pressed between the two of you.">>
+<<AddParagraph " His moans continue, frantic, incoherent.">>
+
+<<AddOption "This moment is perfect, overwhelming, and thus it cannot last -" Orgasm>>[[|Orgasm]]
+
+:: Orgasm [nobr] {"position":"1300,8050"}
+
+<<PassiveSkill "ENDURANCE">>
+<<AddParagraph "And now: a point of undoing.">>
+
+<<PassiveSkill "VOLITION" >>
+<<AddParagraph "A collapse of control.">>
+
+<<PassiveSkill "RHETORIC">>
+<<AddParagraph "An unfurling of the tangle of the brain.">>
+
+<<PassiveSkill "PHYSICAL INSTRUMENT" >>
+<<AddParagraph "An uncoiling of the body. Muscles slacken, release their grip.">>
+
+<<PassiveSkill "ELECTROCHEMISTRY" >>
+<<AddParagraph "The best, most delicious head high. Pleasure unparalleled, the most disco of emotional states. You are the light and the disco ball and the dancer all in one - bright and scattered and moved by it, all at once. ">>
+
+<<SetSpeaker "Ancient Reptilian Brain">>
+<<AddParagraph "Here we are, you filthy animal! It's right before you teeter into oblivion, //baby//.">>
+<<AddParagraph "Go on - mark him, fill him, make him //yours// in the oldest, most primal way possible.">>
+
+<<SetSpeaker "Limbic System">>
+<<AddParagraph "It is not amnesia - you have been there, that terrible uncontrolled wildfire. But it is a different thing, burning clean all your cares for a moment, in exchange for connection to flesh and blood.">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "Intimacy and physicality spark a sweeter kind of fire.">>
+
+<<AddOption "The world goes white, for just a moment, nothing but feral groans from the both of you and the connection of your bodies. " Aftercare1>>[[|Aftercare1]]
+
+:: Aftercare1 [nobr] {"position":"1300,8200"}
+
+<<SetSpeaker "you">>
+<<AddParagraph "Spent, you collapse more fully onto him, caring not a bit for the sticky sensation of bodies against each other. It's even slicker than before - he must have come again when you did. \"That was amazing,\" you murmur into the crook of his neck.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph " \"Yes-yes, it was. I didn't know you had it in you.\" You feel his hands move off of you briefly - he's taking his glasses off and stretching to put them on the nightstand.">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"I didn't know //you// did, either,\" you respond, as you slowly slide off his body to settle in next to him. \"I didn't even know you wanted me like this.\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph " He smiles at that. \"I've been told I'm a terrible flirt. Alcohol makes it easier though - almost too easy. Maybe one day I'll tell you //that// story.\" And with that, he moves to his side and backs into you; you slot in easily, the proverbial bigger spoon.">>
+
+<<PassiveSkill "RHETORIC" >>
+<<AddParagraph "One day, you will fulfill the task \"Learn the lieutenant's drunkotype\". Today is not that day. ">>
+
+<<PassiveSkill "SUGGESTION" >>
+<<AddParagraph "Pull the covers up around you both. This is the time to be gentle, to be tender, right as you drift off.">>
+
+<<AddOption "\"Hey. Kitsy. Are you awake?\"" HiKitsy>>[[|HiKitsy]]
+
+:: HiKitsy [nobr] {"position":"1300,8350"}
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"//Kitsy?//\"">>
+
+<<PassiveSkill "EMPATHY" "Medium" "Success">> 
+<<AddParagraph "He's surprised by the new nickname, but it's not unwelcome.">>
+
+<<PassiveSkill "ESPRIT DE CORPS" >>
+<<AddParagraph "After years of \"Kimball\", let alone terrible racist epithets said in the name of \"joking\", he's bristled at the idea of being nicknamed again - but he can tell this comes from genuine affection. It'll take him time to get used to it, but he's willing to give you that time. ">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Sorry, don't like it?\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"... I didn't say that.\" He's silent, for just a moment, considering. \"What is it, Harry?\" ">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Is your secret //really// cock sucking? I mean, that was incredible, but -\"">>
+
+<<SecretTaskComplete "A nickname for your partner" 25>>
+
+<<SetSpeaker "Kitsy">>
+<<AddParagraph "\"Khm.\" He sounds affectionate, amused. \"I guess you'll have to keep detecting to find out.\"">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"... tomorrow?\" ">>
+
+<<SetSpeaker "Kitsy">>
+<<AddParagraph "His chuckle is soft and genuine. \"Sure, maybe you'll get it tomorrow. Good night, Harry.\" ">>
+
+<<AddOption " \"Good night, Kitsy.\"" FinalShivers>>[[|FinalShivers]]
+
+:: FinalShivers [nobr] {"position": "1300,8500"}
+
+<<PassiveSkill "Shivers">>
+<<AddParagraph " At your back is a window left slightly ajar, and a whisper of wind kisses the back of your neck, sending a chill down your spine. It carries to your senses a hint of the sea, a life in salt. Dark depths, stretching on and on, across a city with every possible story to tell. Dots of humanity in motion, drenched in sea spray, peering for signs of life in the dark, dreaming of the kind of warmth and connection you have at hand.">>
+<<AddParagraph "Coldly uncaring the breeze blows past, skimming the hard and barren planes of vinyl and oak, swirling around the discarded detritus of personal touchstones, dreams of the sparkling lights of disco and the thrilling whirl of aerostatics. The breeze slides through the cracks in the door and into the hallway, down into the street, retracing a path further and further back. To a discrete bar in Jamrock where lonely hearts have lingered. To a dock on the coast of Martinaise, where a woman watches the waves alone. Perhaps even all the way to a small hostel, a balcony that always smells of smoke; through a once shattered window, now cracked open into a room that will never be completely free of a permeated unpleasant odor.">>
+<<AddParagraph "Warm breath suddenly replaces the chill, as Kim stirs enough to reach out and draw the covers more snugly around you both. The wind carries on its way, but you are no longer carried with it. You're just here, now, with your partner settled back against your chest. Two hearts slowing and syncing into a shared beat.">>
+
+<<AddOption "You close your eyes again and allow yourself to drift to sleep, under the moon; you give yourself a chance to dream." FinalIE>>[[|FinalIE]]
+
+:: FinalIE [nobr] {"position":"1300,8650"}
+
+<<if $apartment is "Kim">>
+<<set _coffee to "does not have any on hand">>
+<<else>>
+<<set _coffee to "turns down your offered cup">>
+<<endif>>
+
+<<if $alley is true>>
+<<set _sniffles to "through your cold-induced sniffles">>
+<<else>>
+<<set _sniffles to "">>
+<<endif>>
+
+<<PassiveSkill "INLAND EMPIRE" >>
+<<AddParagraph "In the morning, there will be a moment of confusion, as you find the lieutenant does not drink coffee and thus _coffee.">>
+<<AddParagraph "In a few days, there will be a moment of pride _sniffles, as you introduce Kim formally to the 41st and are assigned your first case with him.">>
+<<AddParagraph "In a few weeks, there will be a moment of joy, as he invites you back to that bar on a Friday night.">>
+<<AddParagraph "In a few months? In a few years? Things are hazier, besides the light behind Kim's face. That much will stay, a beacon to guide you onwards. ">>
+
+<<BlankSpeaker>>
+<<AddParagraph "''FIN''">>
+
+<<AddOption "Credits" Credits>>[[|Credits]]
+
+:: Credits [nobr] {"position":"1300,8800"}
+
+<<SetSpeaker "Kawa">>
+<<AddParagraph "Enormous, enormous thanks to all the following people!">>
+<<AddParagraph "rulse, best Drunk Cop, whose wonderful art inspired this fic in the first place;">>
+<<AddParagraph "Alexei/Pikalex, Mistress of Shivers, Keeper of Macros, best collaborator, and general darling of mine;">>
+<<AddParagraph "Mysterious PartnerBeast, human-shaped Animal of Esteem, a patient and thoughtful editor and anchor;">>
+<<AddParagraph "coolant6969, for writing assistance in the \"Alley\" fork of the game;">>
+<<AddParagraph "the entire fan-run Disco Elysium Discord server, sexyposter or not, a wonderful community that I'm proud to call home;">>
+<<AddParagraph "the art movement of ZA/UM - a continuous inspiration to keep striving to further creative heights, untethered from expectations;">>
+<<AddParagraph "And you, dear reader, player of games - thanks for coming along for the ride!">>
