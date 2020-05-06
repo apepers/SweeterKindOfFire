@@ -215,6 +215,7 @@ $(document).on("keyup", function (e) {
 <<set $triedfancy to false>>
 <<set $alley to false>>
 <<set $hastyprep to false>>
+<<set $undies to "what gender?">>
 <<set $optionmap to new Map()>>
 <<set $motorics to ["composure", "hand/eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception", "perception (smell)", "perception (sight)", "perception (taste)", "perception (touch)", "perception (hearing)"]>>
 <<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual calculus"]>>
@@ -2078,8 +2079,8 @@ A Disco Elysium Fanwork
 /* Tension and Release, Earlier this fanfic... */
 <<if $apartment is "Harry">>
     <<SBOption "\"I should have just dragged you into that alleyway when I had a chance.\"" SB_Alley>>[[|SB_Alley]]
-/*    <<else>>
-    <<SBOption "\"I should have just gone down on you in the cab.\"" >> */
+    <<else>>
+    <<SBOption "\"I should have just gone down on you in the cab.\"" SB_Cab>> [[|SB_Cab]]
     
     /* Exhibitionism fantasies, version 1 */
 <<endif>>
@@ -2120,11 +2121,11 @@ A Disco Elysium Fanwork
 
 /* zis is fashuun */
 <<if $apartment is "Harry">>
-<<set _direction to "I'd get to take you home">>
+<<set $direction to "I'd get to take you home">>
 <<else>>
-<<set _direction to "you'd take me home">>
+<<set $direction to "you'd take me home">>
 <<endif>>
-<<SBOption "\"It's a bit of a shame, if I'd known _direction, I would have worn something nicer...\"" SB_Fashion>>[[|SB_Fashion]]
+<<SBOption "\"It's a bit of a shame, if I'd known $direction, I would have worn something nicer...\"" SB_Fashion>>[[|SB_Fashion]]
 
 /* Stereo feelings */
 <<SBOption "\"I wonder if Jean would like to watch...\"" SB_Stereo>>[[|SB_Stereo]]
@@ -2134,7 +2135,27 @@ A Disco Elysium Fanwork
 
 /*Meta-notes: you can use x position = 400, y > 600 to "visually store" all the SB entries. They should be short. Honestly, I should probably be stopped before I make too many.*/
 
-:: SB_Shameless [nobr] {"position": "400, 6800"}
+:: SB_Shameless [nobr] {"position":"400,1200"}
+<<set $fantasies += 1>>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"I'd wonder sometimes, especially if it was raining, if you'd walk in, instead of waiting outside. See me stretched out over that bed, watch me stroke myself.\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"I should have known you'd have no shame...\" His voice trails off, breaking a bit.">>
+
+<<PassiveSkill "Esprit De Corps" >>
+<<AddParagraph "Back then, he thought he needed to give you the space...">>
+
+<<PassiveSkill "Electrochemistry" >>
+<<AddParagraph "And give //himself// a chance to be a little more unrestrained in his own room in the Whirling.">>
+
+<<AddOption "...okay, that's hot, but let's consider something else." SB_Start>>
+
+
+:: SB_Shameless0 [nobr] {"position": "4000, 6800"}
+
+/* Kept this disconnected from everything else for you. <3 */
 <<set $fantasies += 1>>
 <<SetSpeaker "Pikalex">>
 <<AddParagraph "Well, now I am the shameless one.">>
@@ -2172,6 +2193,24 @@ A Disco Elysium Fanwork
 <<AddParagraph "He may say he wouldn't, but he's thinking about it thanks to you, how it'd look, how it'd feel - and it excites him more than he wants to admit.">>
 
 <<AddOption "Perfect. Let's tell him another fantasy." SB_Start>>
+
+:: SB_Cab [nobr] {"position":"200,700"}
+
+<<set $fantasies += 1>>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Wouldn't that have been a thrill? Hot and heavy in the back of a motor carriage, not caring what the cab driver thought...they picked us up from an Underground-leaning bar, I'm sure it's nothing they havne't seen before.\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"I'd hate to make the cab driver clean up your filth, though.\"">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Like I wouldn't try to swallow for you?\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He looks flustered at your implications.">>
+
+<<AddOption "He's cute like that - let's tell him more." SB_Start>>
 
 :: SB_Stereo [nobr] {"position":"400,800"}
 
@@ -2232,9 +2271,18 @@ A Disco Elysium Fanwork
 <<SetSpeaker "kim kitsuragi">>
 <<AddParagraph "\"Something nicer? Like what?\"">>
 
-<<AddOption "\"There's a store on Boogie Street, sells really salacious things for men of the underground. I think they call it a banana hammock?\"" SB2_Boogie>>[[|SB2_Boogie]]
-<<AddOption "\"There's a store on Boogie Street, sells //really// salacious things for men of the underground, with a good deal of discretion. Frilly, lacy things.\"" SB2_Boogie>>[[|SB2_Boogie]]>>
+<<AddOption "\"There's a store on Boogie Street, sells really salacious things for men of the underground. I think they call it a banana hammock?\"" SB2_Boogie_m>>[[|SB2_Boogie_m]]
+<<AddOption "\"There's a store on Boogie Street, sells //really// salacious things for men of the underground, with a good deal of discretion. Frilly, lacy things.\"" SB2_Boogie_f>>[[|SB2_Boogie_f]]
 <<AddOption "\"There's a store in central Jamrock, that sells nothing but socks and stockings and garter belts...\"" sb2_socks>>[[|sb2_socks]]
+
+/* the way macros work means I had to do it this cludgy way instead of setting it at the option itself, but eh, whatever */
+:: SB2_Boogie_m [nobr] {"position":"100,1100"}
+<<set $lovely to "hot and exposed">>
+<<include SB2_Boogie>>[[|SB2_Boogie]]
+
+::SB2_Boogie_f [nobr] {"position":"300,1100"}
+<<set $lovely to "pretty">>
+<<include SB2_Boogie>>[[|SB2_Boogie]]
 
 :: SB2_Boogie [nobr] {"position":"200,1100"}
 
@@ -2242,9 +2290,9 @@ A Disco Elysium Fanwork
 <<AddParagraph "\"Ah, I wasn’t aware you have been doing ... //that// kind of investigating.\" His voice is distracted and he's not quite making eye contact.">>
 
 <<PassiveSkill "EMPATHY" "Medium" "Success" >>
-<<AddParagraph "The vision in his mind’s eye is very specific and //very// appealing. It’s not the first time he’s thought of you wearing a little something from Boogie Street but it’s different now that he //knows// you’d enjoy it.">>
+<<AddParagraph "The vision in his mind’s eye is very specific and //very// appealing. It’s not the first time he’s thought of you wearing a little something $lovely from Boogie Street but it’s different now that he //knows// you’d enjoy it.">>
 
-<<AddOption "One day you'll be all pretty for him. But for now..." SB_Start>>
+<<AddOption "One day you'll be all $lovely for him. But for now..." SB_Start>>
 
 :: sb2_socks [nobr] {"position":"600,1100"}
 
@@ -2256,7 +2304,7 @@ A Disco Elysium Fanwork
 
 <<AddOption "His bare legs feel pretty great in your hands right now, though. (Back to more fantasies.)" SB_Start>>
 
-:: SB_Interrupt [nobr] {"position": "400, 6800"}
+:: SB_Interrupt [nobr] {"position": "400, 6950"}
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Okay okay, I get it, enough!\" The mix of exasperation and lust looks good on him. \"We can discuss your...imagination...some other time. Now, please, //fuck me//.\"">>
 
