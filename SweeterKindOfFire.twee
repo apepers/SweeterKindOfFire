@@ -2040,8 +2040,7 @@ A Disco Elysium Fanwork
 <<AddOption "\[Authority - Medium 10\] Draw it out of him. \"Is there something you want, //Lieutenant//? I think you're going to have to tell me.\"" "UseYourWords">>[[|UseYourWords]]
 
 :: SoftDom [nobr] {"position":"400,6650"}
-
-<<CheckSuccess>>
+<<SkillSuccess>>
 
 <<set $fantasies to 0>> /* fantasy counter */
 <<set $threshold to 5>> /* adjust this as we make more ridiculous options. Player will not get *all* options, but it's good practice to have this be adjustable. */
@@ -2054,20 +2053,39 @@ A Disco Elysium Fanwork
 
 <<AddOption "Let us consider the Kim Kitsuragi Spank Bank." SB_Start>>[[|SB_Start]]
 
+/* Special spank bank widget which lets you add an option that Kim will interrupt if your fantasy count is higher than his patience theshold */
+:: SBOption [Widget widget]
+<<nobr>>
+<<widget "SBOption">>
+<<set _override to ($fantasies > $threshold)>>
+<<AddOption $args[0] `_override ? "SB_Interrupt" : $args[1]`>>
+<</widget>>
+<</nobr>>
+
 :: SB_Start [nobr] {"position": "400,6800"}
-
 /* oh jeez here we go */
+<<if $fantasies == 0>>
+  <<PassiveSkill "Electrochemistry">>
+  <<AddParagraph "The Kim Kitsuragi Spank Bank is extensive. You've wanted to boogie with the man for a long time, and the realms of the //fantasme érotique// are vast.">>
+<<else>>
+  <<PassiveSkill "Electrochemistry">>
+  <<AddParagraph "Hmm... what next?">>
+<<endif>>
 
-<<if $fantasies > $threshold>>
+<<SBOption "\"I touched myself you know, in that shack on the coast, thinking about you.\"" SB_Shameless>>
+
+/*Meta-notes: you can use x position = 400, y > 600 to "visually store" all the SB entries. They should be short. Honestly, I should probably be stopped before I make too many.*/
+
+:: SB_Shameless [nobr] {"position": "400, 6800"}
+<<set $fantasies to ($threshold + 1)>>
+<<SetSpeaker "Pikalex">>
+<<AddParagraph "Well, now I am the shameless one.">>
+
+<<AddOption "Sure am!" SB_Start>>
+
+:: SB_Interrupt [nobr] {"position": "400, 6800"}
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Okay okay, I get it, enough!\" The mix of exasperation and lust looks good on him. \"We can discuss your...imagination...some other time. Now, please, //fuck me//.\"">>
-
-<<else>>
-<<PassiveSkill "Electrochemistry">>
-<<AddParagraph "The Kim Kitsuragi Spank Bank is extensive. You've wanted to boogie with the man for a long time, and the realms of the //fantasme érotique// are vast.">>
-
-/* Meta-notes: you can use x position = 400, y > 600 to "visually store" all the SB entries. They should be short. Honestly, I should probably be stopped before I make too many. */
-<<endif>>
 
 :: UseYourWords [nobr] {"position":"800,6650"}
 
