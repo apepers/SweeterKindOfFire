@@ -2043,7 +2043,7 @@ A Disco Elysium Fanwork
 <<SkillSuccess>>
 
 <<set $fantasies to 0>> /* fantasy counter */
-<<set $threshold to 5>> /* adjust this as we make more ridiculous options. Player will not get *all* options, but it's good practice to have this be adjustable. */
+<<set $threshold to 7>> /* adjust this as we make more ridiculous options. Player will not get *all* options, but it's good practice to have this be adjustable. */
 
 <<PassiveSkill "Empathy">>
 <<AddParagraph "As forceful as he is, he's a little embarrassed about dirty talk, and you're not going to push it.">>
@@ -2072,20 +2072,196 @@ A Disco Elysium Fanwork
   <<AddParagraph "Hmm... what next?">>
 <<endif>>
 
-<<SBOption "\"I touched myself you know, in that shack on the coast, thinking about you.\"" SB_Shameless>>
+/* Really? */
+<<AddOption "Isn't this a comedic number of options?" SB_Comedic>>[[|SB_Comedic]]
+
+/* Tension and Release, Earlier this fanfic... */
+<<if $apartment is "Harry">>
+    <<SBOption "\"I should have just dragged you into that alleyway when I had a chance.\"" SB_Alley>>[[|SB_Alley]]
+/*    <<else>>
+    <<SBOption "\"I should have just gone down on you in the cab.\"" >> */
+    
+    /* Exhibitionism fantasies, version 1 */
+<<endif>>
+
+/* Shameless */
+<<SBOption "\"I touched myself you know, in that shack on the coast, thinking about you.\"" SB_Shameless>> [[|SB_Shameless]]
+/* Exhibitionism fantasies, version 2 */
+
+/* Pain and Pleasure, Vampire!AU 
+<<if $drink is "wine">>
+    <<set _forced to "bit">>
+    <<else>>
+    <<set _forced to "squeezed">>
+    <<endif>>
+    <<SBOption "\"Maybe you could have _forced my throat sometime earlier.\"">> */
+    /* Notes about bruises and Pain Threshold */
+
+/* we sleep under the moon 
+<<SBOption "\"I bet you would have fucked me that first night in Martinaise.\"">> */
+
+/* Speedfreaks 
+<<SBOption "\"You could fuck me in the Kineema sometime.\"">> */
+
+/* Valentine's Day Ghost of Hornt 
+<<SBOption "\"I could crawl under your desk at the 41st at some point.\"">> */
+
+/* electrochemistry reigns */
+<<SBOption "\"I should have just gotten to you in the bar bathroom.\"" SB_ECReigns>>[[|SB_ECReigns]]
+
+/* Education of Kim Kitsuragi */
+<<SBOption "\"You know, I've even thought about when we were younger, back when I taught gym at JCEC.\"" SB_SchoolAU>>[[|SB_SchoolAU]]
+
+/* Apres le mort / Creatures of Play 
+<<SBOption "\"You know, I've thought about what would have happened if I'd pursued my teenage World Games dreams.\"">> */
+
+/* Medicinal Properties of the Pale 
+<<SBOption "\"Have you ever used a venik?\"">> */
+
+/* zis is fashuun */
+<<if $apartment is "Harry">>
+<<set _direction to "I'd get to take you home">>
+<<else>>
+<<set _direction to "you'd take me home">>
+<<endif>>
+<<SBOption "\"It's a bit of a shame, if I'd known _direction, I would have worn something nicer...\"" SB_Fashion>>[[|SB_Fashion]]
+
+/* Stereo feelings */
+<<SBOption "\"I wonder if Jean would like to watch...\"" SB_Stereo>>[[|SB_Stereo]]
+
+/* Whiskey Dick 
+<<SBOption "\"You remember that pretty smoker on the balcony?\"">> */
 
 /*Meta-notes: you can use x position = 400, y > 600 to "visually store" all the SB entries. They should be short. Honestly, I should probably be stopped before I make too many.*/
 
 :: SB_Shameless [nobr] {"position": "400, 6800"}
-<<set $fantasies to ($threshold + 1)>>
+<<set $fantasies += 1>>
 <<SetSpeaker "Pikalex">>
 <<AddParagraph "Well, now I am the shameless one.">>
 
-<<AddOption "Sure am!" SB_Start>>
+<<SetSpeaker "Kawa">>
+<<AddParagraph "Yes you are dear, and I love you for it.">>
+
+<<AddOption "CONTROL: Stop being cute at each other and get back to the old men fucking, thanks." SB_Start>>
+
+:: SB_Comedic [nobr] {"position":"400,600"}
+/* Unlike the others, this shouldn't add to the counter. */
+
+<<PassiveSkill "logic">>
+<<AddParagraph "While it's not uncommon to have sexual fantasies about a person even before real sexual contact, the sheer breadth and depth of your \"Kim Kitsuragi Spank Bank\" is indeed excessive compared to the norm.">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "You gotta admit, it's a fun exercise to consider all the ways the man could thrash you, or vice versa. You got rid of most of the drugs and booze in your system - what else did you expect me to turn to?">>
+
+<<AddOption "Okay, fine. What's in the spank bank?" SB_Start>>
+
+:: SB_Alley [nobr] {"position":"400,700"}
+
+<<set $fantasies += 1>>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Would you have still sucked my cock then, I wonder? Out on the street, in the rain? Who knows who'd find us, who'd see that brilliant mouth of yours at work?\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"You think I'd really get on my knees on a muddy street for you?\"">>
+
+<<PassiveSkill "Reaction Speed" >>
+<<AddParagraph "Ah, but watch, his ears are red and he's having trouble looking at you!">>
+
+<<PassiveSkill "Electrochemistry" >>
+<<AddParagraph "He may say he wouldn't, but he's thinking about it thanks to you, how it'd look, how it'd feel - and it excites him more than he wants to admit.">>
+
+<<AddOption "Perfect. Let's tell him another fantasy." SB_Start>>
+
+:: SB_Stereo [nobr] {"position":"400,800"}
+
+<<set $fantasies += 1>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"You're really thinking about your goddamn partner right now?\"">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"My //other// goddamn partner.  You think you won't be assigned to me when you get to the 41st? I'll have stereo partners, it'll be great. And you gotta admit, he's pretty hot. Look me in the eyes and //tell// me you wouldn't go to town on that ass.\"">>
+
+<<AddOption "Sure you'd like a bite of that Jamrock Cake, but let's consider Kim in front of you right now, shall we?" SB_Start>>
+
+:: SB_SchoolAU [nobr] {"position":"400,900"}
+<<set $fantasies += 1>>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"We had an RCM officer visit every semester, teach a clinic in self defense, try to recruit a kid or two in the academy. Was the same time you were in juvie, it totally could have been you. You, young, with a chip on your shoulder, taking off the standard issue patrol cloak to reveal a tight T-shirt and slacks, using me as a demonstration volunteer, wrestling me to the ground...\"">>
+
+<<SetSpeaker "kim kitsuragi">>
+<<AddParagraph "He hesitates a moment. \"I was...I was a different man back then.\"">>
+
+<<PassiveSkill "ESPRIT DE CORPS" >>
+<<AddParagraph "More impulsive. More prone to lose control.">>
+
+<<PassiveSkill "ELECTROCHEMISTRY">>
+<<AddParagraph "More //fun//.">>
+
+<<AddOption "Worth wrestling down onto gym mats at some point. But regardless." SB_Start>>
+
+:: SB_ECReigns [nobr] {"position":"400,1000"}
+
+<<set $fantasies += 1>>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Shoulda sucked your dick right there on the floor. Showed you how deep I’ve learned to take it.\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "His eyes widen a bit at that, then he regains his composure - or as best he can with fingers stretching him open. \"Maybe you should have.\"">>
+
+<<PassiveSkill "ESPRIT DE CORPS" >>
+<<AddParagraph "He wasn't expecting that you were practicing, too.">>
+
+<<PassiveSkill "LOGIC" "Medium" "Failure">> 
+<<AddParagraph "How could you have possibly known he would be up for it?">>
+
+<<PassiveSkill "ELECTROCHEMISTRY" >>
+<<AddParagraph "He kissed you! He fucking //slapped your ass// before leaving the bar!">>
+
+<<AddOption "Fine, but I've got him here now. (Tell him another fantasy.)" SB_Start>>
+
+
+:: SB_Fashion [nobr] {"position":"400,1100"}
+
+<<set $fantasies += 1>>
+
+/* to implement later: maybe have this line change if you come back to it? */
+<<SetSpeaker "kim kitsuragi">>
+<<AddParagraph "\"Something nicer? Like what?\"">>
+
+<<AddOption "\"There's a store on Boogie Street, sells really salacious things for men of the underground. I think they call it a banana hammock?\"" SB2_Boogie>>[[|SB2_Boogie]]
+<<AddOption "\"There's a store on Boogie Street, sells //really// salacious things for men of the underground, with a good deal of discretion. Frilly, lacy things.\"" SB2_Boogie>>[[|SB2_Boogie]]>>
+<<AddOption "\"There's a store in central Jamrock, that sells nothing but socks and stockings and garter belts...\"" sb2_socks>>[[|sb2_socks]]
+
+:: SB2_Boogie [nobr] {"position":"200,1100"}
+
+<<SetSpeaker "kim kitsuragi">>
+<<AddParagraph "\"Ah, I wasn’t aware you have been doing ... //that// kind of investigating.\" His voice is distracted and he's not quite making eye contact.">>
+
+<<PassiveSkill "EMPATHY" "Medium" "Success" >>
+<<AddParagraph "The vision in his mind’s eye is very specific and //very// appealing. It’s not the first time he’s thought of you wearing a little something from Boogie Street but it’s different now that he //knows// you’d enjoy it.">>
+
+<<AddOption "One day you'll be all pretty for him. But for now..." SB_Start>>
+
+:: sb2_socks [nobr] {"position":"600,1100"}
+
+<<SetSpeaker "kim kitsuragi">>
+<<AddParagraph "\"Ah yes, Fantasy Footwears, next to the Pacific Drake, right? It's a good place, I'm quite familiar.\" He grins a bit at the surprised look on your face.">>
+
+<<PassiveSkill "PERCEPTION (touch)" "Medium" "Success" >>
+<<AddParagraph "This whole time, you'd been thinking of yourself in something swishy and soft. To imagine running your hands up //his// legs with that texture, though? Divine.">>
+
+<<AddOption "His bare legs feel pretty great in your hands right now, though. (Back to more fantasies.)" SB_Start>>
 
 :: SB_Interrupt [nobr] {"position": "400, 6800"}
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Okay okay, I get it, enough!\" The mix of exasperation and lust looks good on him. \"We can discuss your...imagination...some other time. Now, please, //fuck me//.\"">>
+
+/* probably more actual dialogue here but i want the initial connection */
+<<AddOption "That's the permission you need - line yourself up and thrust into him." KimIsReady>>[[|KimIsReady]]
 
 :: UseYourWords [nobr] {"position":"800,6650"}
 
