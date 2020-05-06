@@ -1815,17 +1815,48 @@ A Disco Elysium Fanwork
 <<PassiveSkill "VOLITION" >>
 <<AddParagraph "After that little moment, it'd only be right to help him with that.">>
 
-<<AddOption "\[SAVOIR FAIRE - Challenging 12\] Undo his belt and pull his cock out with your free hand. Yes, one handed." AlleyPullItOut>>[[|AlleyPullItOut]]
+<<AddOption "\[Savoir Faire - Challenging 12\] Undo his belt and pull his cock out with your free hand. Yes, one handed." AlleyPullItOut>>[[|AlleyPullItOut]]
 
 :: AlleyPullItOut [nobr] {"position":"900,6050"}
 
 <<SkillSuccess>> 
 
-<<SetSpeaker "???">>
+<<SetSpeaker "you">>
 <<AddParagraph "Kim lets out a surprised grunt as he’s pressed into the brick like you were.  But when you go for his belt, he doesn’t stop you, but secures his fingers around your lapel. ">>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Harry -\" You lean in so you feel his breathe hot on your ear. It’s a warning, but that’s the only resistance you’ll get.  His cock is hot in your cold hands. He sucks in air through his teeth.">>
+<<AddParagraph "His cock is hot in your cold hands. He sucks in air through his teeth. He’s really hard, tip weeping; this won’t take long.">>
+
+<<AddOption "Take it slow anyway." AlleySlow>>[[|AlleySlow]]
+<<AddOption "No time to waste in this alleyway - give it to him fast." AlleyFast>>[[|AlleyFast]]
+
+:: AlleySlow [nobr] {"position":"900,6200"}
+
+<<PassiveSkill "Electrochemistry" >>
+<<AddParagraph "But you want it to take long! You want to do this for hours. You never want to stop hearing the little hitches in his breath, watching the way his whole body tenses when you run a thumb slowly over the head of his dick.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph " The pace is getting to him; his eyes are screwed shit. In his excitement he’s forgotten where you are right now and can only think about the feeling of your palm. He’s a hair’s width from begging you to speed up.">>
+
+<<PassiveSkill "Electrochemistry" >>
+<<AddParagraph "You could get addicted to this. You might already be. He grits his teeth and lets out a small strangled noise.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Fuck, I…\" he whispers. \"I’m so close, //please//…\"">>
+
+<<PassiveSkill "Rhetoric" >>
+<<AddParagraph "Well that is the magic word, Harry!">>
+
+<<include AlleyFast>>[[|AlleyFast]]
+
+:: AlleyFast [nobr] {"position":"900,6350"}
+
+<<PassiveSkill "Hand/Eye Coordination" >>
+<<AddParagraph "You increase your speed, just a little.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He grabs on to your tie and tugs. Kim comes, hot threads of cum spraying out on the concrete and on your hand.">>
 
 :: NewInnocence [nobr] {"position": "1100,5750"}
 
