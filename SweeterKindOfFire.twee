@@ -2221,7 +2221,7 @@ A Disco Elysium Fanwork
 
 <<set $fantasies += 1>>
 
-<< if $drink is "wine">>
+<<if $drink is "wine">>
 <<set _control to "thrall">>
 <<else>>
 <<set _control to "control">>
