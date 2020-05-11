@@ -2377,6 +2377,43 @@ A Disco Elysium Fanwork
 <<SetSpeaker "Authority">>
 <<AddParagraph "As forceful as he is, he's a little embarrassed about dirty talk - but he wants to be pushed into it.">>
 
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Khm. I, uh. You know...don't you...?">>
+
+<<PassiveSkill "Authority" >>
+<<AddParagraph "Of course you know what he wants. But the point is to make him admit it. Force the words to come from his mouth.">>
+
+<<PassiveSkill "Electrochemistry" >>
+<<AddParagraph "He wants the thrill of filth in his mouth, even more than he got a minute ago. He wants you to make him say it.">>
+
+<<PassiveSkill "Empathy" >>
+<<AddParagraph "Yes, he wants you to //make// him say it.">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "\"Are you going to be honest with me and tell me? Or are you going to deny you want this...\"">>
+
+<<AddOption "\"...Lieutenant?\"" RankKink>>[[|RankKink]]
+<<AddOption "\"...you naughty boy?\"" NaughtyBoy>>[[|NaughtyBoy]]
+
+:: RankKink [nobr] {"position":"700,6800"}
+
+<<PassiveSkill "Authority" >>
+<<AddParagraph "Your grin is sharp in the dark.">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Don't make me pull rank on you a third time, Kim.\"">>
+
+:: NaughtyBoy [nobr] {"position":"900,6800"}
+
+<<PassiveSkill "Pain Threshold">>
+<<AddParagraph "Kim winces a bit, then his eyes go wide.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"I'm not a child, that's ridiculous -"">>
+
+<<PassiveSkill "Drama" "Heroic" "Success">> 
+<<AddParagraph "A half truth, my liege. He is, yes, a grown man. But you've affected him more than he's willing to show.">>
+
 /* Be the right kind of shit disturber. More pulling rank? Pika, Grace, feel free to put any ideas here.*/
 
 :: Needy [nobr] {"position": "1100,6500"}
