@@ -2045,7 +2045,7 @@ A Disco Elysium Fanwork
 <<SkillSuccess>>
 
 <<set $fantasies to 0>> /* fantasy counter */
-<<set $threshold to 5>> /* adjust this as we make more ridiculous options. Player will not get *all* options, but it's good practice to have this be adjustable. */
+<<set $threshold to 3>> /* adjust this as we make more ridiculous options. Player will not get *all* options, but it's good practice to have this be adjustable. */
 
 <<PassiveSkill "Empathy">>
 <<AddParagraph "As forceful as he is, he's a little embarrassed about dirty talk, and you're not going to push it.">>
@@ -2069,6 +2069,9 @@ A Disco Elysium Fanwork
 <<if $fantasies == 0>>
   <<PassiveSkill "Electrochemistry">>
   <<AddParagraph "The Kim Kitsuragi Spank Bank is extensive. You've wanted to boogie with the man for a long time, and the realms of the //fantasme érotique// are vast.">>
+<<elseif $fantasies > $threshold>>
+  <<PassiveSkill "Electrochemistry">>
+  <<AddParagraph "Ooh, ooh, it looks like he's finally starting to lose his patience! Better make this next one //really// good.">>
 <<else>>
   <<PassiveSkill "Electrochemistry">>
   <<AddParagraph "Hmm... what next?">>
@@ -2100,13 +2103,13 @@ A Disco Elysium Fanwork
     /* Notes about bruises and Pain Threshold */
 
 /* we sleep under the moon  */
-<<SBOption "\"I bet you would have fucked me that first night in Martinaise.\"" SB_WeSleep>>[[|SB_WeSleep]]
+<<SBOption "\"I totally would have fucked you that first night in Martinaise, if you'd asked me to.\"" SB_WeSleep>>[[|SB_WeSleep]]
 
 /* Live in Salt */
 <<SBOption "\"God, Kim, you're just so sexy. You could have //anyone// you wanted.\"" SB_LiveInSalt>>[[|SB_LiveInSalt]]
 
-/* Speedfreaks 
-<<SBOption "\"You could fuck me in the Kineema sometime.\"">> */
+/* Speedfreaks */
+<<SBOption "\"You could fuck me in the Kineema sometime.\"" SB_Kineema>> [[|SB_Kineema]]
 
 /* Valentine's Day Ghost of Hornt 
 <<SBOption "\"I could crawl under your desk at the 41st at some point.\"">> */
@@ -2120,8 +2123,8 @@ A Disco Elysium Fanwork
 /* Apres le mort / Creatures of Play 
 <<SBOption "\"You know, I've thought about what would have happened if I'd pursued my teenage World Games dreams.\"">> */
 
-/* Medicinal Properties of the Pale 
-<<SBOption "\"Have you ever used a venik?\"">> */
+/* Medicinal Properties of the Pale */
+<<SBOption "\"Have you ever used a venik?\"" SB_Venik>> [[|SB_Venik]]
 
 /* zis is fashuun */
 <<if $apartment is "Harry">>
@@ -2259,7 +2262,24 @@ A Disco Elysium Fanwork
 
 <<AddOption "It's Kim. I won't let him drown. (Tell him something else.)" SB_Start>>
 
-/* 1000: in the Kineema */
+:: SB_Kineema [nobr] {"position":"400,1000"}
+<<set $fantasies += 1>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Absolutely not.\"">>
+
+<<PassiveSkill "Composure" >>
+<<AddParagraph "His ability to be absolutely deadpan while being finger fucked is a surprise.">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Handle me half as well as you handle your MC and I'm sure you can make sure I keep it clean as a whistle.\"">>
+<<AddParagraph "\"Or punish me if I don't.\"">>
+
+<<SetSpeaker "???">>
+<<AddParagraph "Well, there went the composure!">>
+
+<<AddOption "Perfect. Let's tell him another." SB_Start>>
+
 /* 1100: under the desk */
 
 :: SB_ECReigns [nobr] {"position":"400,1200"}
@@ -2301,7 +2321,24 @@ A Disco Elysium Fanwork
 <<AddOption "Worth wrestling down onto gym mats at some point. But regardless." SB_Start>>
 
 /* 1400: athlete nonsense */
-/* 1500: venik */
+:: SB_Venik [nobr] {"position":"400,1500"}
+
+<<set $fantasies += 1>>
+
+<<SetSpeaker "kim kitsuragi">>
+<<AddParagraph "\"I've been to a traditional sauna once or twice, they're quite relaxing. I'm not sure why you'd bring one up now, though.\"">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Every time I have, I've wanted to be hit harder than a venik ever is. And sometimes, I imagine you being the one to do it.\"">>
+<<AddParagraph "\"And I liked you slapping my ass, earlier. You have the green light to go harder.\"">>
+
+<<PassiveSkill "Authority" >>
+<<AddParagraph "He can't hide the mirth on his face.">>
+
+<<PassiveSkill "Pain Threshold" >>
+<<AddParagraph "Thank you for being honest.">>
+
+<<AddOption "Let's hope that means more time in that particular place later - dark and soft, riding the sensation, following his every word." SB_Start>>
 
 :: SB_Fashion [nobr] {"position":"400,1600"}
 
@@ -2413,8 +2450,6 @@ A Disco Elysium Fanwork
 
 <<PassiveSkill "Drama" "Heroic" "Success">> 
 <<AddParagraph "A half truth, my liege. He is, yes, a grown man. But you've affected him more than he's willing to show.">>
-
-/* Be the right kind of shit disturber. More pulling rank? Pika, Grace, feel free to put any ideas here.*/
 
 :: Needy [nobr] {"position": "1100,6500"}
 
