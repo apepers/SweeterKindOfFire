@@ -2109,7 +2109,7 @@ A Disco Elysium Fanwork
 <<SBOption "\"God, Kim, you're just so sexy. You could have //anyone// you wanted.\"" SB_LiveInSalt>>[[|SB_LiveInSalt]]
 
 /* Speedfreaks */
-<<SBOption "\"You could fuck me in the Kineema sometime.\"" SB_Kineema>> [[|SB_Kineema]]
+<<SBOption "\"You look so sexy when you drive, you know. So confident.\"" SB_Kineema>> [[|SB_Kineema]]
 
 /* Valentine's Day Ghost of Hornt 
 <<SBOption "\"I could crawl under your desk at the 41st at some point.\"">> */
@@ -2265,20 +2265,25 @@ A Disco Elysium Fanwork
 :: SB_Kineema [nobr] {"position":"400,1000"}
 <<set $fantasies += 1>>
 
+<<SetSpeaker "you">>
+<<AddParagraph "\"I'd love to see you really let loose in it...I bet you could speed all across the city chasing an MC and come out of it without a scratch.\"">>
+
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "\"Absolutely not.\"">>
+<<AddParagraph "\"I'm flattered you think so highly of my driving, but I'm not sure what this has to do with our current situation.\"">>
 
 <<PassiveSkill "Composure" >>
 <<AddParagraph "His ability to be absolutely deadpan while being finger fucked is a surprise.">>
 
 <<SetSpeaker "you">>
-<<AddParagraph "\"Handle me half as well as you handle your MC and I'm sure you can make sure I keep it clean as a whistle.\"">>
-<<AddParagraph "\"Or punish me if I don't.\"">>
+<<AddParagraph "\"Handle me half as well as you handle your MC and I'm sure I'll only make a mess exactly where you want me to. Here, or in the Kineema, whenever you want.\"">>
 
-<<SetSpeaker "???">>
-<<AddParagraph "Well, there went the composure!">>
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"You already got water on my seats once. I'm not going to let you cause another mess.\"">>
 
-<<AddOption "Perfect. Let's tell him another." SB_Start>>
+<<PassiveSkill "Esprit De Corps" >>
+<<AddParagraph "But his brain is figuring out how to make sure you don't spill a drop as you suck his cock in the back seat.">>
+
+<<AddOption "Sounds delicious. Let's tell him another." SB_Start>>
 
 /* 1100: under the desk */
 
@@ -2390,13 +2395,36 @@ A Disco Elysium Fanwork
 
 <<set $fantasies += 1>>
 
+<<if $drink is "cocktail">>
+<<set _effort to "spending every centimo on">>
+<<else>>
+<<set _effort to "trying to be classy">>
+<<endif>>
+
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"You're really thinking about your goddamn partner right now?\"">>
 
 <<SetSpeaker "you">>
 <<AddParagraph "\"My //other// goddamn partner.  You think you won't be assigned to me when you get to the 41st? I'll have stereo partners, it'll be great. And you gotta admit, he's pretty hot. Look me in the eyes and //tell// me you wouldn't go to town on that ass.\"">>
 
-<<AddOption "Sure you'd like a bite of that Jamrock Cake, but let's consider Kim in front of you right now, shall we?" SB_Start>>
+<<PassiveSkill "Shivers" "Heroic" "Success">> 
+<<AddParagraph "Ten blocks away, the rain beats down on a mural. Painted in bright blue:">>
+
+<<BlankSpeaker>> 
+<<AddParagraph "IF YOU DON'T LOVE ME NOW">>
+<<AddParagraph "YOU WILL NEVER LOVE ME AGAIN">>
+
+<<PassiveSkill "Esprit De Corps" >>
+<<AddParagraph "Satellite Officer Jean Vicquemare looks out his window at the mural, wishing he could sit on the fire escape. Thinking of the night that had passed. It'd been a risk, suggesting the bar to the Captain, but one that - as far as he could tell - had paid off.">>
+
+<<SetSpeaker "Jean Vicquemare's Inner Monologue">>
+<<AddParagraph "You'd have to be blind, lately, to not realize the attraction those two had for each other. Friendship and brotherhood alone does not explain the extent to which Harry had been helping Kim move over the last while, let alone _effort buying the drinks. Plus the dark looks the two had been giving each other, spoke for itself. Good thing you got out before they could get //too// handsy.">>
+
+<<AddParagraph "Okay, maybe a piece of you would like a bit of that. Either one. Or ... both. Your terrible but brilliant partner, who could match you effortlessly in the gym or on the case. A new, intriguing addition, full of controlled fire.">>
+
+<<AddParagraph "...Yes, both. You should go to bed and... //think about that// for a while. What they're up to. What they could do to you, separately or together.">>
+
+<<AddOption "I hope I'm making you proud, Jean! Time to tell Kim more fantasies." SB_Start>>
 
 /* 1800: Smoker on the Balcony */
 
@@ -2627,7 +2655,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "VISUAL CALCULUS" "Impossible" "Success">> 
 <<AddParagraph "Wait, one second, before you reach to grab his cock, even as it leaks precum all over the both of you. Tilt your pelvis three degrees up and thrust //as hard as you can.//">>
 
-<<SecretTaskComplete "Things you can do without your hands">>
+<<SecretTaskComplete "Things you can do without your hands" 70>>
 <<LevelUp>>
 
 <<SetSpeaker "Kim Kitsuragi">>
