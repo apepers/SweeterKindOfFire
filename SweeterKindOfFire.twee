@@ -219,6 +219,7 @@ $(document).on("keyup", function (e) {
 <<set $fantasies to 0>> /* fantasy counter */
 <<set $threshold to 3>> /* adjust this as we make more ridiculous options. Player will not get *all* options, but it's good practice to have this be adjustable. */
 <<set $undies to "what gender?">>
+<<set $dynamic to "neutral">>
 <<set $optionmap to new Map()>>
 <<set $motorics to ["composure", "hand/eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception", "perception (smell)", "perception (sight)", "perception (taste)", "perception (touch)", "perception (hearing)"]>>
 <<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual calculus"]>>
@@ -480,7 +481,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "An Aerostatique is an extremely complex cocktail - some smoke, some earth, but a strange lightness too, and an electric shade of orange. Goes great with Astras, the cigarettes you know are in Kim's jacket pocket right now.">>
 
 <<PassiveSkill "Encyclopedia" "Legendary" "Success">>
-<<AddParagraph "Indeed, there was an advertisement in //Most Able-Bodied Men// June '36 where noted daredevil aerostatic pilot Danny Demise extolled the virtues of the pair and gave his personal recipe - 2 oz Le Canard 1 rye whiskey, 1 oz Mundial Gener //apertif//, and a dash of chocolate cocktail bitters.">>
+<<AddParagraph "Indeed, there was an advertisement in //Most Able-Bodied Men// June '36 where noted daredevil TipTop driver Jacob Irw extolled the virtues of the pair and gave his personal recipe - 2 oz Le Canard 1 rye whiskey, 1 oz Mundial Gener //apertif//, and a dash of chocolate cocktail bitters.">>
 
 <<SecretTaskComplete "Try to order Kim's favorite drink" 15>>
 
@@ -604,7 +605,7 @@ A Disco Elysium Fanwork
 
 :: Secret1 [nobr] {"position":"1100,800","size":"100,100"}
 <<PassiveSkill "Authority">>
-<<AddParagraph " Also, it's //never// Harry, it's always //detective// or //officer//, even off the clock, what the hell -">>
+<<AddParagraph "Also, it's //never// Harry, it's always //detective// or //officer//, even off the clock, what the hell -">>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Would you like to see something I'm //really// good at?\"">>
@@ -668,7 +669,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "Oh //fuck// this feels //amazing//. _value">>
 
 <<PassiveSkill "Pain Threshold" "Heroic" "Success">>
-<<AddParagraph " He's not being gentle. At all. The pull of the tie was a whip second of breathlessness, which he's now fully taken advantage of. He's kissing //hard//, all force; his mouth melts into yours, demanding surrender with every insistent, spit-slicked movement.">>
+<<AddParagraph "He's not being gentle. At all. The pull of the tie was a whip second of breathlessness, which he's now fully taken advantage of. He's kissing //hard//, all force; his mouth melts into yours, demanding surrender with every insistent, spit-slicked movement.">>
 
 <<AddOption "And what does he taste like?" "Taste">>[[|Taste]]
 
@@ -956,7 +957,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "//Horny// drunk.">>
 
 <<PassiveSkill "Rhetoric" >>
-<<AddParagraph "And probably many more, that you are thankful Kim is not."
+<<AddParagraph "And probably many more, that you are thankful Kim is not.">>
 
 <<AddOption "Like what?" "Taxonomy2">>[[|Taxonomy2]]
 
@@ -1260,7 +1261,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "Which is probably the first time you'd really noticed how he //really// is, underneath the professional face. The way he takes on challenges, his competitive streak, that tinge of vanity.">>
 
 <<PassiveSkill "Electrochemistry">>
-<<AddParagraph " And the way he handled pieces in his long fingers; plus the shapes of his face, the lines of his throat.">>
+<<AddParagraph "And the way he handled pieces in his long fingers; plus the shapes of his face, the lines of his throat.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "He hops out of the cab, and extends a hand to you - the apartment's on his side of the street.">>
@@ -1394,7 +1395,7 @@ A Disco Elysium Fanwork
 <<endif>>
 
 <<PassiveSkill "Electrochemistry" >>
-<<AddParagraph " Keep touching him - don't let go - nothing matters more than the sensation of body against body.">>
+<<AddParagraph "Keep touching him - don't let go - nothing matters more than the sensation of body against body.">>
 
 <<SetSpeaker "You">>
 <<AddParagraph "_you stumble through, and Kim takes the opportunity to stride confidently ahead of you down the hallway. You practically run to catch up, sliding your hands along his sides once you do.">>
@@ -1562,7 +1563,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "You're //just// steady enough to avoid tripping over yourself along the way.">>
 
 <<SetSpeaker "You">>
-<<AddParagraph " \"Are you always this hasty with late night guests?\" you manage to choke out as your shirt goes flying, landing on the radiator across the living room.">>
+<<AddParagraph "\"Are you always this hasty with late night guests?\" you manage to choke out as your shirt goes flying, landing on the radiator across the living room.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Only the ones I really want,\" he snaps back, hands already working on your belt buckle.">>
@@ -1861,7 +1862,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "But you want it to take long! You want to do this for hours. You never want to stop hearing the little hitches in his breath, watching the way his whole body tenses when you run a thumb slowly over the head of his dick.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph " The pace is getting to him; his eyes are screwed shit. In his excitement he’s forgotten where you are right now and can only think about the feeling of your palm. He’s a hair’s width from begging you to speed up.">>
+<<AddParagraph "The pace is getting to him; his eyes are screwed shit. In his excitement he’s forgotten where you are right now and can only think about the feeling of your palm. He’s a hair’s width from begging you to speed up.">>
 
 <<PassiveSkill "Electrochemistry" >>
 <<AddParagraph "You could get addicted to this. You might already be. He grits his teeth and lets out a small strangled noise.">>
@@ -2034,7 +2035,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "The thought comes out of you, a reflex. \"I wonder what handles better, you or the Kineema?\"">>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph " \"Well you're never finding out, because you will //never// drive my Kineema.\"">>
+<<AddParagraph "\"Well you're never finding out, because you will //never// drive my Kineema.\"">>
 
 <<AddOption "This is perfect as is, let's linger on this sensation for as long as he can handle it." Linger>>[[|Linger]]
 <<AddOption "I need more, it's not enough, I want to be inside him too badly." Needy>>[[|Needy]]
@@ -2075,7 +2076,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "As forceful as he is, he's a little embarrassed about dirty talk, and you're not going to push it.">>
 
 <<PassiveSkill "Suggestion">>
-<<AddParagraph " In fact, //you// should push -- to dizzying heights. How many fantasies have you had about him, anyway? List them //all.//">>
+<<AddParagraph "In fact, //you// should push -- to dizzying heights. How many fantasies have you had about him, anyway? List them //all.//">>
 
 <<AddOption "Let us consider the Kim Kitsuragi Spank Bank." SB_Start>>[[|SB_Start]]
 
@@ -2141,8 +2142,8 @@ A Disco Elysium Fanwork
 /* Education of Kim Kitsuragi */
 <<SBOption "\"You know, I've even thought about when we were younger, back when I taught gym at JCEC.\"" SB_SchoolAU>>[[|SB_SchoolAU]]
 
-/* Apres le mort / Creatures of Play 
-<<SBOption "\"You know, I've thought about what would have happened if I'd pursued my teenage World Games dreams.\"">> */
+/* Apres le mort / Creatures of Play / High Speed Love */
+<<SBOption "\"You know, I've thought about what would have happened if I'd pursued my teenage World Games dreams.\"" SB_Athlete>> [[|SB_Athlete]]
 
 /* Medicinal Properties of the Pale */
 <<SBOption "\"Have you ever used a venik?\"" SB_Venik>> [[|SB_Venik]]
@@ -2362,7 +2363,31 @@ A Disco Elysium Fanwork
 
 <<AddOption "Worth wrestling down onto gym mats at some point. But regardless." SB_Start>>
 
-/* 1400: athlete nonsense */
+:: SB_Athlete [nobr] {"position":"400,1400"}
+
+<<set $fantasies += 1>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Oh? Track and field, I'm assuming?\"">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Yep. Primarily throwing events - I was killer with shotput - but a little of everything. Reasonable decathlete, even, but never really had the means to pursue professionally after high school.\"">>
+
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "He likes the image of you, toned and lean, pushing your body to its limits.">>
+
+<<PassiveSkill "Electrochemistry" >>
+<<AddParagraph "He'd consider following your career with more than casual interest - reading your profiles and looking at your ads in magazines while on downtime at work, biting his lip to hide his lust...">>
+
+<<PassiveSkill "Interfacing" >>
+<<AddParagraph "The last time he had that level of interest, it was for the late Alfie Deletraz, famously daredevil - and famously homo-sexual - TipTop driver.">>
+
+<<if $apartment is "Kim">>
+<<AddOption "Oh, that explains the TipTop Fjördhæmmer '35 poster I saw in his living room! Huh. (Tell him more fantasies.)" SB_Start>>
+<<else>>
+<<AddOption "...now I wonder if I can find my old racing shorts in the closet here... (Tell him more fantasies.)" SB_Start>>
+<<endif>>
+
 :: SB_Venik [nobr] {"position":"400,1500"}
 
 <<set $fantasies += 1>>
@@ -2472,9 +2497,15 @@ A Disco Elysium Fanwork
 <<AddParagraph "\"Okay okay, I get it, enough!\" The mix of exasperation and lust looks good on him. \"We can discuss your...imagination...some other time. Now, please, //fuck me//.\"">>
 
 <<SetSpeaker "You">>
+<<if $dynamic is "rank">>/* A small reward if you went through both branches. */
+<<AddParagraph "\"Good work, lieutenant. I knew I could rely on you.\"">>
+<<elseif $dynamic is "naughty">>
+<<AddParagraph "\"That's a good boy.\"">>
+<<else>>
 <<AddParagraph "\"I'll hold you to that, you know. There's even more I didn't get to tell you, after all.\"">>
+<<endif>>
 
-<<AddOption "But you have the permission you need - line yourself up and thrust into him." KimIsReady>>[[|KimIsReady]]
+<<AddOption "You have the permission you need - line yourself up and thrust into him." KimIsReady>>[[|KimIsReady]]
 
 :: UseYourWords [nobr] {"position":"800,6650"}
 
@@ -2533,11 +2564,22 @@ A Disco Elysium Fanwork
 
 :: TheTeaseYouDeserve [nobr] {"position": "800,6800"}
 
+<<if $dynamic is "rank">>
+<<set _dear to "Lieutenant. I really //don't// want to have to pull rank, you know.">>
+<<elseif $dynamic is "naughty">>
+<<set _dear to "naughty boy. Would hate to have to punish you for being a brat.">>
+<<else>> /* Shouldn't trigger, but just in case. */
+<<set _dear to "Kim. I know you can do it.">>
+<<endif>>
+
 <<SetSpeaker "you">>
 <<AddParagraph "\"Or should I just linger here? You seem to be enjoying yourself well enough. I'll be fine, I assure you.\"">>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Harry, no, you can't...I...\" He pauses for a moment.">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Use your words, _dear\"">>
 
 <<BlankSpeaker>> 
 <<AddParagraph "The silence stretches on.">>
@@ -2566,8 +2608,10 @@ A Disco Elysium Fanwork
 <<SetSpeaker "you">>
 <<if $dynamic is "rank">>
 <<AddParagraph "\"Good work, lieutenant. I knew I could rely on you.\"">>
-<<else>>
+<<elseif $dynamic is "naughty">>
 <<AddParagraph "\"That's a good boy.\"">>
+<<else>> /* This shouldn't trigger, but just in case... */
+<<AddParagraph "\"Of course, Kim. Anything you ask, now that you have.\"">>
 <<endif>>
 
 <<AddOption "As he flushes in reaction to the praise, you withdraw your fingers, align your cock, and slide in with one smooth movement." KimIsReady>>[[|KimIsReady]]
@@ -2630,7 +2674,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "You're being ridiculously messy, smearing precum and your own drool all over your chin. The facial hair is going to need a real scrubbing after this. It's not smooth - it's outright //debauched// - and Kim's cock twitches every time you make eye contact, so you know just how much he enjoys it.">>
 
 <<PassiveSkill "Empathy">>
-<<AddParagraph " The movement of your mouth is no match for his masterful display on you earlier; it's meant to be a distraction - and it worked, exactly as planned. ">>
+<<AddParagraph "The movement of your mouth is no match for his masterful display on you earlier; it's meant to be a distraction - and it worked, exactly as planned. ">>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "His back is arching at the sensation, his feet kicking up into the air a bit. \"Gods, //fuck// - \"">>
@@ -2663,7 +2707,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Pain Threshold">>
 <<AddParagraph "The sounds he is making are evening out now - less surprised. His muscles are still tight around your fingers, but no longer strained, and you have thoroughly covered every possible bit you could reach in plenty of lube. He's as ready as he's going to be for you. Slide out slowly, carefully - both feel and hear the anguished groan of the temporary loss.">>
 
-<<AddOption "Slick up your own cock with more lube" "Ready2">>[[|Ready2]]
+<<AddOption "Slick up your own cock with more lube." "Ready2">>[[|Ready2]]
 
 :: Ready2 [nobr] {"position":"1300,6800"}
 <<PassiveSkill "Electrochemistry">>
@@ -2766,12 +2810,12 @@ A Disco Elysium Fanwork
 
 <<SetSpeaker "you">>
 <<AddParagraph "He presses his ankles against your back and you fall forward, pressing your bodies together as you continue to thrust.">>
-<<AddParagraph " You return to his neck and latch on, kissing and sucking up and down his throat. ">>
+<<AddParagraph "You return to his neck and latch on, kissing and sucking up and down his throat. ">>
 
 <<SetSpeaker "kim kitsuragi">>
 <<AddParagraph "He slides one hand in your hair and another along your neck; his back arches, his chest rises to meet you.">>
-<<AddParagraph " The friction of your bodies makes him hard again, pressed between the two of you.">>
-<<AddParagraph " His moans continue, frantic, incoherent.">>
+<<AddParagraph "The friction of your bodies makes him hard again, pressed between the two of you.">>
+<<AddParagraph "His moans continue, frantic, incoherent.">>
 
 <<AddOption "This moment is perfect, overwhelming, and thus it cannot last -" Orgasm>>[[|Orgasm]]
 
@@ -2810,13 +2854,13 @@ A Disco Elysium Fanwork
 <<AddParagraph "Spent, you collapse more fully onto him, caring not a bit for the sticky sensation of bodies against each other. It's even slicker than before - he must have come again when you did. \"That was amazing,\" you murmur into the crook of his neck.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph " \"Yes-yes, it was. I didn't know you had it in you.\" You feel his hands move off of you briefly - he's taking his glasses off and stretching to put them on the nightstand.">>
+<<AddParagraph "\"Yes-yes, it was. I didn't know you had it in you.\" You feel his hands move off of you briefly - he's taking his glasses off and stretching to put them on the nightstand.">>
 
 <<SetSpeaker "you">>
 <<AddParagraph "\"I didn't know //you// did, either,\" you respond, as you slowly slide off his body to settle in next to him. \"I didn't even know you wanted me like this.\"">>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph " He smiles at that. \"I've been told I'm a terrible flirt. Alcohol makes it easier though - almost too easy. Maybe one day I'll tell you //that// story.\" And with that, he moves to his side and backs into you; you slot in easily, the proverbial bigger spoon.">>
+<<AddParagraph "He smiles at that. \"I've been told I'm a terrible flirt. Alcohol makes it easier though - almost too easy. Maybe one day I'll tell you //that// story.\" And with that, he moves to his side and backs into you; you slot in easily, the proverbial bigger spoon.">>
 
 <<PassiveSkill "RHETORIC" >>
 <<AddParagraph "One day, you will fulfill the task \"Learn the lieutenant's drunkotype\". Today is not that day. ">>
@@ -2862,7 +2906,7 @@ A Disco Elysium Fanwork
 :: FinalShivers [nobr] {"position": "1300,8500"}
 
 <<PassiveSkill "Shivers">>
-<<AddParagraph " At your back is a window left slightly ajar, and a whisper of wind kisses the back of your neck, sending a chill down your spine. It carries to your senses a hint of the sea, a life in salt. Dark depths, stretching on and on, across a city with every possible story to tell. Dots of humanity in motion, drenched in sea spray, peering for signs of life in the dark, dreaming of the kind of warmth and connection you have at hand.">>
+<<AddParagraph "At your back is a window left slightly ajar, and a whisper of wind kisses the back of your neck, sending a chill down your spine. It carries to your senses a hint of the sea, a life in salt. Dark depths, stretching on and on, across a city with every possible story to tell. Dots of humanity in motion, drenched in sea spray, peering for signs of life in the dark, dreaming of the kind of warmth and connection you have at hand.">>
 <<AddParagraph "Coldly uncaring the breeze blows past, skimming the hard and barren planes of vinyl and oak, swirling around the discarded detritus of personal touchstones, dreams of the sparkling lights of disco and the thrilling whirl of aerostatics. The breeze slides through the cracks in the door and into the hallway, down into the street, retracing a path further and further back. To a discrete bar in Jamrock where lonely hearts have lingered. To a dock on the coast of Martinaise, where a woman watches the waves alone. Perhaps even all the way to a small hostel, a balcony that always smells of smoke; through a once shattered window, now cracked open into a room that will never be completely free of a permeated unpleasant odor.">>
 <<AddParagraph "Warm breath suddenly replaces the chill, as Kim stirs enough to reach out and draw the covers more snugly around you both. The wind carries on its way, but you are no longer carried with it. You're just here, now, with your partner settled back against your chest. Two hearts slowing and syncing into a shared beat.">>
 
