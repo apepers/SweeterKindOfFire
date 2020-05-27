@@ -1851,7 +1851,7 @@ A Disco Elysium Fanwork
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Harry -\" You lean in so you feel his breathe hot on your ear. It’s a warning, but that’s the only resistance you’ll get.  His cock is hot in your cold hands. He sucks in air through his teeth.">>
-<<AddParagraph "His cock is hot in your cold hands. He sucks in air through his teeth. He’s really hard, tip weeping; this won’t take long.">>
+<<AddParagraph "He’s really hard, tip weeping; this won’t take long.">>
 
 <<AddOption "Take it slow anyway." AlleySlow>>[[|AlleySlow]]
 <<AddOption "No time to waste in this alleyway - give it to him fast." AlleyFast>>[[|AlleyFast]]
@@ -1873,15 +1873,57 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Rhetoric" >>
 <<AddParagraph "Well that is the magic word, Harry!">>
 
-<<include AlleyFast>>[[|AlleyFast]]
+<<include Alley3>>[[|Alley3]]
 
-:: AlleyFast [nobr] {"position":"900,6350"}
+:: AlleyFast [nobr] {"position":"700,6200"}
+
+<<PassiveSkill "Electrochemistry" >>
+<<AddParagraph "So give him what he wants, Harry boy! It’ll feel good to do exactly what he needs you to.">>
+
+<<PassiveSkill "Esprit De Corps" >>
+<<AddParagraph "He might praise you if Kim weren’t Kim, but the rise and fall of his chest, the tension straining his neck, the little hitches of his breath are praise enough for you.">>
+
+<<include Alley3>>[[|Alley3]]
+
+:: Alley3 [nobr] {"position":"1500,6350"}
 
 <<PassiveSkill "Hand/Eye Coordination" >>
 <<AddParagraph "You increase your speed, just a little.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "He grabs on to your tie and tugs. Kim comes, hot threads of cum spraying out on the concrete and on your hand.">>
+
+<<SetSpeaker "you">>
+<<AddParagraph " You lick the cum off your hand with relish and smile smugly back up at Kim.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He’s looking at you, smiling too. His neck is flushed. His breathing starts to slow and then he pulls you in for another kiss.">>
+
+<<AddOption "You’re still seeing stars." Alley4>>[[|Alley4]]
+
+:: Alley4 [nobr] {"position":"1500,6500"}
+
+<<SetSpeaker "you">>
+<<AddParagraph "You don’t think you could ever get used to this- the novelty of kissing Kim could never wear away.">>
+
+<<PassiveSkill "Half Light" "Medium" "Failure">> 
+<<AddParagraph "You terrible fool! Now that you've gotten him off, there's no reason for him to come home with you! You'll finish your night in bed alone, after all of this - what the hell were you thinking?">>
+
+<<PassiveSkill "Suggestion" "Medium" "Success">> 
+<<AddParagraph "Ask him what he wants to do anyway. There's a chance he will surprise you.">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "You break the kiss with some reluctance. \"I...I guess we got too eager. Would you... Would you still like to come home with me?\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "His smile hasn't faded at all. He offers his arm to you. \"That would be nice. At least, get out of the rain, get some water...\"">>
+
+<<PassiveSkill "Empathy">>
+<<AddParagraph "A bit of pretext, but mostly genuine. This man continues to surprise you.">>
+
+<<AddOption "\"Well, let's get going then.\" (Take his arm and start walking.)" AlleyApartment>>[[|AlleyApartment]]
+
+/* Gonna put the apartment and onwards segment way futher down the file! */
 
 :: NewInnocence [nobr] {"position": "1100,5750"}
 
@@ -2847,6 +2889,98 @@ A Disco Elysium Fanwork
 <<AddParagraph "Intimacy and physicality spark a sweeter kind of fire.">>
 
 <<AddOption "The world goes white, for just a moment, nothing but feral groans from the both of you and the connection of your bodies. " Aftercare1>>[[|Aftercare1]]
+
+:: AlleyApartment [nobr] {"position":"1500,6650"}
+
+<<PassiveSkill "Perception (Touch)">>
+<<AddParagraph "Kim's holding your arm tightly as you walk the last few blocks to your apartment. He doesn't let go, even as you go through the hallway to get to the stairs in the back.">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "Without the energy of erotic need, and with the alcoholic buzz fading, the touch renders less electric, but still quite pleasant. A warm, safe body near you, holding fast to you.">>
+
+<<SetSpeaker "Your apartment building">>
+<<AddParagraph "As you make your way through the hallway, you once again hear 3K's semi-regular house party, a mix of anodic dance music and something more...fleshy and primal. Given that distraction, no one will notice two older men clinging too closely to be merely drunken friends.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "When Kim gets to the stairwell, he waits for you, and hands you back your keys as you take the lead to the third floor.">>
+
+<<AddOption "You bound up the stairs, Kim close behind." AlleyKeys>>[[|AlleyKeys]]
+
+:: AlleyKeys [nobr] {"position":"1500,6800"}
+
+<<SetSpeaker "you">>
+<<AddParagraph "You get to the landing just before him. There is a single weak, flickering lamp in this part of the hallway, casting long shadows on you both.">>
+<<AddParagraph "As you work your way through your keys - there's not many, but it always does take you a moment to find the right ones - you feel cool hands on your waist.">>
+<<AddParagraph "Your breath catches, and you freeze for just a moment - just long enough, apparently, for him to get on his tiptoes and kiss where your neck meets your shoulder. The contact to the sensitive skin makes your heart race.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "He can feel your pulse under his lips, and likes it - and responds by biting down.">>
+
+<<PassiveSkill "Electrochemistry" >>
+<<AddParagraph "Oh //fuck//, that's delightful. Not enough to get you hard again, but enough to make you want more contact, more delicious touch.">>
+
+<<AddOption "\[Volition - Medium 10\] - Well to do that, you need to get inside. (Open the door.)" Domestic1>>[[|Domestic1]]
+
+:: Domestic1 [nobr] {"position":"1500,6950"}
+
+<<SkillSuccess>> 
+
+<<SetSpeaker "you">>
+<<AddParagraph "You manage to open the door and tumble inside, hurried along by the force of his body weight on you. Once you're inside, you firmly shut the door, then press his body against the doorframe for another deep kiss.">>
+
+<<TaskComplete "Take Kim home" 25>>
+
+<<PassiveSkill "Volition" "Heroic" "Success">> 
+<<AddParagraph "As delicious as it is to keep kissing him, you can feel the cold of rain-slicked skin - you should be a good houseguest and let him dry off.">>
+
+<<AddOption "Begrudgingly move away from his lips. \"Bathroom's in the hallway on the right, should have some clean towels for ya. I'll get some water and a shirt for you.\"" Domestic2>>[[|Domestic2]]
+
+:: Domestic2 [nobr] {"position":"1500,7100"}
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim nods and heads towards the bathroom. This gives you time to find everything.">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "You move to the kitchenette and open a cabinet. Instead of glass or porcelain cups, you find a variety of small metal pitchers, the kind that you'd get cream in with coffee at a diner.">>
+
+<<PassiveSkill "Esprit De Corps" >>
+<<AddParagraph "You briefly have a terrible memory of smashing cups against your wall in a drugged out, drunken haze. You then have a more positive one, as Trant, Jean, and Judit scour a dozen thrift stores and restaurant supply shops in Jamrock to get you the little pitchers as replacement cups. Harder to break. Cute and unique. Oddly cheap and easy to replace, too.">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "You fill two pitchers with tap water, then set them down on the coffee table in your living room, knocking a stack of paperbacks to the ground in the process. Now, where will you get a shirt?">>
+
+<<AddOption "In my gym bag." Shirt_Jersey>>[[|Shirt_Jersey]]
+<<AddOption "In my closet." Shirt_Disco>>[[|Shirt_Disco]]
+<<AddOption "In my drawers." Shirt_Hog>>[[|Shirt_Hog]]
+
+:: Shirt_Jersey [nobr] {"position":"1500,7250"}
+
+<<SetSpeaker "you">>
+<<AddParagraph "You find an old track and field jersey.">>
+
+/* a memory about playing, and maybe even about having admirers? */
+
+:: Shirt_Disco [nobr] {"position":"1700,7250"}
+
+<<SetSpeaker "you">>
+<<AddParagraph "You find a disco shirt, rayon instead of polyester for softness.">>
+
+/* IE imagines Kim at the discotheque, Empathy pulls to the present. */
+
+:: Shirt_Hog [nobr] {"position":"1900,7250"}
+
+<<SetSpeaker "you">>
+<<AddParagraph "You find a muscle tee with the phrase \"GUARANTEED TO CONTAIN NOTHING BUT THE PURE SWEET FAT OF THE HOG\" on it.">>
+
+/* Le Caractère de Cochon is a magical place. */
+
+/* Kim does or doesn't take the shirt. Sits on the couch. Comments on the wacky couch, the art on the wall. */
+
+/* Sit next to him on the couch. Talk about art. Notice him getting sleepy. Tell him where the bedroom is, let him get up. */
+
+/* Kim offers a hand to you. Don't sleep on the couch of your own apartment! */
+
+/* lead into Aftercare1. Edit Aftercare1 to have a version where you didn't fuck here. */
 
 :: Aftercare1 [nobr] {"position":"1300,8200"}
 
