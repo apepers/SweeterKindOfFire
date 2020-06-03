@@ -137,11 +137,11 @@ a.macro-linkreplace {
 }
 
 #SuccessImg {
-  background: url(SuccessOverlay.png) no-repeat center;
+  background: url(https://github.com/apepers/DiscoElysiumTwineMacros/blob/master/SuccessOverlay.png?raw=true) no-repeat center;
 }
 
 #FailureImg {
-  background: url(FailureOverlay.png) no-repeat center;
+  background: url(https://github.com/apepers/DiscoElysiumTwineMacros/blob/master/FailureOverlay.png?raw=true) no-repeat center;
 }
 
 @keyframes Flash {
@@ -217,7 +217,7 @@ $(document).on("keyup", function (e) {
 <<set $hastyprep to false>> /* got too wild and impatient in the prep sequence */
 <<set $mentioned to false>> /* already attempted to talk about sexy things to wear in the spank bank */
 <<set $fantasies to 0>> /* fantasy counter */
-<<set $threshold to 3>> /* adjust this as we make more ridiculous options. Player will not get *all* options, but it's good practice to have this be adjustable. */
+<<set $threshold to 2>> /* adjust this as we make more ridiculous options. Player will not get *all* options, but it's good practice to have this be adjustable. */
 <<set $undies to "what gender?">>
 <<set $dynamic to "neutral">>
 <<set $optionmap to new Map()>>
@@ -1355,7 +1355,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "The metal of your belt buckle briefly brushes against exposed skin -">>
 
 <<PassiveSkill "Shivers">>
-<<AddParagraph "You are suddenly deeply aware of how eerily quiet the world is around you, even though you are literally expose in public. All around you, while Revachol is alive, it is at a remove from you - people pursuing their own moments of tenderness and debauchery, but away from the two of you, without directly regarding you. One of the lights in a house down the street turns off. A different light turns on in another window, but filtered through heavy curtains. All you hear is wind, rain, and your own pounding heartbeat.">>
+<<AddParagraph "You are suddenly deeply aware of how eerily quiet the world is around you, even though you are literally exposed in public. All around you, while Revachol is alive, it is at a remove from you - people pursuing their own moments of tenderness and debauchery, but away from the two of you, without directly regarding you. One of the lights in a house down the street turns off. A different light turns on in another window, but filtered through heavy curtains. All you hear is wind, rain, and your own pounding heartbeat.">>
 
 <<AddParagraph "YOU'VE MADE YOUR CHOICE, MY OFFICERS. YOU KEEP ME SAFE AND LOVE ME - I LOVE YOU AND I'LL KEEP YOU SAFE. BUT IT'S YOUR FUNERAL IF YOU CATCH A COLD FROM YOUR DECADENCE.">>
 
@@ -1794,7 +1794,7 @@ A Disco Elysium Fanwork
 <<AddOption "Yes, good idea. I will do exactly that." "NewInnocence">>[[|NewInnocence]]
 <<endif>>
 
-:: Alley2 [nobr] {"position": "900,5750"}
+:: Alley2 [nobr] {"position": "1500,5750"}
 
 <<PassiveSkill "CONCEPTUALIZATION" >>
 <<AddParagraph "Kim’s eyes flutter prettily and he swallows you down in one swift motion. God, he’s gorgeous, lips pursed around you. The neon from the sign across the road  shines on the spit coating your cock and his lips. Beautiful; a painting in pinks and blues and dirty gray.">>
@@ -1822,7 +1822,7 @@ A Disco Elysium Fanwork
 
 <<AddOption "No, I can't hold out. (Cum.)" AlleyPremature>>[[|AlleyPremature]]
 
-:: AlleyPremature [nobr] {"position":"900,5900"}
+:: AlleyPremature [nobr] {"position":"1500,5900"}
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "Kim licks his lips and looks up at you for the briefest moment. You should help him up; you’re not young men anymore. But he stands without complaint, grabbing your forearms and leverage.">>
@@ -1842,7 +1842,7 @@ A Disco Elysium Fanwork
 
 <<AddOption "\[Savoir Faire - Challenging 12\] Undo his belt and pull his cock out with your free hand. Yes, one handed." AlleyPullItOut>>[[|AlleyPullItOut]]
 
-:: AlleyPullItOut [nobr] {"position":"900,6050"}
+:: AlleyPullItOut [nobr] {"position":"1500,6050"}
 
 <<SkillSuccess>> 
 
@@ -1856,7 +1856,7 @@ A Disco Elysium Fanwork
 <<AddOption "Take it slow anyway." AlleySlow>>[[|AlleySlow]]
 <<AddOption "No time to waste in this alleyway - give it to him fast." AlleyFast>>[[|AlleyFast]]
 
-:: AlleySlow [nobr] {"position":"900,6200"}
+:: AlleySlow [nobr] {"position":"1700,6200"}
 
 <<PassiveSkill "Electrochemistry" >>
 <<AddParagraph "But you want it to take long! You want to do this for hours. You never want to stop hearing the little hitches in his breath, watching the way his whole body tenses when you run a thumb slowly over the head of his dick.">>
@@ -1875,7 +1875,7 @@ A Disco Elysium Fanwork
 
 <<include Alley3>>[[|Alley3]]
 
-:: AlleyFast [nobr] {"position":"700,6200"}
+:: AlleyFast [nobr] {"position":"1500,6200"}
 
 <<PassiveSkill "Electrochemistry" >>
 <<AddParagraph "So give him what he wants, Harry boy! It’ll feel good to do exactly what he needs you to.">>
@@ -2424,6 +2424,11 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Interfacing" >>
 <<AddParagraph "The last time he had that level of interest, it was for the late Alfie Deletraz, famously daredevil - and famously homo-sexual - TipTop driver.">>
 
+<<if $triedfancy is true>>
+<<PassiveSkill "Encyclopedia" "Heroic" "Success">> 
+<<AddParagraph "Alfie Deletraz's career was tragically cut short by an accident on the racetrack that later on got renamed 'Grinsenring' in his honor. Though the months before that featured both thrills on the racetrack and his personal life, as he quickly became the paramour of legendary driver Jacob Irw - yes, the same who had advertised the Aerostatique. Perhaps this explains Kim's fondness for it...?">>
+<<endif>>
+
 <<if $apartment is "Kim">>
 <<AddOption "Oh, that explains the TipTop Fjördhæmmer '35 poster I saw in his living room! Huh. (Tell him more fantasies.)" SB_Start>>
 <<else>>
@@ -2573,13 +2578,14 @@ A Disco Elysium Fanwork
 
 <<AddOption "\"...Lieutenant?\"" RankKink>>[[|RankKink]]
 <<AddOption "\"...you naughty boy?\"" NaughtyBoy>>[[|NaughtyBoy]]
+<<AddOption "\"...?\" (Trail off without adding anything.)" WhatDynamic>>[[|WhatDynamic]]
 
-:: RankKink [nobr] {"position":"700,6800"}
+:: RankKink [nobr] {"position":"650,6800"}
 
 <<set $dynamic to "rank">>
 
 <<PassiveSkill "Authority" >>
-<<AddParagraph "Your grin is sharp in the dark.">>
+<<AddParagraph "Your grin is sharp in the dark. The kind you've used before, on mouthy reports, just before putting them in their place.">>
 
 <<SetSpeaker "you">>
 <<AddParagraph "\"Don't make me pull rank on you a third time, Kim.\"">>
@@ -2589,7 +2595,7 @@ A Disco Elysium Fanwork
 
 <<include TheTeaseYouDeserve>>[[|TheTeaseYouDeserve]]
 
-:: NaughtyBoy [nobr] {"position":"900,6800"}
+:: NaughtyBoy [nobr] {"position":"950,6800"}
 
 <<set $dynamic to "naughty">>
 
@@ -2604,14 +2610,23 @@ A Disco Elysium Fanwork
 
 <<include TheTeaseYouDeserve>>[[|TheTeaseYouDeserve]]
 
+:: WhatDynamic [nobr] {"position":"1050,6800"}
+
+<<set $dynamic to "neutral">>
+
+<<PassiveSkill "Empathy" "Legendary" "Success">>
+<<AddParagraph "You don't need an exchange of power. He just needs to be encouraged. You can do that gently.">>
+
+<<include TheTeaseYouDeserve>>
+
 :: TheTeaseYouDeserve [nobr] {"position": "800,6800"}
 
 <<if $dynamic is "rank">>
-<<set _dear to "Lieutenant. I really //don't// want to have to pull rank, you know.">>
+<<set _dear to "Lieutenant. Or am I going to have to punish you for insubordination?">>
 <<elseif $dynamic is "naughty">>
 <<set _dear to "naughty boy. Would hate to have to punish you for being a brat.">>
 <<else>> /* Shouldn't trigger, but just in case. */
-<<set _dear to "Kim. I know you can do it.">>
+<<set _dear to "Kim. I know you can do it. Take your time, but you've got this.">>
 <<endif>>
 
 <<SetSpeaker "you">>
@@ -2633,13 +2648,23 @@ A Disco Elysium Fanwork
 :: PatienceRewarded [nobr] {"position":"800,6950"}
 
 <<set $hastyprep to "false">>
+<<if $dynamic is "rank">>
+<<set _darling to "You have permission to speak your mind, Lieutenant.">>
+<<elseif $dynamic is "naughty">>
+<<set _darling to "Be a good boy and tell me what you really want.">>
+<<else>> /* Shouldn't trigger, but just in case. */
+<<set _darling to "But Kim...don't //you// want something else, too?">>
+<<endif>>
+
 <<SkillSuccess>> 
 
 <<SetSpeaker "you">>
 <<AddParagraph "You continue stretching him gently, scissoring your fingers, curling them sometimes to listen to him gasp.">>
 
+<<AddParagraph "\"_darling\"">>
+
 <<BlankSpeaker>> 
-<<AddParagraph "Time stretches for a bit as he collects himself, finds his courage.">>
+<<AddParagraph "Time stretches for a bit as he collects himself, finds his courage. Breathes deeply, thoughtfully.">>
 
 <<PassiveSkill "volition" "Medium" "Success">> 
 <<AddParagraph "Something in the lieutenant breaks.">>
@@ -2652,7 +2677,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "\"Good work, lieutenant. I knew I could rely on you.\"">>
 <<elseif $dynamic is "naughty">>
 <<AddParagraph "\"That's a good boy.\"">>
-<<else>> /* This shouldn't trigger, but just in case... */
+<<else>> 
 <<AddParagraph "\"Of course, Kim. Anything you ask, now that you have.\"">>
 <<endif>>
 
@@ -2666,7 +2691,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Physical Instrument">>
 <<AddParagraph "He's tight but surely he can take it, you need it now. Lining yourself up you start to push inside - despite the lube, he's incredibly tight. You have to be more forceful than expected, slower. Muscles taut against the head. Willing Kim to open up to you as you drive into him with a steady weight.">>
 
-<<PassiveSkill "Pain Threshold" "Difficult" "Success">>
+<<PassiveSkill "Pain Threshold" "Challenging" "Success">> 
 <<AddParagraph "It's almost a more intense stretch than he can take. He's breathing heavily, trying to force himself to relax - but his own excitement, his craving for the stretch and the effort, is making that difficult for him.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
@@ -2778,7 +2803,7 @@ A Disco Elysium Fanwork
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "His cock pulses against you, though. He //likes// this.">>
 
-<<SetSpeaker "Kim Kitsurag">>
+<<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "He looks back up at you, some of the earlier worry undone in exchange for more wanton desire. \"//Please//, Harry. Fuck me.\"">>
 
 <<AddOption "That's all the permission you need." "KimIsReady">>[[|KimIsReady]]
@@ -2793,7 +2818,7 @@ A Disco Elysium Fanwork
 
 <<PassiveSkill "Electrochemistry">>
 <<AddParagraph "Indeed, the bobbing of his cock against his stomach, the grip of the sheets, the intensity of his eyes screwed shut and the hiss from between his teeth - he wants every bit of this. It is a deep seated, primal craving. Give him what he wants, baby. Fuck his brains out.">>
-<</if>>
+<<endif>>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "You take a breath, then slide your hips back - relishing the gasp that comes out from him.">>
@@ -2943,11 +2968,23 @@ A Disco Elysium Fanwork
 <<SetSpeaker "you">>
 <<AddParagraph "You move to the kitchenette and open a cabinet. Instead of glass or porcelain cups, you find a variety of small metal pitchers, the kind that you'd get cream in with coffee at a diner.">>
 
+<<PassiveSkill "Half Light" >>
+<<AddParagraph "You briefly have a terrible memory of smashing cups against your wall in a drugged out, drunken haze. Some were full, leaving coffee stains on your off-white walls.">>
+
 <<PassiveSkill "Esprit De Corps" >>
-<<AddParagraph "You briefly have a terrible memory of smashing cups against your wall in a drugged out, drunken haze. You then have a more positive one, as Trant, Jean, and Judit scour a dozen thrift stores and restaurant supply shops in Jamrock to get you the little pitchers as replacement cups. Harder to break. Cute and unique. Oddly cheap and easy to replace, too.">>
+<<AddParagraph "Two days after that incident, Patrol Officer Judit Minot was at 'Doyon Després,' a restaurant supply store in the GRIH, picking up a few of the small creamer pitchers. Further south in Jamrock, Special Consultant Trant Heidelstam was doing the same at a //ressourcerie//. Harder to break, they had decided. Trant praised the clever utility, Judit called it 'cute'. Oddly cheap and easy to replace, too.">>
 
 <<SetSpeaker "you">>
-<<AddParagraph "You fill two pitchers with tap water, then set them down on the coffee table in your living room, knocking a stack of paperbacks to the ground in the process. Now, where will you get a shirt?">>
+<<AddParagraph "You fill two pitchers with tap water, then set them down on the coffee table in your living room, knocking a stack of paperbacks to the ground in the process.">>
+
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "You're going to be boiling hot with another person even in the same apartment - take off everything but your boxer briefs, toss the wet clothes into the laundry.">>
+
+<<PassiveSkill "Interfacing">>
+<<AddParagraph "Grab a spare clean kitchen towel - hey, make do with what you've got while Kim's in the bathroom - and dry off some of that carpet that's your chest.">>
+
+<<BlankSpeaker>> 
+<<AddParagraph "Now, where will you get a shirt for Kim?">>
 
 <<AddOption "In my gym bag." Shirt_Jersey>>[[|Shirt_Jersey]]
 <<AddOption "In my closet." Shirt_Disco>>[[|Shirt_Disco]]
@@ -2955,28 +2992,126 @@ A Disco Elysium Fanwork
 
 :: Shirt_Jersey [nobr] {"position":"1500,7250"}
 
+<<set $shirt to "sporty">>
+
 <<SetSpeaker "you">>
 <<AddParagraph "You find an old track and field jersey.">>
 
-/* a memory about playing, and maybe even about having admirers? */
+<<ItemGained "JCEC Track Jersey">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim leaves the bathroom, hair mussed from towel drying, wearing nothing but blue boxer briefs. You hand him the shirt and he pulls it on. Once it's on, he takes a deep breath - smelling you on it.">>
+
+<<ItemLost "JCEC Track Jersey">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "\"Khm. Uh. It's clean, it just has been in my gym bag, it might smell a bit...odd...\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"No-no, it's fine. Smells like you. That's, khm...that's not a bad thing.\" His ears flush slightly pink at it.">>
+
+<<PassiveSkill "Physical Instrument" >>
+<<AddParagraph "He likes the image of you working out, hearing you groan as you do another rep, watching you sweat. The smell of it excites him a bit, actually, but he's a bit embarrassed to admit it.">>
+
+<<AddOption "Sit on the couch and drink some water." Domestic3>>[[|Domestic3]]
 
 :: Shirt_Disco [nobr] {"position":"1700,7250"}
 
-<<SetSpeaker "you">>
-<<AddParagraph "You find a disco shirt, rayon instead of polyester for softness.">>
+<<set $shirt to "disco">>
 
-/* IE imagines Kim at the discotheque, Empathy pulls to the present. */
+<<SetSpeaker "you">>
+<<AddParagraph "You find a disco shirt, overlapping abstract shapes in bright primary colors and various animal prints, rayon instead of polyester for softness.">>
+
+<<ItemGained "Disco shirt 'Crazed Animal'">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim leaves the bathroom, hair mussed from towel drying, wearing nothing but blue boxer briefs. You hand him the shirt and he slides it onto his shoulders. It's large on him, but looks good.">>
+
+<<ItemLost "Disco shirt 'Crazed Animal'">>
+
+<<PassiveSkill "Inland Empire" >>
+<<AddParagraph "You can see him nervously at a discotheque in the '30s, dragged along by acquaintances - not even friends, this really isn't his scene - but catching eyes on the dance floor, asking to buy him a drink...">>
+
+<<PassiveSkill "Empathy" >>
+<<AddParagraph "It would never have happened - as you said, not his scene. Not that it matters. Here, in '51, right now, he is in your apartment, wearing your shirt, having already kissed you a half dozen times. The past is exactly itself - immutable. The future is something else.">>
+
+<<AddOption "Sit on the couch and drink some water." Domestic3>>[[|Domestic3]]
 
 :: Shirt_Hog [nobr] {"position":"1900,7250"}
+
+<<set $shirt to "hog">>
 
 <<SetSpeaker "you">>
 <<AddParagraph "You find a muscle tee with the phrase \"GUARANTEED TO CONTAIN NOTHING BUT THE PURE SWEET FAT OF THE HOG\" on it.">>
 
-/* Le Caractère de Cochon is a magical place. */
+<<ItemGained "Muscle shirt 'Pure Sweet Fat of the Hog'">>
 
-/* Kim does or doesn't take the shirt. Sits on the couch. Comments on the wacky couch, the art on the wall. */
+<<SetSpeaker "Muscle shirt 'Pure Sweet Fat of the Hog'">>
+<<AddParagraph "A shirt sold by the nearby charcuterie 'Caractère de Cochon'. Best //terrine de Campagne// in Revachol. The fifth time you came in, the shirt was tucked in alongside your order. You did not order it, you did not pay for it, and every attempt since to pay for it has been met with blank stares.">>
 
-/* Sit next to him on the couch. Talk about art. Notice him getting sleepy. Tell him where the bedroom is, let him get up. */
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim leaves the bathroom, hair mussed from towel drying, wearing nothing but blue boxer briefs. You hand him the shirt - and he smirks and hands it right back to you.">>
+<<AddParagraph "\"Khm. No thanks, I think I'll be fine like this.\"">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "\"Are you sure? Don't want you to get cold...\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"Oh, I'm quite sure you'll be warm enough.\" The look on his face makes you incapable of arguing back.">>
+
+<<AddOption "Sit on the couch and drink some water." Domestic3>>[[|Domestic3]]
+
+:: Domestic3 [nobr] {"position":"1500,7400"}
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "Kim joins you on the couch, snuggling into you. He picks up his mini pitcher and takes a sip, then looks up at the wall. \"Tell me about this mural.\"">>
+
+<<SetSpeaker "Your work in progress">>
+<<AddParagraph "An abstract work, directly on your wall - cobbled together from cans of paint, based in part on the shapes those coffee stains had left, but there's so much that you can't really see the coffee anymore. Teal, indigo, crimson, and goldenrod. Kinetic splatters, dancing across your living room. One exception - in stark black on the top left, perfectly crisp lettering - \"NO TRUCE WITH THE FURIES.\"">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "\"Honestly? I just add paint to it when I feel it needs it. I don't know if I can really explain it. Some of it, including the text, was here after I got back from Martinaise, and I've added to it bit by bit ever since. I think one day I'll know what it means, just not now, because it's not done yet.\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"I admire that about you. The willingness to not know where it's going. The bravery of committing to incomplete chaos on your wall. The honesty of it being a work in progress.\" He takes another gulp from his pitcher. \"If you do figure it out, though, let me know.\"">>
+
+<<NewTask "An artist's statement">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Will do. Anyway, you should get to bed. I'll be here on the couch.\"">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"No. It's your own damn apartment. I'll take the couch.\"">>
+
+<<PassiveSkill "Drama">>
+<<AddParagraph "You CANNOT let him get away with that, my lord! Chivalry //cannot// be dead! Let the prince rest in his proper place!">>
+
+<<AddOption "\"Fine, if you're going to be like that... ALLEY OOP!\"" "CarryKim">>[[|CarryKim]]
+
+:: CarryKim [nobr] {"position":"1500,7550"}
+
+<<PassiveSkill "Physical Instrument">>
+<<AddParagraph "Grabbing the lieutenant and hefting him up into a carry, you absolutely catch him unaware with your display of masculine strength.">>
+
+<<PassiveSkill "Electrochemistry">>
+<<AddParagraph "He's surprised //and// just a bit horny if that flush is anything to go by - get your sweet ass into the bedroom, stud.">>
+
+<<PassiveSkill "Endurance">>
+<<AddParagraph "Be quick about it - you've got maybe two minutes before you collapse like a load bearing wall made of plaster.">>
+
+<<PassiveSkill "Savoir Faire" "Challenging" "Failure">> 
+<<AddParagraph "Well, you make it through the door and get him on the bed - and then trip over a pair of pants, falling on top of him, nearly crushing the poor man.">>
+
+<<SetSpeaker "you">>
+<<AddParagraph "\"Ah, fuck, sorry!\" You flush crimson and try to extricate yourself -">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "But his hands latch onto your biceps, holding you in place. \"Stay. Please. I insist.\"">>
+
+<<PassiveSkill "Esprit De Corps" "Heroic" "Success">> 
+<<AddParagraph "Even though he offered to take the couch before, the truth is, given the chance, he doesn't want to sleep alone after the wildness of the evening.">>
+
+<<AddOption "Your heart aches. You cannot deny him. \"Of course. I'll stay.\"" Aftercare1>>[[|Aftercare1]]
 
 /* Kim offers a hand to you. Don't sleep on the couch of your own apartment! */
 
@@ -2985,7 +3120,11 @@ A Disco Elysium Fanwork
 :: Aftercare1 [nobr] {"position":"1300,8200"}
 
 <<SetSpeaker "you">>
+<<if $alley is false>>
 <<AddParagraph "Spent, you collapse more fully onto him, caring not a bit for the sticky sensation of bodies against each other. It's even slicker than before - he must have come again when you did. \"That was amazing,\" you murmur into the crook of his neck.">>
+<<else>>
+<<AddParagraph "You let yourself relax a bit, pressing yourself against him. \"That was...that was pretty wild, huh.\"">>
+<<endif>>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Yes-yes, it was. I didn't know you had it in you.\" You feel his hands move off of you briefly - he's taking his glasses off and stretching to put them on the nightstand.">>
@@ -3057,7 +3196,7 @@ A Disco Elysium Fanwork
 <<if $alley is true>>
 <<set _sniffles to "through your cold-induced sniffles">>
 <<else>>
-<<set _sniffles to "">>
+<<set _sniffles to "and maybe a tear in your eye">>
 <<endif>>
 
 <<PassiveSkill "INLAND EMPIRE" >>
