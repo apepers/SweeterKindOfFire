@@ -196,6 +196,23 @@ postdisplay['paragraph'] = function (taskName) {
 	//$('.paragraph').hide().fadeIn(10000);
 };
 
+// Em's PlayFab setup
+var url = "https://lazerwalker.com/playfab-twine/index.js";
+
+// Your PlayFab Title ID, found in Step 2
+var playfabID = "C3358";
+
+// An array of every Twine variable you want to track (don't include the dollar sign)
+var trackedVariables = ["triedfancy","drink","apartment","alley","dynamic"];
+
+$(function() {
+  $.getScript(url, function(data, textStatus, jqxhr) {
+    const trackedVariables = [];
+    setupPlayfab(playfabID, trackedVariables, State);
+  });
+});
+
+
 $(document).on("keyup", function (e) {
   if ((e.keyCode == 32) && ($("#ContinueBtn"))) {
     $("#ContinueBtn").click();
@@ -221,7 +238,7 @@ $(document).on("keyup", function (e) {
 <<set $undies to "what gender?">>
 <<set $dynamic to "neutral">>
 <<set $optionmap to new Map()>>
-<<set $motorics to ["composure", "hand/eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception", "perception (smell)", "perception (sight)", "perception (taste)", "perception (touch)", "perception (hearing)"]>>
+<<set $motorics to ["composure", "hand/eye coordination", "interfacing", "perception", "reaction speed", "savoir faire", "perception (smell)", "perception (sight)", "perception (taste)", "perception (touch)", "perception (hearing)"]>>
 <<set $intellect to ["conceptualization", "drama", "encyclopedia", "logic", "rhetoric", "visual calculus"]>>
 <<set $fysique to ["electrochemistry", "endurance", "half light", "pain threshold", "physical instrument", "shivers"]>>
 <<set $psyche to ["authority", "empathy", "esprit de corps", "inland empire", "suggestion", "volition"]>>
@@ -257,7 +274,7 @@ $(document).on("keyup", function (e) {
 <<nobr>>
 <<widget "SkillSuccess">>
 <div id="SuccessImg" class="CheckOverlay"></div>
-<div id="CheckSuccess" class="CheckText">CHECK Success</div>
+<div id="CheckSuccess" class="CheckText">CHECK SUCCESS</div>
 <<SetSpeaker "">>
 <<AddParagraph "//Green flashes at the edges of your vision - a success.//">>
 <</widget>>
@@ -267,7 +284,7 @@ $(document).on("keyup", function (e) {
 <<nobr>>
 <<widget "SkillFailure">>
 <div id="FailureImg" class="CheckOverlay"></div>
-<div id="CheckFailure" class="CheckText">CHECK Failure</div>
+<div id="CheckFailure" class="CheckText">CHECK FAILURE</div>
 <<SetSpeaker "">>
 <<AddParagraph "//Red flashes at the edges of your vision - a failure.//">>
 <</widget>>
@@ -512,7 +529,7 @@ A Disco Elysium Fanwork
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "He looks approvingly at the drink and takes a sip. \"Thank you, detective.\"">>
 
-<<SetSpeaker "Empathy" "Legendary" "Success">>
+<<PassiveSkill "Empathy" "Legendary" "Success">>
 <<if $triedfancy is true>>
 <<AddParagraph "He appreciates that you knew of and tried your best to get something that aligns with his aesthetic.">>
 <<else>>
@@ -1641,7 +1658,7 @@ A Disco Elysium Fanwork
 :: GloveSuck [nobr] {"position": "1400,5000"}
 
 <<SkillSuccess>>
-<<PassiveSkill "perception (hearing)">>
+<<PassiveSkill "Perception (Hearing)">>
 <<AddParagraph "The scrape of your teeth against the pad of Kim's finger draws out a hitched breath, barely perceptible even in this empty room.">>
 
 <<PassiveSkill "interfacing">>
@@ -1846,11 +1863,11 @@ A Disco Elysium Fanwork
 
 <<SkillSuccess>> 
 
-<<SetSpeaker "you">>
+<<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "Kim lets out a surprised grunt as he’s pressed into the brick like you were.  But when you go for his belt, he doesn’t stop you, but secures his fingers around your lapel. ">>
 
-<<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "\"Harry -\" You lean in so you feel his breathe hot on your ear. It’s a warning, but that’s the only resistance you’ll get.  His cock is hot in your cold hands. He sucks in air through his teeth.">>
+
 <<AddParagraph "He’s really hard, tip weeping; this won’t take long.">>
 
 <<AddOption "Take it slow anyway." AlleySlow>>[[|AlleySlow]]
@@ -1862,7 +1879,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "But you want it to take long! You want to do this for hours. You never want to stop hearing the little hitches in his breath, watching the way his whole body tenses when you run a thumb slowly over the head of his dick.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "The pace is getting to him; his eyes are screwed shit. In his excitement he’s forgotten where you are right now and can only think about the feeling of your palm. He’s a hair’s width from begging you to speed up.">>
+<<AddParagraph "The pace is getting to him; his eyes are screwed shut. In his excitement he’s forgotten where you are right now and can only think about the feeling of your palm. He’s a hair’s width from begging you to speed up.">>
 
 <<PassiveSkill "Electrochemistry" >>
 <<AddParagraph "You could get addicted to this. You might already be. He grits his teeth and lets out a small strangled noise.">>
@@ -1887,7 +1904,7 @@ A Disco Elysium Fanwork
 
 :: Alley3 [nobr] {"position":"1500,6350"}
 
-<<PassiveSkill "Hand/Eye Coordination" >>
+<<PassiveSkill "Hand/Eye Coordination">>
 <<AddParagraph "You increase your speed, just a little.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
@@ -2204,6 +2221,9 @@ A Disco Elysium Fanwork
 /* Whiskey Dick 
 <<SBOption "\"You remember that pretty smoker on the balcony?\"">> */
 
+/* Thanks, Twitter RPers. */
+<<SBOption "\"What are your plans for keeping up with fitness requirements when you join us?\"" SB_Sparring>>[[|SB_Sparring]]
+
 /*Meta-notes: you can use x position = 400, y > 600 to "visually store" all the SB entries. They should be short. Honestly, I should probably be stopped before I make too many.*/
 
 :: SB_Shameless0 [nobr] {"position": "4000, 6800"}
@@ -2290,10 +2310,10 @@ A Disco Elysium Fanwork
 <<AddParagraph "\"Khm. The...the vampyre novel everyone loved in '19? Scandalized the isola, accusations that the author was trying to corrupt young ladies' minds? Maybe once, but I didn't find it very exciting, myself.\"">>
 
 <<SetSpeaker "You">>
-<<AddParagraph "Yes, exactly! Though I always wondered why Dracul preyed on young women, specifically. I, for one, would have //loved// to have been bitten by an immortal creature. 'Invite me in, Dracul...'">>
+<<AddParagraph "\"Yes, exactly! Though I always wondered why Dracul preyed on young women, specifically. I, for one, would have //loved// to have been bitten by an immortal creature. 'Invite me in, Dracul...'\"">>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "A few years later, there was a novel called //Pascal's Journey//. You may find it...enjoyable...if that is your style.">>
+<<AddParagraph "\"A few years later, there was a novel called //Pascal's Journey//. You may find it...enjoyable...if that is your style.\"">>
 
 <<PassiveSkill "Encyclopedia" "Medium" "Success">> 
 <<AddParagraph "//Pascal's Journey// is a graphic novel, by Ira P., released in '22. It explored Vampyre themes...and was exclusively sold in homo-sexual underground shops, for reasons that will be obvious to the reader about three pages in.">>
@@ -2426,7 +2446,7 @@ A Disco Elysium Fanwork
 
 <<if $triedfancy is true>>
 <<PassiveSkill "Encyclopedia" "Heroic" "Success">> 
-<<AddParagraph "Alfie Deletraz's career was tragically cut short by an accident on the racetrack that later on got renamed 'Grinsenring' in his honor. Though the months before that featured both thrills on the racetrack and his personal life, as he quickly became the paramour of legendary driver Jacob Irw - yes, the same who had advertised the Aerostatique. Perhaps this explains Kim's fondness for it...?">>
+<<AddParagraph "Alfie Deletraz's career was tragically cut short by an accident on a circuit that is now known as 'Grinsenring', after the team he was on at the time. The months before that horrible incident featured both thrills on the racetrack and his personal life, as he quickly became the paramour of legendary driver Jacob Irw - yes, the same who had advertised the Aerostatique. Perhaps this explains Kim's fondness for the drink...?">>
 <<endif>>
 
 <<if $apartment is "Kim">>
@@ -2537,6 +2557,30 @@ A Disco Elysium Fanwork
 
 /* 1800: Smoker on the Balcony */
 
+:: SB_Sparring [nobr] {"position":"400,1900"}
+
+<<set $fantasies += 1>>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"I mean, I assume there's a small weight room, same as the 57th. Regular sprints in the Parc de Suzerain, on the hills. Why are you asking...?\"">>
+
+<<SetSpeaker "You">>
+<<AddParagraph "\"I could use a new sparring partner on hand-to-hand drills.\"">>
+
+<<PassiveSkill "Esprit De Corps" "Medium" "Success">> 
+<<AddParagraph "The last time, you were paired off with Trant, and Jean with Judit. The entire time, as Trant royally whipped your ass, Jean was shooting you daggers with his eyes, even more than usual - and thus was distracted enough to get a solid smack upside the head from the lady who normally pulls her punches a bit when working with colleagues.">>
+
+<<PassiveSkill "Electrochemistry" >>
+<<AddParagraph "Not gonna lie, there was something //very// disco there, about the mild-mannered Special Consultant thrashing you, and about possibly inciting something a bit possessive in your other partner.">>
+
+<<PassiveSkill "Esprit De Corps" >>
+<<AddParagraph "And now, Kim is imagining you, hands wrapped, tank top sticking to your chest with sweat, eyes locked with his as you circle each other, a battle of bodies and wills.">>
+
+<<SetSpeaker "Kim Kitsuragi">>
+<<AddParagraph "\"I hope you're ready for me to thrash you, detective. I don't pull my punches in training, even for superior officers.\"">>
+
+<<AddOption "\"Honestly, I'm looking forward to it.\" (Tell him another.)" SB_Start>>
+
 :: SB_Interrupt [nobr] {"position": "400, 6950"}
 <<set $hastyprep to "false">>
 
@@ -2558,7 +2602,7 @@ A Disco Elysium Fanwork
 
 <<SkillSuccess>> 
 
-<<SetSpeaker "Authority">>
+<<PassiveSkill "Authority">>
 <<AddParagraph "As forceful as he is, he's a little embarrassed about dirty talk - but he wants to be pushed into it.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
@@ -2829,7 +2873,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "You keep your motions slow at first, steady. You want desire to build. You want to hold on and watch Kim come undone completely.">>
 
 <<PassiveSkill "Rhetoric" "Legendary" "Failure">>
-<<AddParagraph "You find yourself babbling, the slick heat undoing any thoughts basides the sheer wonder you feel about your current position">>
+<<AddParagraph "You find yourself babbling, the slick heat undoing any thoughts besides the sheer wonder you feel about your current position">>
 
 <<AddOption "\"Fucking hell, Kim, you're perfect, you look amazing, you feel amazing -\"" "FuckKimHarder">>[[|FuckKimHarder]]
 
@@ -2844,7 +2888,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "Who are you to deny //yourself// at this point? Give in. Wreck him and yourself. Head into oblivion together, Disco Zero, the only place all this can go.">>
 
 <<PassiveSkill "PHYSICAL INSTRUMENT" >>
-<<AddParagraph "Your pick up the pace; fast now, hard, with the full force of your weight into them; in time to the kind of music he likes, primal, thrashing, forceful.">>
+<<AddParagraph "You pick up the pace; fast now, hard, with the full force of your weight into them; in time to the kind of music he likes, primal, thrashing, forceful.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "His reactions are exquisite - look at this beautiful mess! Flashes of light bounce chaotically around the room as his glasses get knocked about. He's sweating profusely, the sheen highlighting his musculature just so. A bead of precum at the tip of his hard cock becomes a streak on his stomach with one thrust, joined by more as you go. ">>
@@ -3163,10 +3207,10 @@ A Disco Elysium Fanwork
 <<SetSpeaker "you">>
 <<AddParagraph "\"Is your secret //really// cock sucking? I mean, that was incredible, but -\"">>
 
-<<SecretTaskComplete "A nickname for your partner" 25>>
-
 <<SetSpeaker "Kitsy">>
 <<AddParagraph "\"Khm.\" He sounds affectionate, amused. \"I guess you'll have to keep detecting to find out.\"">>
+
+<<SecretTaskComplete "A nickname for your partner" 25>>
 
 <<SetSpeaker "you">>
 <<AddParagraph "\"... tomorrow?\" ">>
