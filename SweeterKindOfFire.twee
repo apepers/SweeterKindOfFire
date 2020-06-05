@@ -1668,7 +1668,7 @@ A Disco Elysium Fanwork
 <<AddParagraph "With a bit of suction and delicate biting, you get a firm grip on the tip of his glove between your teeth and tilt your head back, shifting it off his hand.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "The lieutenant draws his hand back the rest of the way and his dark eyes follow his glove as it drop from your mouth and to the floor.">>
+<<AddParagraph "The lieutenant draws his hand back the rest of the way and his dark eyes follow his glove as it drops from your mouth and to the floor.">>
 
 <<AddParagraph "With a surge of hunger he meets your eyes once again the presses the thumb of his other hand forcefully against your mouth, prompting you to repeat your trick.">>
 
@@ -2867,10 +2867,16 @@ A Disco Elysium Fanwork
 <<AddParagraph "Indeed, the bobbing of his cock against his stomach, the grip of the sheets, the intensity of his eyes screwed shut and the hiss from between his teeth - he wants every bit of this. It is a deep seated, primal craving. Give him what he wants, baby. Fuck his brains out.">>
 <<endif>>
 
+<<if $apartment is "Kim">>
+<<set _the to "his">>
+<<else>>
+<<set _the to "your">>
+<<endif>>
+
 <<SetSpeaker "Kim Kitsuragi">>
 <<AddParagraph "You take a breath, then slide your hips back - relishing the gasp that comes out from him.">>
 <<AddParagraph "then...">>
-<<AddParagraph "//Snap// your hips back in, rewarded with the sound of a moan that will almost certainly wake his neighbors, if not the dead.">>
+<<AddParagraph "//Snap// your hips back in, rewarded with the sound of a moan that will almost certainly wake _the neighbors, if not the dead.">>
 
 <<PassiveSkill "Composure" "Impossible" "Success">>
 <<AddParagraph "You keep your motions slow at first, steady. You want desire to build. You want to hold on and watch Kim come undone completely.">>
