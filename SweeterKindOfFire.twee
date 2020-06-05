@@ -1329,7 +1329,10 @@ A Disco Elysium Fanwork
 <<AddParagraph "Being that wet cannot be comfortable, it's freezing out. Offer him your jacket.">>
 
 <<SetSpeaker "Kim Kitsuragi">>
-<<AddParagraph "\"Thank you.\" He's practically swimming in it, //that's// how much bigger you are. Think on that for a moment.">>
+<<AddParagraph "\"Thank you.\"">>
+
+<<PassiveSkill "Physical Instrument" "Easy" "Success">> 
+<<AddParagraph "Even though the disco jacket is a bit form fitting on you, he's practically swimming in it, //that's// how much bigger you are. Think on that for a moment.">>
 
 <<PassiveSkill "Reaction Speed">>
 <<AddParagraph "Ah shit, your keys are in there!">>
