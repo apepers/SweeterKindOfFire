@@ -22,7 +22,7 @@ html {
 
 body, tw-story
 {
-  font-family: 'David Libre', serif;
+  font-family: 'Sina Nova', 'David Libre', serif;
   margin-left: 2em;
   color: #d2d3cd;
   height: 100%;
@@ -195,23 +195,6 @@ $(document).click(function(e) {
 postdisplay['paragraph'] = function (taskName) {
 	//$('.paragraph').hide().fadeIn(10000);
 };
-
-// Em's PlayFab setup
-var url = "https://lazerwalker.com/playfab-twine/index.js";
-
-// Your PlayFab Title ID, found in Step 2
-var playfabID = "C3358";
-
-// An array of every Twine variable you want to track (don't include the dollar sign)
-var trackedVariables = ["triedfancy","drink","apartment","alley","dynamic"];
-
-$(function() {
-  $.getScript(url, function(data, textStatus, jqxhr) {
-    const trackedVariables = [];
-    setupPlayfab(playfabID, trackedVariables, State);
-  });
-});
-
 
 $(document).on("keyup", function (e) {
   if ((e.keyCode == 32) && ($("#ContinueBtn"))) {
